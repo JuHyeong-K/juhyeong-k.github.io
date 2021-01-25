@@ -23,20 +23,20 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="This is my first github blog post for test. WOW..">
+<meta name="description" content="Requirments Github ID Node.js Git  Github 호스팅용 저장소 생성repository name은 domain으로 사용할 이름(juhyenog-k.github.io)으로 설정 hexo 설치Node.js를 설치하면 사용할 수 있는 npm명령어를 사용해서 hexo를 설치한다.$ sudo npm install -g hexo-cli he">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Test">
-<meta property="og:url" content="https://juhyeong-k.github.io/2021/08/04/Test/index.html">
+<meta property="og:title" content="hexo로 블로그 만드는 방법">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/index.html">
 <meta property="og:site_name" content="JH&#39;s dev blog">
-<meta property="og:description" content="This is my first github blog post for test. WOW..">
+<meta property="og:description" content="Requirments Github ID Node.js Git  Github 호스팅용 저장소 생성repository name은 domain으로 사용할 이름(juhyenog-k.github.io)으로 설정 hexo 설치Node.js를 설치하면 사용할 수 있는 npm명령어를 사용해서 hexo를 설치한다.$ sudo npm install -g hexo-cli he">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-08-04T06:45:43.000Z">
-<meta property="article:modified_time" content="2021-01-22T06:48:29.801Z">
-<meta property="article:author" content="JuHyeong-K">
+<meta property="article:published_time" content="2021-01-22T07:37:13.000Z">
+<meta property="article:modified_time" content="2021-01-25T08:20:01.765Z">
+<meta property="article:author" content="Kim Ju Hyeong">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://juhyeong-k.github.io/2021/08/04/Test/">
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/">
 
 
 <script class="page-configurations">
@@ -48,7 +48,7 @@
     lang   : 'en'
   };
 </script>
-<title>Test | JH's dev blog</title>
+<title>hexo로 블로그 만드는 방법 | JH's dev blog</title>
   
 
 
@@ -135,7 +135,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -148,19 +148,20 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Requirments"><span class="nav-number">1.</span> <span class="nav-text">Requirments</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Github-%ED%98%B8%EC%8A%A4%ED%8C%85%EC%9A%A9-%EC%A0%80%EC%9E%A5%EC%86%8C-%EC%83%9D%EC%84%B1"><span class="nav-number">2.</span> <span class="nav-text">Github 호스팅용 저장소 생성</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-%EC%84%A4%EC%B9%98"><span class="nav-number">3.</span> <span class="nav-text">hexo 설치</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hexo-%EC%84%A4%EC%A0%95"><span class="nav-number">4.</span> <span class="nav-text">hexo 설정</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#post"><span class="nav-number">5.</span> <span class="nav-text">post</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#generate-amp-deploy"><span class="nav-number">6.</span> <span class="nav-text">generate &amp; deploy</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">JuHyeong-K</p>
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
   <div class="site-description" itemprop="description">django newbie</div>
 </div>
 <div class="site-state-wrap site-overview-item animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives">
-          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-count">1</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -200,11 +201,11 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/08/04/Test/">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="JuHyeong-K">
+      <meta itemprop="name" content="Kim Ju Hyeong">
       <meta itemprop="description" content="django newbie">
     </span>
 
@@ -213,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Test
+          hexo로 블로그 만드는 방법
         </h1>
 
         <div class="post-meta-container">
@@ -224,14 +225,14 @@
       </span>
       <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2021-08-04 15:45:43" itemprop="dateCreated datePublished" datetime="2021-08-04T15:45:43+09:00">2021-08-04</time>
+      <time title="Created: 2021-01-22 16:37:13" itemprop="dateCreated datePublished" datetime="2021-01-22T16:37:13+09:00">2021-01-22</time>
     </span>
       <span class="post-meta-item">
         <span class="post-meta-item-icon">
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-22 15:48:29" itemprop="dateModified" datetime="2021-01-22T15:48:29+09:00">2021-01-22</time>
+        <time title="Modified: 2021-01-25 17:20:01" itemprop="dateModified" datetime="2021-01-25T17:20:01+09:00">2021-01-25</time>
       </span>
 
   
@@ -244,8 +245,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>This is my first github blog post for test.</p>
-<p>WOW..</p>
+        <h4 id="Requirments"><a href="#Requirments" class="headerlink" title="Requirments"></a>Requirments</h4><ul>
+<li>Github ID</li>
+<li>Node.js</li>
+<li>Git</li>
+</ul>
+<h4 id="Github-호스팅용-저장소-생성"><a href="#Github-호스팅용-저장소-생성" class="headerlink" title="Github 호스팅용 저장소 생성"></a>Github 호스팅용 저장소 생성</h4><p>repository name은 domain으로 사용할 이름(juhyenog-k.github.io)으로 설정</p>
+<h4 id="hexo-설치"><a href="#hexo-설치" class="headerlink" title="hexo 설치"></a>hexo 설치</h4><p>Node.js를 설치하면 사용할 수 있는 npm명령어를 사용해서 hexo를 설치한다.<br><code>$ sudo npm install -g hexo-cli</code></p>
+<p>hexo설치가 끝난 뒤에 블로그로 사용될 폴더를 생성 후 그 디렉토리로 들어간다.<br><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code></p>
+<p>초기화에 필요한 패키지 설치<br><code>$ npm install</code></p>
+<p>서버를 실행해서 확인해본다. 주소는 <a target="_blank" rel="noopener" href="https://localhost:4000/">https://localhost:4000</a><br><code>$ hexo server</code></p>
+<h4 id="hexo-설정"><a href="#hexo-설정" class="headerlink" title="hexo 설정"></a>hexo 설정</h4><p>hexo 블로그를 Github에 배포할 때 필요한 플러그인 설치<br><code>$ npm install hexo-deployer-git --save</code><br> package.json에 찍어준다</p>
+<p><code>_config.yml</code>파일을 사용해서 사이트 환경설정해줄 수 있다.<br><code>$ vi _config.yml</code><br>‘#Site에서 title, subtitle 등 정해주면 되고,’<br>‘#Deploy에서 type: git / repo: {Github 저장소 주소}’입력해주면 된다.<br>자세한 설명은<a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/configuration">_config.yml 설정</a> 참조</p>
+<h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><p>원하는 제목()으로 post작성<br><code>$ hexo new post &quot;제목&quot;</code></p>
+<p>저장된 경로 확인 (~/Documents/dev/blog/source/_posts/Test.md)</p>
+<p>vim으로 해당 포스트 수정<br><code>~/Documents/dev/blog/source/_posts/Test.md</code></p>
+<h4 id="generate-amp-deploy"><a href="#generate-amp-deploy" class="headerlink" title="generate &amp; deploy"></a>generate &amp; deploy</h4><p><code>$ hexo clean &amp;&amp; hexo generate</code></p>
+<ul>
+<li><code>hexo clean</code> &gt;&gt; 캐시 파일 및 생성된 파일들(public)을 삭제</li>
+<li><code>&amp;&amp;</code> &gt;&gt; 앞에 명령 실행완료 되면, 뒤에 명령 실행</li>
+<li><code>hexo generate</code> &gt;&gt; .md확장자로 만들어진 post를 html로 변환해주는 기능</li>
+</ul>
+<p>서버를 다시 켜서 제대로 작성 됐는지 확인<br><code>$ hexo server</code></p>
+<p>commit 작성 후, gitgub 저장소에 배포해주면 완료<br><code>$ hexo clean &amp;&amp; hexo deploy</code></p>
 
     </div>
 
@@ -257,15 +279,6 @@
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2021/01/22/hello-world/" rel="prev" title="Hello World">
-                  <i class="fa fa-chevron-left"></i> Hello World
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
     </footer>
   </article>
 </div>
@@ -310,7 +323,7 @@
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">JuHyeong-K</span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>

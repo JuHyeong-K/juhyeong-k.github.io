@@ -31,7 +31,7 @@
 <meta property="og:description" content="오늘 한 일 알고리즘 문제 풀이   112# 자연수 N이 주어졌을 때, N의 각 자릿수의 합을 구해라.# ex) N &#x3D; 123, 1 + 2 + 3 &#x3D; 6 12345678910111213# 1번째 풀이# input값을 받는 N# 입력받은 수를 for반복문 활용해서 빈 리스트에 추가# 자료형이 int이기 때문에 for문에 들어갈 때는 str로 자료형 변경# 빈">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-27T10:35:54.000Z">
-<meta property="article:modified_time" content="2021-01-27T13:26:14.375Z">
+<meta property="article:modified_time" content="2021-01-27T13:30:40.717Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="TIL">
 <meta name="twitter:card" content="summary">
@@ -251,7 +251,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-01-27 19:35:54 / Modified: 22:26:14" itemprop="dateCreated datePublished" datetime="2021-01-27T19:35:54+09:00">2021-01-27</time>
+      <time title="Created: 2021-01-27 19:35:54 / Modified: 22:30:40" itemprop="dateCreated datePublished" datetime="2021-01-27T19:35:54+09:00">2021-01-27</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -287,9 +287,10 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 2번째 풀이</span></span><br><span class="line"><span class="comment"># 반복문 없이도 가능할까?</span></span><br><span class="line"><span class="comment"># 일단 n의 값을 str로 변경 후 join으로 사이사이에 +를 넣고</span></span><br><span class="line"><span class="comment"># eval함수를 이용해서 계산</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">input</span>(<span class="string">&quot;자연수 입력: &quot;</span>)</span><br><span class="line">mk_str = <span class="string">&quot;+&quot;</span>.join(<span class="built_in">str</span>(n))</span><br><span class="line">answer = <span class="built_in">eval</span>(mk_str)</span><br><span class="line">print(<span class="string">&quot;n = &#123;&#125;, answer = &#123;&#125;&quot;</span>.<span class="built_in">format</span>(n, answer))</span><br></pre></td></tr></table></figure>
 <blockquote>
 <blockquote>
-<p>n = 123, answer = 6<br>반복문 없이는 풀지 못할 거라고 생각했는데,<br>수업 때 잠깐 스쳐지나간  eval()함수가 생각나서 사용해봤는데 문제가 풀렸다.<br>사실 eval()함수를 사용해서 문제를 푸는 것이 좋은 방법은 아닌 것 같다.<br>eval()함수는 코드의 가독성을 떨어뜨리고 디버깅을 어렵게 만들수 도 있고,<br>특히 시스템 명령을 넣고 그 내용을 그대로 노출(Command Injection Flaws)<br>시킬 수 있기 때문에 대형 참사로 이어질 수 있다고 한다.(보안 문제)<br>eval()함수 사용을 지양하자<del>eval() is evil.</del></p>
+<p>n = 123, answer = 6</p>
 </blockquote>
 </blockquote>
+<p>반복문 없이는 풀지 못할 거라고 생각했는데,<br>수업 때 잠깐 스쳐지나간  eval()함수가 생각나서 사용해봤는데 문제가 풀렸다.<br>사실 eval()함수를 사용해서 문제를 푸는 것이 좋은 방법은 아닌 것 같다.<br>eval()함수는 코드의 가독성을 떨어뜨리고 디버깅을 어렵게 만들수 도 있고,<br>특히 시스템 명령을 넣고 그 내용을 그대로 노출(Command Injection Flaws)<br>시킬 수 있기 때문에 대형 참사로 이어질 수 있다고 한다.(보안 문제)<br>eval()함수 사용을 지양하자<del>eval() is evil.</del></p>
 <hr>
 <h2 id="2"><a href="#2" class="headerlink" title="2"></a>2</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 정수를 입력받는 n이 존재</span></span><br><span class="line"><span class="comment"># n의 각 자릿수를 큰 것부터 작은 순으로 새로운 정수를 출력</span></span><br><span class="line"><span class="comment"># ex) n = 132749, answer = 132479</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># int인 n을 str로 변경하는 동시에 list로 변경</span></span><br><span class="line"><span class="comment"># sort함수로 내림차순 정렬</span></span><br><span class="line"><span class="comment"># join함수로 str로 만들고 int자료형으로 변경 후 출력</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">input</span>(<span class="string">&quot;정수 입력: &quot;</span>)</span><br><span class="line">mk_list = []</span><br><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> <span class="built_in">str</span>(n):</span><br><span class="line">  mk_list.append(num)</span><br><span class="line">mk_list.sort(reverse=<span class="literal">True</span>) <span class="comment"># reverse=True;내림차순 reverse=False;오름차순(default)</span></span><br><span class="line">mk_str = <span class="string">&quot;&quot;</span>.join(mk_list)</span><br><span class="line">answer = <span class="built_in">int</span>(mk_str)</span><br><span class="line">print(<span class="string">&quot;n = &#123;&#125;, answer = &#123;&#125;&quot;</span>.<span class="built_in">format</span>(n, answer))</span><br></pre></td></tr></table></figure>

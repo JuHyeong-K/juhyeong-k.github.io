@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="Exception, RegEx, LambdaTry-Except Error Handle123456# 작성하기 전에 pass를 써놓고 작성하는 것을 추천 # 사용자에게 input을 받는 것 처럼 통제할 수 없는 상태일 때 사용try:    passexcept: # Error 발생 시    pass 12345678910111213141516171819try:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210202 TIL">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/02/02/20210202-TIL/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="Exception, RegEx, LambdaTry-Except Error Handle123456# 작성하기 전에 pass를 써놓고 작성하는 것을 추천 # 사용자에게 input을 받는 것 처럼 통제할 수 없는 상태일 때 사용try:    passexcept: # Error 발생 시    pass 12345678910111213141516171819try:">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-02T08:47:08.000Z">
+<meta property="article:modified_time" content="2021-02-02T10:43:20.005Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="TIL">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/02/02/20210202-TIL/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>20210202 TIL | JH's dev blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Exception-RegEx-Lambda"><span class="nav-number">1.</span> <span class="nav-text">Exception, RegEx, Lambda</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Try-Except"><span class="nav-number">1.1.</span> <span class="nav-text">Try-Except</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Regular-Expressions"><span class="nav-number">2.</span> <span class="nav-text">Regular Expressions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Meta-Characters"><span class="nav-number">2.0.1.</span> <span class="nav-text">Meta Characters</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Lambda"><span class="nav-number">3.</span> <span class="nav-text">Lambda</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/02/20210202-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210202 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-02 17:47:08 / Modified: 19:43:20" itemprop="dateCreated datePublished" datetime="2021-02-02T17:47:08+09:00">2021-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Exception-RegEx-Lambda"><a href="#Exception-RegEx-Lambda" class="headerlink" title="Exception, RegEx, Lambda"></a>Exception, RegEx, Lambda</h1><h2 id="Try-Except"><a href="#Try-Except" class="headerlink" title="Try-Except"></a>Try-Except</h2><ul>
+<li>Error Handle<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 작성하기 전에 pass를 써놓고 작성하는 것을 추천 </span></span><br><span class="line"><span class="comment"># 사용자에게 input을 받는 것 처럼 통제할 수 없는 상태일 때 사용</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span>: <span class="comment"># Error 발생 시</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">&quot;Plz, don&#x27;t bother programmer.&quot;</span> )</span><br><span class="line">    guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line"><span class="comment"># &gt;&gt; except를 실행하게 되지만 문제가 해결되지는 않음</span></span><br><span class="line"><span class="comment"># 사용자의 입력을 오류없이 제대로 받으려면?</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_num_from_user</span>():</span> <span class="comment"># 사용자에게 input값을 받는 function</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> guess <span class="comment"># 제대로된 input을 입력 받으면 return</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">	<span class="comment"># 오류가 나면, 재귀함수를 사용해서 오류가 나지 않을 때 까지 반복</span></span><br><span class="line">        print(<span class="string">&quot;Plz, don&#x27;t bother programmer.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> get_num_from_user()</span><br><span class="line"></span><br><span class="line">get_num_from_user()</span><br><span class="line">&gt;&gt; 원하는 <span class="built_in">input</span>값을 받을 수 있다</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Regular-Expressions"><a href="#Regular-Expressions" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h1><ul>
+<li>특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어</li>
+<li>Python은 re 모듈로 정규표현식 사용 가능</li>
+<li>기본적인 문법은 비슷하나 언어별로 사용법이나 문법이 조금씩 달라 외우기 보다는 필요할 때 Reference를 참조</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;penpineapple&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;applepen&#x27;</span> <span class="comment"># re.match - 일치하는 부분 찾아내는 함수</span></span><br><span class="line">m = re.match(<span class="string">r&#x27;^pen&#x27;</span>, a) <span class="comment"># ^pen = &#x27;pen&#x27;으로 &#x27;시작&#x27;하는 문자 </span></span><br><span class="line"><span class="comment"># r = raw string &gt;&gt; 문자열 그대로 표시(escape문에 영향 안받음(\n, \b ...)) </span></span><br><span class="line">n = re.match(<span class="string">r&#x27;.+pen$&#x27;</span>, b) <span class="comment"># .+pen$ = 앞에 무엇이 있든 뒤가 pen으로 끝나는 것</span></span><br><span class="line">print(m, n)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">out:</span></span><br><span class="line"><span class="string">&lt;re.Match object; span=(0, 3), match=&#x27;pen&#x27;&gt; &lt;re.Match object; span=(0, 8), match=&#x27;applepen&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Meta-Characters"><a href="#Meta-Characters" class="headerlink" title="Meta Characters"></a>Meta Characters</h3><ul>
+<li>Dot(<code>.</code>): 개행문자(\n)을 제외한 모든 문자를 의미합니다.<br>ex) a.ple == a(모든문자)ple == aaple, abple, acple, ..</li>
+<li>Repetition(<code>*</code>): 앞 문자의 반복을 의미합니다.(0개 ~ 무한대)<br>ex) ap*le == ale, aple, apple, appple, ..</li>
+<li>Repetition(<code>+</code>): 앞 문자의 반복을 의미합니다.(1개 ~ 무한대)<br>ex) ap+le == aple, apple, appple, ..</li>
+<li>Caret(<code>^</code>): 정의한 문자열 패턴으로 시작함을 의미합니다.<br>ex) ^pen == penpineapple (!= applepen)</li>
+<li>Dollar sign(<code>$</code>): 정의한 문자열 패턴으로 끝남을 의미합니다.<br>ex) [a-z]+pen$ == applepen (!= penpineapple)</li>
+</ul>
+<ul>
+<li>Question mark(<code>?</code>): 앞 문자의 존재유무(있거나 없거나)를 의미합니다.<br>ex) appl?e == appe 또는 apple</li>
+<li>Curly brackets(<code>&#123;m,n&#125;</code>): 반복횟수를 정의할 때 사용합니다. 중괄호 안의 숫자(m,n)은 반복횟수를<br>정의하며, 정확히 일치할 경우 1개의 숫자(m)를, 범위를 정의할 경우 2개의 숫자를 사용합니다.<br>(m개~n개)<br>ex1) ba(na){2} == banana<br>ex2) ba(na){0,2} == ba, bana, banana</li>
+</ul>
+<ul>
+<li>Square brackets(<code>[]</code>): 문자클래스를 의미합니다. 대괄호 사이에 나열한 문자 중 하나의 값과 일치<br>할 경우를 의미합니다. 이 문자클래스와 함께 쓰이는 메타문자는 하이픈(-) 과 캐럿(^) 입니다.</li>
+<li>Hyphen(<code>-</code>): 두 문자 사이의 범위를 뜻합니다.<br>ex1) [A-Za-z] == 대문자와 소문자 알파벳 모두<br>ex2) [a-g0-5] == a,b,c,d,e,f,g 와 0,1,2,3,4,5 중 하나의 문자</li>
+<li>Caret(<code>^</code>): 부정(Not)을 의미합니다.<br>ex1) [^0-9]: 숫자가 아닌 문자<br>ex2) [^A-Za-z]: 알파벳이 아닌 모든 문자</li>
+</ul>
+<ul>
+<li>Parentheses(<code>()</code>): 소괄호 안의 문자열의 그룹을 의미합니다. 문자열 패턴의 반복을 검사하고<br>싶을 때 사용합니다. ex) (apple)+ == penpineappleapplepen</li>
+<li>Vertical bar(<code>|</code>): | 의 좌우 중 하나의 값과 일치하는 경우를 의미합니다.<br>ex1) (apple|apqle) == apple 또는 apqle<br>ex2) ap[p|q]le == apple 또는 apqle</li>
+<li>Backslach(<code>\</code>): 정규표현식을 만들 때 메타문자가 메타문자가 아닌 그 문자 그대로 사용하게 하기<br>위해 사용합니다.<br>ex) <code>https://www.google.co.kr/</code>=&gt; URL의 구두점(.)이 메타문자로 인식될 수 있음<br>-&gt; <code>https://www\.google\.co\.kr/</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># r&#x27;[A-Za-z0-9\-\_\.\+]@gmail\.com&#x27; </span></span><br><span class="line"><span class="comment"># username으로 들어올 수 있는 글자 = alphabet, number, -, ., _, +</span></span><br><span class="line"><span class="comment"># A-Z 모든 대문자 알파벳</span></span><br><span class="line"><span class="comment"># a-z 모든 소문자 알파벳</span></span><br><span class="line"><span class="comment"># 0-9 모든 숫자</span></span><br><span class="line"><span class="comment"># \- \_ \. \+</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+] &gt;&gt; 한 문자에 대한 것</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]+ &gt;&gt; 1개 이상의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;5&#125; &gt;&gt; 5개의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;4, 32&#125; &gt;&gt; 4개~32개의 문자</span></span><br><span class="line"><span class="comment"># ㄱ-ㅎ ㅏ-ㅣ 가-힣 &gt;&gt; 모든 한글 표현(한글은 2byte 언어(UNICODE), 영어는 1byte 언어(ASCII))</span></span><br><span class="line"></span><br><span class="line">apples = [<span class="string">&#x27;a&#x27;</span> + <span class="string">&#x27;p&#x27;</span>*i + <span class="string">&#x27;le&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)] <span class="comment"># ale ~ a&#x27;p*9&#x27;le 까지 리스트에 입력</span></span><br><span class="line">finder = re.<span class="built_in">compile</span>(<span class="string">r&#x27;^ap&#123;2&#125;le$&#x27;</span>) <span class="comment"># 반복문에 들어가기 전에 미리 compile</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 반복문 안에서 re.match(item)을 하게 되면</span></span><br><span class="line"><span class="comment"># compile + match를 계속 반복하기 때문에 퍼포먼스 떨어짐.</span></span><br><span class="line"><span class="comment"># 반복할 때는 compile을 미리 해두고 반복문 안에서는 match만 해주는게 좋다.</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> apples:</span><br><span class="line">    m = finder.match(item)</span><br><span class="line">    print(item, m)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h1><ul>
+<li>익명함수(이름이 없는 함수)</li>
+<li>간단한 수식을 함수로 지정해 한 두번 쓸 용도로 사용할 때</li>
+<li>두 줄 이상 실행될 함수는 그냥 함수로 정의하는게 낫다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers_plus = [i+<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">numbers_plus</span><br></pre></td></tr></table></figure></li>
+<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int_plus_one</span>(<span class="params">a</span>):</span></span><br><span class="line">    <span class="keyword">return</span> a + <span class="number">1</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(int_plus_one, numbers))</span><br></pre></td></tr></table></figure></li>
+<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> a: a+<span class="number">1</span>, numbers))</span><br><span class="line"><span class="comment"># 함수를 정의하지 않고 한번 쓰고 버릴 거라 lambda를 사용하면 편리</span></span><br><span class="line"><span class="comment"># map과 lambda는 heap에서 처리하고 사라짐</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list comprehension</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_squared</span>(<span class="params">num_list</span>):</span></span><br><span class="line">    result = [i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> num_list]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">get_squared(numbers)</span><br></pre></td></tr></table></figure></li>
+<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_square</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> num ** <span class="number">2</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(do_square, numbers))</span><br></pre></td></tr></table></figure></li>
+<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map + lambda</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> num: num**<span class="number">2</span>, numbers))</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/01/20210201-TIL/" rel="prev" title="20210201 TIL">
+                  <i class="fa fa-chevron-left"></i> 20210201 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

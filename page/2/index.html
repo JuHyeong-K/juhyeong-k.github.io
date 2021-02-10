@@ -170,7 +170,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">21</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -212,6 +212,246 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/03/20210203-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/03/20210203-TIL/" class="post-title-link" itemprop="url">20210203 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-03 21:47:35 / Modified: 23:53:06" itemprop="dateCreated datePublished" datetime="2021-02-03T21:47:35+09:00">2021-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Fix-ubuntu-login-loop"><a href="#Fix-ubuntu-login-loop" class="headerlink" title="Fix ubuntu login loop"></a>Fix ubuntu login loop</h1><ul>
+<li><p>Why happened?<br>Zoom을 설치 후, 한글 입력이 되질 않아서 지금 쓰고 있는 uim(Byeoru)한글 입력기 대신<br>fcitx한글 입력기로 변경하려고 함. fcitx설치 후 재부팅 도중에 로그인 후 화면 멈춤현상 발생.</p>
+</li>
+<li><p>How to Fix it<br>tty에 들어가서<br>현재 사용하고 있는 gdm3말고 다른 diplay manager LightDM과 KDE(sddm)으로 변경</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install lightdm</span><br><span class="line">$ sudo dpkg-reconfigure lightdm</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install sddm</span><br><span class="line">$ sudo dpkg-reconfigure sddm</span><br></pre></td></tr></table></figure>
+<p>다른 display manager로 변경해도 해결x</p>
+</li>
+</ul>
+<hr>
+<p>Xauthority 제거</p>
+<p>Xauthoriry는 user home디렉토리에 저장되어 있는 파일로 xauth에 대한 쿠키 파일로 xsession에 대한<br>인증 파일로 사용되는 파일이라고 한다. 처음에 Xauthority가 존재하지 않아서 시도를 안했는데,<br>lightdm과 sddm설치하면서 새로 생긴 것 같다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pwd</span><br><span class="line">&gt;&gt; home&#x2F;kjh</span><br><span class="line"></span><br><span class="line">$ ls -a</span><br><span class="line">&gt;&gt; Document Downloads ... .Xauthority</span><br><span class="line"></span><br><span class="line">$ mv .Xauthority Xauthority.backup</span><br><span class="line"></span><br><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
+<p>이 방법도 해결x</p>
+<hr>
+<p>Fixing Permission of Xauthority</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown username:username .Xauthority</span><br></pre></td></tr></table></figure>
+<p>ex) <code>chown kjh:kjh .Xauthority</code><br>이 방법도 해결x</p>
+<hr>
+<p>startx<br><code>sudo startx</code>입력하면 desktop screen이 나올텐데, 거기서 터미널을 열고</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
+<p>입력하고 reboot 해봤지만 해결x</p>
+<hr>
+<p>gdm3 재설치<br>방금 전에 설치한 <code>LitghtDM</code>과 <code>KDE</code>를 삭제하고, gdm3를 다시 설치해봤다.</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge lightdm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge sddm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge gdm3</span><br><span class="line"></span><br><span class="line">$ sudo apt install gdm3</span><br><span class="line"></span><br><span class="line">$ sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
+<p>gdm3로 변경할 때 아래의 오류메세지가 나올 수 있는데 그냥 reboot하면 gdm3가 적용된다.<br><code>invoke-rc.d: initscript gdm3, action &quot;reload&quot; failed.</code></p>
+<p>이 방법도 해결x</p>
+<hr>
+<p>Fix temp directory permission<br>temp 디렉토리의 권한을 수정</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+wt /tmp</span><br></pre></td></tr></table></figure>
+<p>이 방법으로도 해결 x</p>
+<hr>
+<p>정말 몇 시간동안 해결이 되질 않아서 ubuntu를 다시 설치해야 되나 했는데</p>
+<p> 마지막으로,</p>
+<p>fcitx 설치 이후에 login loop가 생겼으니, fcitx를 지워봐야겠다고 생각했다.<br>이유는 모르지만, fcitx를 설치하면서 다른 입력기나 어디선가 문제가 생겼을 가능성도<br>있을 법 해서 지워봤다.</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge fcitx-hangul</span><br><span class="line">$ sudo apt autoremove</span><br><span class="line"></span><br><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
+<p>신기하게도, 해결이 됐다.<br>정말 fcitx-hangul을 지워서 해결이 된건지, 앞의 과정들을 진행해서 해결이 된건지 모르겠지만<br>결국 해결을 하고 zoom 한글문제는 ibus로 입력기를 바꾼 뒤,<br>간단한 설정으로 한글을 입력할 수 있게 되었다.</p>
+<p>앞으로 무언가를 설치할 때 신중해야겠다..</p>
+<p>TTY(Teletypewriter) - OS에서 제공하는 가상콘솔<br>데스크탑 GUI(xwindows)에서는 <code>/dev/pts/1</code>에 올려져 있고<br>tty 콘솔 모드(<code>Ctrl</code>+<code>Alt</code>+<code>F1</code><del><code>F6</code>)에서는 `/dev/tty1</del>6`<br>tty가 물리적인 콘솔에서 사람이 직접 조작하는 개념이라면, pty는 xwindow에서 에뮬레이터로 접속할<br>때 사용하는 접속점의 개념<br>로그인을 콘솔에서 했는지, 원격지에서 했는지 차이</p>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>우분투 그놈(ubuntu 16.04 gnome) 무한 로그인 현상 : 네이버 블로그<br>(<a target="_blank" rel="noopener" href="https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https://www.google.com/">https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https:%2F%2Fwww.google.com%2F</a>)<br>How to get rid of Login Screen Loop in Ubuntu ? | by Satyabrat Bhol | Medium<br>(<a target="_blank" rel="noopener" href="https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302">https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302</a>)<br>Ubuntu 20.04 Login loop fix - Let’s FOSS<br>(<a target="_blank" rel="noopener" href="https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/">https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/</a>)<br>Can’t switch to gdm3 using sudo dpkg-reconfigure gdm3 - Ask Ubuntu<br>(<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3">https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3</a>)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/02/20210202-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/02/20210202-TIL/" class="post-title-link" itemprop="url">20210202 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-02 17:47:08 / Modified: 19:43:20" itemprop="dateCreated datePublished" datetime="2021-02-02T17:47:08+09:00">2021-02-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Exception-RegEx-Lambda"><a href="#Exception-RegEx-Lambda" class="headerlink" title="Exception, RegEx, Lambda"></a>Exception, RegEx, Lambda</h1><h2 id="Try-Except"><a href="#Try-Except" class="headerlink" title="Try-Except"></a>Try-Except</h2><ul>
+<li>Error Handle<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 작성하기 전에 pass를 써놓고 작성하는 것을 추천 </span></span><br><span class="line"><span class="comment"># 사용자에게 input을 받는 것 처럼 통제할 수 없는 상태일 때 사용</span></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="keyword">except</span>: <span class="comment"># Error 발생 시</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    print(<span class="string">&quot;Plz, don&#x27;t bother programmer.&quot;</span> )</span><br><span class="line">    guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line"><span class="comment"># &gt;&gt; except를 실행하게 되지만 문제가 해결되지는 않음</span></span><br><span class="line"><span class="comment"># 사용자의 입력을 오류없이 제대로 받으려면?</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_num_from_user</span>():</span> <span class="comment"># 사용자에게 input값을 받는 function</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        guess = <span class="built_in">int</span>(<span class="built_in">input</span>(<span class="string">&#x27;Guess the number: &#x27;</span>))</span><br><span class="line">        <span class="keyword">return</span> guess <span class="comment"># 제대로된 input을 입력 받으면 return</span></span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">	<span class="comment"># 오류가 나면, 재귀함수를 사용해서 오류가 나지 않을 때 까지 반복</span></span><br><span class="line">        print(<span class="string">&quot;Plz, don&#x27;t bother programmer.&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> get_num_from_user()</span><br><span class="line"></span><br><span class="line">get_num_from_user()</span><br><span class="line">&gt;&gt; 원하는 <span class="built_in">input</span>값을 받을 수 있다</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="Regular-Expressions"><a href="#Regular-Expressions" class="headerlink" title="Regular Expressions"></a>Regular Expressions</h1><ul>
+<li>특정한 규칙을 가진 문자열의 집합을 표현하는데 사용하는 형식언어</li>
+<li>Python은 re 모듈로 정규표현식 사용 가능</li>
+<li>기본적인 문법은 비슷하나 언어별로 사용법이나 문법이 조금씩 달라 외우기 보다는 필요할 때 Reference를 참조</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">a = <span class="string">&#x27;penpineapple&#x27;</span></span><br><span class="line">b = <span class="string">&#x27;applepen&#x27;</span> <span class="comment"># re.match - 일치하는 부분 찾아내는 함수</span></span><br><span class="line">m = re.match(<span class="string">r&#x27;^pen&#x27;</span>, a) <span class="comment"># ^pen = &#x27;pen&#x27;으로 &#x27;시작&#x27;하는 문자 </span></span><br><span class="line"><span class="comment"># r = raw string &gt;&gt; 문자열 그대로 표시(escape문에 영향 안받음(\n, \b ...)) </span></span><br><span class="line">n = re.match(<span class="string">r&#x27;.+pen$&#x27;</span>, b) <span class="comment"># .+pen$ = 앞에 무엇이 있든 뒤가 pen으로 끝나는 것</span></span><br><span class="line">print(m, n)</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">out:</span></span><br><span class="line"><span class="string">&lt;re.Match object; span=(0, 3), match=&#x27;pen&#x27;&gt; &lt;re.Match object; span=(0, 8), match=&#x27;applepen&#x27;&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Meta-Characters"><a href="#Meta-Characters" class="headerlink" title="Meta Characters"></a>Meta Characters</h3><ul>
+<li>Dot(<code>.</code>): 개행문자(\n)을 제외한 모든 문자를 의미합니다.<br>ex) a.ple == a(모든문자)ple == aaple, abple, acple, ..</li>
+<li>Repetition(<code>*</code>): 앞 문자의 반복을 의미합니다.(0개 ~ 무한대)<br>ex) ap*le == ale, aple, apple, appple, ..</li>
+<li>Repetition(<code>+</code>): 앞 문자의 반복을 의미합니다.(1개 ~ 무한대)<br>ex) ap+le == aple, apple, appple, ..</li>
+<li>Caret(<code>^</code>): 정의한 문자열 패턴으로 시작함을 의미합니다.<br>ex) ^pen == penpineapple (!= applepen)</li>
+<li>Dollar sign(<code>$</code>): 정의한 문자열 패턴으로 끝남을 의미합니다.<br>ex) [a-z]+pen$ == applepen (!= penpineapple)</li>
+</ul>
+<ul>
+<li>Question mark(<code>?</code>): 앞 문자의 존재유무(있거나 없거나)를 의미합니다.<br>ex) appl?e == appe 또는 apple</li>
+<li>Curly brackets(<code>&#123;m,n&#125;</code>): 반복횟수를 정의할 때 사용합니다. 중괄호 안의 숫자(m,n)은 반복횟수를<br>정의하며, 정확히 일치할 경우 1개의 숫자(m)를, 범위를 정의할 경우 2개의 숫자를 사용합니다.<br>(m개~n개)<br>ex1) ba(na){2} == banana<br>ex2) ba(na){0,2} == ba, bana, banana</li>
+</ul>
+<ul>
+<li>Square brackets(<code>[]</code>): 문자클래스를 의미합니다. 대괄호 사이에 나열한 문자 중 하나의 값과 일치<br>할 경우를 의미합니다. 이 문자클래스와 함께 쓰이는 메타문자는 하이픈(-) 과 캐럿(^) 입니다.</li>
+<li>Hyphen(<code>-</code>): 두 문자 사이의 범위를 뜻합니다.<br>ex1) [A-Za-z] == 대문자와 소문자 알파벳 모두<br>ex2) [a-g0-5] == a,b,c,d,e,f,g 와 0,1,2,3,4,5 중 하나의 문자</li>
+<li>Caret(<code>^</code>): 부정(Not)을 의미합니다.<br>ex1) [^0-9]: 숫자가 아닌 문자<br>ex2) [^A-Za-z]: 알파벳이 아닌 모든 문자</li>
+</ul>
+<ul>
+<li>Parentheses(<code>()</code>): 소괄호 안의 문자열의 그룹을 의미합니다. 문자열 패턴의 반복을 검사하고<br>싶을 때 사용합니다. ex) (apple)+ == penpineappleapplepen</li>
+<li>Vertical bar(<code>|</code>): | 의 좌우 중 하나의 값과 일치하는 경우를 의미합니다.<br>ex1) (apple|apqle) == apple 또는 apqle<br>ex2) ap[p|q]le == apple 또는 apqle</li>
+<li>Backslach(<code>\</code>): 정규표현식을 만들 때 메타문자가 메타문자가 아닌 그 문자 그대로 사용하게 하기<br>위해 사용합니다.<br>ex) <code>https://www.google.co.kr/</code>=&gt; URL의 구두점(.)이 메타문자로 인식될 수 있음<br>-&gt; <code>https://www\.google\.co\.kr/</code></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># r&#x27;[A-Za-z0-9\-\_\.\+]@gmail\.com&#x27; </span></span><br><span class="line"><span class="comment"># username으로 들어올 수 있는 글자 = alphabet, number, -, ., _, +</span></span><br><span class="line"><span class="comment"># A-Z 모든 대문자 알파벳</span></span><br><span class="line"><span class="comment"># a-z 모든 소문자 알파벳</span></span><br><span class="line"><span class="comment"># 0-9 모든 숫자</span></span><br><span class="line"><span class="comment"># \- \_ \. \+</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+] &gt;&gt; 한 문자에 대한 것</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]+ &gt;&gt; 1개 이상의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;5&#125; &gt;&gt; 5개의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;4, 32&#125; &gt;&gt; 4개~32개의 문자</span></span><br><span class="line"><span class="comment"># ㄱ-ㅎ ㅏ-ㅣ 가-힣 &gt;&gt; 모든 한글 표현(한글은 2byte 언어(UNICODE), 영어는 1byte 언어(ASCII))</span></span><br><span class="line"></span><br><span class="line">apples = [<span class="string">&#x27;a&#x27;</span> + <span class="string">&#x27;p&#x27;</span>*i + <span class="string">&#x27;le&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)] <span class="comment"># ale ~ a&#x27;p*9&#x27;le 까지 리스트에 입력</span></span><br><span class="line">finder = re.<span class="built_in">compile</span>(<span class="string">r&#x27;^ap&#123;2&#125;le$&#x27;</span>) <span class="comment"># 반복문에 들어가기 전에 미리 compile</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 반복문 안에서 re.match(item)을 하게 되면</span></span><br><span class="line"><span class="comment"># compile + match를 계속 반복하기 때문에 퍼포먼스 떨어짐.</span></span><br><span class="line"><span class="comment"># 반복할 때는 compile을 미리 해두고 반복문 안에서는 match만 해주는게 좋다.</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> apples:</span><br><span class="line">    m = finder.match(item)</span><br><span class="line">    print(item, m)</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h1><ul>
+<li>익명함수(이름이 없는 함수)</li>
+<li>간단한 수식을 함수로 지정해 한 두번 쓸 용도로 사용할 때</li>
+<li>두 줄 이상 실행될 함수는 그냥 함수로 정의하는게 낫다.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<ul>
+<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers_plus = [i+<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">numbers_plus</span><br></pre></td></tr></table></figure></li>
+<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int_plus_one</span>(<span class="params">a</span>):</span></span><br><span class="line">    <span class="keyword">return</span> a + <span class="number">1</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(int_plus_one, numbers))</span><br></pre></td></tr></table></figure></li>
+<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> a: a+<span class="number">1</span>, numbers))</span><br><span class="line"><span class="comment"># 함수를 정의하지 않고 한번 쓰고 버릴 거라 lambda를 사용하면 편리</span></span><br><span class="line"><span class="comment"># map과 lambda는 heap에서 처리하고 사라짐</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<ul>
+<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list comprehension</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_squared</span>(<span class="params">num_list</span>):</span></span><br><span class="line">    result = [i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> num_list]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">get_squared(numbers)</span><br></pre></td></tr></table></figure></li>
+<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_square</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> num ** <span class="number">2</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(do_square, numbers))</span><br></pre></td></tr></table></figure></li>
+<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map + lambda</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> num: num**<span class="number">2</span>, numbers))</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -925,110 +1165,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/" class="post-title-link" itemprop="url">hexo로 블로그 만드는 방법</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-22 16:37:13" itemprop="dateCreated datePublished" datetime="2021-01-22T16:37:13+09:00">2021-01-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-29 20:43:39" itemprop="dateModified" datetime="2021-01-29T20:43:39+09:00">2021-01-29</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/etc/" itemprop="url" rel="index"><span itemprop="name">etc</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="Requirments"><a href="#Requirments" class="headerlink" title="Requirments"></a>Requirments</h4><ul>
-<li>Github ID</li>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<h4 id="Github-호스팅용-저장소-생성"><a href="#Github-호스팅용-저장소-생성" class="headerlink" title="Github 호스팅용 저장소 생성"></a>Github 호스팅용 저장소 생성</h4><p>repository name은 domain으로 사용할 이름(juhyenog-k.github.io)으로 설정</p>
-<h4 id="hexo-설치"><a href="#hexo-설치" class="headerlink" title="hexo 설치"></a>hexo 설치</h4><p>Node.js를 설치하면 사용할 수 있는 npm명령어를 사용해서 hexo를 설치한다.<br><code>$ sudo npm install -g hexo-cli</code></p>
-<p>hexo설치가 끝난 뒤에 블로그로 사용될 폴더를 생성 후 그 디렉토리로 들어간다.<br><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code></p>
-<p>초기화에 필요한 패키지 설치<br><code>$ npm install</code></p>
-<p>서버를 실행해서 확인해본다. 주소는 <a target="_blank" rel="noopener" href="https://localhost:4000/">https://localhost:4000</a><br><code>$ hexo server</code></p>
-<h4 id="hexo-설정"><a href="#hexo-설정" class="headerlink" title="hexo 설정"></a>hexo 설정</h4><p>hexo 블로그를 Github에 배포할 때 필요한 플러그인 설치<br><code>$ npm install hexo-deployer-git --save</code><br> package.json에 찍어준다</p>
-<p><code>_config.yml</code>파일을 사용해서 사이트 환경설정해줄 수 있다.<br><code>$ vi _config.yml</code><br>‘#Site에서 title, subtitle 등 정해주면 되고,’<br>‘#Deploy에서 type: git / repo: {Github 저장소 주소}’입력해주면 된다.<br>자세한 설명은<a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/configuration">_config.yml 설정</a> 참조</p>
-<h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><p>원하는 제목()으로 post작성<br><code>$ hexo new post &quot;제목&quot;</code></p>
-<p>저장된 경로 확인 (~/Documents/dev/blog/source/_posts/Test.md)</p>
-<p>vim으로 해당 포스트 수정<br><code>~/Documents/dev/blog/source/_posts/Test.md</code></p>
-<h4 id="generate-amp-deploy"><a href="#generate-amp-deploy" class="headerlink" title="generate &amp; deploy"></a>generate &amp; deploy</h4><p><code>$ hexo clean &amp;&amp; hexo generate</code></p>
-<ul>
-<li><code>hexo clean</code> &gt;&gt; 캐시 파일 및 생성된 파일들(public)을 삭제</li>
-<li><code>&amp;&amp;</code> &gt;&gt; 앞에 명령 실행완료 되면, 뒤에 명령 실행</li>
-<li><code>hexo generate</code> &gt;&gt; .md확장자로 만들어진 post를 html로 변환해주는 기능</li>
-</ul>
-<p>서버를 다시 켜서 제대로 작성 됐는지 확인<br><code>$ hexo server</code></p>
-<p>commit 작성 후, gitgub 저장소에 배포해주면 완료<br><code>$ hexo clean &amp;&amp; hexo deploy</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 

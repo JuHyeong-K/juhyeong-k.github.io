@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Muse","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="캡슐화(Encapsulation) 객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것 객체의 일부 구현 내용에 대해 외부로부터의 직접적인 액세스를 차단하는 것  12345678910111213141516171819202122class SmartPhone:    def __init__(self, ap, cam):        self.ap &#x3D; ap">
+<meta property="og:type" content="article">
+<meta property="og:title" content="파이썬의 캡슐화가 완벽하지 못한 이유">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="캡슐화(Encapsulation) 객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것 객체의 일부 구현 내용에 대해 외부로부터의 직접적인 액세스를 차단하는 것  12345678910111213141516171819202122class SmartPhone:    def __init__(self, ap, cam):        self.ap &#x3D; ap">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-02-10T10:03:53.000Z">
+<meta property="article:modified_time" content="2021-02-10T11:19:37.167Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>파이썬의 캡슐화가 완벽하지 못한 이유 | JH's dev blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EC%BA%A1%EC%8A%90%ED%99%94-Encapsulation"><span class="nav-number">1.</span> <span class="nav-text">캡슐화(Encapsulation)</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">21</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          파이썬의 캡슐화가 완벽하지 못한 이유
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-10 19:03:53 / Modified: 20:19:37" itemprop="dateCreated datePublished" datetime="2021-02-10T19:03:53+09:00">2021-02-10</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="캡슐화-Encapsulation"><a href="#캡슐화-Encapsulation" class="headerlink" title="캡슐화(Encapsulation)"></a>캡슐화(Encapsulation)</h1><ul>
+<li>객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것</li>
+<li>객체의 일부 구현 내용에 대해 외부로부터의 직접적인 액세스를 차단하는 것</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmartPhone</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, ap, cam</span>):</span></span><br><span class="line">        self.ap = ap</span><br><span class="line">        self.cam = cam</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_jail_break</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;jail break complete&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__custom_firmware</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;You can&#x27;t do this&quot;</span></span><br><span class="line"></span><br><span class="line">samsung = SmartPhone(<span class="string">&#x27;exinos&#x27;</span>, <span class="string">&#x27;1.2M&#x27;</span>)</span><br><span class="line"></span><br><span class="line">print(samsung._jail_break()) <span class="comment"># 클래스 외부에서 불러오는게 가능</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">jail break complete</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">print(samsung.__custom_firmware()) <span class="comment"># 클래스 외부에서 불러오면 AttributeError 발생</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">AttributeError: &#x27;SmartPhone&#x27; object has no attribute &#x27;__custom_firmware&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드에서 underscore<code>__</code> 2개로 접근을 막을 수 있는 것 처럼 보이지만,<br>파이썬에서는 underscore<code>__</code> 2개로 캡슐화를 해도 클래스 밖에서 접근이 가능하다는 것을 알게 되었다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Citizen</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age, r_id</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.__age = age</span><br><span class="line">        self.__r_id = r_id</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_age</span>(<span class="params">self</span>):</span>  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;__age를 리턴하는 메소드&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line"></span><br><span class="line">man = Citizen(<span class="string">&quot;JH&quot;</span>, <span class="number">27</span>, <span class="string">&quot;12345678&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>위의 코드를 보면 Citizen 클래스로 man 인스턴스를 생성했다.<br><code>print(man.get_age())</code>를 실행하면 <code>27</code>이 결과로 나오는 걸 알 수 있다.</p>
+<p>이 상태에서 <code>__age</code>에 어떻게 접근할 수 있을까?</p>
+<p><code>print(dir(man))</code>의 결과를 보면 <code>man</code> 객체가 어떤 변수와 메소드를 가지고 있는지 나열해준다.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;_Citizen__age&#x27;, &#x27;_Citizen__r_id&#x27;, &#x27;__class__&#x27;, &#x27;__delattr__&#x27;, &#x27;__dict__&#x27;, &#x27;__dir__&#x27;, &#x27;__doc__&#x27;, &#x27;__eq__&#x27;, &#x27;__format__&#x27;, &#x27;__ge__&#x27;, &#x27;__getattribute__&#x27;, &#x27;__gt__&#x27;, &#x27;__hash__&#x27;, &#x27;__init__&#x27;, &#x27;__init_subclass__&#x27;, &#x27;__le__&#x27;, &#x27;__lt__&#x27;, &#x27;__module__&#x27;, &#x27;__ne__&#x27;, &#x27;__new__&#x27;, &#x27;__reduce__&#x27;, &#x27;__reduce_ex__&#x27;, &#x27;__repr__&#x27;, &#x27;__setattr__&#x27;, &#x27;__sizeof__&#x27;, &#x27;__str__&#x27;, &#x27;__subclasshook__&#x27;, &#x27;__weakref__&#x27;, &#x27;get_age&#x27;, &#x27;name&#x27;]</span><br></pre></td></tr></table></figure>
+<p>그 중에 <code>_Citizen__age</code>를 살펴보자.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(man.get_age())</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">27</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">man._Citizen__age = -<span class="number">10</span></span><br><span class="line">print(man.get_age())</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">-10</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p><code>__age</code> 값이 변경되는 걸 확인할 수 있다.</p>
+<p> 이게 어떻게 가능할까?</p>
+<p>파이썬에서 클래스 안에 변수나 메소드의 앞에 underscore<code>__</code> 2개를 붙이면,<br>네임 맹글링(Name Mangling) 되어서 아예 새로운 이름을 갖게 된다고 한다.<br>새로운 이름으로는 클래스 밖에서 접근이 가능하기 때문에 이와 같이 변경이 가능하다.<br><code>__age</code> =&gt; <code>_Citizen__age</code></p>
+<blockquote>
+<blockquote>
+<p>결국 캡슐화를 해도 클래스 밖에서 접근이 가능하면 캡슐화가 안되는 것 아닌가?</p>
+</blockquote>
+</blockquote>
+<p>사실 파이썬은 언어차원에서 캡슐화를 지원하지 않는다고 한다.<br>캡슐화처럼 보이긴 하지만, 완벽한 캡슐화가 아니다.<br>(Java에서는 <code>private</code>이라는 키워드를 변수 앞에 붙이면, 외부로 부터의 접근이 완벽히 차단된다.)</p>
+<p>그렇다고 파이썬에서 캡슐화를 아예 무시하는 것은 아니다.</p>
+<p>언어에서 지원하지는 않지만 파이썬 개발자들은 캡슐화에 대한 문화를 가지고 있다.</p>
+<blockquote>
+<blockquote>
+<p>메소드에 함부로 접근하지 말라는 경고 표시로 앞에 underscore<code>_</code> 1개를 사용한다.</p>
+</blockquote>
+</blockquote>
+<p>여기서 더 궁금한 점이 생겼다. </p>
+<blockquote>
+<blockquote>
+<p>아무리 파이썬 문화라고 하지만, “underscore(<code>__</code>) 2개로 클래스의 변수나 메소드를 표현하면<br> 완벽하지는 않지만 외부에서 접근 못하게 하는 기능이 있는데, 왜 underscore(<code>_</code>) 1개로 표현할까?”</p>
+</blockquote>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/02/10/class-practice-train/" rel="prev" title="class practice - train">
+                  <i class="fa fa-chevron-left"></i> class practice - train
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/02/10/20210210-TIL/" rel="next" title="20210210 TIL">
+                  20210210 TIL <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

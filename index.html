@@ -325,10 +325,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-02-10 19:03:53 / Modified: 20:19:37" itemprop="dateCreated datePublished" datetime="2021-02-10T19:03:53+09:00">2021-02-10</time>
+      <time title="Created: 2021-02-10 19:03:53" itemprop="dateCreated datePublished" datetime="2021-02-10T19:03:53+09:00">2021-02-10</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-11 23:30:42" itemprop="dateModified" datetime="2021-02-11T23:30:42+09:00">2021-02-11</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -370,7 +376,7 @@
 <p>결국 캡슐화를 해도 클래스 밖에서 접근이 가능하면 캡슐화가 안되는 것 아닌가?</p>
 </blockquote>
 </blockquote>
-<p>사실 파이썬은 언어차원에서 캡슐화를 지원하지 않는다고 한다.<br>캡슐화처럼 보이긴 하지만, 완벽한 캡슐화가 아니다.<br>(Java에서는 <code>private</code>이라는 키워드를 변수 앞에 붙이면, 외부로 부터의 접근이 완벽히 차단된다.)</p>
+<p>사실 <strong>파이썬은 언어차원에서 캡슐화를 지원하지 않는다</strong>고 한다.<br>캡슐화처럼 보이긴 하지만, 완벽한 캡슐화가 아니다.<br>(Java에서는 <code>private</code>이라는 키워드를 변수 앞에 붙이면, 외부로 부터의 접근이 완벽히 차단된다.)</p>
 <p>그렇다고 파이썬에서 캡슐화를 아예 무시하는 것은 아니다.</p>
 <p>언어에서 지원하지는 않지만 파이썬 개발자들은 캡슐화에 대한 문화를 가지고 있다.</p>
 <blockquote>
@@ -384,6 +390,20 @@
 <p>아무리 파이썬 문화라고 하지만, “underscore(<code>__</code>) 2개로 클래스의 변수나 메소드를 표현하면<br> 완벽하지는 않지만 외부에서 접근 못하게 하는 기능이 있는데, 왜 underscore(<code>_</code>) 1개로 표현할까?”</p>
 </blockquote>
 </blockquote>
+<p>파이썬의 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/#method-names-and-instance-variables"><strong>코딩 스타일 가이드라인</strong></a>의 <code>Method Names and Instance Variables</code>,<br><a target="_blank" rel="noopener" href="https://docs.python.org/3/tutorial/classes.html#private-variables"><strong>파이썬 공식 문서</strong></a>의 <code>9.6. Private Variables</code>를 살펴보면 알 수 있다.</p>
+<p>그 내용을 정리하면</p>
+<blockquote>
+<blockquote>
+<p>파이썬에서 클래스 밖에서 접근하지 말라는 컨벤션은 <code>underscore</code> 하나로 나타내고,<br>자식 클래스에서 <code>name conflict</code>가 발생하기를 원치 않는 경우 즉,<br><code>name mangling</code>을 해야할 때 underscore(<code>__</code>)2개로 나타낸다.</p>
+</blockquote>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.msg = <span class="string">&quot;Hi&quot;</span></span><br><span class="line">        self.introduce()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">introduce</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is John!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cashier</span>(<span class="params">Employee</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">introduce</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is &#123;&#125;, I am &#123;&#125; years old&quot;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cashier = Cashier()</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">TypeError: introduce() missing 2 required positional arguments: &#x27;name&#x27; and &#x27;age&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>위의 코드를 보면, <code>Employee</code>클래스를 상속받는 <code>Cashier</code>클래스가 있고<br><code>Employee</code>클래스의 <code>__init__</code>메소드가 실행 될 때 <code>introduce</code>메소드가 실행되는 것을 볼 수 있다.<br>인스턴스가 생성될 때 <code>Employee</code>클래스에 있는 <code>introduce</code>메소드가 실행될거라 예상했는데<br><code>TypeError</code>가 발생하는 것을 볼 수 있다.</p>
+<p><code>__init__</code>메소드가 실행될 때 <code>Empoyee</code>클래스의 <code>introduce</code>메소드가 아닌, <code>Cashier</code>클래스의<br>인자 2개를 받는 오버라이딩 된 <code>introduce</code>가 실행되기 때문에 오류가 발생했다.</p>
+<p>이런 경우처럼 <code>Employee</code>클래스의 <code>__init__</code>메소드에서 실행되는 <code>introduce</code>메소드가<br><code>Employee</code>클래스 자신의 <code>introduce</code>메소드로 실행되게 만들고 싶을 때 underscore(<code>__</code>)2개를 사용한다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.msg = <span class="string">&quot;Hi&quot;</span></span><br><span class="line">        self.__introduce()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__introduce</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is John!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cashier</span>(<span class="params">Employee</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__introduce</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is &#123;&#125;, I am &#123;&#125; years old&quot;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cashier = Cashier()</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">Hello, my name is John!</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
+<p>이 처럼 앞에 underscore(<code>__</code>)2개를 붙여서 실행하게 되면 <code>Employee</code>클래스에 있는 <code>introduce</code>는<br><code>_Employee__introduce</code>로 네임 맹글링되고, <code>Cashier</code>클래스에 있는 <code>introduce</code>는<br><code>_Cashier__introduce</code>로 네임 맹글링되기 때문에 <code>name confilicts</code>를 방지하게 되어서<br>오류 없이 실행이 된다.</p>
+<p>underscore(<code>_</code>)1개를 사용하던 2개를 사용하던 결국 완벽한 캡슐화가 아니기 때문에,<br>가이드라인에 따라서 코딩을 하는게 좋을 것 같다.</p>
 
       
     </div>

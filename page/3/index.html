@@ -170,7 +170,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-count">29</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -212,6 +212,176 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/01/20210201-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/01/20210201-TIL/" class="post-title-link" itemprop="url">20210201 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-01 17:59:13 / Modified: 19:37:55" itemprop="dateCreated datePublished" datetime="2021-02-01T17:59:13+09:00">2021-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="List-Comprehension"><a href="#List-Comprehension" class="headerlink" title="List Comprehension"></a>List Comprehension</h1><ul>
+<li>List Comprehension<br>존재하는 리스트를 활용하여 새로운 리스트 생성하는 방법<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">new_numbers = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># Without list comprehension</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> numbers:</span><br><span class="line">    new_numbers.append(i * <span class="number">2</span>)</span><br><span class="line">print(new_numbers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># List comprehension</span></span><br><span class="line">new_numbers = [(i * <span class="number">2</span>) <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">print(new_numbers)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># <span class="doctag">TODO:</span> numbers 자료 중 짝수일때만 제곱하여 new_numbers에 추가</span></span><br><span class="line"><span class="comment"># Without list comprehension</span></span><br><span class="line">numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">new_numbers = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> numbers:</span><br><span class="line">    <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>:</span><br><span class="line">        new_numbers.append(i ** <span class="number">2</span>)</span><br><span class="line">print(new_numbers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># use List comprehension</span></span><br><span class="line"><span class="comment"># if만 사용할 때는 반복문 뒤에 위치</span></span><br><span class="line">new_numbers = [i ** <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> numbers <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span>]</span><br><span class="line">print(new_numbers)</span><br><span class="line"></span><br><span class="line"><span class="comment"># if-else면 반복문 앞에 위치</span></span><br><span class="line">new_numbers = [i ** <span class="number">2</span> <span class="keyword">if</span> i % <span class="number">2</span> == <span class="number">0</span> <span class="keyword">else</span> i ** <span class="number">3</span> <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">print(new_numbers)</span><br></pre></td></tr></table></figure>
+<del>if 와 if-else 차이가 나는 이유?(statement expression ternary operator)</del></li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 1부터 100까지 list comprehension으로 편하게 생성(pythonic)</span></span><br><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">100</span>+<span class="number">1</span>)]</span><br><span class="line"> </span><br><span class="line"><span class="comment"># List comprehension으로 FizzBuzz 한 줄로 구현</span></span><br><span class="line">fizzbuzz_list = [<span class="string">&quot;Fizz&quot;</span> * (num % <span class="number">3</span> == <span class="number">0</span>) + </span><br><span class="line">		<span class="string">&quot;Buzz&quot;</span> * (num % <span class="number">5</span> == <span class="number">0</span>) </span><br><span class="line">		<span class="keyword">if</span> num % <span class="number">3</span> == <span class="number">0</span> <span class="keyword">or</span> num % <span class="number">5</span> == <span class="number">0</span> <span class="keyword">else</span></span><br><span class="line">		num <span class="keyword">for</span> num <span class="keyword">in</span> numbers]</span><br><span class="line"><span class="comment"># (&#x27;Fizz&#x27; * False) + (&#x27;Buzz&#x27; * True) = &#x27;Buzz&#x27;</span></span><br><span class="line">print(fizzbuzz_list)</span><br><span class="line"></span><br><span class="line"><span class="comment"># List comprehension으로 FizzBuzz 한 줄로 구현 2</span></span><br><span class="line">fizzbuzz_list2 = [<span class="string">&#x27;fizzbuzz&#x27;</span> <span class="keyword">if</span> i%<span class="number">15</span>==<span class="number">0</span> <span class="keyword">else</span></span><br><span class="line">                <span class="string">&#x27;fizz&#x27;</span> <span class="keyword">if</span> i%<span class="number">3</span>==<span class="number">0</span> <span class="keyword">else</span></span><br><span class="line">                <span class="string">&#x27;buzz&#x27;</span> <span class="keyword">if</span> i%<span class="number">5</span>==<span class="number">0</span> <span class="keyword">else</span></span><br><span class="line">                i <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">print(fizzbuzz_list)</span><br></pre></td></tr></table></figure>
+<h1 id="Dictionary-Comprehension"><a href="#Dictionary-Comprehension" class="headerlink" title="Dictionary Comprehension"></a>Dictionary Comprehension</h1><ul>
+<li>Dictionary Comprehension<br>list는 순서가 있는 index를 부르는 거라면, dict는 key값을 부름<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fruits = &#123;<span class="string">&#x27;a&#x27;</span>:<span class="string">&#x27;apple&#x27;</span>, <span class="string">&#x27;b&#x27;</span>:<span class="string">&#x27;banana&#x27;</span>, <span class="string">&#x27;c&#x27;</span>:<span class="string">&#x27;coconut&#x27;</span>, <span class="string">&#x27;d&#x27;</span>:<span class="string">&#x27;durian&#x27;</span>&#125;</span><br><span class="line">over_six_letter_fruits = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> fruits.items():</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(v) &gt; <span class="number">6</span>:</span><br><span class="line">        over_six_letter_fruits[<span class="string">&#x27;k&#x27;</span>] = v</span><br><span class="line">print(over_six_letter_fruits)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dictionary comprehension</span></span><br><span class="line"><span class="comment"># statement 타입이 아닌 expression 타입으로 정의해야 함(not k=v, k:v)</span></span><br><span class="line">over_six_letter_fruits = &#123;k:v <span class="keyword">for</span> k,v <span class="keyword">in</span> fruits.items() <span class="keyword">if</span> <span class="built_in">len</span>(v) &gt; <span class="number">6</span>&#125;</span><br><span class="line">print(over_six_letter_fruits)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">number_dict = &#123;<span class="string">&#x27;pi&#x27;</span>:<span class="number">3.14</span>, <span class="string">&#x27;e&#x27;</span>:<span class="number">2.71828</span>, <span class="string">&#x27;year&#x27;</span>:<span class="number">2021</span>, <span class="string">&#x27;month&#x27;</span>:<span class="number">2</span>, <span class="string">&#x27;day&#x27;</span>:<span class="number">1</span>&#125;</span><br><span class="line">new_number_dict = &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> k,v <span class="keyword">in</span> number_dict.items():</span><br><span class="line">    <span class="keyword">if</span> v &lt; <span class="number">3</span>:</span><br><span class="line">        new_number_dict[k] = v ** <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        new_number_dict[k] = v - <span class="number">1</span></span><br><span class="line">print(new_number_dict)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dictionary comprehension</span></span><br><span class="line">new_number_dict = &#123;k:v**<span class="number">2</span> <span class="keyword">if</span> v &lt; <span class="number">3</span> <span class="keyword">else</span> v-<span class="number">1</span> <span class="keyword">for</span> k,v <span class="keyword">in</span> number_dict.items()&#125;</span><br><span class="line"><span class="comment"># else문에 들어갈 때는 k:v를 앞에서 정의했으므로, v만 적어주면 된다.</span></span><br><span class="line"><span class="comment"># (else문에 k:v 했을 때 오류가 나는 이유는 lamda에서 콜론(:)을 써서?)</span></span><br><span class="line">print(new_number_dict)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="File-I-O"><a href="#File-I-O" class="headerlink" title="File I/O"></a>File I/O</h1><ul>
+<li>File I/O<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># open()- 파일 불러오는 함수 write read append</span></span><br><span class="line"><span class="comment"># file = (&#x27;불러올 파일&#x27;, &#x27;w=읽기모드/</span></span><br><span class="line"><span class="comment">#                      r=쓰기모드/</span></span><br><span class="line"><span class="comment">#                      a=추가모드&#x27;, encoding=&#x27;utf-8&#x27;)</span></span><br><span class="line"><span class="comment"># file = (&#x27;불러올 파일&#x27;, &#x27;모드선택&#x27;, 인코딩 형식)</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">f.write(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">f.close()<span class="comment"># open을 했으면 꼭 close를 해줘야 함 잠재적 문제 발생 가능</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 파일을 읽을 때는 r 사용</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>)</span><br><span class="line">text = f.readline()</span><br><span class="line">print(text)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+<code>open()</code>하고 <code>close()</code>를 잊어버리는 경우가 많다.<br><code>with</code>를 사용하면 걱정없이 사용 가능<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># f = open(&#x27;./numbers.txt&#x27;, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) + f.close()</span></span><br><span class="line"><span class="comment"># with 안에서 하고싶은 행동 하고 나오면 알아서 close()</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    print(f.readline())</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numbers에 있는 값들 하나하나를 작성파일에 작성해주고 싶을 때</span></span><br><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>)]</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> numbers: <span class="comment"># 반복문을 사용해서 여러 번 작성 가능</span></span><br><span class="line">        f.write(<span class="string">&#x27;&#123;&#125;\n&#x27;</span>.<span class="built_in">format</span>(i)) <span class="comment"># write할 때는 항상 type을 str으로 해야 함.</span></span><br><span class="line">        <span class="comment"># \n없이 작성했을 경우 &gt;&gt; [&#x27;hellohellohellohellohello&#x27;]</span></span><br><span class="line">        <span class="comment"># \n넣어서 작성했을 경우 &gt;&gt; [&#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text_list = f.readlines() <span class="comment"># 여러 줄 읽을 때는 readlines() 사용해야 함</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> text_list:</span><br><span class="line">        print(line.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>)) </span><br><span class="line">	<span class="comment"># print함수에도 \n이 있기 때문에 \n이 2번 실행 됨.                                     </span></span><br><span class="line">	<span class="comment"># replace를 활용해서 line에 있는 개행문자를 없는 문자로 대체</span></span><br></pre></td></tr></table></figure></li>
+<li>CSV<br>Comma-Separated Values<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># comma(,)를 기준으로 알아서 separate해주기 때문에 읽을 때 개행문자(\n)를 제거해줄 필요 없음</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./customers.csv&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> customer_csv:</span><br><span class="line">    customers = csv.reader(customer_csv)</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> customers:</span><br><span class="line">        print(row)</span><br></pre></td></tr></table></figure></li>
+<li>JSON<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">&#x27;users&#x27;</span>: [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;KD Hong&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;Seoul, KR&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;John Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;NewYork, US&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Jane Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;London, UK&#x27;</span>&#125;</span><br><span class="line">]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.dump - 어떤 dict를 json형태로 파일을 만들 수 있음</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.load - json파일을 해체해서 dict로 다시 보여줌</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    des_data = json.load(f)</span><br><span class="line"></span><br><span class="line">print(des_data[<span class="string">&#x27;users&#x27;</span>])</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">[&#123;&#x27;name&#x27;: &#x27;KD Hong&#x27;, &#x27;locale&#x27;: &#x27;Seoul, KR&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;John Doe&#x27;, &#x27;locale&#x27;: &#x27;NewYork, US&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;Jane Doe&#x27;, &#x27;locale&#x27;: &#x27;London, UK&#x27;&#125;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> des_data[<span class="string">&#x27;users&#x27;</span>]:</span><br><span class="line">    print(<span class="string">&quot;&#123;&#125; is from &#123;&#125;.&quot;</span>.<span class="built_in">format</span>(row[<span class="string">&#x27;name&#x27;</span>], row[<span class="string">&#x27;locale&#x27;</span>]))</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">KD Hong is from Seoul, KR.</span></span><br><span class="line"><span class="string">John Doe is from NewYork, US.</span></span><br><span class="line"><span class="string">Jane Doe is from London, UK.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/31/20210131-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/01/31/20210131-TIL/" class="post-title-link" itemprop="url">20210131 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-01-31 21:51:43 / Modified: 22:06:50" itemprop="dateCreated datePublished" datetime="2021-01-31T21:51:43+09:00">2021-01-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="알고리즘-문제-풀이"><a href="#알고리즘-문제-풀이" class="headerlink" title="알고리즘 문제 풀이"></a>알고리즘 문제 풀이</h1><ul>
+<li>[프로그래머스] 두 개 뽑아서 더하기<br>(<a target="_blank" rel="noopener" href="https://programmers.co.kr/learn/courses/30/lessons/68644">https://programmers.co.kr/learn/courses/30/lessons/68644</a>)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 2개의 반복문으로 경우의 수 다 구하고</span></span><br><span class="line"> <span class="comment"># 중복되는 숫자는 제외시키고, 오름차순으로 정렬</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers</span>):</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(numbers)):</span><br><span class="line">        j = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; <span class="built_in">len</span>(numbers):</span><br><span class="line">            <span class="keyword">if</span> numbers[i] + numbers[j] <span class="keyword">not</span> <span class="keyword">in</span> answer:</span><br><span class="line">                answer.append(numbers[i] + numbers[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        answer.sort()</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">solution([5, 0, 2, 7])</span><br><span class="line">&gt;&gt; [2, 5, 7, 9, 12]</span><br></pre></td></tr></table></figure>
+다른 사람들 풀이를 보니, set을 이용해서 중복되는 숫자 제거했다.<br>set을 이용해서 다시 풀어봤다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers</span>):</span></span><br><span class="line">   answer = []</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(numbers)):</span><br><span class="line">       <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(numbers)):</span><br><span class="line">           answer.append(numbers[i] + numbers[j])       </span><br><span class="line">   set_answer = <span class="built_in">set</span>(answer) <span class="comment"># set함수로 중복되는 숫자 제거</span></span><br><span class="line">   answer = <span class="built_in">list</span>(set_answer)</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">sorted</span>(answer)</span><br></pre></td></tr></table></figure></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 

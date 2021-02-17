@@ -31,7 +31,7 @@
 <meta property="og:description" content="이 글은 Ubuntu 20.04LTS 기준으로 작성되었습니다. pyenv Installationhttps:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv  git clone1git clone https:&#x2F;&#x2F;github.com&#x2F;pyenv&#x2F;pyenv.git ~&#x2F;.pyenv 환경변수 설정(Define environment variable)For Ubuntu Desk">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-15T11:43:52.000Z">
-<meta property="article:modified_time" content="2021-02-16T11:26:02.439Z">
+<meta property="article:modified_time" content="2021-02-17T09:32:53.866Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="etc">
 <meta name="twitter:card" content="summary">
@@ -257,7 +257,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-16 20:26:02" itemprop="dateModified" datetime="2021-02-16T20:26:02+09:00">2021-02-16</time>
+        <time title="Modified: 2021-02-17 18:32:53" itemprop="dateModified" datetime="2021-02-17T18:32:53+09:00">2021-02-17</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -342,6 +342,12 @@ poetry를 잠깐 써보면서 문득 이런 생각이 들었다.<blockquote>
 <li><code>autoenv</code> 사용<br>아까 위에서 만들었던 <code>poetry-practice</code>디렉토리에 <code>autoenv</code>를 적용해보려고 한다.<br><code>poetry-practice</code>폴더 안에서 <code>touch .env</code>로 <code>.env</code>파일 생성 한 뒤에<br><code>echo &quot;pyenv activate wps-391&quot; &gt;&gt; .env</code> 혹은 <code>vi .env</code>로 들어가서<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .env 파일</span></span><br><span class="line">pyenv activate wps-391</span><br></pre></td></tr></table></figure>
 이렇게 <code>.env</code>파일에 <code>pyenv activate wps-391</code>라고 적어놓고, <code>poetry-practice</code>폴더에 다시 들어가면<br>자동으로 <code>pyenv activate wps-391</code>명령을 실행해서 원하는 가상환경을 만들어줄 수 있다.<br>이렇게 되면 앞으로 <code>poetry-practice</code>에서 작업할 때 따로 가상환경을 실행시킬 필요가 없어진다.</li>
 </ul>
+<hr>
+<p>-21.02.17 내용 추가-</p>
+<p><code>autoenv</code>를 사용해서 폴더에 들어갈 때 자동으로 가상환경을 들어가줬지만, 폴더에서 나오고 나서<br>내가 <code>pyenv deactivate</code>해줘야 하는게 귀찮았다.<br>이럴 때 <code>pyenv deactivte</code>를 해주고 싶은 폴더에 <code>.env</code>를 만들어서 넣어줬다.<br>이제 폴더를 옮겨다니면서 <code>pyenv activate</code>, <code>pyenv deactivate</code>를 하지 않아도 된다.</p>
+<p>근데 여기서 신경쓰이는게, 가상환경이 <code>activate</code>되어 있지 않은 상태에서 <code>deactivate</code>설정한 폴더에<br>들어가면 <code>pyenv-virtualenv: no virtualenv has been activated</code>라고 메세지가 출력된다.<br>다시 <code>.env</code>파일에 들어가서 수정해줬다.</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ -n <span class="string">&quot;<span class="variable">$VIRTUAL_ENV</span>&quot;</span> ] ; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;virtualenv has been deactivated&quot;</span></span><br><span class="line">        pyenv deactivate</span><br><span class="line"></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>이제 가상환경이 켜진 상태에서 폴더에 들어갈 때만 <code>deactivate</code>해주고 <code>virtualenv has been deactivated</code>라는 메세지를 출력한다.</p>
 
     </div>
 

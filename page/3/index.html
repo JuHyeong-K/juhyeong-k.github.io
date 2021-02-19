@@ -170,7 +170,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">37</span>
+          <span class="site-state-item-count">38</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -212,6 +212,91 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/09/HackerRank-Find-the-Torsional-Angle/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/09/HackerRank-Find-the-Torsional-Angle/" class="post-title-link" itemprop="url">[HackerRank] Find the Torsional Angle</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-02-09 19:26:10" itemprop="dateCreated datePublished" datetime="2021-02-09T19:26:10+09:00">2021-02-09</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-02-13 19:27:26" itemprop="dateModified" datetime="2021-02-13T19:27:26+09:00">2021-02-13</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HackerRank/" itemprop="url" rel="index"><span itemprop="name">HackerRank</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Class-2-Find-the-Torsional-Angle"><a href="#Class-2-Find-the-Torsional-Angle" class="headerlink" title="Class 2 - Find the Torsional Angle"></a>Class 2 - Find the Torsional Angle</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Points</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x, y, z</span>):</span></span><br><span class="line">        self.x=x</span><br><span class="line">        self.y=y</span><br><span class="line">        self.z=z</span><br><span class="line">        print(<span class="string">&quot;init 실행: &#123;&#125; &#123;&#125; &#123;&#125;&quot;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>(self.x),<span class="built_in">int</span>(self.y),<span class="built_in">int</span>(self.z)))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sub__</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;sub 실행&#x27;</span>, <span class="built_in">int</span>(self.x-no.x),<span class="built_in">int</span>(self.y-no.y),<span class="built_in">int</span>(self.z-no.z))</span><br><span class="line">        <span class="keyword">return</span> Points((self.x-no.x),(self.y-no.y),(self.z-no.z))</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dot</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;dot 실행&#x27;</span>, <span class="built_in">int</span>(self.x*no.x)+<span class="built_in">int</span>(self.y*no.y)+<span class="built_in">int</span>(self.z*no.z))</span><br><span class="line">        <span class="keyword">return</span> (self.x*no.x)+(self.y*no.y)+(self.z*no.z)</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cross</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;cross 실행&#x27;</span>, <span class="built_in">int</span>(self.y*no.z-self.z*no.y),<span class="built_in">int</span>(self.z*no.x-self.x*no.z),<span class="built_in">int</span>(self.x*no.y-self.y*no.x))</span><br><span class="line">        <span class="keyword">return</span> Points((self.y*no.z-self.z*no.y),(self.z*no.x-self.x*no.z),(self.x*no.y-self.y*no.x))</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">absolute</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&#x27;absolute 실행&#x27;</span>, <span class="built_in">pow</span>((self.x ** <span class="number">2</span> + self.y ** <span class="number">2</span> + self.z ** <span class="number">2</span>), <span class="number">0.5</span>))</span><br><span class="line"><span class="comment">#         return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)</span></span><br><span class="line">        <span class="keyword">return</span> math.sqrt(self.x**<span class="number">2</span> + self.y**<span class="number">2</span> + self.z**<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="comment">#     points = list()</span></span><br><span class="line"><span class="comment">#     for i in range(4):</span></span><br><span class="line"><span class="comment">#         a = list(map(float, input().split()))</span></span><br><span class="line"><span class="comment">#         points.append(a)</span></span><br><span class="line"></span><br><span class="line">    points = [[<span class="number">0.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">6.0</span>], [<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">2.0</span>]]</span><br><span class="line">    print(<span class="string">&#x27;----a, b, c, d 인스턴스 생성--------&#x27;</span>)</span><br><span class="line">    <span class="comment"># *points[n] = n번 째 index의 모든 값(*) 표현(x,y,z)</span></span><br><span class="line">    a, b, c, d = Points(*points[<span class="number">0</span>]), Points(*points[<span class="number">1</span>]), Points(*points[<span class="number">2</span>]), Points(*points[<span class="number">3</span>])</span><br><span class="line">    print(<span class="string">&#x27;----x 계산--------&#x27;</span>)</span><br><span class="line">    <span class="comment"># (b - a) sub로 계산 -&gt; (c - b) sub로 계산 -&gt; cross메소드로 계산</span></span><br><span class="line">    x = (b - a).cross(c - b)</span><br><span class="line">    print(<span class="string">&#x27;----y 계산--------&#x27;</span>)</span><br><span class="line">    <span class="comment"># (c - b) sub로 계산 -&gt; (d - c) sub로 계산 -&gt; cross메소드로 계산</span></span><br><span class="line">    y = (c - b).cross(d - c)</span><br><span class="line">    print(<span class="string">&#x27;----x, y이용해서 angle계산--------&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))</span><br><span class="line"></span><br><span class="line">    print(<span class="built_in">round</span>(math.degrees(angle), <span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+<p>혼자 해결하지 못해서 Discussions을 참조해서 실행되는 과정 표현해 봤다.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">----a, b, c, d 인스턴스 생성--------</span><br><span class="line">init 실행: 0 4 5</span><br><span class="line">init 실행: 1 7 6</span><br><span class="line">init 실행: 0 5 9</span><br><span class="line">init 실행: 1 7 2</span><br><span class="line">----x 계산순서--------</span><br><span class="line">sub 실행 1 3 1</span><br><span class="line">init 실행: 1 3 1</span><br><span class="line">sub 실행 -1 -2 3</span><br><span class="line">init 실행: -1 -2 3</span><br><span class="line">cross 실행 11 -4 1</span><br><span class="line">init 실행: 11 -4 1</span><br><span class="line">----y 계산순서--------</span><br><span class="line">sub 실행 -1 -2 3</span><br><span class="line">init 실행: -1 -2 3</span><br><span class="line">sub 실행 1 2 -7</span><br><span class="line">init 실행: 1 2 -7</span><br><span class="line">cross 실행 8 -4 0</span><br><span class="line">init 실행: 8 -4 0</span><br><span class="line">----x, y이용해서 angle계산--------</span><br><span class="line">dot 실행 104</span><br><span class="line">absolute 실행 11.74734012447073</span><br><span class="line">absolute 실행 8.94427190999916</span><br><span class="line">8.19</span><br></pre></td></tr></table></figure>
+<p>위의 내용을 참고해서 코드를 다시 작성해 봤다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Points</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x, y, z</span>):</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        self.z = z</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sub__</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> Points((self.x - no.x), (self.y - no.y), (self.z - no.z))</span><br><span class="line">        <span class="comment"># 리턴값을 Points(x, y, z)가 아닌 (x, y, z)로 리턴해주면, Points의 인스턴스가 아니기 때문에 Points메소드 사용 불가</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dot</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> (self.x * no.x) + (self.y * no.y) + (self.z * no.z)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cross</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> Points((self.y * no.z - self.z * no.y), (-self.x * no.z + self.z * no.x), (self.x * no.y - self.y * no.x)) </span><br><span class="line">        <span class="comment"># 리턴값을 Points(x, y, z)가 아닌 (x, y, z)로 리턴해주면, Points의 인스턴스가 아니기 때문에 Points메소드 사용 불가</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">absolute</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)</span></span><br><span class="line">        <span class="keyword">return</span> math.sqrt(self.x ** <span class="number">2</span> + self.y ** <span class="number">2</span> + self.z ** <span class="number">2</span>)</span><br><span class="line">        <span class="comment">#pow()대신 sqrt()함수 사용</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="comment">#     points = list()</span></span><br><span class="line"><span class="comment">#     for i in range(4):</span></span><br><span class="line"><span class="comment">#         a = list(map(float, input().split()))</span></span><br><span class="line"><span class="comment">#         points.append(a)</span></span><br><span class="line">    points = [[<span class="number">0.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">6.0</span>], [<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">2.0</span>]]</span><br><span class="line"></span><br><span class="line">    a, b, c, d = Points(*points[<span class="number">0</span>]), Points(*points[<span class="number">1</span>]), Points(*points[<span class="number">2</span>]), Points(*points[<span class="number">3</span>])</span><br><span class="line">    AB = b - a</span><br><span class="line">    BC = c - b</span><br><span class="line">    x = AB.cross(BC)</span><br><span class="line">    y = (c - b).cross(d - c)</span><br><span class="line">    angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))</span><br><span class="line">    <span class="comment"># angle값이 radian이라서 문제에서 원하는 degree로 바꿔줘야 함</span></span><br><span class="line">    print(<span class="built_in">round</span>(math.degrees(angle), <span class="number">2</span>))</span><br><span class="line">    <span class="comment"># 소수점 2번 째 자리까지 round()이용해서 출력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 출력값 확인 OK</span></span><br><span class="line">&gt;&gt; <span class="number">8.19</span></span><br></pre></td></tr></table></figure>
+<p><img src="/image/20210209_191014.jpg" alt="Vactor"></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1040,84 +1125,6 @@ random input으로 결과 테스트 -&gt; OK</li>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># numbers에 있는 값들 하나하나를 작성파일에 작성해주고 싶을 때</span></span><br><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>+<span class="number">1</span>)]</span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> numbers: <span class="comment"># 반복문을 사용해서 여러 번 작성 가능</span></span><br><span class="line">        f.write(<span class="string">&#x27;&#123;&#125;\n&#x27;</span>.<span class="built_in">format</span>(i)) <span class="comment"># write할 때는 항상 type을 str으로 해야 함.</span></span><br><span class="line">        <span class="comment"># \n없이 작성했을 경우 &gt;&gt; [&#x27;hellohellohellohellohello&#x27;]</span></span><br><span class="line">        <span class="comment"># \n넣어서 작성했을 경우 &gt;&gt; [&#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n&#x27;, &#x27;hello\n]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./numbers.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    text_list = f.readlines() <span class="comment"># 여러 줄 읽을 때는 readlines() 사용해야 함</span></span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> text_list:</span><br><span class="line">        print(line.replace(<span class="string">&#x27;\n&#x27;</span>, <span class="string">&#x27;&#x27;</span>)) </span><br><span class="line">	<span class="comment"># print함수에도 \n이 있기 때문에 \n이 2번 실행 됨.                                     </span></span><br><span class="line">	<span class="comment"># replace를 활용해서 line에 있는 개행문자를 없는 문자로 대체</span></span><br></pre></td></tr></table></figure></li>
 <li>CSV<br>Comma-Separated Values<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv</span><br><span class="line"><span class="comment"># comma(,)를 기준으로 알아서 separate해주기 때문에 읽을 때 개행문자(\n)를 제거해줄 필요 없음</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./customers.csv&#x27;</span>, newline=<span class="string">&#x27;&#x27;</span>) <span class="keyword">as</span> customer_csv:</span><br><span class="line">    customers = csv.reader(customer_csv)</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> customers:</span><br><span class="line">        print(row)</span><br></pre></td></tr></table></figure></li>
 <li>JSON<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">&#x27;users&#x27;</span>: [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;KD Hong&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;Seoul, KR&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;John Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;NewYork, US&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Jane Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;London, UK&#x27;</span>&#125;</span><br><span class="line">]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.dump - 어떤 dict를 json형태로 파일을 만들 수 있음</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.load - json파일을 해체해서 dict로 다시 보여줌</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    des_data = json.load(f)</span><br><span class="line"></span><br><span class="line">print(des_data[<span class="string">&#x27;users&#x27;</span>])</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">[&#123;&#x27;name&#x27;: &#x27;KD Hong&#x27;, &#x27;locale&#x27;: &#x27;Seoul, KR&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;John Doe&#x27;, &#x27;locale&#x27;: &#x27;NewYork, US&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;Jane Doe&#x27;, &#x27;locale&#x27;: &#x27;London, UK&#x27;&#125;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> des_data[<span class="string">&#x27;users&#x27;</span>]:</span><br><span class="line">    print(<span class="string">&quot;&#123;&#125; is from &#123;&#125;.&quot;</span>.<span class="built_in">format</span>(row[<span class="string">&#x27;name&#x27;</span>], row[<span class="string">&#x27;locale&#x27;</span>]))</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">KD Hong is from Seoul, KR.</span></span><br><span class="line"><span class="string">John Doe is from NewYork, US.</span></span><br><span class="line"><span class="string">Jane Doe is from London, UK.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/31/20210131-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/31/20210131-TIL/" class="post-title-link" itemprop="url">20210131 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-01-31 21:51:43 / Modified: 22:06:50" itemprop="dateCreated datePublished" datetime="2021-01-31T21:51:43+09:00">2021-01-31</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="알고리즘-문제-풀이"><a href="#알고리즘-문제-풀이" class="headerlink" title="알고리즘 문제 풀이"></a>알고리즘 문제 풀이</h1><ul>
-<li>[프로그래머스] 두 개 뽑아서 더하기<br>(<a target="_blank" rel="noopener" href="https://programmers.co.kr/learn/courses/30/lessons/68644">https://programmers.co.kr/learn/courses/30/lessons/68644</a>)<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment"># 2개의 반복문으로 경우의 수 다 구하고</span></span><br><span class="line"> <span class="comment"># 중복되는 숫자는 제외시키고, 오름차순으로 정렬</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers</span>):</span></span><br><span class="line">    answer = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(numbers)):</span><br><span class="line">        j = i + <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> j &lt; <span class="built_in">len</span>(numbers):</span><br><span class="line">            <span class="keyword">if</span> numbers[i] + numbers[j] <span class="keyword">not</span> <span class="keyword">in</span> answer:</span><br><span class="line">                answer.append(numbers[i] + numbers[j])</span><br><span class="line">            j += <span class="number">1</span></span><br><span class="line">        answer.sort()</span><br><span class="line">    <span class="keyword">return</span> answer</span><br></pre></td></tr></table></figure>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">solution([5, 0, 2, 7])</span><br><span class="line">&gt;&gt; [2, 5, 7, 9, 12]</span><br></pre></td></tr></table></figure>
-다른 사람들 풀이를 보니, set을 이용해서 중복되는 숫자 제거했다.<br>set을 이용해서 다시 풀어봤다.<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span>(<span class="params">numbers</span>):</span></span><br><span class="line">   answer = []</span><br><span class="line">   <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(numbers)):</span><br><span class="line">       <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i+<span class="number">1</span>, <span class="built_in">len</span>(numbers)):</span><br><span class="line">           answer.append(numbers[i] + numbers[j])       </span><br><span class="line">   set_answer = <span class="built_in">set</span>(answer) <span class="comment"># set함수로 중복되는 숫자 제거</span></span><br><span class="line">   answer = <span class="built_in">list</span>(set_answer)</span><br><span class="line">   <span class="keyword">return</span> <span class="built_in">sorted</span>(answer)</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       

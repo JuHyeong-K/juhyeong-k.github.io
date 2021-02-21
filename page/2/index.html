@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">39</span>
+          <span class="site-state-item-count">40</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,109 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/" class="post-title-link" itemprop="url">[Ubuntu 20.04] pyenv에서 system을 찾지 못하는 현상</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-15 19:58:32 / Modified: 20:39:11" itemprop="dateCreated datePublished" datetime="2021-02-15T19:58:32+09:00">2021-02-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/etc/" itemprop="url" rel="index"><span itemprop="name">etc</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/15/ubuntu20-04-pyenv에서-system을-찾지-못하는-현상/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="What-happened"><a href="#What-happened" class="headerlink" title="What happened?"></a>What happened?</h2><p><code>pyenv versions</code>에서 <code>system</code>이 보이지 않고, <code>pyenv global system</code>으로 전역을 <code>system</code>으로 변경<br>하려고 했으나 오류 발생</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pyenv versions</span><br><span class="line">* 3.9.1 (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line"></span><br><span class="line">$ pyenv global system</span><br><span class="line">pyenv: system version not found <span class="keyword">in</span> PATH</span><br></pre></td></tr></table></figure>
+<h2 id="Why-happened"><a href="#Why-happened" class="headerlink" title="Why happened?"></a>Why happened?</h2><p>Ubuntu 20.04 버전에서는 실행할 수 있는 <code>python</code>이 없다고 한다.<br><code>/usr/bin</code>에는 <code>python2</code>와 <code>python3</code>만 있고 <code>python</code>이라는 파일이 존재하지 않아서 pyenv에서<br>인식을 못한다고 한다.</p>
+<h2 id="How-to-fixed-it"><a href="#How-to-fixed-it" class="headerlink" title="How to fixed it?"></a>How to fixed it?</h2><p>해결 방법은 <code>python</code>을 실행 가능하게 만들어주면 된다.</p>
+<ul>
+<li>심볼릭 링크(ln -s)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -s /usr/bin/python3 /usr/bin/python</span><br></pre></td></tr></table></figure>
+<code>ln</code>링크 종류는 크게 <strong>하드링크</strong>와 <strong>심볼릭 링크(소프트 링크)</strong>가 있다.<br>그 중에서 심볼릭 링크는 <code>ln -s</code>로 사용하고 원하는 파일을 다른 이름으로 불러올 수 있게 해준다.<br>윈도우의 바로가기 아이콘이라고 생각하면 쉽다.</li>
+</ul>
+<p>위에 명령을 실행하면 이제 <code>/usr/bin/python</code>을 찾을 때 알아서 <code>usr/bin/python3</code>를 불러오게 된다.</p>
+<ul>
+<li>python is python3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install python-is-python3</span><br></pre></td></tr></table></figure>
+위와 비슷한 기능을 패키지로 만든 것 같다.<br>파이썬을 실행할 때 <code>python</code>이 아닌 <code>python3</code>로 입력해야 실행이 가능했는데,<br>위의 패키지를 설치하면 이제 <code>python</code>으로 파이썬을 실행할 수 있게 된다.</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pyenv versions</span><br><span class="line">  system</span><br><span class="line">* 3.9.1 (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line"></span><br><span class="line">$ pyenv global system</span><br><span class="line">$ pyenv versions</span><br><span class="line">* system (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line">  3.9.1</span><br></pre></td></tr></table></figure>
+<p>보이지 않던 system이 보이고 변경된 것을 확인할 수 있다.</p>
+<h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a target="_blank" rel="noopener" href="https://github.com/pyenv/pyenv/issues/1613">https://github.com/pyenv/pyenv/issues/1613</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1033,148 +1136,6 @@
 <li>HackerRank 문제 풀이</li>
 <li>OPP 내용 정리</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/10/why-use-one-underscore-in-python/" class="post-title-link" itemprop="url">파이썬의 캡슐화가 완벽하지 못한 이유</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-10 19:03:53" itemprop="dateCreated datePublished" datetime="2021-02-10T19:03:53+09:00">2021-02-10</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-02-11 23:30:42" itemprop="dateModified" datetime="2021-02-11T23:30:42+09:00">2021-02-11</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/02/10/why-use-one-underscore-in-python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/10/why-use-one-underscore-in-python/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="캡슐화-Encapsulation"><a href="#캡슐화-Encapsulation" class="headerlink" title="캡슐화(Encapsulation)"></a>캡슐화(Encapsulation)</h1><ul>
-<li>객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것</li>
-<li>객체의 일부 구현 내용에 대해 외부로부터의 직접적인 액세스를 차단하는 것</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmartPhone</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, ap, cam</span>):</span></span><br><span class="line">        self.ap = ap</span><br><span class="line">        self.cam = cam</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_jail_break</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;jail break complete&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__custom_firmware</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;You can&#x27;t do this&quot;</span></span><br><span class="line"></span><br><span class="line">samsung = SmartPhone(<span class="string">&#x27;exinos&#x27;</span>, <span class="string">&#x27;1.2M&#x27;</span>)</span><br><span class="line"></span><br><span class="line">print(samsung._jail_break()) <span class="comment"># 클래스 외부에서 불러오는게 가능</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">jail break complete</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">print(samsung.__custom_firmware()) <span class="comment"># 클래스 외부에서 불러오면 AttributeError 발생</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">AttributeError: &#x27;SmartPhone&#x27; object has no attribute &#x27;__custom_firmware&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>위의 코드에서 underscore<code>__</code> 2개로 접근을 막을 수 있는 것 처럼 보이지만,<br>파이썬에서는 underscore<code>__</code> 2개로 캡슐화를 해도 클래스 밖에서 접근이 가능하다는 것을 알게 되었다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Citizen</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age, r_id</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.__age = age</span><br><span class="line">        self.__r_id = r_id</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_age</span>(<span class="params">self</span>):</span>  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;__age를 리턴하는 메소드&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line"></span><br><span class="line">man = Citizen(<span class="string">&quot;JH&quot;</span>, <span class="number">27</span>, <span class="string">&quot;12345678&quot;</span>)</span><br></pre></td></tr></table></figure>
-<p>위의 코드를 보면 Citizen 클래스로 man 인스턴스를 생성했다.<br><code>print(man.get_age())</code>를 실행하면 <code>27</code>이 결과로 나오는 걸 알 수 있다.</p>
-<p>이 상태에서 <code>__age</code>에 어떻게 접근할 수 있을까?</p>
-<p><code>print(dir(man))</code>의 결과를 보면 <code>man</code> 객체가 어떤 변수와 메소드를 가지고 있는지 나열해준다.</p>
-<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[&#x27;_Citizen__age&#x27;, &#x27;_Citizen__r_id&#x27;, &#x27;__class__&#x27;, &#x27;__delattr__&#x27;, &#x27;__dict__&#x27;, &#x27;__dir__&#x27;, &#x27;__doc__&#x27;, &#x27;__eq__&#x27;, &#x27;__format__&#x27;, &#x27;__ge__&#x27;, &#x27;__getattribute__&#x27;, &#x27;__gt__&#x27;, &#x27;__hash__&#x27;, &#x27;__init__&#x27;, &#x27;__init_subclass__&#x27;, &#x27;__le__&#x27;, &#x27;__lt__&#x27;, &#x27;__module__&#x27;, &#x27;__ne__&#x27;, &#x27;__new__&#x27;, &#x27;__reduce__&#x27;, &#x27;__reduce_ex__&#x27;, &#x27;__repr__&#x27;, &#x27;__setattr__&#x27;, &#x27;__sizeof__&#x27;, &#x27;__str__&#x27;, &#x27;__subclasshook__&#x27;, &#x27;__weakref__&#x27;, &#x27;get_age&#x27;, &#x27;name&#x27;]</span><br></pre></td></tr></table></figure>
-<p>그 중에 <code>_Citizen__age</code>를 살펴보자.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(man.get_age())</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">27</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">man._Citizen__age = -<span class="number">10</span></span><br><span class="line">print(man.get_age())</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">-10</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p><code>__age</code> 값이 변경되는 걸 확인할 수 있다.</p>
-<p> 이게 어떻게 가능할까?</p>
-<p>파이썬에서 클래스 안에 변수나 메소드의 앞에 underscore<code>__</code> 2개를 붙이면,<br>네임 맹글링(Name Mangling) 되어서 아예 새로운 이름을 갖게 된다고 한다.<br>새로운 이름으로는 클래스 밖에서 접근이 가능하기 때문에 이와 같이 변경이 가능하다.<br><code>__age</code> =&gt; <code>_Citizen__age</code></p>
-<blockquote>
-<blockquote>
-<p>결국 캡슐화를 해도 클래스 밖에서 접근이 가능하면 캡슐화가 안되는 것 아닌가?</p>
-</blockquote>
-</blockquote>
-<p>사실 <strong>파이썬은 언어차원에서 캡슐화를 지원하지 않는다</strong>고 한다.<br>캡슐화처럼 보이긴 하지만, 완벽한 캡슐화가 아니다.<br>(Java에서는 <code>private</code>이라는 키워드를 변수 앞에 붙이면, 외부로 부터의 접근이 완벽히 차단된다.)</p>
-<p>그렇다고 파이썬에서 캡슐화를 아예 무시하는 것은 아니다.</p>
-<p>언어에서 지원하지는 않지만 파이썬 개발자들은 캡슐화에 대한 문화를 가지고 있다.</p>
-<blockquote>
-<blockquote>
-<p>메소드에 함부로 접근하지 말라는 경고 표시로 앞에 underscore<code>_</code> 1개를 사용한다.</p>
-</blockquote>
-</blockquote>
-<p>여기서 더 궁금한 점이 생겼다. </p>
-<blockquote>
-<blockquote>
-<p>아무리 파이썬 문화라고 하지만, “underscore(<code>__</code>) 2개로 클래스의 변수나 메소드를 표현하면<br> 완벽하지는 않지만 외부에서 접근 못하게 하는 기능이 있는데, 왜 underscore(<code>_</code>) 1개로 표현할까?”</p>
-</blockquote>
-</blockquote>
-<p>파이썬의 <a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-0008/#method-names-and-instance-variables"><strong>코딩 스타일 가이드라인</strong></a>의 <code>Method Names and Instance Variables</code>,<br><a target="_blank" rel="noopener" href="https://docs.python.org/3/tutorial/classes.html#private-variables"><strong>파이썬 공식 문서</strong></a>의 <code>9.6. Private Variables</code>를 살펴보면 알 수 있다.</p>
-<p>그 내용을 정리하면</p>
-<blockquote>
-<blockquote>
-<p>파이썬에서 클래스 밖에서 접근하지 말라는 컨벤션은 <code>underscore</code> 하나로 나타내고,<br>자식 클래스에서 <code>name conflict</code>가 발생하기를 원치 않는 경우 즉,<br><code>name mangling</code>을 해야할 때 underscore(<code>__</code>)2개로 나타낸다.</p>
-</blockquote>
-</blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.msg = <span class="string">&quot;Hi&quot;</span></span><br><span class="line">        self.introduce()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">introduce</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is John!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cashier</span>(<span class="params">Employee</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">introduce</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is &#123;&#125;, I am &#123;&#125; years old&quot;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cashier = Cashier()</span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">TypeError: introduce() missing 2 required positional arguments: &#x27;name&#x27; and &#x27;age&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>위의 코드를 보면, <code>Employee</code>클래스를 상속받는 <code>Cashier</code>클래스가 있고<br><code>Employee</code>클래스의 <code>__init__</code>메소드가 실행 될 때 <code>introduce</code>메소드가 실행되는 것을 볼 수 있다.<br>인스턴스가 생성될 때 <code>Employee</code>클래스에 있는 <code>introduce</code>메소드가 실행될거라 예상했는데<br><code>TypeError</code>가 발생하는 것을 볼 수 있다.</p>
-<p><code>__init__</code>메소드가 실행될 때 <code>Empoyee</code>클래스의 <code>introduce</code>메소드가 아닌, <code>Cashier</code>클래스의<br>인자 2개를 받는 오버라이딩 된 <code>introduce</code>가 실행되기 때문에 오류가 발생했다.</p>
-<p>이런 경우처럼 <code>Employee</code>클래스의 <code>__init__</code>메소드에서 실행되는 <code>introduce</code>메소드가<br><code>Employee</code>클래스 자신의 <code>introduce</code>메소드로 실행되게 만들고 싶을 때 underscore(<code>__</code>)2개를 사용한다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Employee</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.msg = <span class="string">&quot;Hi&quot;</span></span><br><span class="line">        self.__introduce()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__introduce</span>(<span class="params">self</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is John!&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Cashier</span>(<span class="params">Employee</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__introduce</span>(<span class="params">self, name, age</span>):</span></span><br><span class="line">        print(<span class="string">&quot;Hello, my name is &#123;&#125;, I am &#123;&#125; years old&quot;</span>.<span class="built_in">format</span>(name, age))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cashier = Cashier()</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">Hello, my name is John!</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>이 처럼 앞에 underscore(<code>__</code>)2개를 붙여서 실행하게 되면 <code>Employee</code>클래스에 있는 <code>introduce</code>는<br><code>_Employee__introduce</code>로 네임 맹글링되고, <code>Cashier</code>클래스에 있는 <code>introduce</code>는<br><code>_Cashier__introduce</code>로 네임 맹글링되기 때문에 <code>name confilicts</code>를 방지하게 되어서<br>오류 없이 실행이 된다.</p>
-<p>underscore(<code>_</code>)1개를 사용하던 2개를 사용하던 결국 완벽한 캡슐화가 아니기 때문에,<br>가이드라인에 따라서 코딩을 하는게 좋을 것 같다.</p>
 
       
     </div>

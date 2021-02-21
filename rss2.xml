@@ -9,8 +9,37 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Sat, 20 Feb 2021 14:06:09 GMT</pubDate>
+    <pubDate>Sun, 21 Feb 2021 14:08:57 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>20210221 TIL</title>
+      <link>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/</link>
+      <guid>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/</guid>
+      <pubDate>Sun, 21 Feb 2021 13:24:26 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;오늘-한-일&quot;&gt;&lt;a href=&quot;#오늘-한-일&quot; class=&quot;headerlink&quot; title=&quot;오늘 한 일&quot;&gt;&lt;/a&gt;오늘 한 일&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;git flow 연습&lt;/li&gt;
+&lt;li&gt;“clean code” 책 읽기&lt;/li&gt;
+&lt;/ul</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul><li>git flow 연습</li><li>“clean code” 책 읽기</li></ul><h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul><li>강의 복습</li><li>하노이타워 구현</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210220 TIL</title>
@@ -254,32 +283,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/02/15/pyenv-virtualenv-poetry-autoenv-%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>[Ubuntu 20.04] pyenv에서 system을 찾지 못하는 현상</title>
-      <link>https://juhyeong-k.github.io/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/</link>
-      <guid>https://juhyeong-k.github.io/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/</guid>
-      <pubDate>Mon, 15 Feb 2021 10:58:32 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h2 id=&quot;What-happened&quot;&gt;&lt;a href=&quot;#What-happened&quot; class=&quot;headerlink&quot; title=&quot;What happened?&quot;&gt;&lt;/a&gt;What happened?&lt;/h2&gt;&lt;p&gt;&lt;code&gt;pyenv versions&lt;/co</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h2 id="What-happened"><a href="#What-happened" class="headerlink" title="What happened?"></a>What happened?</h2><p><code>pyenv versions</code>에서 <code>system</code>이 보이지 않고, <code>pyenv global system</code>으로 전역을 <code>system</code>으로 변경<br>하려고 했으나 오류 발생</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pyenv versions</span><br><span class="line">* 3.9.1 (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line"></span><br><span class="line">$ pyenv global system</span><br><span class="line">pyenv: system version not found <span class="keyword">in</span> PATH</span><br></pre></td></tr></table></figure><h2 id="Why-happened"><a href="#Why-happened" class="headerlink" title="Why happened?"></a>Why happened?</h2><p>Ubuntu 20.04 버전에서는 실행할 수 있는 <code>python</code>이 없다고 한다.<br><code>/usr/bin</code>에는 <code>python2</code>와 <code>python3</code>만 있고 <code>python</code>이라는 파일이 존재하지 않아서 pyenv에서<br>인식을 못한다고 한다.</p><h2 id="How-to-fixed-it"><a href="#How-to-fixed-it" class="headerlink" title="How to fixed it?"></a>How to fixed it?</h2><p>해결 방법은 <code>python</code>을 실행 가능하게 만들어주면 된다.</p><ul><li>심볼릭 링크(ln -s)<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ln -s /usr/bin/python3 /usr/bin/python</span><br></pre></td></tr></table></figure><code>ln</code>링크 종류는 크게 <strong>하드링크</strong>와 <strong>심볼릭 링크(소프트 링크)</strong>가 있다.<br>그 중에서 심볼릭 링크는 <code>ln -s</code>로 사용하고 원하는 파일을 다른 이름으로 불러올 수 있게 해준다.<br>윈도우의 바로가기 아이콘이라고 생각하면 쉽다.</li></ul><p>위에 명령을 실행하면 이제 <code>/usr/bin/python</code>을 찾을 때 알아서 <code>usr/bin/python3</code>를 불러오게 된다.</p><ul><li>python is python3<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install python-is-python3</span><br></pre></td></tr></table></figure>위와 비슷한 기능을 패키지로 만든 것 같다.<br>파이썬을 실행할 때 <code>python</code>이 아닌 <code>python3</code>로 입력해야 실행이 가능했는데,<br>위의 패키지를 설치하면 이제 <code>python</code>으로 파이썬을 실행할 수 있게 된다.</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$ pyenv versions</span><br><span class="line">  system</span><br><span class="line">* 3.9.1 (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line"></span><br><span class="line">$ pyenv global system</span><br><span class="line">$ pyenv versions</span><br><span class="line">* system (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line">  3.9.1</span><br></pre></td></tr></table></figure><p>보이지 않던 system이 보이고 변경된 것을 확인할 수 있다.</p><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p><a href="https://github.com/pyenv/pyenv/issues/1613">https://github.com/pyenv/pyenv/issues/1613</a></p>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/etc/">etc</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/etc/">etc</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/#disqus_thread</comments>
       
     </item>
     

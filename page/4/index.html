@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">40</span>
+          <span class="site-state-item-count">41</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,134 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/03/20210203-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/03/20210203-TIL/" class="post-title-link" itemprop="url">20210203 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-03 21:47:35 / Modified: 23:53:06" itemprop="dateCreated datePublished" datetime="2021-02-03T21:47:35+09:00">2021-02-03</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/02/03/20210203-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/03/20210203-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="Fix-ubuntu-login-loop"><a href="#Fix-ubuntu-login-loop" class="headerlink" title="Fix ubuntu login loop"></a>Fix ubuntu login loop</h1><ul>
+<li><p>Why happened?<br>Zoom을 설치 후, 한글 입력이 되질 않아서 지금 쓰고 있는 uim(Byeoru)한글 입력기 대신<br>fcitx한글 입력기로 변경하려고 함. fcitx설치 후 재부팅 도중에 로그인 후 화면 멈춤현상 발생.</p>
+</li>
+<li><p>How to Fix it<br>tty에 들어가서<br>현재 사용하고 있는 gdm3말고 다른 diplay manager LightDM과 KDE(sddm)으로 변경</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install lightdm</span><br><span class="line">$ sudo dpkg-reconfigure lightdm</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt install sddm</span><br><span class="line">$ sudo dpkg-reconfigure sddm</span><br></pre></td></tr></table></figure>
+<p>다른 display manager로 변경해도 해결x</p>
+</li>
+</ul>
+<hr>
+<p>Xauthority 제거</p>
+<p>Xauthoriry는 user home디렉토리에 저장되어 있는 파일로 xauth에 대한 쿠키 파일로 xsession에 대한<br>인증 파일로 사용되는 파일이라고 한다. 처음에 Xauthority가 존재하지 않아서 시도를 안했는데,<br>lightdm과 sddm설치하면서 새로 생긴 것 같다.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ pwd</span><br><span class="line">&gt;&gt; home&#x2F;kjh</span><br><span class="line"></span><br><span class="line">$ ls -a</span><br><span class="line">&gt;&gt; Document Downloads ... .Xauthority</span><br><span class="line"></span><br><span class="line">$ mv .Xauthority Xauthority.backup</span><br><span class="line"></span><br><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
+<p>이 방법도 해결x</p>
+<hr>
+<p>Fixing Permission of Xauthority</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown username:username .Xauthority</span><br></pre></td></tr></table></figure>
+<p>ex) <code>chown kjh:kjh .Xauthority</code><br>이 방법도 해결x</p>
+<hr>
+<p>startx<br><code>sudo startx</code>입력하면 desktop screen이 나올텐데, 거기서 터미널을 열고</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
+<p>입력하고 reboot 해봤지만 해결x</p>
+<hr>
+<p>gdm3 재설치<br>방금 전에 설치한 <code>LitghtDM</code>과 <code>KDE</code>를 삭제하고, gdm3를 다시 설치해봤다.</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge lightdm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge sddm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge gdm3</span><br><span class="line"></span><br><span class="line">$ sudo apt install gdm3</span><br><span class="line"></span><br><span class="line">$ sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
+<p>gdm3로 변경할 때 아래의 오류메세지가 나올 수 있는데 그냥 reboot하면 gdm3가 적용된다.<br><code>invoke-rc.d: initscript gdm3, action &quot;reload&quot; failed.</code></p>
+<p>이 방법도 해결x</p>
+<hr>
+<p>Fix temp directory permission<br>temp 디렉토리의 권한을 수정</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+wt /tmp</span><br></pre></td></tr></table></figure>
+<p>이 방법으로도 해결 x</p>
+<hr>
+<p>정말 몇 시간동안 해결이 되질 않아서 ubuntu를 다시 설치해야 되나 했는데</p>
+<p> 마지막으로,</p>
+<p>fcitx 설치 이후에 login loop가 생겼으니, fcitx를 지워봐야겠다고 생각했다.<br>이유는 모르지만, fcitx를 설치하면서 다른 입력기나 어디선가 문제가 생겼을 가능성도<br>있을 법 해서 지워봤다.</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge fcitx-hangul</span><br><span class="line">$ sudo apt autoremove</span><br><span class="line"></span><br><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
+<p>신기하게도, 해결이 됐다.<br>정말 fcitx-hangul을 지워서 해결이 된건지, 앞의 과정들을 진행해서 해결이 된건지 모르겠지만<br>결국 해결을 하고 zoom 한글문제는 ibus로 입력기를 바꾼 뒤,<br>간단한 설정으로 한글을 입력할 수 있게 되었다.</p>
+<p>앞으로 무언가를 설치할 때 신중해야겠다..</p>
+<p>TTY(Teletypewriter) - OS에서 제공하는 가상콘솔<br>데스크탑 GUI(xwindows)에서는 <code>/dev/pts/1</code>에 올려져 있고<br>tty 콘솔 모드(<code>Ctrl</code>+<code>Alt</code>+<code>F1</code><del><code>F6</code>)에서는 `/dev/tty1</del>6`<br>tty가 물리적인 콘솔에서 사람이 직접 조작하는 개념이라면, pty는 xwindow에서 에뮬레이터로 접속할<br>때 사용하는 접속점의 개념<br>로그인을 콘솔에서 했는지, 원격지에서 했는지 차이</p>
+<hr>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>우분투 그놈(ubuntu 16.04 gnome) 무한 로그인 현상 : 네이버 블로그<br>(<a target="_blank" rel="noopener" href="https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https://www.google.com/">https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https:%2F%2Fwww.google.com%2F</a>)<br>How to get rid of Login Screen Loop in Ubuntu ? | by Satyabrat Bhol | Medium<br>(<a target="_blank" rel="noopener" href="https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302">https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302</a>)<br>Ubuntu 20.04 Login loop fix - Let’s FOSS<br>(<a target="_blank" rel="noopener" href="https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/">https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/</a>)<br>Can’t switch to gdm3 using sudo dpkg-reconfigure gdm3 - Ask Ubuntu<br>(<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3">https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3</a>)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1187,124 +1315,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/" class="post-title-link" itemprop="url">hexo로 블로그 만드는 방법</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-22 16:37:13" itemprop="dateCreated datePublished" datetime="2021-01-22T16:37:13+09:00">2021-01-22</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-29 20:43:39" itemprop="dateModified" datetime="2021-01-29T20:43:39+09:00">2021-01-29</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/etc/" itemprop="url" rel="index"><span itemprop="name">etc</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/01/22/hexo%EB%A1%9C-%EB%B8%94%EB%A1%9C%EA%B7%B8-%EB%A7%8C%EB%93%9C%EB%8A%94-%EB%B0%A9%EB%B2%95/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/22/hexo로-블로그-만드는-방법/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h4 id="Requirments"><a href="#Requirments" class="headerlink" title="Requirments"></a>Requirments</h4><ul>
-<li>Github ID</li>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<h4 id="Github-호스팅용-저장소-생성"><a href="#Github-호스팅용-저장소-생성" class="headerlink" title="Github 호스팅용 저장소 생성"></a>Github 호스팅용 저장소 생성</h4><p>repository name은 domain으로 사용할 이름(juhyenog-k.github.io)으로 설정</p>
-<h4 id="hexo-설치"><a href="#hexo-설치" class="headerlink" title="hexo 설치"></a>hexo 설치</h4><p>Node.js를 설치하면 사용할 수 있는 npm명령어를 사용해서 hexo를 설치한다.<br><code>$ sudo npm install -g hexo-cli</code></p>
-<p>hexo설치가 끝난 뒤에 블로그로 사용될 폴더를 생성 후 그 디렉토리로 들어간다.<br><code>$ hexo init &lt;folder&gt;</code><br><code>$ cd &lt;folder&gt;</code></p>
-<p>초기화에 필요한 패키지 설치<br><code>$ npm install</code></p>
-<p>서버를 실행해서 확인해본다. 주소는 <a target="_blank" rel="noopener" href="https://localhost:4000/">https://localhost:4000</a><br><code>$ hexo server</code></p>
-<h4 id="hexo-설정"><a href="#hexo-설정" class="headerlink" title="hexo 설정"></a>hexo 설정</h4><p>hexo 블로그를 Github에 배포할 때 필요한 플러그인 설치<br><code>$ npm install hexo-deployer-git --save</code><br> package.json에 찍어준다</p>
-<p><code>_config.yml</code>파일을 사용해서 사이트 환경설정해줄 수 있다.<br><code>$ vi _config.yml</code><br>‘#Site에서 title, subtitle 등 정해주면 되고,’<br>‘#Deploy에서 type: git / repo: {Github 저장소 주소}’입력해주면 된다.<br>자세한 설명은<a target="_blank" rel="noopener" href="https://hexo.io/ko/docs/configuration">_config.yml 설정</a> 참조</p>
-<h4 id="post"><a href="#post" class="headerlink" title="post"></a>post</h4><p>원하는 제목()으로 post작성<br><code>$ hexo new post &quot;제목&quot;</code></p>
-<p>저장된 경로 확인 (~/Documents/dev/blog/source/_posts/Test.md)</p>
-<p>vim으로 해당 포스트 수정<br><code>~/Documents/dev/blog/source/_posts/Test.md</code></p>
-<h4 id="generate-amp-deploy"><a href="#generate-amp-deploy" class="headerlink" title="generate &amp; deploy"></a>generate &amp; deploy</h4><p><code>$ hexo clean &amp;&amp; hexo generate</code></p>
-<ul>
-<li><code>hexo clean</code> &gt;&gt; 캐시 파일 및 생성된 파일들(public)을 삭제</li>
-<li><code>&amp;&amp;</code> &gt;&gt; 앞에 명령 실행완료 되면, 뒤에 명령 실행</li>
-<li><code>hexo generate</code> &gt;&gt; .md확장자로 만들어진 post를 html로 변환해주는 기능</li>
-</ul>
-<p>서버를 다시 켜서 제대로 작성 됐는지 확인<br><code>$ hexo server</code></p>
-<p>commit 작성 후, gitgub 저장소에 배포해주면 완료<br><code>$ hexo clean &amp;&amp; hexo deploy</code></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 

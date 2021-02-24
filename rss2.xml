@@ -9,8 +9,37 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Tue, 23 Feb 2021 12:51:31 GMT</pubDate>
+    <pubDate>Wed, 24 Feb 2021 12:32:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>20210224 TIL</title>
+      <link>https://juhyeong-k.github.io/2021/02/24/20210224-TIL/</link>
+      <guid>https://juhyeong-k.github.io/2021/02/24/20210224-TIL/</guid>
+      <pubDate>Wed, 24 Feb 2021 12:28:21 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;오늘-한-일&quot;&gt;&lt;a href=&quot;#오늘-한-일&quot; class=&quot;headerlink&quot; title=&quot;오늘 한 일&quot;&gt;&lt;/a&gt;오늘 한 일&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;파이썬 과제 수정 제출&lt;/li&gt;
+&lt;li&gt;html, css 강의 복습&lt;/li&gt;
+&lt;li&gt;“</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul><li>파이썬 과제 수정 제출</li><li>html, css 강의 복습</li><li>“Clean Code” 18p ~ 27p 독서</li></ul><h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul><li>css 강의 복습</li><li>“Clean Code” 독서</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/02/24/20210224-TIL/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210223 TIL</title>
@@ -258,32 +287,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/02/16/20210216-TIL/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>decorator practice</title>
-      <link>https://juhyeong-k.github.io/2021/02/16/decorator-practice/</link>
-      <guid>https://juhyeong-k.github.io/2021/02/16/decorator-practice/</guid>
-      <pubDate>Tue, 16 Feb 2021 12:03:40 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;Decorator-practice&quot;&gt;&lt;a href=&quot;#Decorator-practice&quot; class=&quot;headerlink&quot; title=&quot;Decorator practice&quot;&gt;&lt;/a&gt;Decorator practice&lt;/h1&gt;&lt;blockquo</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="Decorator-practice"><a href="#Decorator-practice" class="headerlink" title="Decorator practice"></a>Decorator practice</h1><blockquote><blockquote><p>“Hi, {name}. You might be loved with {lang}” 이라는 문자열이 존재할 때,<br>이 문자열의 앞 뒤로 <code>&lt;h1&gt;</code>, <code>&lt;em&gt;</code> 태그가 붙도록 하는 데코레이터를 생성하세요</p></blockquote></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># decorator 2개 사용</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_tag_em</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;&lt;em&gt; <span class="subst">&#123;func(name, lang)&#125;</span> &lt;/em&gt;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_tag_h1</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;&lt;h1&gt; <span class="subst">&#123;func(name, lang)&#125;</span> &lt;/h1&gt;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@get_tag_h1</span></span><br><span class="line"><span class="meta">@get_tag_em</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hi, <span class="subst">&#123;name&#125;</span>, You might be loved with <span class="subst">&#123;lang&#125;</span>&quot;</span></span><br><span class="line">print(print_msg(<span class="string">&#x27;JH&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>))</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">&lt;h1&gt; &lt;em&gt; Hi, JH, You might be loved with Python &lt;/em&gt; &lt;/h1&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># decorator 1개 사용</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_tag_h1_em</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;&lt;h1&gt;&lt;em&gt; <span class="subst">&#123;func(name, lang)&#125;</span> &lt;/em&gt;&lt;/h1&gt;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@get_tag_h1_em</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hi, <span class="subst">&#123;name&#125;</span>, You might be loved with <span class="subst">&#123;lang&#125;</span>&quot;</span></span><br><span class="line">print(print_msg(<span class="string">&#x27;JH&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">&lt;h1&gt;&lt;em&gt; Hi, JH, You might be loved with Python &lt;/em&gt;&lt;/h1&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># decorator 1개 사용 + tag값 입력</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_tag_h1_em</span>(<span class="params">func</span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">name, lang, tag1, tag2</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">f&quot;&lt;<span class="subst">&#123;tag1&#125;</span>&gt;&lt;<span class="subst">&#123;tag2&#125;</span>&gt; <span class="subst">&#123;func(name, lang, tag1, tag2)&#125;</span> &lt;/<span class="subst">&#123;tag2&#125;</span>&gt;&lt;/<span class="subst">&#123;tag1&#125;</span>&gt;&quot;</span></span><br><span class="line">    <span class="keyword">return</span> wrapper</span><br><span class="line"></span><br><span class="line"><span class="meta">@get_tag_h1_em</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">name, lang, tag1, tag2</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hi, <span class="subst">&#123;name&#125;</span>, You might be loved with <span class="subst">&#123;lang&#125;</span>&quot;</span></span><br><span class="line">print(print_msg(<span class="string">&#x27;JH&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>, <span class="string">&#x27;h2&#x27;</span>, <span class="string">&#x27;strong&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 이렇게 하면 데코레이터를 사용하는 의미가 없는 것 같은데...</span></span><br></pre></td></tr></table></figure><hr><p>-20.02.17 내용 추가-<br>오늘 강사님이 <code>decorator</code>안에 parameter를 넣을 수 있다고 해서 찾아보고 이 문제에 적용해봤다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deco_input</span>(<span class="params">tag1, tag2</span>):</span> <span class="comment"># 데코레이터에 파라미터를 넣어주기 위한 함수</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_tag_h1_em</span>(<span class="params">func</span>):</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">wrapper</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">            <span class="keyword">return</span> <span class="string">f&quot;&lt;<span class="subst">&#123;tag2&#125;</span>&gt;&lt;<span class="subst">&#123;tag1&#125;</span>&gt; <span class="subst">&#123;func(name, lang)&#125;</span> &lt;/<span class="subst">&#123;tag1&#125;</span>&gt;&lt;/<span class="subst">&#123;tag2&#125;</span>&gt;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> wrapper</span><br><span class="line">    <span class="keyword">return</span> get_tag_h1_em <span class="comment"># 데코레이터가 get_tag_h1_em에서 deco_input으로 바뀌기 때문에</span></span><br><span class="line">                         <span class="comment"># get_tag_h1_em을 리턴해줬다. </span></span><br><span class="line"></span><br><span class="line"><span class="meta">@deco_input(<span class="params"><span class="string">&#x27;h1&#x27;</span>, <span class="string">&#x27;em&#x27;</span></span>) </span><span class="comment"># 데코레이터 안에 파라미터 추가</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_msg</span>(<span class="params">name, lang</span>):</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">f&quot;Hi, <span class="subst">&#123;name&#125;</span>, You might be loved with <span class="subst">&#123;lang&#125;</span>&quot;</span></span><br><span class="line"></span><br><span class="line">print(print_msg(<span class="string">&#x27;JH&#x27;</span>, <span class="string">&#x27;Python&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">&lt;h2&gt;&lt;strong&gt; Hi, JH, You might be loved with Python &lt;/strong&gt;&lt;/h2&gt;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/python/">python</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/python/">python</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/02/16/decorator-practice/#disqus_thread</comments>
       
     </item>
     

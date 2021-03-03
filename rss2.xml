@@ -9,8 +9,38 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Tue, 02 Mar 2021 12:40:01 GMT</pubDate>
+    <pubDate>Wed, 03 Mar 2021 12:47:47 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>20210303 TIL 작성중..</title>
+      <link>https://juhyeong-k.github.io/2021/03/03/20210303-TIL/</link>
+      <guid>https://juhyeong-k.github.io/2021/03/03/20210303-TIL/</guid>
+      <pubDate>Wed, 03 Mar 2021 11:47:24 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;HTML-CSS-강의-내용-정리&quot;&gt;&lt;a href=&quot;#HTML-CSS-강의-내용-정리&quot; class=&quot;headerlink&quot; title=&quot;HTML, CSS 강의 내용 정리&quot;&gt;&lt;/a&gt;HTML, CSS 강의 내용 정리&lt;/h1&gt;&lt;h2 id=&quot;tra</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="HTML-CSS-강의-내용-정리"><a href="#HTML-CSS-강의-내용-정리" class="headerlink" title="HTML, CSS 강의 내용 정리"></a>HTML, CSS 강의 내용 정리</h1><h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h2><p><code>transition</code>은 어떤 속성이 어떤 상황(ex.<code>:hover</code>)으로 인해 <code>A-&gt;B</code>로 변경될 때 그 과정을 일정 기간에 걸쳐서 자연스럽게 변화하는 과정을 보여준다. 이와 비슷한 기능을 하는 <code>@keyframes</code>가 있는데, <code>transition</code>보다 더 디테일하고 다양하게 변화를 줄 수 있다.<br>‘transition-delay’속성을 줄 때, <code>s</code>, <code>ms</code>단위를 사용할 수 있는데, 0초를 주더라고 꼭 <code>0s</code>로 s를 붙여야 한다. 다른 속성들과 다르게 0초의 단위를 생략할 수 없다.</p><h2 id="대화형-콘텐츠"><a href="#대화형-콘텐츠" class="headerlink" title="대화형 콘텐츠"></a>대화형 콘텐츠</h2><p><code>:hover</code>는 모든 태그에 대해서 사용이 가능하지만, <code>:focus</code>는 <code>a</code>, <code>input</code>, <code>button</code> 태그와 같이 <a href="https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories#%EB%8C%80%ED%99%94%ED%98%95_%EC%BD%98%ED%85%90%EC%B8%A0">대화형 콘텐츠</a>의 요소만 사용이 가능하다.</p><blockquote><p>태그에 <code>tabindex=&quot;0&quot;</code>을 준다면 <code>tab</code>키를 받을 수 있어서 <code>:focus</code>를 사용가능하게 만들 수는 있다.</p></blockquote><h2 id="순서-입력"><a href="#순서-입력" class="headerlink" title="순서 입력"></a>순서 입력</h2><p>CSS로 <code>&lt;li&gt;</code>안에 순서대로 숫자를 입력할 때 <code>li::before&#123;content: &quot;1&quot;&#125;</code>하나씩 입력해도 되지만 100개가 넘는다면? 너무 노가다.. 해결 방법이 있다.</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">::befor</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">counter</span>(number);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">counter-increment</span>: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><code>&lt;li&gt;</code>에 순서대로 숫자가 입력된다.</p><h2 id="문자-숨기는-방법"><a href="#문자-숨기는-방법" class="headerlink" title="문자 숨기는 방법"></a>문자 숨기는 방법</h2><p><code>padding</code><br><code>text-indent</code><br>``</p><h2 id="px-차이점"><a href="#px-차이점" class="headerlink" title="px, % 차이점"></a><code>px</code>, <code>%</code> 차이점</h2><h2 id="인용구"><a href="#인용구" class="headerlink" title="인용구"></a>인용구</h2><p><code>&lt;blockquote&gt;</code><br><code>&lt;q cite=&quot; &quot;&gt;</code> <code>cite</code>는 인용한 정보의 저작권 표시를 위한 속성. 값으로 <code>isbn: ~</code>책에 대한 내용 <code>http:// ~</code> 웹에 대한 내용</p><h2 id="lt-footer-gt-는-제목을-가지지-않는게-좋다"><a href="#lt-footer-gt-는-제목을-가지지-않는게-좋다" class="headerlink" title="&lt;footer&gt;는 제목을 가지지 않는게 좋다."></a><code>&lt;footer&gt;</code>는 제목을 가지지 않는게 좋다.</h2><h2 id="a"><a href="#a" class="headerlink" title="a"></a>a</h2><p><code>&lt;a href=&quot;tel: 01012341234&quot;&gt;</code> 링크를 누르면 자동으로 전화로 연결해줄 수 있다.</p><h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><p>Grid를 사용하면 배치에 대한 큰 걱정없이 논리성을 줌심으로 마크업할 수 있다.<br>단, <code>Internet Explorer</code>를 지원하지 않는 단점이 있는데,<br>전세계에서 <code>Internet Explorer</code>의 점유율은 2%미만을 차지하는데 우리나라는 높은 비중을 차지하고 있어서 현업에서 <code>Grid</code>를 사용하기는 힘들다고 한다.<br><a href="https://presscat.co.kr/blog/browser-market-share-mar2020/">웹 브라우저 시장 점유율(2020)</a></p><p>클론 코딩은 완전히 똑같이 만드는게 아니라 그 페이지를 분석해보고, 장점은 가져오고 보완했으면 좋은 것들을 정리해서 만들어야 한다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/HTML/">HTML</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/CSS/">CSS</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/03/03/20210303-TIL/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210302 TIL</title>
@@ -262,35 +292,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/02/22/20210222-TIL/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>20210221 TIL</title>
-      <link>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/</link>
-      <guid>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/</guid>
-      <pubDate>Sun, 21 Feb 2021 13:24:26 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;오늘-한-일&quot;&gt;&lt;a href=&quot;#오늘-한-일&quot; class=&quot;headerlink&quot; title=&quot;오늘 한 일&quot;&gt;&lt;/a&gt;오늘 한 일&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;git flow 연습&lt;/li&gt;
-&lt;li&gt;“clean code” 책 읽기&lt;/li&gt;
-&lt;/ul</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul><li>git flow 연습</li><li>“clean code” 책 읽기</li></ul><h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul><li>강의 복습</li><li>하노이타워 구현</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/02/21/20210221-TIL/#disqus_thread</comments>
       
     </item>
     

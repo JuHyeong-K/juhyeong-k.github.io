@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="문제도현이네 반 학생 N명의 이름과 국어, 영어, 수학 점수가 주어진다. 이때, 다음과 같은 조건으로 학생의 성적을 정렬하는 프로그램을 작성하시오. 국어 점수가 감소하는 순서로국어 점수가 같으면 영어 점수가 증가하는 순서로국어 점수와 영어 점수가 같으면 수학 점수가 감소하는 순서로모든 점수가 같으면 이름이 사전 순으로 증가하는 순서로 (단, 아스키 코드에서">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[BAEKJOON] 국영수 10825번">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="문제도현이네 반 학생 N명의 이름과 국어, 영어, 수학 점수가 주어진다. 이때, 다음과 같은 조건으로 학생의 성적을 정렬하는 프로그램을 작성하시오. 국어 점수가 감소하는 순서로국어 점수가 같으면 영어 점수가 증가하는 순서로국어 점수와 영어 점수가 같으면 수학 점수가 감소하는 순서로모든 점수가 같으면 이름이 사전 순으로 증가하는 순서로 (단, 아스키 코드에서">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-05T03:36:26.000Z">
+<meta property="article:modified_time" content="2021-03-05T04:00:35.463Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="BAEKJOON">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>[BAEKJOON] 국영수 10825번 | JH's dev blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-93XKT8K1JW');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="JH's dev blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">문제</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%92%80%EC%9D%B4"><span class="nav-number">2.</span> <span class="nav-text">풀이</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">52</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [BAEKJOON] 국영수 10825번
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-05 12:36:26 / Modified: 13:00:35" itemprop="dateCreated datePublished" datetime="2021-03-05T12:36:26+09:00">2021-03-05</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BAEKJOON/" itemprop="url" rel="index"><span itemprop="name">BAEKJOON</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/05/BAEKJOON-국영수-10825번/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>도현이네 반 학생 N명의 이름과 국어, 영어, 수학 점수가 주어진다. 이때, 다음과 같은 조건으로 학생의 성적을 정렬하는 프로그램을 작성하시오.</p>
+<p>국어 점수가 감소하는 순서로<br>국어 점수가 같으면 영어 점수가 증가하는 순서로<br>국어 점수와 영어 점수가 같으면 수학 점수가 감소하는 순서로<br>모든 점수가 같으면 이름이 사전 순으로 증가하는 순서로 (단, 아스키 코드에서 대문자는 소문자보다 작으므로 사전순으로 앞에 온다.)</p>
+<p>첫째 줄에 도현이네 반의 학생의 수 N (1 ≤ N ≤ 100,000)이 주어진다. 둘째 줄부터 한 줄에 하나씩 각 학생의 이름, 국어, 영어, 수학 점수가 공백으로 구분해 주어진다. 점수는 1보다 크거나 같고, 100보다 작거나 같은 자연수이다. 이름은 알파벳 대소문자로 이루어진 문자열이고, 길이는 10자리를 넘지 않는다.</p>
+<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>처음 든 생각은 <code>input()</code>으로 들어오는 값을 어떤 방식으로 저장할지 고민이었다.<br><code>dictionary</code>로 저장할 경우 순서를 구분하기 힘들 것 같고, <code>list</code>로 저장할 경우 <code>key:value</code>를 구분하기 힘들 것 같아서, 그냥 둘 다 써보기로 했다.</p>
+<p>입력받은 이름과 국영수 점수들을 <code>dict</code>에 <code>&#123;name: [국, 영, 수]&#125;</code>형태로 저장하고, list에는<code>[[국, 영,수]]</code> 국영수 점수만 저장했다.</p>
+<p>이제 어떻게 정렬할지 고민을 해봤는데, 쉽게 떠오르지는 않았다.<br><code>input()</code>을 입력 받을 때, <code>current_score</code>라는 이름의 <code>list</code>를 두고 위에 저장된 <code>list</code>의 값과 비교해보기로 했다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">subject_score_dict = &#123;&#125;</span><br><span class="line">subject_score_list = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    name, korean_score, english_score, math_score = <span class="built_in">input</span>().split()</span><br><span class="line">    korean_score, english_score, math_score = <span class="built_in">int</span>(korean_score), <span class="built_in">int</span>(english_score), <span class="built_in">int</span>(math_score)</span><br><span class="line">    subject_score_dict[name] = [korean_score, english_score, math_score]</span><br><span class="line">    current_score = [korean_score, english_score, math_score]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(subject_score_list) == <span class="number">0</span>:</span><br><span class="line">        subject_score_list.append(current_score)</span><br><span class="line">        print(<span class="string">&#x27;첫 번째 값&#x27;</span>,subject_score_list) <span class="comment">###</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> score_index, score <span class="keyword">in</span> <span class="built_in">enumerate</span>(subject_score_list):</span><br><span class="line">            <span class="comment"># 국어 점수 비교</span></span><br><span class="line">            <span class="keyword">if</span> current_score[<span class="number">0</span>] &gt; score[<span class="number">0</span>]:</span><br><span class="line">                subject_score_list.insert(score_index, current_score)</span><br><span class="line">                print(<span class="string">&#x27;cs[0]&gt;s[0]&#x27;</span>,subject_score_list) <span class="comment">###</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] &lt; score[<span class="number">0</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] == score[<span class="number">0</span>]:</span><br><span class="line">                <span class="comment"># 영어 점수 비교</span></span><br><span class="line">                <span class="keyword">if</span> current_score[<span class="number">1</span>] &lt; score[<span class="number">1</span>]:</span><br><span class="line">                    subject_score_list.insert(score_index, current_score)</span><br><span class="line">                    print(<span class="string">&#x27;cs[1]&lt;s[1]&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] &gt; score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                        subject_score_list.append(current_score)</span><br><span class="line">                        print(<span class="string">&#x27;cs[1]&gt;s[1]이지만, 마지막 요소라서 리스트 맨뒤에 추가&#x27;</span>, subject_score_list)</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] == score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="comment"># 수학 점수 비교</span></span><br><span class="line">                    <span class="keyword">if</span> current_score[<span class="number">2</span>] &gt; score[<span class="number">2</span>]:</span><br><span class="line">                        subject_score_list.insert(score_index, current_score)</span><br><span class="line">                        print(<span class="string">&#x27;cs[2]&gt;s[2]&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] &lt; score[<span class="number">2</span>]:</span><br><span class="line">                        <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                            subject_score_list.append(current_score)</span><br><span class="line">                            print(<span class="string">&#x27;cs[2]&lt;s[2]이지만, 마지막 요소라서 리스트 맨뒤에 추가&#x27;</span>, subject_score_list)</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] == score[<span class="number">2</span>]:</span><br><span class="line">                        print(<span class="string">&#x27;cs[2]==s[2] 중복된 값이라서 추가x&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>정해진 순서대로 점수들을 배치하고, 중복된 점수들은 value값을 <code>dict</code>에서 찾아서 key값들을 같이 불러올거라서 제외했다.</p>
+<p>이제 국영수 점수가 똑같은 사람들의 이름과 각 점수에 해당하는 사람들의 이름을 불러오면 된다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 중복되는 값을 제거하고, dict에서 이름 찾을 때, 중복된 값이면 여러개가 저장될 텐데 거기서 네임 정렬 후 출력해주면 될 듯</span></span><br><span class="line"><span class="keyword">for</span> score <span class="keyword">in</span> subject_score_list:</span><br><span class="line">    name_list = []</span><br><span class="line">    <span class="keyword">for</span> name, value <span class="keyword">in</span> subject_score_dict.items():</span><br><span class="line">        <span class="keyword">if</span> value == score:</span><br><span class="line">            name_list.append(name)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(name_list) &gt; <span class="number">1</span>:</span><br><span class="line">        name_list.sort()</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> name_list:</span><br><span class="line">            print(a)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(name_list[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>중복된 점수의 이름을 불러올 때, 내림차순으로 정렬 후 출력해주고, 중복된 점수가 아닐 때는 해당하는 이름만 불러오면 끝이다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">subject_score_dict = &#123;&#125;</span><br><span class="line">subject_score_list = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    name, korean_score, english_score, math_score = <span class="built_in">input</span>().split()</span><br><span class="line">    korean_score, english_score, math_score = <span class="built_in">int</span>(korean_score), <span class="built_in">int</span>(english_score), <span class="built_in">int</span>(math_score)</span><br><span class="line">    subject_score_dict[name] = [korean_score, english_score, math_score]</span><br><span class="line">    current_score = [korean_score, english_score, math_score]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(subject_score_list) == <span class="number">0</span>:</span><br><span class="line">        subject_score_list.append(current_score)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> score_index, score <span class="keyword">in</span> <span class="built_in">enumerate</span>(subject_score_list):</span><br><span class="line">            <span class="keyword">if</span> current_score[<span class="number">0</span>] &gt; score[<span class="number">0</span>]:</span><br><span class="line">                subject_score_list.insert(score_index, current_score)</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] &lt; score[<span class="number">0</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] == score[<span class="number">0</span>]:</span><br><span class="line">                <span class="keyword">if</span> current_score[<span class="number">1</span>] &lt; score[<span class="number">1</span>]:</span><br><span class="line">                    subject_score_list.insert(score_index, current_score)</span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] &gt; score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                        subject_score_list.append(current_score)</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] == score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">if</span> current_score[<span class="number">2</span>] &gt; score[<span class="number">2</span>]:</span><br><span class="line">                        subject_score_list.insert(score_index, current_score)</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] &lt; score[<span class="number">2</span>]:</span><br><span class="line">                        <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                            subject_score_list.append(current_score)</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] == score[<span class="number">2</span>]:</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line"><span class="keyword">for</span> score <span class="keyword">in</span> subject_score_list:</span><br><span class="line">    name_list = []</span><br><span class="line">    <span class="keyword">for</span> name, value <span class="keyword">in</span> subject_score_dict.items():</span><br><span class="line">        <span class="keyword">if</span> value == score:</span><br><span class="line">            name_list.append(name)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(name_list) &gt; <span class="number">1</span>:</span><br><span class="line">        name_list.sort()</span><br><span class="line">        <span class="keyword">for</span> a <span class="keyword">in</span> name_list:</span><br><span class="line">            print(a)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        print(name_list[<span class="number">0</span>])</span><br></pre></td></tr></table></figure>
+<p>입력예제 통과 후 제출했는데 python3로는 시간초과, PyPy3는 메모리 초과로 나왔다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/BAEKJOON/" rel="tag"># BAEKJOON</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/04/20210304-TIL/" rel="prev" title="20210304 TIL 작성중..">
+                  <i class="fa fa-chevron-left"></i> 20210304 TIL 작성중..
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://juhyeong-k.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/";
+    this.page.identifier = "2021/03/05/BAEKJOON-국영수-10825번/";
+    this.page.title = "[BAEKJOON] 국영수 10825번";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

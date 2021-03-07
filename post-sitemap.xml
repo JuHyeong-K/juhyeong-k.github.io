@@ -9,6 +9,38 @@
 
 
     <url>
+        <loc>https://juhyeong-k.github.io/2021/03/07/20210307-TIL/</loc>
+        <lastmod>2021-03-07T12:53:40.575Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/</loc>
+        <lastmod>2021-03-07T12:53:15.231Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/</loc>
+        <lastmod>2021-03-07T11:07:38.556Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/02/13/hackerrank-dealling-with-complex-numbers/</loc>
+        <lastmod>2021-03-07T11:01:56.727Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://juhyeong-k.github.io/2021/03/04/20210304-TIL/</loc>
         <lastmod>2021-03-07T10:41:08.454Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -19,14 +51,6 @@
     <url>
         <loc>https://juhyeong-k.github.io/2021/03/03/20210303-TIL/</loc>
         <lastmod>2021-03-07T07:48:01.507Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://juhyeong-k.github.io/2021/03/07/20210307-TIL/</loc>
-        <lastmod>2021-03-07T04:43:06.032Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -241,14 +265,6 @@
     </url>
 
     <url>
-        <loc>https://juhyeong-k.github.io/2021/02/13/hackerrank-dealling-with-complex-numbers/</loc>
-        <lastmod>2021-02-13T10:43:49.831Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://juhyeong-k.github.io/2021/02/09/HackerRank-Find-the-Torsional-Angle/</loc>
         <lastmod>2021-02-13T10:27:26.763Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -267,14 +283,6 @@
     <url>
         <loc>https://juhyeong-k.github.io/2021/02/11/20210211-TIL/</loc>
         <lastmod>2021-02-11T14:37:28.075Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/</loc>
-        <lastmod>2021-02-11T14:30:42.510Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

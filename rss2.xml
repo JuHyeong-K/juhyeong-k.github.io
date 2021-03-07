@@ -9,8 +9,39 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Sun, 07 Mar 2021 04:43:06 GMT</pubDate>
+    <pubDate>Sun, 07 Mar 2021 12:53:15 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>HTML/CSS 강의에 대한 회고</title>
+      <link>https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/</link>
+      <guid>https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/</guid>
+      <pubDate>Sun, 07 Mar 2021 10:42:24 GMT</pubDate>
+      
+        
+        
+      <description>&lt;p&gt;2주 동안 들었던 HTML/CSS 강의 에 대한 회고를 작성해보려고 한다.&lt;/p&gt;
+&lt;p&gt;사실 강의를 듣기 전까지, HTML과 CSS에 크게 관심이 없었다. HTML과 CSS를 온라인 강의로 잠깐 접해본 적이 있는데, 그 당시만 해도 이걸 배워서 </description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<p>2주 동안 들었던 HTML/CSS 강의 에 대한 회고를 작성해보려고 한다.</p><p>사실 강의를 듣기 전까지, HTML과 CSS에 크게 관심이 없었다. HTML과 CSS를 온라인 강의로 잠깐 접해본 적이 있는데, 그 당시만 해도 이걸 배워서 어떻게 써먹어야될지도 몰랐고 재미도 없어서 그냥 이론만 듣고 말았다. 그래서 이번 HTML/CSS 강의도 그런 내용이겠구나 생각하고 있었다. 첫 날, 둘 째날 강의를 계속 들으면서 HTML이 어떻게 만들어졌고 어떤 역사를 가지고 지금까지 발전을 했는지, HTML을 작성할 때 어떤 흐름으로 작성을 해야되는지 설명을 들으면서 강의 자체에 재미를 붙이게 됐다.</p><p>2주라는 기간 동안 배운 많은 내용들을 내가 전부 흡수하지 못해 아쉬움이 크지만, 이번 강의를 들으면서 내가 HTML을 작성할 때는 어떤 흐름으로 작성을 하고 어떤 부분을 고려해서 작성을 해야되는지 감을 잡는 계기가 됐고, CSS도 배우기 전까지는 정말 어렵다고 생각됐는데, 내가 보여지는 것만 보고 판단을 해서 어렵게 느껴졌었고, 내가 사용한 property들의 목적을 알고 있어야 문제가 생겨도 왜 문제가 생겼는지 원인을 판단할 수 있고, 특히, CSS에서는 본래의 목적으로 사용하는게 아닌, 다른 용도(<del>꼼수</del>)로 사용하는 경우도 많기 때문에 왜 이런 property를 사용하는지 정확하게 알고 있어야 한다는걸 알게 됐다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/Retrospective/">Retrospective</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/HTML/">HTML</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/CSS/">CSS</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/Retrospective/">Retrospective</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210307 TIL</title>
@@ -26,7 +57,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="오늘-할-일"><a href="#오늘-할-일" class="headerlink" title="오늘 할 일"></a>오늘 할 일</h1><ul><li><del>[BAEKJOON] 국영수 10825번 글 내용 추가(sort, sorted)</del></li><li>20210304 TIL, 20210303 TIL 수업 내용 정리 추가</li><li>HTML, CSS 회고 작성</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="오늘-할-일"><a href="#오늘-할-일" class="headerlink" title="오늘 할 일"></a>오늘 할 일</h1><ul><li><del>[BAEKJOON] 국영수 10825번 글 내용 추가(sort, sorted)</del></li><li>~~ 20210304 TIL, 20210303 TIL 수업 내용 정리 추가 ~~</li><li>~~ HTML, CSS 회고 작성 ~~</li></ul>]]></content:encoded>
       
       
       <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
@@ -262,34 +293,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/02/26/20210226-TIL/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>20210225 TIL</title>
-      <link>https://juhyeong-k.github.io/2021/02/25/20210225-TIL/</link>
-      <guid>https://juhyeong-k.github.io/2021/02/25/20210225-TIL/</guid>
-      <pubDate>Thu, 25 Feb 2021 12:38:49 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;오늘-한-일&quot;&gt;&lt;a href=&quot;#오늘-한-일&quot; class=&quot;headerlink&quot; title=&quot;오늘 한 일&quot;&gt;&lt;/a&gt;오늘 한 일&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;CSS 강의 복습&lt;/li&gt;
-&lt;li&gt;“Clean Code” 28p ~ 36p 독서&lt;/li</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul><li>CSS 강의 복습</li><li>“Clean Code” 28p ~ 36p 독서</li></ul><h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul><li>CSS 강의 복습</li><li>“Clean Code” 독서</li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/02/25/20210225-TIL/#disqus_thread</comments>
       
     </item>
     

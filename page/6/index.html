@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">61</span>
+          <span class="site-state-item-count">62</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,106 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/04/20210204-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/04/20210204-TIL/" class="post-title-link" itemprop="url">20210204 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-04 22:08:39 / Modified: 22:18:06" itemprop="dateCreated datePublished" datetime="2021-02-04T22:08:39+09:00">2021-02-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/02/04/20210204-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/04/20210204-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul>
+<li><p>[HackerRank] Re.findall() &amp; Re.finditer()<br><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/re-findall-re-finditer/problem">https://www.hackerrank.com/challenges/re-findall-re-finditer/problem</a></p>
+</li>
+<li><p>[HackerRank] Regex Substitution<br><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/re-sub-regex-substitution/problem">https://www.hackerrank.com/challenges/re-sub-regex-substitution/problem</a></p>
+</li>
+<li><p>[HackerRank] Validating and Parsing Email Addresses<br><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/validating-named-email-addresses/problem">https://www.hackerrank.com/challenges/validating-named-email-addresses/problem</a></p>
+</li>
+<li><p>[HackerRank] Validating phone numbers<br><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/validating-the-phone-number/forum">https://www.hackerrank.com/challenges/validating-the-phone-number/forum</a></p>
+</li>
+<li><p>CSV 파일을 JSON으로 Converting하기</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv, json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 인코딩 utf-8 =&gt; error, &#x27;cp949&#x27; or &#x27;euc-kr&#x27;로 변경</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./population.csv&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    csved = csv.reader(f)</span><br><span class="line">    population_list = [row <span class="keyword">for</span> row <span class="keyword">in</span> csved]</span><br><span class="line"><span class="comment"># population_list 출력 확인</span></span><br><span class="line"></span><br><span class="line">users = &#123;<span class="string">&#x27;users&#x27;</span>: []&#125;</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> population_list[<span class="number">1</span>:]:</span><br><span class="line">    user_dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> index, key <span class="keyword">in</span> <span class="built_in">enumerate</span>(population_list[<span class="number">0</span>]):</span><br><span class="line">        <span class="comment"># &#x27;동&#x27;: value값 뒤에 whitespace제거 replace(&quot; &quot;,&quot;&quot;)</span></span><br><span class="line">        user_dict[key] = row[index].replace(<span class="string">&quot; &quot;</span>,<span class="string">&quot;&quot;</span>)</span><br><span class="line">        users[<span class="string">&#x27;users&#x27;</span>].append(user_dict)</span><br><span class="line"><span class="comment"># users 출력 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># json.dump로 json파일 만들기</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;population.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(users, f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#json.load로 파일 읽고 변수에 저장</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;population.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    j_data = json.load(f)</span><br><span class="line">print(j_data)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1197,106 +1297,6 @@
 <li>Conditional Expressions, Statements, Loop 복습</li>
 <li>Function 예습</li>
 </ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/01/25/20210125-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/01/25/20210125-TIL/" class="post-title-link" itemprop="url">20210125 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-01-25 23:00:52" itemprop="dateCreated datePublished" datetime="2021-01-25T23:00:52+09:00">2021-01-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-01-26 13:57:15" itemprop="dateModified" datetime="2021-01-26T13:57:15+09:00">2021-01-26</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/01/25/20210125-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/01/25/20210125-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h2 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h2><p>어제 배운 hexo를 이용한 블로그 만드는 방법을 간단하게 정리해봤다.<br>정리해보면서 햇갈리거나 생각이 잘 나지 않는 부분이 많아서 여기저기<br>찾아보면서 작성했다. 한번 정리를 해놓으니 어느정도 흐름은 알 수 있게 되었다.</p>
-<p><a target="_blank" rel="noopener" href="https://cresumerjang.github.io/2019/01/17/hexo-start-manual/">hexo블로그 입문 가이드</a><br><a target="_blank" rel="noopener" href="https://wonderbout.tistory.com/121">GitHub 블로그 만들기 Hexo 설치 및 배포</a></p>
-<h2 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h2><ol>
-<li>Monty Hall Problem simulation 코드 작성해보기</li>
-<li>Etiopian multiplication 코드 작성해보기</li>
-<li>MarkDown문법 많이 써보기</li>
-</ol>
 
       
     </div>

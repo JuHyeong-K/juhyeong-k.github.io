@@ -9,8 +9,35 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Sun, 14 Mar 2021 04:16:10 GMT</pubDate>
+    <pubDate>Sun, 14 Mar 2021 09:35:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[BAEKJOON] 이진수 변환 10829번</title>
+      <link>https://juhyeong-k.github.io/2021/03/14/BAEKJOON-%EC%9D%B4%EC%A7%84%EC%88%98-%EB%B3%80%ED%99%98-10829%EB%B2%88/</link>
+      <guid>https://juhyeong-k.github.io/2021/03/14/BAEKJOON-%EC%9D%B4%EC%A7%84%EC%88%98-%EB%B3%80%ED%99%98-10829%EB%B2%88/</guid>
+      <pubDate>Sun, 14 Mar 2021 09:13:50 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h1&gt;&lt;p&gt;자연수 N이 주어진다. N을 이진수로 바꿔서 출력하는 프로그램을 작성하시오.&lt;/p&gt;
+&lt;p&gt;첫째 줄에 자연수 N이 주어진다. (</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>자연수 N이 주어진다. N을 이진수로 바꿔서 출력하는 프로그램을 작성하시오.</p><p>첫째 줄에 자연수 N이 주어진다. (1 ≤ N ≤ 100,000,000,000,000)</p><p>N을 이진수로 바꿔서 출력한다. 이진수는 0으로 시작하면 안 된다.</p><h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>문제를 보고 제일 처음 생각난 건 파이썬 내장함수 <code>bin()</code>을 활용하면 바로 풀 수 있겠다는 생각이 들었다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 파이썬 내장함수 bin() 활용</span></span><br><span class="line">print(<span class="built_in">bin</span>(<span class="built_in">int</span>(<span class="built_in">input</span>()))[<span class="number">2</span>:])</span><br><span class="line"><span class="comment"># 성공</span></span><br></pre></td></tr></table></figure><p>제출에 통과는 했지만 이렇게 푸는 건 도움이 되지 않는다 생각되어서 다른 방법을 생각해봤다.</p><p>10진수에서 2진수로 변환할 때 보통 소인수분해를 이용해서 구한다. 53을 2로 나눈 값과 나머지를 구하고 나눈 값을 또 다시 나눠서 값과 나머지를 구하고… 이렇게 나눠지지 않을 때 까지 나눈 뒤에 나머지 값들을 역순으로 정렬하면 이진수 값이 나온다. 이 방법 그대로 재귀함수를 사용하면 풀 수 있다고 생각하고 탈출 조건으로 몫이 0일 때 <code>return</code>한다고 하고 pseudo 코드를 작성하고 그 코드로 실행을 해봤다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorization</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line">    remainder = n % <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> factorization(n // <span class="number">2</span>) + <span class="built_in">str</span>(remainder)</span><br><span class="line">print(factorization(n))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">53</span></span><br><span class="line"><span class="string">TypeError: unsupported operand type(s) for +: &#x27;NoneType&#x27; and &#x27;str&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure><p>예상과 다르게 <code>TypeError</code>가 발생했다. 생각해보니 <code>return</code> 값으로 <code>None</code>이 나오기 때문에 타입이 다른 문자열 타입과 더하지 못했다. <code>return</code> 값으로 타입을 맞추기 위해 빈 문자열(<code>&#39;&#39;</code>)을 주고 다시 실행해봤다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorization</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    remainder = n % <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> factorization(n // <span class="number">2</span>) + <span class="built_in">str</span>(remainder)</span><br><span class="line">print(factorization(n))</span><br><span class="line"></span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">53</span></span><br><span class="line"><span class="string">110101</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure><p>예상대로 출력이 잘 되었고 제출 후 통과했다.</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 이진수 변환 - 10829번</span></span><br><span class="line"><span class="comment"># 첫째 줄에 자연수 N이 주어진다.</span></span><br><span class="line"><span class="comment"># N을 이진수로 바꿔 출력하고</span></span><br><span class="line"><span class="comment"># 이진수는 0으로 시작하면 안된다.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 파이썬 내장함수 bin() 활용</span></span><br><span class="line">print(<span class="built_in">bin</span>(<span class="built_in">int</span>(<span class="built_in">input</span>()))[<span class="number">2</span>:])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 소인수 분해 - 변수를 사용한 방법</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorization</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    remainder = n % <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> factorization(n // <span class="number">2</span>) + <span class="built_in">str</span>(remainder)</span><br><span class="line">print(factorization(n))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 소인수 분해 - 변수를 사용하지 않는 방법</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorization</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> factorization(n // <span class="number">2</span>) + <span class="built_in">str</span>(n % <span class="number">2</span>)</span><br><span class="line">print(factorization(n))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 소인수 분해 - str대신 f-string으로</span></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">factorization</span>(<span class="params">n</span>):</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">    <span class="keyword">return</span> factorization(n // <span class="number">2</span>) + <span class="string">f&#x27;<span class="subst">&#123;n % <span class="number">2</span>&#125;</span>&#x27;</span></span><br><span class="line">print(factorization(n))</span><br></pre></td></tr></table></figure>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/BAEKJOON/">BAEKJOON</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/BAEOJOON/">BAEOJOON</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/03/14/BAEKJOON-%EC%9D%B4%EC%A7%84%EC%88%98-%EB%B3%80%ED%99%98-10829%EB%B2%88/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210314 TIL</title>
@@ -268,33 +295,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>20210307 TIL</title>
-      <link>https://juhyeong-k.github.io/2021/03/07/20210307-TIL/</link>
-      <guid>https://juhyeong-k.github.io/2021/03/07/20210307-TIL/</guid>
-      <pubDate>Sun, 07 Mar 2021 04:39:50 GMT</pubDate>
-      
-        
-        
-      <description>&lt;h1 id=&quot;오늘-할-일&quot;&gt;&lt;a href=&quot;#오늘-할-일&quot; class=&quot;headerlink&quot; title=&quot;오늘 할 일&quot;&gt;&lt;/a&gt;오늘 할 일&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;del&gt;[BAEKJOON] 국영수 10825번 글 내용 추가(sort, sorted)</description>
-        
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="오늘-할-일"><a href="#오늘-할-일" class="headerlink" title="오늘 할 일"></a>오늘 할 일</h1><ul><li><del>[BAEKJOON] 국영수 10825번 글 내용 추가(sort, sorted)</del></li><li><del>20210304 TIL, 20210303 TIL 수업 내용 정리 추가</del></li><li><del>HTML, CSS 회고 작성</del></li></ul>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/03/07/20210307-TIL/#disqus_thread</comments>
       
     </item>
     

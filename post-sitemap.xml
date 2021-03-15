@@ -9,8 +9,32 @@
 
 
     <url>
+        <loc>https://juhyeong-k.github.io/2021/03/15/20210315-TIL/</loc>
+        <lastmod>2021-03-15T12:50:57.987Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/03/14/20210314-TIL/</loc>
+        <lastmod>2021-03-15T04:57:17.158Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/03/12/20210312-TIL/</loc>
+        <lastmod>2021-03-14T11:02:11.274Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://juhyeong-k.github.io/2021/03/14/BAEKJOON-%EC%9D%B4%EC%A7%84%EC%88%98-%EB%B3%80%ED%99%98-10829%EB%B2%88/</loc>
-        <lastmod>2021-03-14T09:35:59.524Z</lastmod>
+        <lastmod>2021-03-14T09:54:04.619Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -19,22 +43,6 @@
     <url>
         <loc>https://juhyeong-k.github.io/2021/03/13/20210313-TIL/</loc>
         <lastmod>2021-03-14T04:33:53.045Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://juhyeong-k.github.io/2021/03/14/20210314-TIL/</loc>
-        <lastmod>2021-03-14T04:16:10.617Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://juhyeong-k.github.io/2021/03/12/20210312-TIL/</loc>
-        <lastmod>2021-03-12T12:23:28.606Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

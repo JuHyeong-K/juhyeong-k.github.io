@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,104 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/17/20210317-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/17/20210317-TIL/" class="post-title-link" itemprop="url">20210317 TIL JS 5회차</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-17 14:47:10 / Modified: 20:34:40" itemprop="dateCreated datePublished" datetime="2021-03-17T14:47:10+09:00">2021-03-17</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/17/20210317-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/17/20210317-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>for문 대신에 reduce, filter, map으로 반복문 대체 가능</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  만약 재귀를 한다면 add와 foo중 어느 것을 쓰는게 나을까?</span></span><br><span class="line"><span class="comment">  스코프 관점에서 보면 foo 쓰는게 낫다. 굳이 스코프 체인을 통해</span></span><br><span class="line"><span class="comment">  전역으로 가서 확인할 필요가 없다.</span></span><br><span class="line"><span class="comment">  하지만 애초에 함수 표현식에서 함수 이름은 생략이 가능하기 때문에</span></span><br><span class="line"><span class="comment">  함수 이름을 생략하고 변수로 사용하는게 나을 것 같다.</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="27-배열"><a href="#27-배열" class="headerlink" title="27. 배열"></a>27. 배열</h1><p>자바스크립트에서 배열은 값으로 올 수 있는 모든 값이 올 수 있고 요소들의 타입이 일치하지 않아도 된다. 다만, 자바스크립트에서 배열을 쓰는 이유는 length 프로퍼티를 이용해서 looping(반복)하기 위해 사용하는거라 다름 없기 때문에 배열의 타입을 일치 시키는게 좋다.</p>
+<p>자료구조(Data Structure)에서의 배열과 자바스크립트의 배열은 다르다. 자료구조에서의 배열은 동일한 크기의 메모리공간이 빈틈없이 연속적으로 나열된 자료구조라서 선두 메모리 어드레스와 메모리 크기만 알고 있다면 빠른 접근이 가능하다. 자바스크립트에서의 배열은 같은 크기를 가지고 있다면 배열로 만들고, 타입과 크기가 다르다면 해쉬 테이블로 만든다고 한다.</p>
+<p>일반적인 배열은 인덱스로 요소에 빠르게 접근할 수 있지만, 특정 요소를 검색하거나 요소를 삽입, 삭제하는 경우에는 비효율적이다.<br>자바스크립트 배열은 해시 테이블로 구현된 객체이므로 인덱스로 접근하는 경우 일반적인 배열보다 성능적인 면에서 느릴 수 밖에 없는 구조적 단점이 있지만, 특정 요소를 검색하거나 요소를 삽입, 삭제하는 경우에는 일반적인 배열보다 빠른 성능을 기대할 수 있다.</p>
+<p>인덱스로 배열 요소에 접근할 때 일반적인 배열보다 느릴 수 밖에 없는 구조적 단점을 보완하기 위해 대부분의 모던 자바스크립트 엔진은 일반 객체와 구별하여 좀 더 배열처럼 동작하도록 최적화를 구현했다.</p>
+<p>REST 파라미터와 스프레드 문법</p>
+<p>프로토타입</p>
+<p>배열의 mutator와 accessor</p>
+<p>splice(), 스프레드 문법으로 얕은 복사(shallow copy)가능 하다.<br>얕은 복사는 한 단계까지만 가능하다.</p>
+<p>깊은 복사를 하려면 재귀를 써야 한다.<br>typeOf메소드로 객체인지 확인 후 객체라면 그 객체의 프로퍼티에 다시 접근 후 객체라면 다시…<br>기존에 만들어진 library를 사용해도 된다.(Lodash 라이브러리의 .clonedeep)<br>라이브러리에 만들어진 함수들을 직접 구현해보는 연습을 한다면 많은 도움이 된다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -423,10 +521,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-15 13:57:29 / Modified: 21:50:57" itemprop="dateCreated datePublished" datetime="2021-03-15T13:57:29+09:00">2021-03-15</time>
+      <time title="Created: 2021-03-15 13:57:29" itemprop="dateCreated datePublished" datetime="2021-03-15T13:57:29+09:00">2021-03-15</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-17 09:57:22" itemprop="dateModified" datetime="2021-03-17T09:57:22+09:00">2021-03-17</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -461,7 +565,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="11-함수"><a href="#11-함수" class="headerlink" title="11. 함수"></a>11. 함수</h1><p>인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.<br>매개변수는 0개 이상<br>함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다.</p>
+          <h1 id="12-함수"><a href="#12-함수" class="headerlink" title="12. 함수"></a>12. 함수</h1><p>인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.<br>매개변수는 0개 이상<br>함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다.</p>
 <p>변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.<br>변수 선언문은 런타임 이전에 변수가 <code>undefined</code>로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은 runtime 이전에 정의가 되어지기 때문에 함수 정의가 어느 위치에 있던 런타임 시 첫째줄에 호출을 해도 실행이 된다.</p>
 <p>함수 표현식을 사용하면 변수 호이스팅이 발생해서 runtime 이전에 변수에 undefined로 초기화되고 런타임에 순서에 맞게 함수가 정의가 된다. 즉, 함수 표현식은 정의 이전에 호출할 수 없다.</p>
 <p>함수 이름은 함수 몸체 안에서만 유효하다. 그래서 함수 표현식에서 함수 이름은 생략이 가능하다. 함수 몸체 안에서 사용할 때는 재귀를 사용할때 정도로 생각할 수 있는데, 굳이 함수 이름이 아닌 식별자로 넣어줘도 문제 없기 때문에, 함수 표현식에서 함수 이름은 생략한다.</p>
@@ -482,7 +586,7 @@
 <p>위와 같이 매개변수로 <code>...args</code>를 주면, 파이썬의 <code>*args</code>와 비슷하게 여러 개의 매개변수를 받을 수 있고, 배열로 저장된다.</p>
 <p>함수에서 <code>return</code>이 생략되어도 자바스크립트 엔진이 마지막에 <code>return</code>을 만들어 줘서 <code>undefined</code>값이 리턴된다.</p>
 <p>jQuery에서 파라미터를 하나만 받는 이유</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  url: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  data: &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span> &#125;,</span><br><span class="line">  cache: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터로 하나의 객체에 담아서 주는 이유? 프로퍼티가 여러 개 들어갈수록 순서를 지켜야 하고, 타입도 생각을 해야하기 때문에</span></span><br><span class="line"><span class="comment">// 파라미터를 하나만 줘서 가독성 좋게 만들었다.</span></span><br><span class="line"><span class="comment">// 프로퍼티 키가 프로퍼티 값을 설명해주고, 순서를 지키지 않아도 되기 때문에 파라미터는 적을수록 좋다.</span></span><br><span class="line"><span class="comment">// 단점으로 객체 참조할 수 있기 때문에 함수를 거쳐서 원본이 수정될 수 있다.</span></span><br><span class="line"><span class="comment">// 그래서 원본이 수정되지 않게 객체를 동결시켜야하는 경우가 있다.</span></span><br><span class="line"><span class="comment">// 혹은 객체를 카피(깊은 복사)해서 따로 관리하게 할 수도 있다.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  url: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  data: &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span> &#125;,</span><br><span class="line">  cache: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터로 하나의 객체에 담아서 주는 이유?</span></span><br><span class="line"><span class="comment">// 프로퍼티가 여러 개 들어갈수록 순서를 지켜야 하고, 타입도 생각을 해야하기 때문에</span></span><br><span class="line"><span class="comment">// 파라미터를 하나만 줘서 가독성 좋게 만들었다.</span></span><br><span class="line"><span class="comment">// 프로퍼티 키가 프로퍼티 값을 설명해주고, 순서를 지키지 않아도 되기 때문에 파라미터는 적을수록 좋다.</span></span><br><span class="line"><span class="comment">// 단점으로 객체 참조할 수 있기 때문에 함수를 거쳐서 원본이 수정될 수 있다.</span></span><br><span class="line"><span class="comment">// 그래서 원본이 수정되지 않게 객체를 동결시켜야하는 경우가 있다. Object.freeze()</span></span><br><span class="line"><span class="comment">// 혹은 객체를 카피(깊은 복사)해서 따로 관리하게 할 수도 있다.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 익명 즉시 실행 함수</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <p>변수는 값을 재사용하는 것 처럼, 함수는 로직을 재사용하는 것이다.</p>
 <p>중첩함수(nested function)</p>
@@ -1424,103 +1528,6 @@
 <p>일반 문자열(따옴표)과 달리 템플릿 리터럴(백틱) 내에서는 이스케이프 시퀀스(\n, \b 등)를 사용하지 않고도 줄바꿈이 허용되고 모든 공백도 있는 그대로 적용된다.</p>
 <p>표현식 삽입(<code>$&#123;&#125;</code>)은 반드시 템플릿 리터럴 내에서 사용해야 한다. 템플릿 리터럴이 아닌 일반 문자열에서 표현식 삽입은 문자열 취급한다.</p>
 <p><a target="_blank" rel="noopener" href="https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/">Cross-Browsing이란?</a></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/" class="post-title-link" itemprop="url">[BAEKJOON] 유기농 배추 1012번</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-08 19:51:12 / Modified: 20:01:52" itemprop="dateCreated datePublished" datetime="2021-03-08T19:51:12+09:00">2021-03-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/BAEKJOON/" itemprop="url" rel="index"><span itemprop="name">BAEKJOON</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/08/BAEKJOON-유기농-배추-1012번/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다. 농약을 쓰지 않고 배추를 재배하려면 배추를 해충으로부터 보호하는 것이 중요하기 때문에, 한나는 해충 방지에 효과적인 배추흰지렁이를 구입하기로 결심한다. 이 지렁이는 배추근처에 서식하며 해충을 잡아 먹음으로써 배추를 보호한다. 특히, 어떤 배추에 배추흰지렁이가 한 마리라도 살고 있으면 이 지렁이는 인접한 다른 배추로 이동할 수 있어, 그 배추들 역시 해충으로부터 보호받을 수 있다.</p>
-<p>(한 배추의 상하좌우 네 방향에 다른 배추가 위치한 경우에 서로 인접해있다고 간주한다)</p>
-<p>한나가 배추를 재배하는 땅은 고르지 못해서 배추를 군데군데 심어놓았다. 배추들이 모여있는 곳에는 배추흰지렁이가 한 마리만 있으면 되므로 서로 인접해있는 배추들이 몇 군데에 퍼져있는지 조사하면 총 몇 마리의 지렁이가 필요한지 알 수 있다.</p>
-<p>예를 들어 배추밭이 아래와 같이 구성되어 있으면 최소 5마리의 배추흰지렁이가 필요하다.</p>
-<p>(0은 배추가 심어져 있지 않은 땅이고, 1은 배추가 심어져 있는 땅을 나타낸다.)</p>
-<p>입력의 첫 줄에는 테스트 케이스의 개수 T가 주어진다. 그 다음 줄부터 각각의 테스트 케이스에 대해 첫째 줄에는 배추를 심은 배추밭의 가로길이 M(1 ≤ M ≤ 50)과 세로길이 N(1 ≤ N ≤ 50), 그리고 배추가 심어져 있는 위치의 개수 K(1 ≤ K ≤ 2500)이 주어진다. 그 다음 K줄에는 배추의 위치 X(0 ≤ X ≤ M-1), Y(0 ≤ Y ≤ N-1)가 주어진다.</p>
-<p>각 테스트 케이스에 대해 필요한 최소의 배추흰지렁이 마리 수를 출력한다.</p>
-<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>처음에 든 생각은 2차원 배열에서 인접해 있는 요소를 어떻게 표현해야될 지 고민이 많았다.<br>알고리즘에 대해서 공부하고 푸는 문제가 아니기 때문에 여러 고민을 해봤다.<br>입력 값으로 받는 배열의 크기 없이, 배추의 갯수만으로 좌표를 받아서 찾아도 문제를 해결할 수 있을 것 같아 설계를 해봤다. 고민을 하다보니 인접해 있는 배추를 찾을 때, 그 인접한 배추도 다시 인접한 배추를 찾아야 된다고 생각해서 재귀함수를 사용하는 방법으로 고민을 해봤다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_cabbage</span>(<span class="params">cabbage_location, cabbage_group, index_tuple</span>):</span></span><br><span class="line">    x, y = index_tuple</span><br><span class="line">    <span class="keyword">if</span> (x+<span class="number">1</span>, y) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> x &lt; <span class="number">9</span> <span class="keyword">and</span> (x+<span class="number">1</span>, y) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x+<span class="number">1</span>, y))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x+<span class="number">1</span>, y))</span><br><span class="line">    <span class="keyword">if</span> (x-<span class="number">1</span>, y) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> x &gt; <span class="number">0</span> <span class="keyword">and</span> (x-<span class="number">1</span>, y) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x-<span class="number">1</span>, y))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x-<span class="number">1</span>, y))</span><br><span class="line">    <span class="keyword">if</span> (x, y+<span class="number">1</span>) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> y &lt; <span class="number">9</span> <span class="keyword">and</span> (x, y+<span class="number">1</span>) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x, y+<span class="number">1</span>))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x, y+<span class="number">1</span>))  </span><br><span class="line">    <span class="keyword">if</span> (x, y-<span class="number">1</span>) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> y &gt; <span class="number">0</span> <span class="keyword">and</span> (x, y-<span class="number">1</span>) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x, y-<span class="number">1</span>))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x, y-<span class="number">1</span>))</span><br><span class="line">    <span class="comment"># 탈출 조건...?</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    cabbage_num = <span class="built_in">input</span>().split()[<span class="number">2</span>]</span><br><span class="line">    cabbage_location = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(cabbage_num)):</span><br><span class="line">        x, y = <span class="built_in">input</span>().split()</span><br><span class="line">        cabbage_location.append((x, y))</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(cabbage_location) &gt; <span class="number">0</span>:</span><br><span class="line">        cabbage_group = []</span><br><span class="line">        cabbage_group.append(cabbage_location.pop())</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            search_cabbage(cabbage_location, cabbage_group, cabbage_group[<span class="number">0</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>재귀 함수 탈출 조건을 구현하지 못해서 일단 여기까지 작성해보고 다음에 알고리즘 공부 후 다시 풀어봐야겠다.</p>
 
       
     </div>

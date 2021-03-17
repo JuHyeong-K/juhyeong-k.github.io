@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="11. 함수인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.매개변수는 0개 이상함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다. 변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.변수 선언문은 런타임 이전에 변수가 undefined로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은">
+<meta name="description" content="12. 함수인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.매개변수는 0개 이상함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다. 변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.변수 선언문은 런타임 이전에 변수가 undefined로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20210315 TIL JS 4회차">
 <meta property="og:url" content="https://juhyeong-k.github.io/2021/03/15/20210315-TIL/index.html">
 <meta property="og:site_name" content="JH&#39;s dev blog">
-<meta property="og:description" content="11. 함수인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.매개변수는 0개 이상함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다. 변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.변수 선언문은 런타임 이전에 변수가 undefined로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은">
+<meta property="og:description" content="12. 함수인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.매개변수는 0개 이상함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다. 변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.변수 선언문은 런타임 이전에 변수가 undefined로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-15T04:57:29.000Z">
-<meta property="article:modified_time" content="2021-03-15T12:50:57.987Z">
+<meta property="article:modified_time" content="2021-03-17T00:57:22.300Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="JS">
@@ -171,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#11-%ED%95%A8%EC%88%98"><span class="nav-number">1.</span> <span class="nav-text">11. 함수</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%EC%8A%A4%EC%BD%94%ED%94%84"><span class="nav-number">2.</span> <span class="nav-text">13. 스코프</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-let-const%EC%99%80-%EB%B8%94%EB%A1%9D-%EB%A0%88%EB%B2%A8-%EC%8A%A4%EC%BD%94%ED%94%84"><span class="nav-number">3.</span> <span class="nav-text">15. let, const와 블록 레벨 스코프</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#12-%ED%95%A8%EC%88%98"><span class="nav-number">1.</span> <span class="nav-text">12. 함수</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%EC%8A%A4%EC%BD%94%ED%94%84"><span class="nav-number">2.</span> <span class="nav-text">13. 스코프</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-let-const%EC%99%80-%EB%B8%94%EB%A1%9D-%EB%A0%88%EB%B2%A8-%EC%8A%A4%EC%BD%94%ED%94%84"><span class="nav-number">3.</span> <span class="nav-text">15. let, const와 블록 레벨 스코프</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -185,7 +185,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -260,10 +260,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-15 13:57:29 / Modified: 21:50:57" itemprop="dateCreated datePublished" datetime="2021-03-15T13:57:29+09:00">2021-03-15</time>
+      <time title="Created: 2021-03-15 13:57:29" itemprop="dateCreated datePublished" datetime="2021-03-15T13:57:29+09:00">2021-03-15</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-17 09:57:22" itemprop="dateModified" datetime="2021-03-17T09:57:22+09:00">2021-03-17</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -298,7 +304,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="11-함수"><a href="#11-함수" class="headerlink" title="11. 함수"></a>11. 함수</h1><p>인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.<br>매개변수는 0개 이상<br>함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다.</p>
+        <h1 id="12-함수"><a href="#12-함수" class="headerlink" title="12. 함수"></a>12. 함수</h1><p>인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.<br>매개변수는 0개 이상<br>함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다.</p>
 <p>변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.<br>변수 선언문은 런타임 이전에 변수가 <code>undefined</code>로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은 runtime 이전에 정의가 되어지기 때문에 함수 정의가 어느 위치에 있던 런타임 시 첫째줄에 호출을 해도 실행이 된다.</p>
 <p>함수 표현식을 사용하면 변수 호이스팅이 발생해서 runtime 이전에 변수에 undefined로 초기화되고 런타임에 순서에 맞게 함수가 정의가 된다. 즉, 함수 표현식은 정의 이전에 호출할 수 없다.</p>
 <p>함수 이름은 함수 몸체 안에서만 유효하다. 그래서 함수 표현식에서 함수 이름은 생략이 가능하다. 함수 몸체 안에서 사용할 때는 재귀를 사용할때 정도로 생각할 수 있는데, 굳이 함수 이름이 아닌 식별자로 넣어줘도 문제 없기 때문에, 함수 표현식에서 함수 이름은 생략한다.</p>
@@ -319,7 +325,7 @@
 <p>위와 같이 매개변수로 <code>...args</code>를 주면, 파이썬의 <code>*args</code>와 비슷하게 여러 개의 매개변수를 받을 수 있고, 배열로 저장된다.</p>
 <p>함수에서 <code>return</code>이 생략되어도 자바스크립트 엔진이 마지막에 <code>return</code>을 만들어 줘서 <code>undefined</code>값이 리턴된다.</p>
 <p>jQuery에서 파라미터를 하나만 받는 이유</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  url: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  data: &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span> &#125;,</span><br><span class="line">  cache: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터로 하나의 객체에 담아서 주는 이유? 프로퍼티가 여러 개 들어갈수록 순서를 지켜야 하고, 타입도 생각을 해야하기 때문에</span></span><br><span class="line"><span class="comment">// 파라미터를 하나만 줘서 가독성 좋게 만들었다.</span></span><br><span class="line"><span class="comment">// 프로퍼티 키가 프로퍼티 값을 설명해주고, 순서를 지키지 않아도 되기 때문에 파라미터는 적을수록 좋다.</span></span><br><span class="line"><span class="comment">// 단점으로 객체 참조할 수 있기 때문에 함수를 거쳐서 원본이 수정될 수 있다.</span></span><br><span class="line"><span class="comment">// 그래서 원본이 수정되지 않게 객체를 동결시켜야하는 경우가 있다.</span></span><br><span class="line"><span class="comment">// 혹은 객체를 카피(깊은 복사)해서 따로 관리하게 할 수도 있다.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  url: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  data: &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span> &#125;,</span><br><span class="line">  cache: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터로 하나의 객체에 담아서 주는 이유?</span></span><br><span class="line"><span class="comment">// 프로퍼티가 여러 개 들어갈수록 순서를 지켜야 하고, 타입도 생각을 해야하기 때문에</span></span><br><span class="line"><span class="comment">// 파라미터를 하나만 줘서 가독성 좋게 만들었다.</span></span><br><span class="line"><span class="comment">// 프로퍼티 키가 프로퍼티 값을 설명해주고, 순서를 지키지 않아도 되기 때문에 파라미터는 적을수록 좋다.</span></span><br><span class="line"><span class="comment">// 단점으로 객체 참조할 수 있기 때문에 함수를 거쳐서 원본이 수정될 수 있다.</span></span><br><span class="line"><span class="comment">// 그래서 원본이 수정되지 않게 객체를 동결시켜야하는 경우가 있다. Object.freeze()</span></span><br><span class="line"><span class="comment">// 혹은 객체를 카피(깊은 복사)해서 따로 관리하게 할 수도 있다.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 익명 즉시 실행 함수</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <p>변수는 값을 재사용하는 것 처럼, 함수는 로직을 재사용하는 것이다.</p>
 <p>중첩함수(nested function)</p>

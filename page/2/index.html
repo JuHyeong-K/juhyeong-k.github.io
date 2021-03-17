@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">65</span>
+          <span class="site-state-item-count">66</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,103 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/" class="post-title-link" itemprop="url">[BAEKJOON] 유기농 배추 1012번</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-08 19:51:12 / Modified: 20:01:52" itemprop="dateCreated datePublished" datetime="2021-03-08T19:51:12+09:00">2021-03-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BAEKJOON/" itemprop="url" rel="index"><span itemprop="name">BAEKJOON</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/08/BAEKJOON-유기농-배추-1012번/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>차세대 영농인 한나는 강원도 고랭지에서 유기농 배추를 재배하기로 하였다. 농약을 쓰지 않고 배추를 재배하려면 배추를 해충으로부터 보호하는 것이 중요하기 때문에, 한나는 해충 방지에 효과적인 배추흰지렁이를 구입하기로 결심한다. 이 지렁이는 배추근처에 서식하며 해충을 잡아 먹음으로써 배추를 보호한다. 특히, 어떤 배추에 배추흰지렁이가 한 마리라도 살고 있으면 이 지렁이는 인접한 다른 배추로 이동할 수 있어, 그 배추들 역시 해충으로부터 보호받을 수 있다.</p>
+<p>(한 배추의 상하좌우 네 방향에 다른 배추가 위치한 경우에 서로 인접해있다고 간주한다)</p>
+<p>한나가 배추를 재배하는 땅은 고르지 못해서 배추를 군데군데 심어놓았다. 배추들이 모여있는 곳에는 배추흰지렁이가 한 마리만 있으면 되므로 서로 인접해있는 배추들이 몇 군데에 퍼져있는지 조사하면 총 몇 마리의 지렁이가 필요한지 알 수 있다.</p>
+<p>예를 들어 배추밭이 아래와 같이 구성되어 있으면 최소 5마리의 배추흰지렁이가 필요하다.</p>
+<p>(0은 배추가 심어져 있지 않은 땅이고, 1은 배추가 심어져 있는 땅을 나타낸다.)</p>
+<p>입력의 첫 줄에는 테스트 케이스의 개수 T가 주어진다. 그 다음 줄부터 각각의 테스트 케이스에 대해 첫째 줄에는 배추를 심은 배추밭의 가로길이 M(1 ≤ M ≤ 50)과 세로길이 N(1 ≤ N ≤ 50), 그리고 배추가 심어져 있는 위치의 개수 K(1 ≤ K ≤ 2500)이 주어진다. 그 다음 K줄에는 배추의 위치 X(0 ≤ X ≤ M-1), Y(0 ≤ Y ≤ N-1)가 주어진다.</p>
+<p>각 테스트 케이스에 대해 필요한 최소의 배추흰지렁이 마리 수를 출력한다.</p>
+<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>처음에 든 생각은 2차원 배열에서 인접해 있는 요소를 어떻게 표현해야될 지 고민이 많았다.<br>알고리즘에 대해서 공부하고 푸는 문제가 아니기 때문에 여러 고민을 해봤다.<br>입력 값으로 받는 배열의 크기 없이, 배추의 갯수만으로 좌표를 받아서 찾아도 문제를 해결할 수 있을 것 같아 설계를 해봤다. 고민을 하다보니 인접해 있는 배추를 찾을 때, 그 인접한 배추도 다시 인접한 배추를 찾아야 된다고 생각해서 재귀함수를 사용하는 방법으로 고민을 해봤다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">search_cabbage</span>(<span class="params">cabbage_location, cabbage_group, index_tuple</span>):</span></span><br><span class="line">    x, y = index_tuple</span><br><span class="line">    <span class="keyword">if</span> (x+<span class="number">1</span>, y) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> x &lt; <span class="number">9</span> <span class="keyword">and</span> (x+<span class="number">1</span>, y) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x+<span class="number">1</span>, y))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x+<span class="number">1</span>, y))</span><br><span class="line">    <span class="keyword">if</span> (x-<span class="number">1</span>, y) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> x &gt; <span class="number">0</span> <span class="keyword">and</span> (x-<span class="number">1</span>, y) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x-<span class="number">1</span>, y))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x-<span class="number">1</span>, y))</span><br><span class="line">    <span class="keyword">if</span> (x, y+<span class="number">1</span>) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> y &lt; <span class="number">9</span> <span class="keyword">and</span> (x, y+<span class="number">1</span>) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x, y+<span class="number">1</span>))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x, y+<span class="number">1</span>))  </span><br><span class="line">    <span class="keyword">if</span> (x, y-<span class="number">1</span>) <span class="keyword">in</span> cabbage_location <span class="keyword">and</span> y &gt; <span class="number">0</span> <span class="keyword">and</span> (x, y-<span class="number">1</span>) <span class="keyword">not</span> <span class="keyword">in</span> cabbage_group:</span><br><span class="line">        cabbage_group.append(cabbage_location.pop(cabbage_location.index((x, y-<span class="number">1</span>))))</span><br><span class="line">        search_cabbage(cabbage_location, cabbage_group, (x, y-<span class="number">1</span>))</span><br><span class="line">    <span class="comment"># 탈출 조건...?</span></span><br><span class="line"></span><br><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    cabbage_num = <span class="built_in">input</span>().split()[<span class="number">2</span>]</span><br><span class="line">    cabbage_location = []</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(cabbage_num)):</span><br><span class="line">        x, y = <span class="built_in">input</span>().split()</span><br><span class="line">        cabbage_location.append((x, y))</span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(cabbage_location) &gt; <span class="number">0</span>:</span><br><span class="line">        cabbage_group = []</span><br><span class="line">        cabbage_group.append(cabbage_location.pop())</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            search_cabbage(cabbage_location, cabbage_group, cabbage_group[<span class="number">0</span>])</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>재귀 함수 탈출 조건을 구현하지 못해서 일단 여기까지 작성해보고 다음에 알고리즘 공부 후 다시 풀어봐야겠다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1186,107 +1283,6 @@
 <h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul>
 <li>HTML, CSS 강의 복습</li>
 <li>알고리즘 문제 정리</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/27/20210227-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/27/20210227-TIL/" class="post-title-link" itemprop="url">20210227 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-27 19:50:45" itemprop="dateCreated datePublished" datetime="2021-02-27T19:50:45+09:00">2021-02-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-01 13:04:18" itemprop="dateModified" datetime="2021-03-01T13:04:18+09:00">2021-03-01</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/02/27/20210227-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/27/20210227-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul>
-<li>이번 주 HTML, CSS 강의 내용 정리</li>
-<li>Clean Code 43p ~ 52p 독서</li>
-</ul>
-<h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul>
-<li>sigma 과제 풀이</li>
-<li>알고리즘 문제 풀이</li>
 </ul>
 
       

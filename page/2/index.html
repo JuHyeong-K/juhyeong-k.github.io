@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">66</span>
+          <span class="site-state-item-count">67</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,108 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/09/20210309-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/09/20210309-TIL/" class="post-title-link" itemprop="url">20210309 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-09 10:10:54 / Modified: 21:26:39" itemprop="dateCreated datePublished" datetime="2021-03-09T10:10:54+09:00">2021-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/09/20210309-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/09/20210309-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="오늘-할-일"><a href="#오늘-할-일" class="headerlink" title="오늘 할 일"></a>오늘 할 일</h1><ul>
+<li><del>JavaScript chap.1 ~ 8 예습</del></li>
+<li><del>내일 team ruberduck 활동을 위한 JS 용어 정리</del></li>
+</ul>
+<p>ECMA Script - 자바스크립트의 표준 사양인 ECMA-262를 말하며, 프로그래밍 언어의 값, 타입, 객체와 프로퍼티, 함수, 표준 빌트인 객체 등 핵심 문법을 규정하고, 각 브라우저 제조사는 ECMA Script 사양을 준수해서 브라우저에 내장되는 자바스크립트 엔진을 구현한다. (자바스크립트의 뼈대(core))</p>
+<h2 id="리터럴-literal-과-표현식-expression-과-문-statement"><a href="#리터럴-literal-과-표현식-expression-과-문-statement" class="headerlink" title="리터럴(literal)과 표현식(expression)과 문(statement)"></a>리터럴(literal)과 표현식(expression)과 문(statement)</h2><p>리터럴(literal)은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기 방식(notation)</p>
+<p>표현식(expression)은 값으로 평가될 수 있는 문(statement)이다. 표현식이 평가되면 새로운 값을 생성하거나 기존의 값을 참조한다.(리터럴도 값으로 평가되기 때문에 표현식이다)</p>
+<p>문(statement)은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되어 있다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 토큰 - 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소</span></span><br><span class="line"><span class="comment">// var, sum, =, 1, +, 2, ; 모두 토큰이다</span></span><br></pre></td></tr></table></figure>
+<p>문의 종료를 나타낼 때 세미콜론을 준다. 코드 블록은 언제나 문의 종료를 의미하는 자체 종결성(self closing)을 갖기 때문에 코드 블록 뒤에 세미콜론을 붙이지 않는다.<br>사실 자바스크립트 엔진이 소스코드를 해석할 때 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 붙여주는 <strong>세미콜론 자동 삽입 기능</strong>이 암묵적을 수행되지만, 세미콜론 자동 삽입 기능과 개발자의 예측이 일치하지 않는 경우도 있기 때문에, 세미콜론을 붙이는 걸 추천한다.</p>
+<p><strong>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단하고 명료한 방법은 변수에 할당해 보는 것이다.</strong></p>
+<h1 id="데이터-타입"><a href="#데이터-타입" class="headerlink" title="데이터 타입"></a>데이터 타입</h1><p>자바스크립트의 문자열은 원시 타입이며, 변경 불가능한 값(immutable value)이다. 문자열이 생성되면 그 문자열을 변경할 수 없다.</p>
+<p>일반 문자열(따옴표)과 달리 템플릿 리터럴(백틱) 내에서는 이스케이프 시퀀스(\n, \b 등)를 사용하지 않고도 줄바꿈이 허용되고 모든 공백도 있는 그대로 적용된다.</p>
+<p>표현식 삽입(<code>$&#123;&#125;</code>)은 반드시 템플릿 리터럴 내에서 사용해야 한다. 템플릿 리터럴이 아닌 일반 문자열에서 표현식 삽입은 문자열 취급한다.</p>
+<p><a target="_blank" rel="noopener" href="https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/">Cross-Browsing이란?</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1189,101 +1291,6 @@
 <p>이번엔 결과가 틀렸다고 나왔다. 코드를 다시 살펴보니, 문자를 한 개만 제거하고 비교해야 하는데, 문자열이 맞지 않을 때마다 계속 제거하면서 비교하고 있었다. 그리고 유사 회문(pseudo palindrome)처리가 너무 애매해서 여기저기 찾아보면서 힌트를 얻었다.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pseudo_palindrom</span>(<span class="params">left, right, words</span>):</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">if</span> words[left] == words[right]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">palindrom</span>(<span class="params">words</span>):</span></span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    right = <span class="built_in">len</span>(words) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">if</span> words[left] == words[right]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            func_1 = pseudo_palindrom(left+<span class="number">1</span>, right, words)</span><br><span class="line">            func_2 = pseudo_palindrom(left, right-<span class="number">1</span>, words)</span><br><span class="line">            <span class="keyword">if</span> func_1 <span class="keyword">or</span> func_2:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    print(palindrome(<span class="built_in">input</span>()))</span><br></pre></td></tr></table></figure>
 <p>유사회문(pseudo palindrom)처리하는 함수를 따로 만들어서 왼쪽을 제거할 때, 오른쪽을 제거할 때의 경우를 모두 구해서 둘 중에 하나라도 True값이면 1이 출력되게 했다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/01/20210301-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/01/20210301-TIL/" class="post-title-link" itemprop="url">20210301 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-01 21:53:30 / Modified: 21:55:36" itemprop="dateCreated datePublished" datetime="2021-03-01T21:53:30+09:00">2021-03-01</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/01/20210301-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/01/20210301-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul>
-<li>sigma 과제 풀이</li>
-<li>알고리즘 문제 풀이</li>
-</ul>
-<h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul>
-<li>HTML, CSS 강의 복습</li>
-<li>알고리즘 문제 정리</li>
-</ul>
 
       
     </div>

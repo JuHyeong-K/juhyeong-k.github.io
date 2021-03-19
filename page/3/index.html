@@ -180,20 +180,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -222,6 +222,109 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/01/BAEKJOON-%ED%9A%8C%EB%AC%B8-17609/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/01/BAEKJOON-%ED%9A%8C%EB%AC%B8-17609/" class="post-title-link" itemprop="url">[BAEKJOON] 회문 17609번</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-01 22:37:52" itemprop="dateCreated datePublished" datetime="2021-03-01T22:37:52+09:00">2021-03-01</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-02 19:49:18" itemprop="dateModified" datetime="2021-03-02T19:49:18+09:00">2021-03-02</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/BAEKJOON/" itemprop="url" rel="index"><span itemprop="name">BAEKJOON</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/01/BAEKJOON-%ED%9A%8C%EB%AC%B8-17609/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/01/BAEKJOON-회문-17609/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="회문-팰린드롬-palindrome"><a href="#회문-팰린드롬-palindrome" class="headerlink" title="회문/팰린드롬(palindrome)"></a>회문/팰린드롬(palindrome)</h1><h2 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h2><p>회문(回文) 또는 팰린드롬(palindrome)은 앞 뒤 방향으로 볼 때 같은 순서의 문자로 구성된 문자열을 말한다. 예를 들어 ‘abba’ ‘kayak’, ‘reviver’, ‘madam’은 모두 회문이다. 만일 그 자체는 회문이 아니지만 한 문자를 삭제하여 회문으로 만들 수 있는 문자열이라면 우리는 이런 문자열을 “유사회문”(pseudo palindrome)이라고 부른다. 예를 들어 ‘summuus’는 5번째나 혹은 6번째 문자 ‘u’를 제거하여 ‘summus’인 회문이 되므로 유사회문이다.</p>
+<p>여러분은 제시된 문자열을 분석하여 그것이 그 자체로 회문인지, 또는 한 문자를 삭제하면 회문이 되는 “유사회문”인지, 아니면 회문이나 유사회문도 아닌 일반 문자열인지를 판단해야 한다. 만일 문자열 그 자체로 회문이면 0, 유사회문이면 1, 그 외는 2를 출력해야 한다.</p>
+<h2 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h2><p>처음에 생각한 건 입력받은 문자열과 거꾸로 뒤집은 문자열을 비교하고, 같으면 0출력 다르면 문자열에서 문자 한 개를 빼고 다시 뒤집은 다음에 비교하는 반복문을 넣어서 만들어봤다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">n = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    words = <span class="built_in">list</span>(<span class="built_in">input</span>())</span><br><span class="line">    reverse_words = words[::-<span class="number">1</span>]</span><br><span class="line">    <span class="keyword">if</span> words == reverse_words:</span><br><span class="line">        print(<span class="number">0</span>) <span class="comment"># palindrome</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(words)):</span><br><span class="line">            new_words = <span class="built_in">list</span>(words) <span class="comment"># 연결 끊어내기 위해 list선언</span></span><br><span class="line">            new_words.pop(i)</span><br><span class="line">            reverse_new_words = new_words[::-<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> new_words == reverse_new_words:</span><br><span class="line">                print(<span class="number">1</span>) <span class="comment"># pseudo palindrome</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">if</span> new_words != reverse_new_words:</span><br><span class="line">            print(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
+<p>정답을 제출했는데, 시간초과가 나왔다. 맞거나 틀리거나 둘 중 하나라고 생각했는데 시간초과라고 해서 당황했다. 시간복잡도에 대해서 제대로 생각해본 적이 없었던 것 같다.</p>
+<p>이번엔 다른 방식으로 코드를 짜봤다.<br>왼쪽과 오른쪽 문자를 가운데에 수렴할 때까지 비교해서 계속 같으면 0출력, 다르면 왼쪽 혹은 오른쪽 문자 한 개를 제외하고 다시 비교해서 계속 같으면 1출력, 다르면 0출력</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">palindrom</span>(<span class="params">words</span>):</span></span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    right = <span class="built_in">len</span>(words) - <span class="number">1</span></span><br><span class="line">    result = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">if</span> words[left] == words[right]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> words[left+<span class="number">1</span>] == words[right]:</span><br><span class="line">            left += <span class="number">2</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">            result = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">elif</span> words[left] == words[right-<span class="number">1</span>]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">2</span></span><br><span class="line">            result = <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line"></span><br><span class="line">            <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> result:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>: </span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(palindrom(<span class="string">&#x27;comwwtmoc&#x27;</span>))</span><br></pre></td></tr></table></figure>
+<p>이번엔 결과가 틀렸다고 나왔다. 코드를 다시 살펴보니, 문자를 한 개만 제거하고 비교해야 하는데, 문자열이 맞지 않을 때마다 계속 제거하면서 비교하고 있었다. 그리고 유사 회문(pseudo palindrome)처리가 너무 애매해서 여기저기 찾아보면서 힌트를 얻었다.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pseudo_palindrom</span>(<span class="params">left, right, words</span>):</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">if</span> words[left] == words[right]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">palindrom</span>(<span class="params">words</span>):</span></span><br><span class="line">    left = <span class="number">0</span></span><br><span class="line">    right = <span class="built_in">len</span>(words) - <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> left &lt; right:</span><br><span class="line">        <span class="keyword">if</span> words[left] == words[right]:</span><br><span class="line">            left += <span class="number">1</span></span><br><span class="line">            right -= <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            func_1 = pseudo_palindrom(left+<span class="number">1</span>, right, words)</span><br><span class="line">            func_2 = pseudo_palindrom(left, right-<span class="number">1</span>, words)</span><br><span class="line">            <span class="keyword">if</span> func_1 <span class="keyword">or</span> func_2:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    print(palindrome(<span class="built_in">input</span>()))</span><br></pre></td></tr></table></figure>
+<p>유사회문(pseudo palindrom)처리하는 함수를 따로 만들어서 왼쪽을 제거할 때, 오른쪽을 제거할 때의 경우를 모두 구해서 둘 중에 하나라도 True값이면 1이 출력되게 했다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1061,101 +1164,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="Elevator-class-practice"><a href="#Elevator-class-practice" class="headerlink" title="Elevator class practice"></a>Elevator class practice</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> abc <span class="keyword">import</span> ABC, abstractmethod</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Elevators</span>(<span class="params">ABC</span>):</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_min_max</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_up</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_down</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_to_passenger1</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="meta">    @abstractmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_to_passenger2</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Elevator</span>(<span class="params">Elevators</span>):</span></span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self,current_floor=<span class="number">1</span></span>):</span></span><br><span class="line">        self.passengers = passengers</span><br><span class="line">        <span class="comment"># 엘리베이터를 이용하는 승객</span></span><br><span class="line">        self.current_floor = current_floor</span><br><span class="line">        <span class="comment"># 엘리베이터 현재 층</span></span><br><span class="line">        self.move_counts = <span class="number">0</span></span><br><span class="line">        <span class="comment"># 엘리베이터 누적 층 수</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_min_max</span>(<span class="params">self, passengers</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        올라가고 내려가는 승객들 중 최소 층과 최대 층을 구한다</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        in_f = []</span><br><span class="line">        out_f = []</span><br><span class="line">        <span class="keyword">for</span> a, b <span class="keyword">in</span> passengers:</span><br><span class="line">            in_f.append(a)</span><br><span class="line">            out_f.append(b)</span><br><span class="line">        <span class="keyword">if</span> a &gt; b:</span><br><span class="line">            self.in_floor = <span class="built_in">max</span>(in_f)</span><br><span class="line">            self.out_floor = <span class="built_in">min</span>(out_f)</span><br><span class="line">            print(<span class="string">f&quot;start: <span class="subst">&#123;self.in_floor&#125;</span> end: <span class="subst">&#123;self.out_floor&#125;</span>&quot;</span>)  </span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            self.in_floor = <span class="built_in">min</span>(in_f)</span><br><span class="line">            self.out_floor = <span class="built_in">max</span>(out_f)</span><br><span class="line">            print(<span class="string">f&quot;start: <span class="subst">&#123;self.in_floor&#125;</span> end: <span class="subst">&#123;self.out_floor&#125;</span>&quot;</span>)  </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_up</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        엘리베이터가 올라가면서 이동한 층들을 move_counts에 누적</span></span><br><span class="line"><span class="string">        승객이 내린 층을 현재 엘리베이터의 층으로 변경</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.move_counts += self.out_floor - self.in_floor</span><br><span class="line">        self.current_floor = self.out_floor</span><br><span class="line">        print(<span class="string">f&quot;move_counts: <span class="subst">&#123;self.move_counts&#125;</span>, current_floor: <span class="subst">&#123;self.current_floor&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_down</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        엘리베이터가 내려가면서 이동한 층들을 move_counts에 누적</span></span><br><span class="line"><span class="string">        승객이 내린 층을 현재 엘리베이터의 층으로 변경</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.move_counts += self.in_floor - self.out_floor</span><br><span class="line">        self.current_floor = self.out_floor</span><br><span class="line">        print(<span class="string">f&quot;move_counts: <span class="subst">&#123;self.move_counts&#125;</span>, current_floor: <span class="subst">&#123;self.current_floor&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_to_passenger1</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        올라가는 엘리베이터가 승객의 층까지 이동한 층들을 move_counts에 누적</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.move_counts += <span class="built_in">abs</span>(self.current_floor - self.in_floor)       </span><br><span class="line">        print(<span class="string">f&quot;move to passenger: current:<span class="subst">&#123;self.current_floor&#125;</span>-&gt;passenger:<span class="subst">&#123;self.in_floor&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">move_to_passenger2</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">        내려가는 엘리베이터가 승객의 층까지 이동한 층들을 move_counts에 누적</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        self.move_counts += <span class="built_in">abs</span>(self.current_floor - self.in_floor)        </span><br><span class="line">        print(<span class="string">f&quot;move to passenger: currnet:<span class="subst">&#123;self.current_floor&#125;</span>-&gt;passenger:<span class="subst">&#123;self.in_floor&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 엘리베이터 구현</span></span><br><span class="line">passengers = [(<span class="number">6</span>, <span class="number">12</span>), (<span class="number">4</span>, <span class="number">13</span>), (<span class="number">11</span>, <span class="number">3</span>), (<span class="number">9</span>, <span class="number">2</span>), (<span class="number">11</span>, <span class="number">12</span>), (<span class="number">3</span>, <span class="number">9</span>), (<span class="number">14</span>, <span class="number">8</span>), (<span class="number">1</span>, <span class="number">7</span>), (<span class="number">11</span>, <span class="number">9</span>), (<span class="number">14</span>, <span class="number">16</span>), (<span class="number">2</span>, <span class="number">15</span>), (<span class="number">2</span>, <span class="number">9</span>), (<span class="number">8</span>, <span class="number">16</span>), (<span class="number">8</span>, <span class="number">9</span>), (<span class="number">3</span>, <span class="number">10</span>), (<span class="number">5</span>, <span class="number">4</span>), (<span class="number">13</span>, <span class="number">9</span>), (<span class="number">4</span>, <span class="number">6</span>), (<span class="number">13</span>, <span class="number">7</span>), (<span class="number">4</span>, <span class="number">8</span>), (<span class="number">5</span>, <span class="number">3</span>), (<span class="number">12</span>, <span class="number">14</span>), (<span class="number">10</span>, <span class="number">13</span>), (<span class="number">6</span>, <span class="number">12</span>), (<span class="number">1</span>, <span class="number">7</span>), (<span class="number">9</span>, <span class="number">2</span>), (<span class="number">13</span>, <span class="number">11</span>), (<span class="number">1</span>, <span class="number">14</span>), (<span class="number">11</span>, <span class="number">8</span>), (<span class="number">15</span>, <span class="number">12</span>), (<span class="number">3</span>, <span class="number">15</span>), (<span class="number">10</span>, <span class="number">3</span>), (<span class="number">4</span>, <span class="number">1</span>), (<span class="number">7</span>, <span class="number">1</span>), (<span class="number">15</span>, <span class="number">8</span>), (<span class="number">10</span>, <span class="number">16</span>), (<span class="number">9</span>, <span class="number">3</span>), (<span class="number">14</span>, <span class="number">13</span>), (<span class="number">8</span>, <span class="number">13</span>), (<span class="number">16</span>, <span class="number">9</span>), (<span class="number">10</span>, <span class="number">7</span>), (<span class="number">1</span>, <span class="number">6</span>), (<span class="number">16</span>, <span class="number">13</span>), (<span class="number">5</span>, <span class="number">3</span>), (<span class="number">1</span>, <span class="number">12</span>), (<span class="number">1</span>, <span class="number">7</span>), (<span class="number">12</span>, <span class="number">3</span>), (<span class="number">13</span>, <span class="number">6</span>), (<span class="number">12</span>, <span class="number">15</span>), (<span class="number">15</span>, <span class="number">6</span>)]</span><br><span class="line"></span><br><span class="line">e1 = Elevator()</span><br><span class="line">e2 = Elevator()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">len</span>(passengers) &gt; <span class="number">0</span>:</span><br><span class="line">    up_passengers = [person <span class="keyword">for</span> person <span class="keyword">in</span> passengers[:<span class="number">10</span>] <span class="keyword">if</span> person[<span class="number">0</span>] &lt; person[<span class="number">1</span>]]</span><br><span class="line">    down_passengers = [person <span class="keyword">for</span> person <span class="keyword">in</span> passengers[:<span class="number">10</span>] <span class="keyword">if</span> person[<span class="number">0</span>] &gt; person[<span class="number">1</span>]]</span><br><span class="line">    print(up_passengers)</span><br><span class="line">    print(down_passengers)</span><br><span class="line">    e1.get_min_max(up_passengers)</span><br><span class="line">    e2.get_min_max(down_passengers)</span><br><span class="line">    e1.move_to_passenger1()</span><br><span class="line">    e2.move_to_passenger2()</span><br><span class="line">    e1.move_up()</span><br><span class="line">    e2.move_down()</span><br><span class="line">    print(<span class="string">&quot;\n&quot;</span>)</span><br><span class="line">    passengers = passengers[<span class="number">10</span>:]</span><br><span class="line">print(<span class="string">f&quot;elevator&#x27;s total move: <span class="subst">&#123;e1.move_counts + e2.move_counts&#125;</span>&quot;</span>)</span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/19/20210219-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/19/20210219-TIL/" class="post-title-link" itemprop="url">20210219 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-02-19 21:03:44 / Modified: 21:35:59" itemprop="dateCreated datePublished" datetime="2021-02-19T21:03:44+09:00">2021-02-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/02/19/20210219-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/19/20210219-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul>
-<li>엘리베이터 시스템 클래스 구현 연습</li>
-<li>파이썬 강의 복습</li>
-<li>[HackerRank] Day 14 문제 풀이</li>
-</ul>
-<h1 id="내일-할-일"><a href="#내일-할-일" class="headerlink" title="내일 할 일"></a>내일 할 일</h1><ul>
-<li>파이썬 과제 제출</li>
-</ul>
-
       
     </div>
 

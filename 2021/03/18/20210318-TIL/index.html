@@ -31,7 +31,7 @@
 <meta property="og:description" content="16. 프로퍼티 어트리뷰트내부 슬롯과 내부 메소드내부 슬롯(internal slot)과 내부 메소드(internal method)는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해 ECMAScript 사양에서 사용하는 pseudo property, pseudo method이다. 대괄호 두개로 감싼 이름들이 이에 해당한다. ex) [[Prototype]]">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-18T03:58:07.000Z">
-<meta property="article:modified_time" content="2021-03-18T08:50:29.569Z">
+<meta property="article:modified_time" content="2021-03-18T11:09:24.124Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="TIL">
 <meta property="article:tag" content="JS">
@@ -185,20 +185,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-count">68</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -262,7 +262,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-03-18 12:58:07 / Modified: 17:50:29" itemprop="dateCreated datePublished" datetime="2021-03-18T12:58:07+09:00">2021-03-18</time>
+      <time title="Created: 2021-03-18 12:58:07 / Modified: 20:09:24" itemprop="dateCreated datePublished" datetime="2021-03-18T12:58:07+09:00">2021-03-18</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -355,6 +355,7 @@
 </tr>
 </tbody></table>
 <p>객체 변경 방지 메소드는 얕은 변경 방지(shallow only)이기 때문에 깊은 변경 방지를 하기 위해서는 재귀를 사용해야 한다. <code>Object.freeze</code> 메소드와 깊은 변경 방지를 이용해서 불변 객체를 구현할 수 있다.</p>
+<p>프로토타입<br>추상연산은 필수적으로 자신이 생성할 객체의 프로토타입을 인수로 전달받는다.</p>
 
     </div>
 
@@ -377,6 +378,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/03/19/20210319-TIL/" rel="next" title="20210319 TIL JS 6회차">
+                  20210319 TIL JS 6회차 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

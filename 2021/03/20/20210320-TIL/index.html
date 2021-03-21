@@ -31,9 +31,10 @@
 <meta property="og:description" content="NumberNumber는 빌트인 객체인 생성자 함수 객체다. new 연산자와 함께 호출하여 Number 인스턴스를 생성한다. new 연산자 없이 호출하면 숫자를 반환 하는데 이를 이용하여 명시적으로 타입을 변환하기도 한다. 래퍼 객체 - 원시값은 객체가 아니므로 프로퍼티나 메서드를 가질 수 없는데 원시값인 숫자나 문자열에 메소드를 사용할 수 있는 경우가 있">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-20T13:31:06.000Z">
-<meta property="article:modified_time" content="2021-03-20T14:09:22.392Z">
+<meta property="article:modified_time" content="2021-03-21T11:36:57.889Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="TIL">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
 
 
@@ -170,7 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Number"><span class="nav-number">1.</span> <span class="nav-text">Number</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Number"><span class="nav-number">1.</span> <span class="nav-text">Number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-EPSILON"><span class="nav-number">1.0.1.</span> <span class="nav-text">Number.EPSILON</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isFinite"><span class="nav-number">1.0.2.</span> <span class="nav-text">Number.isFinite</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isInteger"><span class="nav-number">1.0.3.</span> <span class="nav-text">Number.isInteger</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-isNaN"><span class="nav-number">1.0.4.</span> <span class="nav-text">Number.isNaN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-prototype-toFixed"><span class="nav-number">1.0.5.</span> <span class="nav-text">Number.prototype.toFixed</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Number-prototype-toString"><span class="nav-number">1.0.6.</span> <span class="nav-text">Number.prototype.toString</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -184,7 +185,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -259,10 +260,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-20 22:31:06 / Modified: 23:09:22" itemprop="dateCreated datePublished" datetime="2021-03-20T22:31:06+09:00">2021-03-20</time>
+      <time title="Created: 2021-03-20 22:31:06" itemprop="dateCreated datePublished" datetime="2021-03-20T22:31:06+09:00">2021-03-20</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-21 20:36:57" itemprop="dateModified" datetime="2021-03-21T20:36:57+09:00">2021-03-21</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -299,7 +306,15 @@
     <div class="post-body" itemprop="articleBody">
         <h1 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h1><p>Number는 빌트인 객체인 생성자 함수 객체다. new 연산자와 함께 호출하여 Number 인스턴스를 생성한다. new 연산자 없이 호출하면 숫자를 반환 하는데 이를 이용하여 명시적으로 타입을 변환하기도 한다.</p>
 <p>래퍼 객체 - 원시값은 객체가 아니므로 프로퍼티나 메서드를 가질 수 없는데 원시값인 숫자나 문자열에 메소드를 사용할 수 있는 경우가 있다. 이는 자바스크립트 엔진이 일시적으로 원시값을 연관된 객체를 생성하여 그 객체로 프로퍼티에 접근하거나 메서드를 호출하고 다시 원시값으로 되돌린다. 이 때, 문자열, 숫자, 불린 값에 대해 객체처럼 접근하면 생성되는 임시 객체를 래퍼 객체(wrapper object)라 한다.</p>
-
+<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>부동소수점으로 인해 발생하는 오차를 해결하기 위해서 사용된다. </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">isEqual</span> (<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.abs(x - y) &lt; <span class="built_in">Number</span>.EPSILON;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(isEqual(<span class="number">0.1</span> + <span class="number">0.2</span>, <span class="number">0.3</span>)) <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0.1</span> + <span class="number">0.2</span> === <span class="number">0.3</span>); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0.1</span> + <span class="number">0.2</span>) <span class="comment">// 0.30000000000000004</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-isFinite"><a href="#Number-isFinite" class="headerlink" title="Number.isFinite"></a>Number.isFinite</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// isFinite는 인수로 전달된 값이 정상적인 유한수인지 아닌지 불린값으로 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="number">0</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="literal">null</span>)) <span class="comment">// true , null은 암묵적으로 0으로 타입 변환된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="literal">NaN</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="literal">Infinity</span>)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Number.isFinite는 인수를 암묵적으로 숫자로 타입 변환 하지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isFinite(<span class="string">&#x27;123&#x27;</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="comment">// isFinite는 인수를 암묵적으로 숫자로 타입 변환 한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isFinite</span>(<span class="string">&#x27;123&#x27;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-isInteger"><a href="#Number-isInteger" class="headerlink" title="Number.isInteger"></a>Number.isInteger</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Number.isInteger 정적 메소드는 인수로 전달된 숫자값이 정수(integer)인지 불린 값으로 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">0</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(-<span class="number">213</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="number">1.2</span>)); <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환이 일어나지 않는다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isInteger(<span class="string">&#x27;123&#x27;</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-isNaN"><a href="#Number-isNaN" class="headerlink" title="Number.isNaN"></a>Number.isNaN</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Number.isNaN 메소드는 인수에 전달된 숫자값이 NaN인지 불린 값으로 반환한다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isNaN(<span class="literal">NaN</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isNaN(<span class="number">0</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Number</span>.isNaN(<span class="literal">undefined</span>)); <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//빌트인 전역함수 isNaN은 숫자로 암묵적 타입 변환이 일어나기 때문에 숫자가 아닌 값들은 NaN으로 반환된다.</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="number">123</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="literal">undefined</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">isNaN</span>(<span class="string">&#x27;asd&#x27;</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-prototype-toFixed"><a href="#Number-prototype-toFixed" class="headerlink" title="Number.prototype.toFixed"></a>Number.prototype.toFixed</h3><p>toFixed 메소드는 숫자를 반올림 해서 문자열로 반환한다. 인수로 0~20사이의 정수값을 줄 수 있고 기본값은 0이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((<span class="number">123.123</span>).toFixed()); <span class="comment">// &#x27;123&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자에 처음 .은 소수 구분 기호로 구분되고 두번 째 .은 프로퍼티 접근 연산자로 해석된다.</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">123.123</span>.toFixed(<span class="number">2</span>))) <span class="comment">// &#x27;123.12&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="Number-prototype-toString"><a href="#Number-prototype-toString" class="headerlink" title="Number.prototype.toString"></a>Number.prototype.toString</h3><p>toString 메소드는 숫자를 문자열로 반환하는 메소드다. 인수에 2~36사이의 정수값으로 진법을 나타낼 수 있고, 기본 값은 10진법으로 지정된다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((<span class="number">10</span>).toString()); <span class="comment">// 10</span></span><br><span class="line"><span class="comment">// 2진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">20</span>).toString(<span class="number">2</span>)); <span class="comment">// 10100</span></span><br><span class="line"><span class="comment">// 8진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">20</span>).toString(<span class="number">8</span>)); <span class="comment">// 24</span></span><br><span class="line"><span class="comment">// 16진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">30</span>).toString(<span class="number">16</span>)); <span class="comment">//1e</span></span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -309,6 +324,7 @@
     <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/TIL/" rel="tag"># TIL</a>
+              <a href="/tags/JS/" rel="tag"># JS</a>
           </div>
 
         
@@ -320,6 +336,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/03/21/20210321-TIL/" rel="next" title="20210321 TIL">
+                  20210321 TIL <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

@@ -10,7 +10,15 @@
 
     <url>
         <loc>https://juhyeong-k.github.io/2021/03/20/20210320-TIL/</loc>
-        <lastmod>2021-03-20T14:09:22.392Z</lastmod>
+        <lastmod>2021-03-21T11:36:57.889Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/03/21/20210321-TIL/</loc>
+        <lastmod>2021-03-21T11:36:39.344Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

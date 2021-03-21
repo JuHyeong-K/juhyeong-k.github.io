@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,161 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/12/20210312-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/12/20210312-TIL/" class="post-title-link" itemprop="url">20210312 TIL - JS 3회차</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-12 15:45:45" itemprop="dateCreated datePublished" datetime="2021-03-12T15:45:45+09:00">2021-03-12</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-14 20:02:11" itemprop="dateModified" datetime="2021-03-14T20:02:11+09:00">2021-03-14</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/12/20210312-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/12/20210312-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="8-제어문"><a href="#8-제어문" class="headerlink" title="8. 제어문"></a>8. 제어문</h1><h3 id="블록문-block-statement-compound-statement"><a href="#블록문-block-statement-compound-statement" class="headerlink" title="블록문(block statement/compound statement)"></a>블록문(block statement/compound statement)</h3><p>0 개 이상의 문을 중괄호로 묶은 것으로, 코드 블록 또는 블록이라고 부른다. 블록문은 언제나 문의 종료를 의미하는 자체 종결성(self closing)을 갖기 때문에 블록문의 끝에는 세미콜론을 붙이지 않는다.</p>
+<h3 id="조건문"><a href="#조건문" class="headerlink" title="조건문"></a>조건문</h3><p>if..else문</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// if문</span></span><br><span class="line"><span class="keyword">if</span> (조건식) &#123;코드블록&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if..else문</span></span><br><span class="line"><span class="keyword">if</span> (조건식) &#123;</span><br><span class="line">  <span class="comment">// 조건식이 참이면 코드블록 실행</span></span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="comment">// 조건식이 거짓이면 이 코드블록 실행</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>조건식 - <code>true</code>,<code>false</code>로 평가되는 표현식<br>만약 조건식이 불린 값이 아닌 값으로 평가되면 자바스크립트 엔진에 의해 불린 값으로 암묵적 타입변환이 일어난다.</p>
+<p>들여쓰기는 2칸이 일반적이다.(callback hell)</p>
+<h3 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h3><p>for문</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (변수 선언문 또는 할당문; 조건식; 증감식) &#123;</span><br><span class="line">  조건식이 참인 경우 반복 실행될 문;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">2</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// for문 실행 순서</span></span><br><span class="line"><span class="string">`</span></span><br><span class="line"><span class="string">1. i 선언 후 0값 할당</span></span><br><span class="line"><span class="string">2. 조건식 비교(true)</span></span><br><span class="line"><span class="string">3. true값이기 때문에 코드블록 실행</span></span><br><span class="line"><span class="string">4. 증감식에 의해 i값 +1(i=1)</span></span><br><span class="line"><span class="string">5. 조건식 비교(true)</span></span><br><span class="line"><span class="string">6. true값이기 때문에 코드블록 실행</span></span><br><span class="line"><span class="string">7. 증감식에 의해 i값 +1(i=2)</span></span><br><span class="line"><span class="string">8. 조건식 비교(false)</span></span><br><span class="line"><span class="string">9. false이므로 for 문의 실행 종료</span></span><br><span class="line"><span class="string">`</span></span><br></pre></td></tr></table></figure>
+<p>while문</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (조건식) &#123;</span><br><span class="line">  조건식이 참이면 반복 실행될 문;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> count = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 무한루프</span></span><br><span class="line"><span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(count);</span><br><span class="line">  count++;</span><br><span class="line">  <span class="comment">// count가 3이면 코드 블록 탈출</span></span><br><span class="line">  <span class="keyword">if</span> (count === <span class="number">3</span>) <span class="keyword">break</span>;</span><br><span class="line">&#125; <span class="comment">// 0 1 2</span></span><br></pre></td></tr></table></figure>
+<p>break - 코드블록 탈출<br>많은 횟수를 반복하게 되면 stackoverflow 에러가 발생한다고 한다.</p>
+<p>for문은 몇 번 반복해야 되는지 알 때, while문은 몇 번 반복해야 되는지 모를 때 사용한다.</p>
+<h1 id="9-타입-변환과-단축-평가"><a href="#9-타입-변환과-단축-평가" class="headerlink" title="9. 타입 변환과 단축 평가"></a>9. 타입 변환과 단축 평가</h1><h3 id="타입-변환"><a href="#타입-변환" class="headerlink" title="타입 변환"></a>타입 변환</h3><p>개발자가 의도적으로 값의 타입을 변환하는 것을 명시적 타입 변환(explicit coercion)이라 하고 개발자의 의도와 상관없이 자바스크립트 엔진에 의해 암묵적으로 타입이 변환되는 것을 암묵적 타입 변환(implicit coercion)이라고 한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 명시적 타입 변환</span></span><br><span class="line"><span class="keyword">var</span> x = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = x.toString();</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 암묵적 타입 변환</span></span><br><span class="line"><span class="keyword">var</span> y = <span class="number">10</span>;</span><br><span class="line"><span class="keyword">var</span> str = y + <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> str, str); <span class="comment">// string 10</span></span><br></pre></td></tr></table></figure>
+<p>숫자 타입은 연산 목적, 문자 타입은 표시 목적, 타입마다 사용하려고 하는 의미가 다르다.</p>
+<p>문자열 연결 연산자에서 암묵적 타입 변환이 일어났더라도 변수에 부수 효과(side effect)가 생기지 않는다. (한 번 쓰고 버린다)</p>
+<p>자바스크립트 엔진은 불린 타입이 아닌 값을 Truthy 값(참) 또는 Falsy 값(거짓)으로 구분한다.<br>Falsy 값으로는</p>
+<ul>
+<li>false</li>
+<li>undefined</li>
+<li>null</li>
+<li>0, -0</li>
+<li>NaN</li>
+<li>‘’(빈 문자열)<br>나머지는 Truthy 값이다.</li>
+</ul>
+<p><code>null</code>과 <code>undefined</code>는 둘 다 Falsy 값이지만, <code>null</code>은 숫자로 타입 변환하면 0이지만, <code>undefined</code>는 <code>NaN</code>이다.</p>
+<p>암묵적 타입 변환을 보면 사용하지 않을 것 같지만, 실제로 암묵적 타입 변환을 이용해서 명시적 타입으로 변환하는 경우가 많다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 문자열</span></span><br><span class="line"><span class="number">1</span> + <span class="string">&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자</span></span><br><span class="line">+<span class="string">&#x27;123&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 불린</span></span><br><span class="line">!<span class="string">&#x27;0&#x27;</span> / !!<span class="string">&#x27;0&#x27;</span></span><br></pre></td></tr></table></figure>
+<h3 id="단축-평가"><a href="#단축-평가" class="headerlink" title="단축 평가"></a>단축 평가</h3><p>논리 연산자를 사용한 단축 평가로 논리합(<code>||</code>)연산자와 논리곱(<code>&amp;&amp;</code>)연산자가 사용된다. 논리합, 논리곱 연산자 표현식은 언제나 2개의 피연산자 중 어느 한쪽으로 평가된다.</p>
+<p>논리곱(<code>&amp;&amp;</code>)연산자는 두 개의 피연산자 모두 true로 평가 될 때 true를 반환한다. 먼저 오는 피연산자가 true로 평가된다면, 뒤에 오는 피연산자에 의해 결정이 되기 때문에 뒤에 오는 피연산자가 반환된다.<br>논리합(<code>||</code>)연산자는 두 개의 피연산자 중 하나만 true로 평가되어도 true를 반환하기 때문에, 먼저오는 피연산자가 true로 평가되면, 먼저 오는 피연산자가 반환되고, 먼저 오는 피연산자가 false, 뒤에 오는 피연산자가 true라면 뒤에 오는 피연산자가 반환된다.</p>
+<p>이처럼 논리곱(<code>&amp;&amp;</code>)연산자와 논리합(<code>||</code>)연산자는 논리 연산의 결과를 결정하는 피연산자를 타입 변환하지 않고 피연산자의 값 그대로 반환한다. 이를 단축 평가(short-circuit evaluation)라 한다.<br>단축 평가는 표현식을 평가하는 도중에 평가 결과가 확정된 경우 나머지 평가 과정을 생략하는 것을 말한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 논리합(||)</span></span><br><span class="line"><span class="string">&#x27;Cat&#x27;</span> || <span class="string">&#x27;Dog&#x27;</span>  <span class="comment">// Cat</span></span><br><span class="line"><span class="literal">false</span> || <span class="string">&#x27;Dog&#x27;</span>  <span class="comment">// Dog</span></span><br><span class="line"><span class="string">&#x27;Cat&#x27;</span> || <span class="literal">false</span>  <span class="comment">// Cat</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 논리곱(&amp;&amp;)</span></span><br><span class="line"><span class="string">&#x27;Cat&#x27;</span> &amp;&amp; <span class="string">&#x27;Dog&#x27;</span>  <span class="comment">// Dog</span></span><br><span class="line"><span class="literal">false</span> &amp;&amp; <span class="string">&#x27;Dog&#x27;</span>  <span class="comment">// false</span></span><br><span class="line"><span class="string">&#x27;Cat&#x27;</span> &amp;&amp; <span class="literal">false</span>  <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<p>단축 평가를 사용하면 if문을 대체할 수 있다. 어떤 조건이 Truthy값일 때 무언가를 해야 한다면 논리곱(<code>&amp;&amp;</code>)연산자 표현식으로, 조건이 Falsy값일 때 무언가를 해야 한다면 논리합(<code>||</code>)연산자 표현식으로 if문을 대체할 수 있다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 주어진 조건이 true일 때</span></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if 문은 단축 평가로 대체 가능하다.</span></span><br><span class="line"><span class="comment">// done이 true라면 message에 &#x27;완료&#x27;를 할당</span></span><br><span class="line">message = done &amp;&amp; <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// 완료</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> done = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 주어진 조건이 false일 때</span></span><br><span class="line"><span class="keyword">if</span> (!done) message = <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if 문은 단축 평가로 대체 가능하다.</span></span><br><span class="line"><span class="comment">// done이 false라면 message에 &#x27;미완료&#x27;를 할당</span></span><br><span class="line">message = done || <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// 미완료</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> done = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">var</span> message = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// if...else 문</span></span><br><span class="line"><span class="keyword">if</span> (done) message = <span class="string">&#x27;완료&#x27;</span>;</span><br><span class="line"><span class="keyword">else</span>      message = <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// 완료</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if...else 문은 삼항 조건 연산자로 대체 가능하다.</span></span><br><span class="line">message = done ? <span class="string">&#x27;완료&#x27;</span> : <span class="string">&#x27;미완료&#x27;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(message); <span class="comment">// 완료</span></span><br></pre></td></tr></table></figure>
+<h1 id="10-객체-리터럴"><a href="#10-객체-리터럴" class="headerlink" title="10. 객체 리터럴"></a>10. 객체 리터럴</h1><p>다른 언어들이 클래스 기반의 객체 지향 언어라면, 자바스크립트는 프로토 타입 기반의 객체 지향 언어다.<br>인스턴스 - class로 뽑아낸 메모리 상에 존재하는 실체</p>
+<p>JS의 장점 - 문자열, 객체 리터럴(class기반 언어보다 훨씬 낫다. 왜?)</p>
+<p>리터럴 - 값을 만들어 내는 표기법</p>
+<p>객체 리터럴({}) - 클래스가 없는 객체, 코드블럭과 햇갈리면 안된다.</p>
+<p>우리가 관심이 있는 것을 추상화 해서 나열한 것을 객체라고 한다.<br>비슷한 것들을 묶어 하나로 표현한게 객체다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person.name = <span class="string">&#x27;Kim&#x27;</span>; <span class="comment">// 프로퍼티 값의 갱신</span></span><br><span class="line">person.location <span class="comment">// undefined</span></span><br><span class="line">person.location = <span class="string">&#x27;INCHEON&#x27;</span> <span class="comment">// 프로퍼티의 동적 추가</span></span><br><span class="line"></span><br><span class="line">consoel.log(person.age); <span class="comment">// 20</span></span><br></pre></td></tr></table></figure>
+<p><code>.</code> - 프로퍼티 접근 연산자(마침표 표기법)<br>자바스크립트는 인스턴스가 만들어진 이후에도 프로퍼티를 갱신하고 추가할 수 있다.(프로퍼티 동적 추가)<br>자바스크립트 객체의 프로퍼티 값은 값으로 평가될 수 있는 모든 것이 올 수 있다. 함수도 값으로 평가되기 때문에 올 수 있다.</p>
+<p><code>delete</code>명령으로 프로퍼티를 삭제할 수 있지만, 굳이 지울 필요는 없는 것 같다.(Anti-pattern)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  sayHi: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`hello! <span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6 이후 부터 </span></span><br><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Lee&#x27;</span>,</span><br><span class="line">  age: <span class="number">20</span>,</span><br><span class="line">  <span class="function"><span class="title">sayHi</span>(<span class="params"></span>)</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`hello! <span class="subst">$&#123;<span class="built_in">this</span>.name&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><code>this.name</code> - 자신의 프로퍼티에 접근하려면 <code>this</code>로 표현</p>
+<p>프로퍼티 키는 문법적으로 식별자는 아니지만, 식별자의 의미를 갖고 있다. 식별자 명령 규칙에 맞는 프로퍼티 키라면 따옴표 생략이 가능하다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person = &#123;</span><br><span class="line">  firstName: <span class="string">&#x27;JH&#x27;</span>, <span class="comment">// 식별자 명령 규칙을 따랐기 때문에 따옴표 생략 가능</span></span><br><span class="line">  <span class="string">&#x27;last-name&#x27;</span>: <span class="string">&#x27;Kim&#x27;</span> <span class="comment">// 식별자 명령 규칙에 위배되기 때문에 따옴표로 감싸서 문자열로 만들어줌</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person.firstName) <span class="comment">// JH</span></span><br><span class="line"><span class="built_in">console</span>.log(person[<span class="string">&#x27;firstName&#x27;</span>]) <span class="comment">// JH</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(person[<span class="string">&#x27;last-name&#x27;</span>]) <span class="comment">// Kim</span></span><br></pre></td></tr></table></figure>
+<p>불편한 대괄호 표기법 사용보다 네이밍 규칙을 지켜서 마침표 표기법을 사용하는게 편하다.<br>예외 경우가 있는데, 숫자가 프로퍼티 키로 온다면 유사 배열 객체로 사용 가능</p>
+<p>메소드 - 프로퍼티 값이 함수로 표현된 프로퍼티를 메소드라고 부른다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> x = <span class="number">1</span>, y = <span class="number">2</span>; <span class="comment">// Anti-pattern</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">  x: x,</span><br><span class="line">  y; y</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;x: 1, y: 2&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="keyword">const</span> obj = &#123; x, y &#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(obj); <span class="comment">// &#123;x: 1, y: 2&#125;</span></span><br></pre></td></tr></table></figure>
+<h1 id="11-원시값과-객체의-비교"><a href="#11-원시값과-객체의-비교" class="headerlink" title="11. 원시값과 객체의 비교"></a>11. 원시값과 객체의 비교</h1><p>자바스크립트에서 제공하는 7가지 데이터 타입은 크게 원시 타입(primitive type)과 객체(object / reference type)타입 으로 구분할 수 있다.</p>
+<h3 id="원시값"><a href="#원시값" class="headerlink" title="원시값"></a>원시값</h3><p>원시 타입 - 변경 불가능한 값(immutable value), 한번 생성된 원시값은 읽기 전용값으로 변경할 수 없다.<br>원시 값을 변경할 수 없는 것이지, 변수 값을 변경할 수 없는 건 아니다. 변수는 언제든지 재할당을 통해 교체할 수 있다.</p>
+<p>문자열은 유사 배열 객체이면서 이터러블이므로 배열과 유사하게 접근할 수 있다.<br>유사 배열 객체(array-like object) - 배열처럼 인덱스 프로퍼티 값에 접근할 수 있고 length 프로퍼티를 갖는 객체를 말한다.</p>
+<p>값에 의한 전달(Pass by vlaue)<br>원시값을 갖는 변수를 다른 변수에 할당 했을 때, 같은 주소를 가리키는게 아닌 새로운 주소로 원시값이 할당되고 그 주소를 가리키기 때문에, 두 개의 변수의 값은 서로 영향을 끼치지 않는다.</p>
+<p>정확히 표현하면 값에 의한 전달은 값을 전달하는게 아닌 메모리 주소를 전달한다. 단, 전달된 메모리 주소를 통해 메모리 공간에 접근하면 값을 참조할 수 있다.</p>
+<h3 id="객체"><a href="#객체" class="headerlink" title="객체"></a>객체</h3><p>변수에 객체를 할당하게 되면 객체가 값으로 할당되는게 아닌, 객체를 값으로 갖고 있는 메모리 주소를 변수의 값으로 갖게 되고, 그 메모리 주소를 참조해서 접근할 수 있다.</p>
+<p>객체의 메모리 주소값이 변수의 값이고, 그 값은 원시값이기 때문에, 해당 변수를 다른 변수에 할당 한다면, 객체가 아닌 객체의 메모리 주소가 복사되어서 결국 두 개의 변수가 하나의 객체를 참조하게 되고, 하나의 객체에 변경이 생기면 양쪽의 변수에 영향을 끼치게 된다.</p>
+<p>값을 할당했을 때 메모리 주소가 바뀌냐 안 바뀌냐에 따라 immutable vlaue, mutable value로 나뉘게 된다.</p>
+<p>객체는 메모리 뒷 공간에 여유를 갖고 있는 힙에 저장이 되고, 스택은 확정된 메모리 공간으로 공간 없이 쌓이기 때문에 원시값 같은 값들이 들어갈 수 있다.</p>
+<blockquote>
+<p>만약 100개의 변수가 하나의 객체를 참조한다면, 어느 변수가 객체의 변경을 만들어 냈는지 확인하기 힘들텐데, 이런 부작용을 생각을 못했던 걸까? 도대체 왜 객체를 이렇게 만들었을까?</p>
+</blockquote>
+<p>우선 객체는 메모리 크기가 정해져 있지 않아서 사이즈 값이 클 때, 원시값으로 복사된다면 메모리가 감당하기 힘들고 원시값이 하는 일의 수십배 가까운 힘이 들기 때문에 하나의 값을 참조해서 효율을 높혔다.</p>
+<p>객체를 원시값으로 만들면 좋았지만 옛날에는 메모리가 KB단위였고, 메모리도 비쌌기 때문에 눈물을 머금고 독특한 동작으로 만들었을 뿐이라고 한다. 현대에 와서는 메모리가 GB단위로 메모리에 큰 부담이 없어서 객체를 원시값으로 바꾸려는 움직임도 있다고 한다.(메모리보단 퍼포먼스)</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1299,114 +1454,6 @@
 <p>CSS에서 <code>display: none</code>값을 HTML5에서 태그 안에 <code>hidden</code>을 주면 비슷한 역할을 할 수 있다.</p>
 <h2 id="cal"><a href="#cal" class="headerlink" title="cal()"></a>cal()</h2><p>CSS에서 calc() CSS함수를 사용하면 계산식을 지정할 수 있다.</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.h1</span>&#123;</span><br><span class="line"><span class="attribute">width</span>: <span class="built_in">cal</span>(<span class="number">50%</span> - <span class="number">10px</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/03/20210303-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/03/20210303-TIL/" class="post-title-link" itemprop="url">20210303 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-03 20:47:24" itemprop="dateCreated datePublished" datetime="2021-03-03T20:47:24+09:00">2021-03-03</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-07 16:48:01" itemprop="dateModified" datetime="2021-03-07T16:48:01+09:00">2021-03-07</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/03/20210303-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/03/20210303-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="HTML-CSS-강의-내용-정리"><a href="#HTML-CSS-강의-내용-정리" class="headerlink" title="HTML, CSS 강의 내용 정리"></a>HTML, CSS 강의 내용 정리</h1><h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h2><p><code>transition</code>은 어떤 속성이 어떤 상황(ex.<code>:hover</code>)으로 인해 <code>A-&gt;B</code>로 변경될 때 그 과정을 일정 기간에 걸쳐서 자연스럽게 변화하는 과정을 보여준다. 이와 비슷한 기능을 하는 <code>@keyframes</code>가 있는데, <code>transition</code>보다 더 디테일하고 다양하게 변화를 줄 수 있다.<br>‘transition-delay’속성을 줄 때, <code>s</code>, <code>ms</code>단위를 사용할 수 있는데, 0초를 주더라고 꼭 <code>0s</code>로 s를 붙여야 한다. 다른 속성들과 다르게 0초의 단위를 생략할 수 없다.</p>
-<h2 id="대화형-콘텐츠"><a href="#대화형-콘텐츠" class="headerlink" title="대화형 콘텐츠"></a>대화형 콘텐츠</h2><p><code>:hover</code>는 모든 태그에 대해서 사용이 가능하지만, <code>:focus</code>는 <code>a</code>, <code>input</code>, <code>button</code> 태그와 같이 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories#%EB%8C%80%ED%99%94%ED%98%95_%EC%BD%98%ED%85%90%EC%B8%A0">대화형 콘텐츠</a>의 요소만 사용이 가능하다.</p>
-<blockquote>
-<p>태그에 <code>tabindex=&quot;0&quot;</code>을 준다면 <code>tab</code>키를 받을 수 있어서 <code>:focus</code>를 사용가능하게 만들 수는 있다.</p>
-</blockquote>
-<h2 id="순서-입력"><a href="#순서-입력" class="headerlink" title="순서 입력"></a>순서 입력</h2><p>CSS로 <code>&lt;li&gt;</code>안에 순서대로 숫자를 입력할 때 <code>li::before&#123;content: &quot;1&quot;&#125;</code>하나씩 입력해도 되지만 100개가 넘는다면? 너무 노가다.. 해결 방법이 있다.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">::befor</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">counter</span>(number);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">counter-increment</span>: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>&lt;li&gt;</code>에 순서대로 숫자가 입력된다.</p>
-<h2 id="문자-숨기는-방법"><a href="#문자-숨기는-방법" class="headerlink" title="문자 숨기는 방법"></a>문자 숨기는 방법</h2><p><code>padding</code> <code>overflow: hidden</code><br><code>text-indent</code> <code>overflow: hidden</code><br><code>::after&#123;background: url()&#125;</code></p>
-<h2 id="인용구"><a href="#인용구" class="headerlink" title="인용구"></a>인용구</h2><p><code>&lt;blockquote&gt;</code><br><code>&lt;q cite=&quot; &quot;&gt;</code> <code>cite</code>는 인용한 정보의 저작권 표시를 위한 속성. 값으로 <code>isbn: ~</code>책에 대한 내용 <code>http:// ~</code> 웹에 대한 내용</p>
-<p><code>&lt;footer&gt;</code>는 제목을 가지지 않는게 좋다.</p>
-<p><code>&lt;a href=&quot;tel: 01012341234&quot;&gt;</code> 링크를 누르면 자동으로 전화로 연결해줄 수 있다.</p>
-<h2 id="Grid"><a href="#Grid" class="headerlink" title="Grid"></a>Grid</h2><p>Grid를 사용하면 배치에 대한 큰 걱정없이 논리성을 줌심으로 마크업할 수 있다.<br>단, <code>Internet Explorer</code>를 지원하지 않는 단점이 있는데,<br>전세계에서 <code>Internet Explorer</code>의 점유율은 2%미만을 차지하는데 우리나라는 높은 비중을 차지하고 있어서 현업에서 <code>Grid</code>를 사용하기는 힘들다고 한다.<br><a target="_blank" rel="noopener" href="https://presscat.co.kr/blog/browser-market-share-mar2020/">웹 브라우저 시장 점유율(2020)</a></p>
-<hr>
-<p>클론 코딩은 완전히 똑같이 만드는게 아니라 그 페이지를 분석해보고, 장점은 가져오고 보완했으면 좋은 것들을 정리해서 만들어야 한다.</p>
 
       
     </div>

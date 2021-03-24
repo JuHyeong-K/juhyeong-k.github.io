@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">73</span>
+          <span class="site-state-item-count">74</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,144 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/15/20210315-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/15/20210315-TIL/" class="post-title-link" itemprop="url">20210315 TIL JS 4회차</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-15 13:57:29" itemprop="dateCreated datePublished" datetime="2021-03-15T13:57:29+09:00">2021-03-15</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-17 09:57:22" itemprop="dateModified" datetime="2021-03-17T09:57:22+09:00">2021-03-17</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/15/20210315-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/15/20210315-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="12-함수"><a href="#12-함수" class="headerlink" title="12. 함수"></a>12. 함수</h1><p>인수(argument)는 함수 밖에서 함수 매개변수(parameter)에 순서대로 할당된다.<br>매개변수는 0개 이상<br>함수 정의만으로 함수가 실행되지 않고 함수를 호출해야 실행이 된다.</p>
+<p>변수 호이스팅과 함수 호이스팅은 미묘한 차이가 있다.<br>변수 선언문은 런타임 이전에 변수가 <code>undefined</code>로 초기화가 되고, 런타임에 값이 할당 되어지지만, 함수 선언문은 runtime 이전에 정의가 되어지기 때문에 함수 정의가 어느 위치에 있던 런타임 시 첫째줄에 호출을 해도 실행이 된다.</p>
+<p>함수 표현식을 사용하면 변수 호이스팅이 발생해서 runtime 이전에 변수에 undefined로 초기화되고 런타임에 순서에 맞게 함수가 정의가 된다. 즉, 함수 표현식은 정의 이전에 호출할 수 없다.</p>
+<p>함수 이름은 함수 몸체 안에서만 유효하다. 그래서 함수 표현식에서 함수 이름은 생략이 가능하다. 함수 몸체 안에서 사용할 때는 재귀를 사용할때 정도로 생각할 수 있는데, 굳이 함수 이름이 아닌 식별자로 넣어줘도 문제 없기 때문에, 함수 표현식에서 함수 이름은 생략한다.</p>
+<p>함수 리터럴 - 함수객체를 생성하는 것</p>
+<p>일반 객체와 함수 객체의 차이는 호출 가능/불가능 차이</p>
+<blockquote>
+<p>함수 선언문과 함수 표현식 둘 중 어떤걸 사용하는게 좋을까?<br>함수 선언문은 함수 객체가 런타임 이전에 만들어지고 함수 표현식은 런타임 때 만들어진다. 결국 함수 객체를 생성하는 시점에 차이가 있다. 둘 중 어느걸 사용해도 상관은 없지만 일관성 있게 사용해야 한다.(결국 나중에 애로우 함수를 사용할 것이기 때문에..)</p>
+</blockquote>
+<p>함수가 호출이 되면 함수가 정의된 부분으로 돌아가서 함수 코드블록을 실행하기 때문에, 함수도 제어문의 일종이라고 볼 수 있다.</p>
+<blockquote>
+<p>{ }는 블록문일까 객체 리터럴일까?</p>
+</blockquote>
+<p><code>&#123; &#125;</code>는 블록문 일수도 객체 리터럴일 수도 있다. <code>&#123; &#125;</code>는 중의적 표현이기 때문에 자바스크립트 엔진이 코드의 문맥에 따라 해석을 달리한다. <code>&#123; &#125;</code>가 단독을 존재하면 블록문으로 해석하고, <code>&#123; &#125;</code>가 값으로 평가되어야 할 문맥(할당연산자의 우변)에서 피연산자로 사용되면 객체 리터럴로 해석한다.</p>
+<p>자바스크립트는 매개변수(parameter)와 인수(arguments)의 개수가 일치하지 않아도 오류가 발생하지 않는다.<br>매개변수보다 인수가 적을 경우, 함수를 호출하면서 파라미터에 있는 변수를 선언하기 때문에 <code>undefined</code>로 초기화가 되고, 값이 전달되지 않은 파라미터 변수는 <code>undefined</code>를 가지고 진행한다.</p>
+<p>매개변수보다 인수가 많을 경우, 파라미터를 초과하는 값들은 사라지게 될 것 같지만 함수 내에서 <code>arguments</code>를 불러보면 유사 배열 객체로 인수들이 저장되어 있는 것을 확인할 수 있다.</p>
+<p>이렇게 자바스크립트에서 매개변수와 인수의 개수가 맞지 않거나 입력 받는 타입이 다를 때 오류를 발생시키지 않기 때문에, 함수 내부에서 확인을 하고 오류를 발생시키는 것도 좋은 방법이다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> test = <span class="function"><span class="keyword">function</span> (<span class="params">...args</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(args);</span><br><span class="line">&#125;</span><br><span class="line">test(<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>); <span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br></pre></td></tr></table></figure>
+<p>위와 같이 매개변수로 <code>...args</code>를 주면, 파이썬의 <code>*args</code>와 비슷하게 여러 개의 매개변수를 받을 수 있고, 배열로 저장된다.</p>
+<p>함수에서 <code>return</code>이 생략되어도 자바스크립트 엔진이 마지막에 <code>return</code>을 만들어 줘서 <code>undefined</code>값이 리턴된다.</p>
+<p>jQuery에서 파라미터를 하나만 받는 이유</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">  method: <span class="string">&#x27;POST&#x27;</span>,</span><br><span class="line">  url: <span class="string">&#x27;/user&#x27;</span>,</span><br><span class="line">  data: &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">name</span>: <span class="string">&#x27;Lee&#x27;</span> &#125;,</span><br><span class="line">  cache: <span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 파라미터로 하나의 객체에 담아서 주는 이유?</span></span><br><span class="line"><span class="comment">// 프로퍼티가 여러 개 들어갈수록 순서를 지켜야 하고, 타입도 생각을 해야하기 때문에</span></span><br><span class="line"><span class="comment">// 파라미터를 하나만 줘서 가독성 좋게 만들었다.</span></span><br><span class="line"><span class="comment">// 프로퍼티 키가 프로퍼티 값을 설명해주고, 순서를 지키지 않아도 되기 때문에 파라미터는 적을수록 좋다.</span></span><br><span class="line"><span class="comment">// 단점으로 객체 참조할 수 있기 때문에 함수를 거쳐서 원본이 수정될 수 있다.</span></span><br><span class="line"><span class="comment">// 그래서 원본이 수정되지 않게 객체를 동결시켜야하는 경우가 있다. Object.freeze()</span></span><br><span class="line"><span class="comment">// 혹은 객체를 카피(깊은 복사)해서 따로 관리하게 할 수도 있다.</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 익명 즉시 실행 함수</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> a = <span class="number">3</span>;</span><br><span class="line">  <span class="keyword">var</span> b = <span class="number">5</span>;</span><br><span class="line">  <span class="keyword">return</span> a * b;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>변수는 값을 재사용하는 것 처럼, 함수는 로직을 재사용하는 것이다.</p>
+<p>중첩함수(nested function)</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">outer</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> x = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 중첩 함수</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">inner</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> y = <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// 외부 함수의 변수를 참조할 수 있다.</span></span><br><span class="line">    <span class="built_in">console</span>.log(x + y); <span class="comment">// 3</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  inner();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">outer();</span><br></pre></td></tr></table></figure>
+<p>중첩 함수는 자신을 포함하는 외부 함수를 돕는 헬퍼 함수의 역할을 한다.</p>
+<p>콜백 함수(callback function)<br>함수의 매개변수를 통해 다른 함수의 내부로 전달되는 함수를 콜백 함수(callback function)라 하고, 매개변수를 통해 함수의 외부에서 콜백 함수를 전달받은 함수를 고차 함수(Higher-Order Function, HOF)라 한다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 외부에서 전달받은 f를 n만큼 반복 호출한다</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">repeat</span>(<span class="params">n, f</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">    f(i); <span class="comment">// i를 전달하면서 f를 호출</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> logAll = <span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 반복 호출할 함수를 인수로 전달한다.</span></span><br><span class="line">repeat(<span class="number">5</span>, logAll); <span class="comment">// 0 1 2 3 4</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> logOdds = <span class="function"><span class="keyword">function</span> (<span class="params">i</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (i % <span class="number">2</span>) <span class="built_in">console</span>.log(i);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 반복 호출할 함수를 인수로 전달한다.</span></span><br><span class="line">repeat(<span class="number">5</span>, logOdds); <span class="comment">// 1 3</span></span><br></pre></td></tr></table></figure>
+<h1 id="13-스코프"><a href="#13-스코프" class="headerlink" title="13. 스코프"></a>13. 스코프</h1><p>모든 식별자(변수 이름, 함수 이름, 클래스 이름)는 자신이 선언된 위치에 의해 다른 코드가 식별자 자신을 참조할 수 있는 유효 범위가 결정되는 것을 스코프라 한다. 즉, 스코프는 식별자가 유효한 범위를 말한다.(식별자를 검색하는 규칙)</p>
+<p>전역 변수 - 함수 내부가 아닌 모든 변수<br>지역 변수 - 함수 몸체 내부의 변수</p>
+<p><code>var</code>키워드는 같은 스코프 내에서 중복 선언이 허용되지만, <code>let</code>과 <code>const</code>키워드는 같은 스코프 내에서 중복 선언을 허용하지 않는다.</p>
+<p>모든 스코프는 하나의 계측적 구조로 연결되고, 모든 지역 스코프의 최상위 스코프는 전역 스코프다. 스코프가 계층적으로 연결된 것을 스코프 체인(scope chain)이라 한다. 변수를 참조할 때 자바스크립트 엔진은 스코프 체인을 통해 변수를 참조하는 코드의 스코프에서 시작하여 상위 스코프 방향으로 이동하며 선언된 변수를 검색(identifier resolution)한다.</p>
+<p>렉시컬 환경(Lexical Environment)<br>스코프 체인은 실행 컨텍스트의 렉시컬 환경을 단방향으로 연결(chaining)한 것이다.</p>
+<p>블록 레벨 스코프(block level scope)와 함수 레벨 스코프(function level scope)<br>모든 코드 블록(if, for, while, try 등)이 지역 스코프를 만드는 것을 블록 레벨 스코프라 하고, 함수의 코드 블록에서 만 지역 스코프를 만드는 것을 함수 레벨 스코프라 한다.</p>
+<p>자바스크립트에서 <code>var</code>키워드로 선언된 변수는 오로지 함수의 코드 블록만을 지역 스코프로 인정한다. for반복문 안에서 사용되는 <code>i</code>변수는 반복문 안에서만 사용되지만, <code>var</code>키워드로 선언하면 전역 변수가 되기 때문에 의도치 않은 전역 변수 값이 할당된다.<br>ES6에서ES6에 도입된 <code>let</code>, <code>const</code>키워드는 블록 레벨 스코프를 지원한다.</p>
+<p>렉시컬 스코프(lexical scope)와 동적 스코프(dynamic scope)<br>렉시컬 스코프는 함수를 어디서 호출했는지에 따라 함수의 상위 스코프를 결정하고, 동적 스코프는 함수를 어디서 정의 했는지에 따라 함수의 상위 스코프를 결정한다.<br>자바스크립트를 비롯한 대부분의 프로그래밍 언어는 렉시컬 스코프를 따른다.<br>결국 렉시컬 스코프는 함수가 호출된 위치는 상위 스코프 경정에 어떠한 영향도 주지 않고 함수의 상위 스코프는 언제나 자신이 정의된 스코프다.<br>이처럼 함수의 상위 스코프는 함수 정의가 실행될 때 정적으로 결정된다. 함수 정의(함수 선언문, 함수 표현식)가 실행되어 생성된 함수 객체는 이렇게 결정된 상위 스코프를 기억한다. 함수가 호출될 때마다 함수의 상위 스코프를 참조할 필요가 있기 때문이다.</p>
+<h1 id="15-let-const와-블록-레벨-스코프"><a href="#15-let-const와-블록-레벨-스코프" class="headerlink" title="15. let, const와 블록 레벨 스코프"></a>15. let, const와 블록 레벨 스코프</h1><p><code>var</code>키워드의 문제점은 변수의 중복 선언을 허용하고, 함수 레벨 스코프를 지원하고, 변수 호이스팅이 발생하기 때문에 문제가 된다.</p>
+<p>이러한 단점을 보안하기 위해 ES6에서 나온게 <code>let</code>, <code>const</code>키워드다.<br><code>let</code>, <code>const</code>키워드는 중복 선언을 금지하고, 블록 레벨 스코프를 지원한다. 그리고 변수 호이스팅이 발생하지 않는 것 처럼 보이는데, <code>let</code>키워드로 선언한 변수는 스코프의 시작 지점부터 초기화 단계 시작 지점(변수 선언문)까지 변수를 참조할 수 없다. 이러한 구간을 일시적 사각지대(Temporal Dead Zone, TDZ)라고 부른다.</p>
+<p><code>let</code>키워드는 재할당이 가능하다.<br><code>const</code>키워드는 재할당이 금지된 변수</p>
+<blockquote>
+<p>왜 const는 상수가 아닐까?</p>
+</blockquote>
+<p><code>const</code>키워드로 변수에 객체를 할당하면 객체는 참조되는 값이기 때문에 수정이 가능하다. 재할당이 금지된거지 참조가 금지된게 아니라서 상수라고 표현할 수 없다.</p>
+<p><code>const</code>로 선언하고, 재할당이 필요하다고 인지할 때 <code>let</code>으로 바꾸는 걸 추천. 생각보다 재할당 할 일이 없다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1362,96 +1500,6 @@
 <blockquote>
 <p><code>var</code>에 문제가 있어서 <code>let</code>과 <code>const</code>를 도입했는데, 왜 아직까지 <code>var</code>가 사용이 가능할까?<br>자바스크립트는 하위호환성을 유지하기 때문에 <code>var</code> 변수 선언도 지금까지 유지되고 있다.(자바스크립트의 과거 문법도 공부해야 한다)</p>
 </blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/" class="post-title-link" itemprop="url">HTML/CSS 강의에 대한 회고</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-07 19:42:24 / Modified: 21:53:15" itemprop="dateCreated datePublished" datetime="2021-03-07T19:42:24+09:00">2021-03-07</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Retrospective/" itemprop="url" rel="index"><span itemprop="name">Retrospective</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/07/HTML-CSS-강의에-대한-회고/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>2주 동안 들었던 HTML/CSS 강의 에 대한 회고를 작성해보려고 한다.</p>
-<p>사실 강의를 듣기 전까지, HTML과 CSS에 크게 관심이 없었다. HTML과 CSS를 온라인 강의로 잠깐 접해본 적이 있는데, 그 당시만 해도 이걸 배워서 어떻게 써먹어야될지도 몰랐고 재미도 없어서 그냥 이론만 듣고 말았다. 그래서 이번 HTML/CSS 강의도 그런 내용이겠구나 생각하고 있었다. 첫 날, 둘 째날 강의를 계속 들으면서 HTML이 어떻게 만들어졌고 어떤 역사를 가지고 지금까지 발전을 했는지, HTML을 작성할 때 어떤 흐름으로 작성을 해야되는지 설명을 들으면서 강의 자체에 재미를 붙이게 됐다.</p>
-<p>2주라는 기간 동안 배운 많은 내용들을 내가 전부 흡수하지 못해 아쉬움이 크지만, 이번 강의를 들으면서 내가 HTML을 작성할 때는 어떤 흐름으로 작성을 하고 어떤 부분을 고려해서 작성을 해야되는지 감을 잡는 계기가 됐고, CSS도 배우기 전까지는 정말 어렵다고 생각됐는데, 내가 보여지는 것만 보고 판단을 해서 어렵게 느껴졌었고, 내가 사용한 property들의 목적을 알고 있어야 문제가 생겨도 왜 문제가 생겼는지 원인을 판단할 수 있고, 특히, CSS에서는 본래의 목적으로 사용하는게 아닌, 다른 용도(<del>꼼수</del>)로 사용하는 경우도 많기 때문에 왜 이런 property를 사용하는지 정확하게 알고 있어야 한다는걸 알게 됐다.</p>
 
       
     </div>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="36. 디스트럭처링 할당디스트럭처링 할당(destructuring assignment)은 구조화된 배열과 같은 이터러블 또는 객체를 destructuring하여 1개 이상의 변수에 개별적으로 할당하는 것을 말한다. 배열 디스트럭처링 할당배열 디스트럭처링 할당의 대상(할당문의 우변)은 이터러블이어야 하고, 할당 기준은 배열의 인덱스다. 123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210324 TIL JS">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/03/24/20210324-TIL/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="36. 디스트럭처링 할당디스트럭처링 할당(destructuring assignment)은 구조화된 배열과 같은 이터러블 또는 객체를 destructuring하여 1개 이상의 변수에 개별적으로 할당하는 것을 말한다. 배열 디스트럭처링 할당배열 디스트럭처링 할당의 대상(할당문의 우변)은 이터러블이어야 하고, 할당 기준은 배열의 인덱스다. 123456789101">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-24T10:17:44.000Z">
+<meta property="article:modified_time" content="2021-03-24T12:57:28.950Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="TIL">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/03/24/20210324-TIL/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>20210324 TIL JS | JH's dev blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-93XKT8K1JW');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="JH's dev blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#36-%EB%94%94%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%A7%81-%ED%95%A0%EB%8B%B9"><span class="nav-number">1.</span> <span class="nav-text">36. 디스트럭처링 할당</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%B0%B0%EC%97%B4-%EB%94%94%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%A7%81-%ED%95%A0%EB%8B%B9"><span class="nav-number">1.0.1.</span> <span class="nav-text">배열 디스트럭처링 할당</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B0%9D%EC%B2%B4-%EB%94%94%EC%8A%A4%ED%8A%B8%EB%9F%AD%EC%B2%98%EB%A7%81-%ED%95%A0%EB%8B%B9"><span class="nav-number">1.0.2.</span> <span class="nav-text">객체 디스트럭처링 할당</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#39-DOM"><span class="nav-number">2.</span> <span class="nav-text">39. DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTMLCollection%EA%B3%BC-NodeList"><span class="nav-number">2.0.1.</span> <span class="nav-text">HTMLCollection과 NodeList</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EB%85%B8%EB%93%9C-%ED%83%90%EC%83%89-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0"><span class="nav-number">2.0.2.</span> <span class="nav-text">노드 탐색 프로퍼티</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%EA%B3%B5%EB%B0%B1-%ED%85%8D%EC%8A%A4%ED%8A%B8-%EB%85%B8%EB%93%9C"><span class="nav-number">2.0.3.</span> <span class="nav-text">공백 텍스트 노드</span></a></li></ol></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">74</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/24/20210324-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210324 TIL JS
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-24 19:17:44 / Modified: 21:57:28" itemprop="dateCreated datePublished" datetime="2021-03-24T19:17:44+09:00">2021-03-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/24/20210324-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/24/20210324-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="36-디스트럭처링-할당"><a href="#36-디스트럭처링-할당" class="headerlink" title="36. 디스트럭처링 할당"></a>36. 디스트럭처링 할당</h1><p>디스트럭처링 할당(destructuring assignment)은 구조화된 배열과 같은 이터러블 또는 객체를 destructuring하여 1개 이상의 변수에 개별적으로 할당하는 것을 말한다.</p>
+<h3 id="배열-디스트럭처링-할당"><a href="#배열-디스트럭처링-할당" class="headerlink" title="배열 디스트럭처링 할당"></a>배열 디스트럭처링 할당</h3><p>배열 디스트럭처링 할당의 대상(할당문의 우변)은 이터러블이어야 하고, 할당 기준은 배열의 인덱스다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> [a, b] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a, b); <span class="comment">// 1 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [c, d, e] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(c, d, e); <span class="comment">// 1 2 undefined</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [f, , g] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>];</span><br><span class="line"><span class="built_in">console</span>.log(f, g); <span class="comment">// 1 3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [h, i, j] = [<span class="number">1</span>, , <span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(h, i, j); <span class="comment">// 1 undefined 3 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> [k, l, m = <span class="number">1</span>] = [<span class="number">1</span>, <span class="number">2</span>];</span><br><span class="line"><span class="built_in">console</span>.log(k, l, m);</span><br></pre></td></tr></table></figure>
+<h3 id="객체-디스트럭처링-할당"><a href="#객체-디스트럭처링-할당" class="headerlink" title="객체 디스트럭처링 할당"></a>객체 디스트럭처링 할당</h3><p>배열의 할당 기준이 인덱스라면 객체의 할당 기준은 프로퍼티 키다. 객체이기 때문에 순서는 의미가 없고 선언된 변수 이름과 프로퍼티 키가 일치하면 할당된다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> &#123; lastName, firstName &#125; = &#123; <span class="attr">firstName</span>: <span class="string">&quot;Ungmo&quot;</span>, <span class="attr">lastName</span>: <span class="string">&quot;Lee&quot;</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(firstName, lastName); <span class="comment">// Ungmo Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 식별자 이름을 각각 ln과 fn으로 변경</span></span><br><span class="line"><span class="keyword">const</span> &#123; <span class="attr">lastName</span>: ln, <span class="attr">firstName</span>: fn &#125; = &#123; <span class="attr">firstName</span>: <span class="string">&quot;Ungmo&quot;</span>, <span class="attr">lastName</span>: <span class="string">&quot;Lee&quot;</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(ln, fn); <span class="comment">// Ungmo Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 기본값 할당</span></span><br><span class="line"><span class="keyword">const</span> &#123; firstName = <span class="string">&quot;Ungmo&quot;</span>, lastName &#125; = &#123; <span class="attr">lastName</span>: <span class="string">&quot;Lee&quot;</span> &#125;;</span><br><span class="line"><span class="built_in">console</span>.log(firstName, lastName); <span class="comment">// Ungmo Lee</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// string 래퍼 객체로부터 length 프로퍼티만 추출</span></span><br><span class="line"><span class="keyword">const</span> &#123; length &#125; = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(length);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체를 인수로 전달받는 함수의 매개변수에도 사용 가능</span></span><br><span class="line">todos = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">&quot;HTML&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">&quot;CSS&quot;</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">&quot;JavaScript&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="comment">// todo를 불필요하게 중복해서 입력해주고 있지만</span></span><br><span class="line"><span class="keyword">const</span> printTodos = <span class="function">() =&gt;</span></span><br><span class="line">  todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(</span><br><span class="line">      <span class="string">`id = <span class="subst">$&#123;todo.id&#125;</span>, content = <span class="subst">$&#123;todo.content&#125;</span>, completed = <span class="subst">$&#123;todo.completed&#125;</span>`</span></span><br><span class="line">    );</span><br><span class="line">  &#125;);</span><br><span class="line">printTodos();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 객체 디스트럭처링 할당을 사용하면 좀 더 간결하게 사용 가능</span></span><br><span class="line"><span class="keyword">const</span> printTodos2 = <span class="function">() =&gt;</span></span><br><span class="line">  todos.map(<span class="function">(<span class="params">&#123; id, content, completed &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`id = <span class="subst">$&#123;id&#125;</span>, content = <span class="subst">$&#123;content&#125;</span>, completed = <span class="subst">$&#123;completed&#125;</span>`</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">printTodos2();</span><br></pre></td></tr></table></figure>
+<h1 id="39-DOM"><a href="#39-DOM" class="headerlink" title="39. DOM"></a>39. DOM</h1><p>DOM(Document Object Model)은 HTML의 중첩관계를 표현하고 이를 제어할 수 있는 프로퍼티와 메서드를 제공하는 트리 자료구조다.</p>
+<p>HTML 문서는 브라우저의 렌더링 엔진에 의해 파싱되어 DOM을 구성하는 각 노드 객체로 변환된다.(요소 노드, 어트리뷰트 노드, 텍스트 노드)<br>이때 HTML 요소 간에는 중첩 관계에 의해 부자(parent-child)관계가 형성되고 이를 객체화한 모든 노드 객체들을 트리 자료구조로 만든다.<br>부모 노드가 없는 최상위 노드를 루트 노드(root node)라 하고, 자식 노드가 없는 노드를 리프 노드(leaf node)라 한다.</p>
+<p>문서 노드는 DOM 트리의 루트 노드로 다른 노드들에 접근하기 위한 진입점(entry point)역할을 담당하고  document 객체를 가리킨다. 모든 자바스크립트 코드는 전역 객체 window의 document 프로퍼티에 바인딩되어 있는 하나의 document 객체를 바라보고 HTML 문서당 document 객체는 유일한 객체다.</p>
+<p>요소 노드는 HTML요소 간의 중첩에 의해 부자 관계를 가지고 문서의 구조를 표현한다.</p>
+<p>어트리뷰트 노드는 요소노드와 연결되어 있고 부모 노드와는 연결되어 있지 않기 때문에 요소 노드의 형제 노드(sibling node)는 아니다.</p>
+<p>텍스트 노드는 요소 노드의 자식 요소이고 자식 노드를 가질 수 없는 리프 노드(leaf node)다.</p>
+<h3 id="HTMLCollection과-NodeList"><a href="#HTMLCollection과-NodeList" class="headerlink" title="HTMLCollection과 NodeList"></a>HTMLCollection과 NodeList</h3><p>HTMLCollection은 노드 객체의 상태 변화를 실시간으로 반영하는 살아 있는(live) 객체다. NodeList는 대부분의 경우 노드 객체의 상태를 실시간으로 반영하지 않고 과거의 정적 상태를 유지하는 non-live 객체로 동작하지만 경우에 따라 live 객체로 동작할 때가 있다. 결국 두 객체 다 상태 변경을 신경써야 하는 경우가 생기기 때문에 안전하게 DOM 컬렉션을 사용하려면 유사 배열 객체이면서 이터러블인 HTMLCollection이나 NodeList 객체를 배열로 변환하여 사용하는게 낫다.</p>
+<h3 id="노드-탐색-프로퍼티"><a href="#노드-탐색-프로퍼티" class="headerlink" title="노드 탐색 프로퍼티"></a>노드 탐색 프로퍼티</h3><p>노드 탐색 프로퍼티는 모두 setter없이 getter만 존재하여 참조만 가능한 읽기 전용 접근자 프로퍼티다. 읽기 전용 프로퍼티에 값을 할당하면 아무런 에러 없이 무시된다.</p>
+<h3 id="공백-텍스트-노드"><a href="#공백-텍스트-노드" class="headerlink" title="공백 텍스트 노드"></a>공백 텍스트 노드</h3><p>HTML 요소 사이의 스페이스, 탭, 줄바꿈(개행) 등의 공백(white space)문자는 공백 텍스트 노드를 생성한다. <code>childNodes</code>프로퍼티를 이용하면 공백 텍스트 노드까지 포함해서 표현이 가능하지만 <code>children</code>프로퍼티를 사용하면 공백 텍스트 노드를 제외한 요소만 표현된다. 공백 텍스트 노드를 사용하는 게 아니라면 <code>children</code>프로퍼티를 사용하는게 낫다.</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/23/20210323-TIL/" rel="prev" title="20210323 TIL JS 예습">
+                  <i class="fa fa-chevron-left"></i> 20210323 TIL JS 예습
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://juhyeong-k.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/03/24/20210324-TIL/";
+    this.page.identifier = "2021/03/24/20210324-TIL/";
+    this.page.title = "20210324 TIL JS";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

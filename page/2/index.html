@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">77</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,151 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/18/20210318-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/18/20210318-TIL/" class="post-title-link" itemprop="url">20210318 TIL JS 내용 정리</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-18 12:58:07 / Modified: 20:09:24" itemprop="dateCreated datePublished" datetime="2021-03-18T12:58:07+09:00">2021-03-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/18/20210318-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/18/20210318-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="16-프로퍼티-어트리뷰트"><a href="#16-프로퍼티-어트리뷰트" class="headerlink" title="16. 프로퍼티 어트리뷰트"></a>16. 프로퍼티 어트리뷰트</h1><h3 id="내부-슬롯과-내부-메소드"><a href="#내부-슬롯과-내부-메소드" class="headerlink" title="내부 슬롯과 내부 메소드"></a>내부 슬롯과 내부 메소드</h3><p>내부 슬롯(internal slot)과 내부 메소드(internal method)는 자바스크립트 엔진의 구현 알고리즘을 설명하기 위해 ECMAScript 사양에서 사용하는 pseudo property, pseudo method이다. 대괄호 두개로 감싼 이름들이 이에 해당한다. ex) <code>[[Prototype]]</code></p>
+<p>내부 슬롯과 내부 메소드는 자바스크립트 엔진의 로직이기 때문에 직접적인 접근은 제공하지 않고 일부 내부 슬롯과 내부 메소드에 한해서 간접적으로 접근할 수 있는 방법을 제공한다. 예를 들어 <code>[[Prototype]]</code>내부 슬롯은 <code>__proto__</code> 접근자 프로퍼티로 간접적으로 접근이 가능하다.</p>
+<p>프로퍼티를 생성할 대 프로퍼티의 상태를 나타내는 프로퍼티 어트리뷰트를 기본값으로 자동 정의한다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">프로퍼티 상태</th>
+<th align="center">내부 상태값(meta-property)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">프로퍼티 값</td>
+<td align="center">[[Value]]</td>
+</tr>
+<tr>
+<td align="center">값의 갱신 가능 여부</td>
+<td align="center">[[Writable]]</td>
+</tr>
+<tr>
+<td align="center">열거 가능 여부</td>
+<td align="center">[[Enumerable]]</td>
+</tr>
+<tr>
+<td align="center">재정의 가능 여부</td>
+<td align="center">[[Configurable]]</td>
+</tr>
+</tbody></table>
+<p>프로퍼티 어트리뷰트에 직접 접근할 수 없지만 <code>Object.getOwnPropertyDescriptor</code>메소드를 이용해서 간접적으로 접근 가능하다.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> person = &#123;</span><br><span class="line">  name: <span class="string">&#x27;Kim&#x27;</span> </span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptor(person, <span class="string">&#x27;name&#x27;</span>));</span><br><span class="line"><span class="comment">// &#123; value: &#x27;Kim&#x27;, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Object</span>.getOwnPropertyDescriptors(person));</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">&#123;</span></span><br><span class="line"><span class="comment">     name: &#123; value: &#x27;Kim&#x27;, writable: true, enumerable: true, configurable: true &#125;,</span></span><br><span class="line"><span class="comment">     age: &#123; value: 27, writable: true, enumerable: true, configurable: true &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+<p>이와 같이 반환된 객체를 프로퍼티 디스크립터(PropertyDescriptor)라 한다.</p>
+<h3 id="데이터-프로퍼티와-접근자-프로퍼티"><a href="#데이터-프로퍼티와-접근자-프로퍼티" class="headerlink" title="데이터 프로퍼티와 접근자 프로퍼티"></a>데이터 프로퍼티와 접근자 프로퍼티</h3><p>프로퍼티는 데이터 프로퍼티와 접근자 프로퍼티로 나눌 수 있다.</p>
+<p>데이터 프로퍼티는 키와 값으로 구성된 일반적인 프로퍼티로, <code>[[Value]]</code>, <code>[[Writable]]</code>, <code>[[Enumerable]]</code>, [[Configurable]]의 프로퍼티 어트리뷰트를 갖는다.</p>
+<p>접근자 프로퍼티는 자체적으로는 값을 갖지 않고 데이터 프로퍼티의 값을 읽거나 저장할 때 사용하는 접근자 함수(accessor function)로 구성된 프로퍼티다. <code>[[Get]]</code>, <code>[[Set]]</code>, <code>[[Enumerable]]</code>, <code>[[Configurable]]</code>의 프로퍼티 어트리뷰트를 갖는다.</p>
+<p>일반 객체의 <code>__proto__</code>는 접근자 프로퍼티, 함수 객체의 <code>prototype</code>은 데이터 프로퍼티다.</p>
+<p>프로퍼티 정의란 새로운 프로퍼티를 추가하면서 프로퍼티 어트리뷰트를 명시적으로 정의하거나, 기존 프로퍼티의 프로퍼티 어트리뷰트를 재정의하는 것을 말한다. <code>Object.defineProperty</code>, <code>Object.definePropertues</code>를 활용해서 정의할 수 있다.</p>
+<p>객체는 재할당 없이 직접 변경이 가능한데, 이를 방지하는 메소드가 있다.</p>
+<table>
+<thead>
+<tr>
+<th align="center">메소드</th>
+<th align="center">설명</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>Object.preventExtension</code></td>
+<td align="center">객체 확장 금지, 프로퍼티 추가만 금지한다</td>
+</tr>
+<tr>
+<td align="center"><code>Object.seal</code></td>
+<td align="center">객체 밀봉, 프로퍼티 갱신과 프로퍼티 읽기만 가능하다</td>
+</tr>
+<tr>
+<td align="center"><code>Object.freeze</code></td>
+<td align="center">객체 동결, 프로퍼티 읽기만 가능하다</td>
+</tr>
+</tbody></table>
+<p>객체 변경 방지 메소드는 얕은 변경 방지(shallow only)이기 때문에 깊은 변경 방지를 하기 위해서는 재귀를 사용해야 한다. <code>Object.freeze</code> 메소드와 깊은 변경 방지를 이용해서 불변 객체를 구현할 수 있다.</p>
+<p>프로토타입<br>추상연산은 필수적으로 자신이 생성할 객체의 프로토타입을 인수로 전달받는다.</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1430,108 +1575,6 @@
 <h3 id="switch-문"><a href="#switch-문" class="headerlink" title="switch 문"></a>switch 문</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">switch</span> (표현식) &#123;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">1</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">1</span>이 일치하면 실행될 문;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> 표현식<span class="number">2</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 표현식<span class="number">2</span>가 일치하면 실행될 문;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="keyword">switch</span> 문의 표현식과 일치하는 표현식을 갖는 <span class="keyword">case</span> 문이 없을 때 실행될 문;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>break문을 안쓴다면 폴스루(fall through)가 일어난다.</p>
 <h2 id="반복문"><a href="#반복문" class="headerlink" title="반복문"></a>반복문</h2><p>반복문(loop statement)<br>for문 쓸줄 알아야 한다.</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/09/20210309-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/09/20210309-TIL/" class="post-title-link" itemprop="url">20210309 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-09 10:10:54 / Modified: 21:26:39" itemprop="dateCreated datePublished" datetime="2021-03-09T10:10:54+09:00">2021-03-09</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/09/20210309-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/09/20210309-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="오늘-할-일"><a href="#오늘-할-일" class="headerlink" title="오늘 할 일"></a>오늘 할 일</h1><ul>
-<li><del>JavaScript chap.1 ~ 8 예습</del></li>
-<li><del>내일 team ruberduck 활동을 위한 JS 용어 정리</del></li>
-</ul>
-<p>ECMA Script - 자바스크립트의 표준 사양인 ECMA-262를 말하며, 프로그래밍 언어의 값, 타입, 객체와 프로퍼티, 함수, 표준 빌트인 객체 등 핵심 문법을 규정하고, 각 브라우저 제조사는 ECMA Script 사양을 준수해서 브라우저에 내장되는 자바스크립트 엔진을 구현한다. (자바스크립트의 뼈대(core))</p>
-<h2 id="리터럴-literal-과-표현식-expression-과-문-statement"><a href="#리터럴-literal-과-표현식-expression-과-문-statement" class="headerlink" title="리터럴(literal)과 표현식(expression)과 문(statement)"></a>리터럴(literal)과 표현식(expression)과 문(statement)</h2><p>리터럴(literal)은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기 방식(notation)</p>
-<p>표현식(expression)은 값으로 평가될 수 있는 문(statement)이다. 표현식이 평가되면 새로운 값을 생성하거나 기존의 값을 참조한다.(리터럴도 값으로 평가되기 때문에 표현식이다)</p>
-<p>문(statement)은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되어 있다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 토큰 - 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소</span></span><br><span class="line"><span class="comment">// var, sum, =, 1, +, 2, ; 모두 토큰이다</span></span><br></pre></td></tr></table></figure>
-<p>문의 종료를 나타낼 때 세미콜론을 준다. 코드 블록은 언제나 문의 종료를 의미하는 자체 종결성(self closing)을 갖기 때문에 코드 블록 뒤에 세미콜론을 붙이지 않는다.<br>사실 자바스크립트 엔진이 소스코드를 해석할 때 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 붙여주는 <strong>세미콜론 자동 삽입 기능</strong>이 암묵적을 수행되지만, 세미콜론 자동 삽입 기능과 개발자의 예측이 일치하지 않는 경우도 있기 때문에, 세미콜론을 붙이는 걸 추천한다.</p>
-<p><strong>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단하고 명료한 방법은 변수에 할당해 보는 것이다.</strong></p>
-<h1 id="데이터-타입"><a href="#데이터-타입" class="headerlink" title="데이터 타입"></a>데이터 타입</h1><p>자바스크립트의 문자열은 원시 타입이며, 변경 불가능한 값(immutable value)이다. 문자열이 생성되면 그 문자열을 변경할 수 없다.</p>
-<p>일반 문자열(따옴표)과 달리 템플릿 리터럴(백틱) 내에서는 이스케이프 시퀀스(\n, \b 등)를 사용하지 않고도 줄바꿈이 허용되고 모든 공백도 있는 그대로 적용된다.</p>
-<p>표현식 삽입(<code>$&#123;&#125;</code>)은 반드시 템플릿 리터럴 내에서 사용해야 한다. 템플릿 리터럴이 아닌 일반 문자열에서 표현식 삽입은 문자열 취급한다.</p>
-<p><a target="_blank" rel="noopener" href="https://mulder21c.github.io/2019/01/30/what-is-cross-browsing/">Cross-Browsing이란?</a></p>
 
       
     </div>

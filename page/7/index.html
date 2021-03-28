@@ -305,6 +305,14 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> math</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Points</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x, y, z</span>):</span></span><br><span class="line">        self.x = x</span><br><span class="line">        self.y = y</span><br><span class="line">        self.z = z</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sub__</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> Points((self.x - no.x), (self.y - no.y), (self.z - no.z))</span><br><span class="line">        <span class="comment"># 리턴값을 Points(x, y, z)가 아닌 (x, y, z)로 리턴해주면, Points의 인스턴스가 아니기 때문에 Points메소드 사용 불가</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">dot</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> (self.x * no.x) + (self.y * no.y) + (self.z * no.z)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">cross</span>(<span class="params">self, no</span>):</span></span><br><span class="line">        <span class="keyword">return</span> Points((self.y * no.z - self.z * no.y), (-self.x * no.z + self.z * no.x), (self.x * no.y - self.y * no.x)) </span><br><span class="line">        <span class="comment"># 리턴값을 Points(x, y, z)가 아닌 (x, y, z)로 리턴해주면, Points의 인스턴스가 아니기 때문에 Points메소드 사용 불가</span></span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">absolute</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="comment"># return pow((self.x ** 2 + self.y ** 2 + self.z ** 2), 0.5)</span></span><br><span class="line">        <span class="keyword">return</span> math.sqrt(self.x ** <span class="number">2</span> + self.y ** <span class="number">2</span> + self.z ** <span class="number">2</span>)</span><br><span class="line">        <span class="comment">#pow()대신 sqrt()함수 사용</span></span><br><span class="line">        </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line"><span class="comment">#     points = list()</span></span><br><span class="line"><span class="comment">#     for i in range(4):</span></span><br><span class="line"><span class="comment">#         a = list(map(float, input().split()))</span></span><br><span class="line"><span class="comment">#         points.append(a)</span></span><br><span class="line">    points = [[<span class="number">0.0</span>, <span class="number">4.0</span>, <span class="number">5.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">6.0</span>], [<span class="number">0.0</span>, <span class="number">5.0</span>, <span class="number">9.0</span>], [<span class="number">1.0</span>, <span class="number">7.0</span>, <span class="number">2.0</span>]]</span><br><span class="line"></span><br><span class="line">    a, b, c, d = Points(*points[<span class="number">0</span>]), Points(*points[<span class="number">1</span>]), Points(*points[<span class="number">2</span>]), Points(*points[<span class="number">3</span>])</span><br><span class="line">    AB = b - a</span><br><span class="line">    BC = c - b</span><br><span class="line">    x = AB.cross(BC)</span><br><span class="line">    y = (c - b).cross(d - c)</span><br><span class="line">    angle = math.acos(x.dot(y) / (x.absolute() * y.absolute()))</span><br><span class="line">    <span class="comment"># angle값이 radian이라서 문제에서 원하는 degree로 바꿔줘야 함</span></span><br><span class="line">    print(<span class="built_in">round</span>(math.degrees(angle), <span class="number">2</span>))</span><br><span class="line">    <span class="comment"># 소수점 2번 째 자리까지 round()이용해서 출력</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 출력값 확인 OK</span></span><br><span class="line">&gt;&gt; <span class="number">8.19</span></span><br></pre></td></tr></table></figure>
 <p><img src="/image/20210209_191014.jpg" alt="Vactor"></p>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/09/HackerRank-Find-the-Torsional-Angle/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -400,6 +408,14 @@
 <li>코드잇 OOP - SOLID강의 보기</li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/09/20210209-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -502,6 +518,14 @@
 <li><a target="_blank" rel="noopener" href="https://www.hackerrank.com/challenges/class-2-find-the-torsional-angle/problem">HackerRank백터 연산 관련 문제</a> 풀이</li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/08/20210208-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -597,6 +621,14 @@
 </li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/07/20210207-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -706,6 +738,14 @@
 </li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/06/20210206-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -803,6 +843,14 @@
 random input으로 결과 테스트 -&gt; OK</li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/05/20210205-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -903,6 +951,14 @@ random input으로 결과 테스트 -&gt; OK</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> csv, json</span><br><span class="line"></span><br><span class="line"><span class="comment"># 인코딩 utf-8 =&gt; error, &#x27;cp949&#x27; or &#x27;euc-kr&#x27;로 변경</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;./population.csv&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    csved = csv.reader(f)</span><br><span class="line">    population_list = [row <span class="keyword">for</span> row <span class="keyword">in</span> csved]</span><br><span class="line"><span class="comment"># population_list 출력 확인</span></span><br><span class="line"></span><br><span class="line">users = &#123;<span class="string">&#x27;users&#x27;</span>: []&#125;</span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> population_list[<span class="number">1</span>:]:</span><br><span class="line">    user_dict = &#123;&#125;</span><br><span class="line">    <span class="keyword">for</span> index, key <span class="keyword">in</span> <span class="built_in">enumerate</span>(population_list[<span class="number">0</span>]):</span><br><span class="line">        <span class="comment"># &#x27;동&#x27;: value값 뒤에 whitespace제거 replace(&quot; &quot;,&quot;&quot;)</span></span><br><span class="line">        user_dict[key] = row[index].replace(<span class="string">&quot; &quot;</span>,<span class="string">&quot;&quot;</span>)</span><br><span class="line">        users[<span class="string">&#x27;users&#x27;</span>].append(user_dict)</span><br><span class="line"><span class="comment"># users 출력 확인</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># json.dump로 json파일 만들기</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;population.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(users, f)</span><br><span class="line"></span><br><span class="line"><span class="comment">#json.load로 파일 읽고 변수에 저장</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;population.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;cp949&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    j_data = json.load(f)</span><br><span class="line">print(j_data)</span><br></pre></td></tr></table></figure>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/04/20210204-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1006,31 +1062,14 @@ random input으로 결과 테스트 -&gt; OK</li>
 <hr>
 <p>Fixing Permission of Xauthority</p>
 <figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ chown username:username .Xauthority</span><br></pre></td></tr></table></figure>
-<p>ex) <code>chown kjh:kjh .Xauthority</code><br>이 방법도 해결x</p>
-<hr>
-<p>startx<br><code>sudo startx</code>입력하면 desktop screen이 나올텐데, 거기서 터미널을 열고</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
-<p>입력하고 reboot 해봤지만 해결x</p>
-<hr>
-<p>gdm3 재설치<br>방금 전에 설치한 <code>LitghtDM</code>과 <code>KDE</code>를 삭제하고, gdm3를 다시 설치해봤다.</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge lightdm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge sddm</span><br><span class="line"></span><br><span class="line">$ sudo apt purge gdm3</span><br><span class="line"></span><br><span class="line">$ sudo apt install gdm3</span><br><span class="line"></span><br><span class="line">$ sudo dpkg-reconfigure gdm3</span><br></pre></td></tr></table></figure>
-<p>gdm3로 변경할 때 아래의 오류메세지가 나올 수 있는데 그냥 reboot하면 gdm3가 적용된다.<br><code>invoke-rc.d: initscript gdm3, action &quot;reload&quot; failed.</code></p>
-<p>이 방법도 해결x</p>
-<hr>
-<p>Fix temp directory permission<br>temp 디렉토리의 권한을 수정</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod a+wt /tmp</span><br></pre></td></tr></table></figure>
-<p>이 방법으로도 해결 x</p>
-<hr>
-<p>정말 몇 시간동안 해결이 되질 않아서 ubuntu를 다시 설치해야 되나 했는데</p>
-<p> 마지막으로,</p>
-<p>fcitx 설치 이후에 login loop가 생겼으니, fcitx를 지워봐야겠다고 생각했다.<br>이유는 모르지만, fcitx를 설치하면서 다른 입력기나 어디선가 문제가 생겼을 가능성도<br>있을 법 해서 지워봤다.</p>
-<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ sudo apt purge fcitx-hangul</span><br><span class="line">$ sudo apt autoremove</span><br><span class="line"></span><br><span class="line">$ sudo reboot</span><br></pre></td></tr></table></figure>
-<p>신기하게도, 해결이 됐다.<br>정말 fcitx-hangul을 지워서 해결이 된건지, 앞의 과정들을 진행해서 해결이 된건지 모르겠지만<br>결국 해결을 하고 zoom 한글문제는 ibus로 입력기를 바꾼 뒤,<br>간단한 설정으로 한글을 입력할 수 있게 되었다.</p>
-<p>앞으로 무언가를 설치할 때 신중해야겠다..</p>
-<p>TTY(Teletypewriter) - OS에서 제공하는 가상콘솔<br>데스크탑 GUI(xwindows)에서는 <code>/dev/pts/1</code>에 올려져 있고<br>tty 콘솔 모드(<code>Ctrl</code>+<code>Alt</code>+<code>F1</code><del><code>F6</code>)에서는 `/dev/tty1</del>6`<br>tty가 물리적인 콘솔에서 사람이 직접 조작하는 개념이라면, pty는 xwindow에서 에뮬레이터로 접속할<br>때 사용하는 접속점의 개념<br>로그인을 콘솔에서 했는지, 원격지에서 했는지 차이</p>
-<hr>
-<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>우분투 그놈(ubuntu 16.04 gnome) 무한 로그인 현상 : 네이버 블로그<br>(<a target="_blank" rel="noopener" href="https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https://www.google.com/">https://m.blog.naver.com/PostView.nhn?blogId=hahava&amp;logNo=221130469869&amp;proxyReferer=https:%2F%2Fwww.google.com%2F</a>)<br>How to get rid of Login Screen Loop in Ubuntu ? | by Satyabrat Bhol | Medium<br>(<a target="_blank" rel="noopener" href="https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302">https://medium.com/@satyabratbhol/how-to-get-rid-of-login-screen-loop-in-ubuntu-feead4cb2302</a>)<br>Ubuntu 20.04 Login loop fix - Let’s FOSS<br>(<a target="_blank" rel="noopener" href="https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/">https://www.google.com/amp/s/letsfoss.com/ubuntu-20-04-login-loop-fix/amp/</a>)<br>Can’t switch to gdm3 using sudo dpkg-reconfigure gdm3 - Ask Ubuntu<br>(<a target="_blank" rel="noopener" href="https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3">https://askubuntu.com/questions/939353/cant-switch-to-gdm3-using-sudo-dpkg-reconfigure-gdm3</a>)</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/03/20210203-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1140,37 +1179,14 @@ random input으로 결과 테스트 -&gt; OK</li>
 <li>Question mark(<code>?</code>): 앞 문자의 존재유무(있거나 없거나)를 의미합니다.<br>ex) appl?e == appe 또는 apple</li>
 <li>Curly brackets(<code>&#123;m,n&#125;</code>): 반복횟수를 정의할 때 사용합니다. 중괄호 안의 숫자(m,n)은 반복횟수를<br>정의하며, 정확히 일치할 경우 1개의 숫자(m)를, 범위를 정의할 경우 2개의 숫자를 사용합니다.<br>(m개~n개)<br>ex1) ba(na){2} == banana<br>ex2) ba(na){0,2} == ba, bana, banana</li>
 </ul>
-<ul>
-<li>Square brackets(<code>[]</code>): 문자클래스를 의미합니다. 대괄호 사이에 나열한 문자 중 하나의 값과 일치<br>할 경우를 의미합니다. 이 문자클래스와 함께 쓰이는 메타문자는 하이픈(-) 과 캐럿(^) 입니다.</li>
-<li>Hyphen(<code>-</code>): 두 문자 사이의 범위를 뜻합니다.<br>ex1) [A-Za-z] == 대문자와 소문자 알파벳 모두<br>ex2) [a-g0-5] == a,b,c,d,e,f,g 와 0,1,2,3,4,5 중 하나의 문자</li>
-<li>Caret(<code>^</code>): 부정(Not)을 의미합니다.<br>ex1) [^0-9]: 숫자가 아닌 문자<br>ex2) [^A-Za-z]: 알파벳이 아닌 모든 문자</li>
-</ul>
-<ul>
-<li>Parentheses(<code>()</code>): 소괄호 안의 문자열의 그룹을 의미합니다. 문자열 패턴의 반복을 검사하고<br>싶을 때 사용합니다. ex) (apple)+ == penpineappleapplepen</li>
-<li>Vertical bar(<code>|</code>): | 의 좌우 중 하나의 값과 일치하는 경우를 의미합니다.<br>ex1) (apple|apqle) == apple 또는 apqle<br>ex2) ap[p|q]le == apple 또는 apqle</li>
-<li>Backslach(<code>\</code>): 정규표현식을 만들 때 메타문자가 메타문자가 아닌 그 문자 그대로 사용하게 하기<br>위해 사용합니다.<br>ex) <code>https://www.google.co.kr/</code>=&gt; URL의 구두점(.)이 메타문자로 인식될 수 있음<br>-&gt; <code>https://www\.google\.co\.kr/</code></li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># r&#x27;[A-Za-z0-9\-\_\.\+]@gmail\.com&#x27; </span></span><br><span class="line"><span class="comment"># username으로 들어올 수 있는 글자 = alphabet, number, -, ., _, +</span></span><br><span class="line"><span class="comment"># A-Z 모든 대문자 알파벳</span></span><br><span class="line"><span class="comment"># a-z 모든 소문자 알파벳</span></span><br><span class="line"><span class="comment"># 0-9 모든 숫자</span></span><br><span class="line"><span class="comment"># \- \_ \. \+</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+] &gt;&gt; 한 문자에 대한 것</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]+ &gt;&gt; 1개 이상의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;5&#125; &gt;&gt; 5개의 문자</span></span><br><span class="line"><span class="comment"># [A-Za-z0-9\-\_\.\+]&#123;4, 32&#125; &gt;&gt; 4개~32개의 문자</span></span><br><span class="line"><span class="comment"># ㄱ-ㅎ ㅏ-ㅣ 가-힣 &gt;&gt; 모든 한글 표현(한글은 2byte 언어(UNICODE), 영어는 1byte 언어(ASCII))</span></span><br><span class="line"></span><br><span class="line">apples = [<span class="string">&#x27;a&#x27;</span> + <span class="string">&#x27;p&#x27;</span>*i + <span class="string">&#x27;le&#x27;</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)] <span class="comment"># ale ~ a&#x27;p*9&#x27;le 까지 리스트에 입력</span></span><br><span class="line">finder = re.<span class="built_in">compile</span>(<span class="string">r&#x27;^ap&#123;2&#125;le$&#x27;</span>) <span class="comment"># 반복문에 들어가기 전에 미리 compile</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 반복문 안에서 re.match(item)을 하게 되면</span></span><br><span class="line"><span class="comment"># compile + match를 계속 반복하기 때문에 퍼포먼스 떨어짐.</span></span><br><span class="line"><span class="comment"># 반복할 때는 compile을 미리 해두고 반복문 안에서는 match만 해주는게 좋다.</span></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> apples:</span><br><span class="line">    m = finder.match(item)</span><br><span class="line">    print(item, m)</span><br></pre></td></tr></table></figure>
-<hr>
-<h1 id="Lambda"><a href="#Lambda" class="headerlink" title="Lambda"></a>Lambda</h1><ul>
-<li>익명함수(이름이 없는 함수)</li>
-<li>간단한 수식을 함수로 지정해 한 두번 쓸 용도로 사용할 때</li>
-<li>두 줄 이상 실행될 함수는 그냥 함수로 정의하는게 낫다.</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">numbers = [i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">10</span>+<span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
-<ul>
-<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">numbers_plus = [i+<span class="number">1</span> <span class="keyword">for</span> i <span class="keyword">in</span> numbers]</span><br><span class="line">numbers_plus</span><br></pre></td></tr></table></figure></li>
-<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">int_plus_one</span>(<span class="params">a</span>):</span></span><br><span class="line">    <span class="keyword">return</span> a + <span class="number">1</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(int_plus_one, numbers))</span><br></pre></td></tr></table></figure></li>
-<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> a: a+<span class="number">1</span>, numbers))</span><br><span class="line"><span class="comment"># 함수를 정의하지 않고 한번 쓰고 버릴 거라 lambda를 사용하면 편리</span></span><br><span class="line"><span class="comment"># map과 lambda는 heap에서 처리하고 사라짐</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<hr>
-<ul>
-<li>list comprehension 사용 했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># list comprehension</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_squared</span>(<span class="params">num_list</span>):</span></span><br><span class="line">    result = [i**<span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> num_list]</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">get_squared(numbers)</span><br></pre></td></tr></table></figure></li>
-<li>map() 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">do_square</span>(<span class="params">num</span>):</span></span><br><span class="line">    <span class="keyword">return</span> num ** <span class="number">2</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(do_square, numbers))</span><br></pre></td></tr></table></figure></li>
-<li>map + lambda 사용했을 때<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># map + lambda</span></span><br><span class="line"><span class="built_in">list</span>(<span class="built_in">map</span>(<span class="keyword">lambda</span> num: num**<span class="number">2</span>, numbers))</span><br></pre></td></tr></table></figure></li>
-</ul>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/02/20210202-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1277,6 +1293,14 @@ random input으로 결과 테스트 -&gt; OK</li>
 <li>JSON<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> json</span><br><span class="line"></span><br><span class="line">data = &#123;<span class="string">&#x27;users&#x27;</span>: [</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;KD Hong&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;Seoul, KR&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;John Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;NewYork, US&#x27;</span>&#125;,</span><br><span class="line">    &#123;<span class="string">&#x27;name&#x27;</span>:<span class="string">&#x27;Jane Doe&#x27;</span>, <span class="string">&#x27;locale&#x27;</span>:<span class="string">&#x27;London, UK&#x27;</span>&#125;</span><br><span class="line">]&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.dump - 어떤 dict를 json형태로 파일을 만들 수 있음</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;w&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    json.dump(data, f)</span><br><span class="line"></span><br><span class="line"><span class="comment"># json.load - json파일을 해체해서 dict로 다시 보여줌</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;users.json&#x27;</span>, <span class="string">&#x27;r&#x27;</span>, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    des_data = json.load(f)</span><br><span class="line"></span><br><span class="line">print(des_data[<span class="string">&#x27;users&#x27;</span>])</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">[&#123;&#x27;name&#x27;: &#x27;KD Hong&#x27;, &#x27;locale&#x27;: &#x27;Seoul, KR&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;John Doe&#x27;, &#x27;locale&#x27;: &#x27;NewYork, US&#x27;&#125;,</span></span><br><span class="line"><span class="string"> &#123;&#x27;name&#x27;: &#x27;Jane Doe&#x27;, &#x27;locale&#x27;: &#x27;London, UK&#x27;&#125;]</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> row <span class="keyword">in</span> des_data[<span class="string">&#x27;users&#x27;</span>]:</span><br><span class="line">    print(<span class="string">&quot;&#123;&#125; is from &#123;&#125;.&quot;</span>.<span class="built_in">format</span>(row[<span class="string">&#x27;name&#x27;</span>], row[<span class="string">&#x27;locale&#x27;</span>]))</span><br><span class="line"><span class="string">&quot;&quot;&quot;out:</span></span><br><span class="line"><span class="string">KD Hong is from Seoul, KR.</span></span><br><span class="line"><span class="string">John Doe is from NewYork, US.</span></span><br><span class="line"><span class="string">Jane Doe is from London, UK.</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/01/20210201-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">77</span>
+          <span class="site-state-item-count">78</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,99 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/28/20210328-TIL/" class="post-title-link" itemprop="url">20210328 TIL 키보드 이벤트 한글 입력 문제</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-28 16:02:45 / Modified: 20:02:32" itemprop="dateCreated datePublished" datetime="2021-03-28T16:02:45+09:00">2021-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/28/20210328-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/28/20210328-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="키보드-이벤트-한글-입력-문제"><a href="#키보드-이벤트-한글-입력-문제" class="headerlink" title="키보드 이벤트 한글 입력 문제"></a>키보드 이벤트 한글 입력 문제</h1><p><code>keydown</code> - 키가 눌릴 때 이벤트 발생<br><code>keypress</code> - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.<br><code>keyup</code> - 키가 떼질 때 이벤트 발생</p>
+<p>위의 이벤트가 발생하면 KeyboardEvent 타입의 이벤트 객체가 생성된다.<br>영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다.</p>
+<p><code>keyup</code> 이벤트가 발생했을 때,  이벤트 객체는 printable key인 한글을 입력할 때 객체가 생성되지도 않는다. 심지어 한글키로 바꿨을 때 다른 Modifier key들은 출력이 되지만, <code>Enter</code>키는 <code>Enter</code>키 자체가 객체로 생성되지 않아서 <code>Enter</code>키를 인식할 수 없다.(리눅스환경 기준)</p>
+<p><code>keydown</code> 이벤트가 발생했을 때, 이벤트 객체를 출력해보면 printable key인 한글을 입력했을 때 이벤트 객체가 생성은 되지만, key값으로는 <code>Unidentified</code>를 반환한다. Modifier key들은 정상적으로 출력이 된다.</p>
+<p>결국 <code>Enter</code>키를 인식하기 위해서 <code>keyup</code> 이벤트 대신 <code>keydown</code> 이벤트를 사용해서 해결했다.</p>
+<p>IME(Input Method Editor) - 입력기(입력 방식 편집기)는 한글, 한자처럼 컴퓨터 자판에 있는 글자보다 수가 더 많은 문자를 계산하거나 좋바하여 입력해주는 시스템 소프트웨어<br>Modifier key - Shift, Ctrl, Alt 등 키보드의 입력을 보조해주는 키<br>printable key - 문자를 출력하는 키</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -443,7 +536,7 @@
           <i class="far fa-calendar-check"></i>
         </span>
         <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-26 21:48:04" itemprop="dateModified" datetime="2021-03-26T21:48:04+09:00">2021-03-26</time>
+        <time title="Modified: 2021-03-28 20:03:28" itemprop="dateModified" datetime="2021-03-28T20:03:28+09:00">2021-03-28</time>
       </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -546,10 +639,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-03-24 19:17:44 / Modified: 21:57:28" itemprop="dateCreated datePublished" datetime="2021-03-24T19:17:44+09:00">2021-03-24</time>
+      <time title="Created: 2021-03-24 19:17:44" itemprop="dateCreated datePublished" datetime="2021-03-24T19:17:44+09:00">2021-03-24</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-28 20:03:39" itemprop="dateModified" datetime="2021-03-28T20:03:39+09:00">2021-03-28</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -1084,110 +1183,6 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((<span class="number">123.123</span>).toFixed()); <span class="comment">// &#x27;123&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자에 처음 .은 소수 구분 기호로 구분되고 두번 째 .은 프로퍼티 접근 연산자로 해석된다.</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">123.123</span>.toFixed(<span class="number">2</span>))) <span class="comment">// &#x27;123.12&#x27;</span></span><br></pre></td></tr></table></figure>
 <h3 id="Number-prototype-toString"><a href="#Number-prototype-toString" class="headerlink" title="Number.prototype.toString"></a>Number.prototype.toString</h3><p>toString 메소드는 숫자를 문자열로 반환하는 메소드다. 인수에 2~36사이의 정수값으로 진법을 나타낼 수 있고, 기본 값은 10진법으로 지정된다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log((<span class="number">10</span>).toString()); <span class="comment">// 10</span></span><br><span class="line"><span class="comment">// 2진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">20</span>).toString(<span class="number">2</span>)); <span class="comment">// 10100</span></span><br><span class="line"><span class="comment">// 8진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">20</span>).toString(<span class="number">8</span>)); <span class="comment">// 24</span></span><br><span class="line"><span class="comment">// 16진법</span></span><br><span class="line"><span class="built_in">console</span>.log((<span class="number">30</span>).toString(<span class="number">16</span>)); <span class="comment">//1e</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/19/20210319-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/19/20210319-TIL/" class="post-title-link" itemprop="url">20210319 TIL JS 6회차</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-19 20:13:50 / Modified: 21:42:24" itemprop="dateCreated datePublished" datetime="2021-03-19T20:13:50+09:00">2021-03-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/19/20210319-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/19/20210319-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="배열의-메소드"><a href="#배열의-메소드" class="headerlink" title="배열의 메소드"></a>배열의 메소드</h1><h3 id="Array-prototype-sort"><a href="#Array-prototype-sort" class="headerlink" title="Array.prototype.sort"></a>Array.prototype.sort</h3><p>sort 메소드는 원본 배열을 변경하는 mutator, 바뀐 배열을 반환한다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.sort()); <span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">3</span>, <span class="number">33</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr2.sort()); <span class="comment">// [ 1, 10, 2, 22, 3, 33, 5 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// [ 1, 10, 2, 22, 3, 33, 5 ]</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>문자열이 아닌 숫자를 정렬했는데 왜 저런 순서로 정렬되었을까?</p>
-</blockquote>
-<p>sort 메소드는 배열의 요소가 숫자 타입이라 할지라도 배열의 요소를 일시적으로 문자열로 변환 후 유니코드 코드 포인트의 순서를 기준으로 정렬한다.<br>숫자 요소를 정렬할 때는 sort 메소드에 정렬 순서를 정의하는 비교 함수를 인수로 전달해야 한다. </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">3</span>, <span class="number">33</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열의 오름차순 정렬</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> a - b)); <span class="comment">// [ 1,  2,  3, 5, 10, 22, 33 ]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 숫자 배열의 내림차순 정렬</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2.sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span> b - a)); <span class="comment">// [ 33, 22, 10, 5, 3,  2,  1 ]</span></span><br></pre></td></tr></table></figure>
-<p>sort 메소드는 함수를 전달 받았기 때문에 고차 함수(Higher-Order Function, HOF)다.</p>
-<h3 id="배열-고차-함수"><a href="#배열-고차-함수" class="headerlink" title="배열 고차 함수"></a>배열 고차 함수</h3><p>고차 함수는 함수를 인자로 전달 받거나 함수를 반환하는 함수를 말한다. 외부 상태의 변경(인수로 객체를 전달했을 경우 함수 내부에서 재할당없이 자유자재로 변경이 가능)이나 가변(mutable) 데이터를 피하고 불변성(immutability)을 지향하는 함수형 프로그래밍을 기반에 두고 있다.<br>함수형 프로그래밍은 조건문과 반복문을 제거하여 복잡성을 해결하고 변수의 사용을 억제하여 상태 변경을 피하려는 프로그래밍 패러다임이다.</p>
-<h3 id="Array-prototype-forEach"><a href="#Array-prototype-forEach" class="headerlink" title="Array.prototype.forEach"></a>Array.prototype.forEach</h3><p>forEach 메소드는 반복문을 추상화한 고차 함수로서 내부에서 반복문을 통해 자신을 호출한 배열을 순회하면서 수행해야할 처리를 콜백 함수로 전달받아서 반복 호출한다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> numbers = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> pows = [];</span><br><span class="line"></span><br><span class="line"><span class="comment">// forEach 메서드는 numbers 배열의 모든 요소를 순회하면서 콜백 함수를 반복 호출한다.</span></span><br><span class="line">numbers.forEach(<span class="function"><span class="params">item</span> =&gt;</span> pows.push(item ** <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(pows); <span class="comment">// [1, 4, 9]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// forEach와 같은 기능을 하는 함수를 만들어 보자.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.myForEach = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">`<span class="subst">$&#123;fn&#125;</span> is not a funciton`</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.length; i++) &#123;</span><br><span class="line">        fn(<span class="built_in">this</span>[i], i, <span class="built_in">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">numbers.myForEach(<span class="function"><span class="params">v</span> =&gt;</span> pows.push(v ** <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(pows); <span class="comment">// [1, 4, 9]</span></span><br></pre></td></tr></table></figure>
-<p>forEach 메소드의 반환값은 언제나 <code>defined</code>다.</p>
-<h3 id="Array-prototype-map"><a href="#Array-prototype-map" class="headerlink" title="Array.prototype.map"></a>Array.prototype.map</h3><p>map 메소드는 콜백함수의 반환값들로 구성된 새로운 배열을 반환한다. 반환된 새로운 배열의 length 프로퍼티 값은 map 메서드를 호출한 배열의 length 프로퍼티 값과 일치한다. 1:1 매핑(mapping)</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map과 같은 기능을 하는 myMap을 만들어보자.</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.myMap = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> fn !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">`<span class="subst">$&#123;fn&#125;</span> is not a function`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.length; i++) &#123;</span><br><span class="line">        res.push(fn(<span class="built_in">this</span>[i], i, <span class="built_in">this</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(numbers.myMap(<span class="function"><span class="params">v</span> =&gt;</span> v ** <span class="number">4</span>));</span><br></pre></td></tr></table></figure>
-<h3 id="Array-prototype-filter"><a href="#Array-prototype-filter" class="headerlink" title="Array.prototype.filter"></a>Array.prototype.filter</h3><p>filter 메소드는 콜백 함수의 반환값이 true인 요소로만 구성된 새로운 배열을 반환한다. filter 메소드가 생성하여 반환한 새로운 배열의 length 프로퍼티 값은 filter 메소드를 호출한 배열의 length 프로퍼티 값과 같거나 작다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// filter와 같은 기능을 하는 myFilter</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.myFilter = <span class="function"><span class="keyword">function</span> (<span class="params">callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> callback !== <span class="string">&#x27;function&#x27;</span>) &#123;</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">`<span class="subst">$&#123;callback&#125;</span> is not a function`</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="built_in">this</span>.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (callback(<span class="built_in">this</span>[i], i, <span class="built_in">this</span>)) res.push(<span class="built_in">this</span>[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(numbers.myFilter(<span class="function"><span class="params">v</span> =&gt;</span> v &gt; <span class="number">1</span>));</span><br></pre></td></tr></table></figure>
-<h3 id="Array-prototype-reduce"><a href="#Array-prototype-reduce" class="headerlink" title="Array.prototype.reduce"></a>Array.prototype.reduce</h3><p>reduce 메소드는 2개의 값을 이용해서 행동을 한다. map과 filter와 다르게 누계를 해야 하기 때문에 4개의 파라미터를 받는다(accumulator, currentValue, index, array)</p>
-
       
     </div>
 

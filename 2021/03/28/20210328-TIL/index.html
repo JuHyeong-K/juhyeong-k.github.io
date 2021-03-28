@@ -23,18 +23,22 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="All about dev">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JH&#39;s dev blog">
-<meta property="og:url" content="https://juhyeong-k.github.io/categories/TIL/page/6/index.html">
+<meta name="description" content="키보드 이벤트 한글 입력 문제keydown - 키가 눌릴 때 이벤트 발생keypress - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.keyup - 키가 떼질 때 이벤트 발생 위의 이벤트가 발생하면 KeyboardEvent 타입의 이벤트 객체가 생성된다.영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다. keyup 이">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210328 TIL 키보드 이벤트 한글 입력 문제">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/index.html">
 <meta property="og:site_name" content="JH&#39;s dev blog">
-<meta property="og:description" content="All about dev">
+<meta property="og:description" content="키보드 이벤트 한글 입력 문제keydown - 키가 눌릴 때 이벤트 발생keypress - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.keyup - 키가 떼질 때 이벤트 발생 위의 이벤트가 발생하면 KeyboardEvent 타입의 이벤트 객체가 생성된다.영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다. keyup 이">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-03-28T07:02:45.000Z">
+<meta property="article:modified_time" content="2021-03-28T11:02:32.820Z">
 <meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="TIL">
+<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://juhyeong-k.github.io/categories/TIL/page/6/">
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/">
 
 
 <script class="page-configurations">
@@ -42,11 +46,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
-<title>Category: TIL | JH's dev blog</title>
+<title>20210328 TIL 키보드 이벤트 한글 입력 문제 | JH's dev blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
     <script>
@@ -154,7 +158,7 @@
 
   <aside class="sidebar">
 
-    <div class="sidebar-inner sidebar-overview-active">
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
       <ul class="sidebar-nav">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -167,6 +171,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%82%A4%EB%B3%B4%EB%93%9C-%EC%9D%B4%EB%B2%A4%ED%8A%B8-%ED%95%9C%EA%B8%80-%EC%9E%85%EB%A0%A5-%EB%AC%B8%EC%A0%9C"><span class="nav-number">1.</span> <span class="nav-text">키보드 이벤트 한글 입력 문제</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -221,234 +226,122 @@
 </noscript>
 
 
-    <div class="main-inner category posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
-  
-  
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h2 class="collection-header">TIL
-          <small>Category</small>
-        </h2>
-      </div>
 
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210328 TIL 키보드 이벤트 한글 입력 문제
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
+
+      <time title="Created: 2021-03-28 16:02:45 / Modified: 20:02:32" itemprop="dateCreated datePublished" datetime="2021-03-28T16:02:45+09:00">2021-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/28/20210328-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/28/20210328-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="키보드-이벤트-한글-입력-문제"><a href="#키보드-이벤트-한글-입력-문제" class="headerlink" title="키보드 이벤트 한글 입력 문제"></a>키보드 이벤트 한글 입력 문제</h1><p><code>keydown</code> - 키가 눌릴 때 이벤트 발생<br><code>keypress</code> - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.<br><code>keyup</code> - 키가 떼질 때 이벤트 발생</p>
+<p>위의 이벤트가 발생하면 KeyboardEvent 타입의 이벤트 객체가 생성된다.<br>영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다.</p>
+<p><code>keyup</code> 이벤트가 발생했을 때,  이벤트 객체는 printable key인 한글을 입력할 때 객체가 생성되지도 않는다. 심지어 한글키로 바꿨을 때 다른 Modifier key들은 출력이 되지만, <code>Enter</code>키는 <code>Enter</code>키 자체가 객체로 생성되지 않아서 <code>Enter</code>키를 인식할 수 없다.(리눅스환경 기준)</p>
+<p><code>keydown</code> 이벤트가 발생했을 때, 이벤트 객체를 출력해보면 printable key인 한글을 입력했을 때 이벤트 객체가 생성은 되지만, key값으로는 <code>Unidentified</code>를 반환한다. Modifier key들은 정상적으로 출력이 된다.</p>
+<p>결국 <code>Enter</code>키를 인식하기 위해서 <code>keyup</code> 이벤트 대신 <code>keydown</code> 이벤트를 사용해서 해결했다.</p>
+<p>IME(Input Method Editor) - 입력기(입력 방식 편집기)는 한글, 한자처럼 컴퓨터 자판에 있는 글자보다 수가 더 많은 문자를 계산하거나 좋바하여 입력해주는 시스템 소프트웨어<br>Modifier key - Shift, Ctrl, Alt 등 키보드의 입력을 보조해주는 키<br>printable key - 문자를 출력하는 키</p>
+
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-03T21:47:35+09:00"
-              content="2021-02-03">
-          02-03
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/03/20210203-TIL/" itemprop="url">
-            <span itemprop="name">20210203 TIL</span>
-          </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+              <a href="/tags/JS/" rel="tag"># JS</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/03/27/20210327-TIL/" rel="prev" title="20210327 TIL">
+                  <i class="fa fa-chevron-left"></i> 20210327 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-02T17:47:08+09:00"
-              content="2021-02-02">
-          02-02
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/02/20210202-TIL/" itemprop="url">
-            <span itemprop="name">20210202 TIL</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-01T17:59:13+09:00"
-              content="2021-02-01">
-          02-01
-        </time>
-      </div>
 
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/01/20210201-TIL/" itemprop="url">
-            <span itemprop="name">20210201 TIL</span>
-          </a>
-      </div>
 
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-31T21:51:43+09:00"
-              content="2021-01-31">
-          01-31
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/31/20210131-TIL/" itemprop="url">
-            <span itemprop="name">20210131 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-30T23:07:21+09:00"
-              content="2021-01-30">
-          01-30
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/30/20210130-TIL/" itemprop="url">
-            <span itemprop="name">20210130 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-29T20:25:38+09:00"
-              content="2021-01-29">
-          01-29
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/29/20210129-TIL/" itemprop="url">
-            <span itemprop="name">20210129 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-28T18:43:06+09:00"
-              content="2021-01-28">
-          01-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/28/20210128-TIL/" itemprop="url">
-            <span itemprop="name">20210128 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-27T19:35:54+09:00"
-              content="2021-01-27">
-          01-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/27/20210127-TIL/" itemprop="url">
-            <span itemprop="name">20210127 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-26T14:03:44+09:00"
-              content="2021-01-26">
-          01-26
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/26/20210126-TIL/" itemprop="url">
-            <span itemprop="name">20210126 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-01-25T23:00:52+09:00"
-              content="2021-01-25">
-          01-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/01/25/20210125-TIL/" itemprop="url">
-            <span itemprop="name">20210125 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-    </div>
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/categories/TIL/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/categories/TIL/">1</a><span class="space">&hellip;</span><a class="page-number" href="/categories/TIL/page/5/">5</a><span class="page-number current">6</span>
-  </nav>
-
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -518,6 +411,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/03/28/20210328-TIL/";
+    this.page.identifier = "2021/03/28/20210328-TIL/";
+    this.page.title = "20210328 TIL 키보드 이벤트 한글 입력 문제";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>

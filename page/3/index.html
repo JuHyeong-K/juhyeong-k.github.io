@@ -304,11 +304,6 @@
 <p>식별자로 쓸 수 있는 이름 유효한 언어</p>
 <p>유니코드 문자도 가능하지만 권장하지 않는다.</p>
 <p>자바스크립트는 대소문자를 구별한다.</p>
-<p>변수 이름은 변수의 존재 목적을 쉽게 이해할 수 있도록 의미를 명확히 표현해야 한다.(지키기 어렵지만 지키도록 노력해야함)</p>
-<p>네이밍 컨벤션(naming convention) - 개발자들끼리의 약속<br>네이밍 컨벤션은 정말 꼭 지켜야 한다. 별거 아닌 거라고 생각해서는 안된다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 카멜 케이스(camelCase) - 일반적으로 많이 사용(변수, 함수)</span></span><br><span class="line"><span class="keyword">var</span> firstName;</span><br><span class="line"><span class="comment">// 스네이크 케이스(snake_case) - </span></span><br><span class="line"><span class="keyword">var</span> first_name;</span><br><span class="line"><span class="comment">// 파스칼 케이스(PascalCase) - 일반적으로 많이 사용(생성자 이름, 클래스 이름)</span></span><br><span class="line"><span class="keyword">var</span> FirstName;</span><br></pre></td></tr></table></figure>
-<p>쉽게 가리키는 건 없다. 어려운 걸 안 가리킬 뿐</p>
-<p>값 - 메모리 공간 안에 있는 알맹이<br>표현식 - 값으로 평가되는 문<br>문 - 프로그램을 구성하는 최소 실행 단위<br>ex) 세미콜론으로 끝나는 단위</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/10/20210310-TIL/#more" rel="contents">
@@ -409,11 +404,6 @@
 </ul>
 <p>ECMA Script - 자바스크립트의 표준 사양인 ECMA-262를 말하며, 프로그래밍 언어의 값, 타입, 객체와 프로퍼티, 함수, 표준 빌트인 객체 등 핵심 문법을 규정하고, 각 브라우저 제조사는 ECMA Script 사양을 준수해서 브라우저에 내장되는 자바스크립트 엔진을 구현한다. (자바스크립트의 뼈대(core))</p>
 <h2 id="리터럴-literal-과-표현식-expression-과-문-statement"><a href="#리터럴-literal-과-표현식-expression-과-문-statement" class="headerlink" title="리터럴(literal)과 표현식(expression)과 문(statement)"></a>리터럴(literal)과 표현식(expression)과 문(statement)</h2><p>리터럴(literal)은 사람이 이해할 수 있는 문자 또는 약속된 기호를 사용해 값을 생성하는 표기 방식(notation)</p>
-<p>표현식(expression)은 값으로 평가될 수 있는 문(statement)이다. 표현식이 평가되면 새로운 값을 생성하거나 기존의 값을 참조한다.(리터럴도 값으로 평가되기 때문에 표현식이다)</p>
-<p>문(statement)은 프로그램을 구성하는 기본 단위이자 최소 실행 단위이다. 문은 여러 토큰으로 구성되어 있다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sum = <span class="number">1</span> + <span class="number">2</span>;</span><br><span class="line"><span class="comment">// 토큰 - 문법적으로 더 이상 나눌 수 없는 코드의 기본 요소</span></span><br><span class="line"><span class="comment">// var, sum, =, 1, +, 2, ; 모두 토큰이다</span></span><br></pre></td></tr></table></figure>
-<p>문의 종료를 나타낼 때 세미콜론을 준다. 코드 블록은 언제나 문의 종료를 의미하는 자체 종결성(self closing)을 갖기 때문에 코드 블록 뒤에 세미콜론을 붙이지 않는다.<br>사실 자바스크립트 엔진이 소스코드를 해석할 때 문의 끝이라고 예측되는 지점에 세미콜론을 자동으로 붙여주는 <strong>세미콜론 자동 삽입 기능</strong>이 암묵적을 수행되지만, 세미콜론 자동 삽입 기능과 개발자의 예측이 일치하지 않는 경우도 있기 때문에, 세미콜론을 붙이는 걸 추천한다.</p>
-<p><strong>표현식인 문과 표현식이 아닌 문을 구별하는 가장 간단하고 명료한 방법은 변수에 할당해 보는 것이다.</strong></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/09/20210309-TIL/#more" rel="contents">
@@ -512,10 +502,6 @@
 <p>(한 배추의 상하좌우 네 방향에 다른 배추가 위치한 경우에 서로 인접해있다고 간주한다)</p>
 <p>한나가 배추를 재배하는 땅은 고르지 못해서 배추를 군데군데 심어놓았다. 배추들이 모여있는 곳에는 배추흰지렁이가 한 마리만 있으면 되므로 서로 인접해있는 배추들이 몇 군데에 퍼져있는지 조사하면 총 몇 마리의 지렁이가 필요한지 알 수 있다.</p>
 <p>예를 들어 배추밭이 아래와 같이 구성되어 있으면 최소 5마리의 배추흰지렁이가 필요하다.</p>
-<p>(0은 배추가 심어져 있지 않은 땅이고, 1은 배추가 심어져 있는 땅을 나타낸다.)</p>
-<p>입력의 첫 줄에는 테스트 케이스의 개수 T가 주어진다. 그 다음 줄부터 각각의 테스트 케이스에 대해 첫째 줄에는 배추를 심은 배추밭의 가로길이 M(1 ≤ M ≤ 50)과 세로길이 N(1 ≤ N ≤ 50), 그리고 배추가 심어져 있는 위치의 개수 K(1 ≤ K ≤ 2500)이 주어진다. 그 다음 K줄에는 배추의 위치 X(0 ≤ X ≤ M-1), Y(0 ≤ Y ≤ N-1)가 주어진다.</p>
-<p>각 테스트 케이스에 대해 필요한 최소의 배추흰지렁이 마리 수를 출력한다.</p>
-<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>처음에 든 생각은 2차원 배열에서 인접해 있는 요소를 어떻게 표현해야될 지 고민이 많았다.<br>알고리즘에 대해서 공부하고 푸는 문제가 아니기 때문에 여러 고민을 해봤다.<br>입력 값으로 받는 배열의 크기 없이, 배추의 갯수만으로 좌표를 받아서 찾아도 문제를 해결할 수 있을 것 같아 설계를 해봤다. 고민을 하다보니 인접해 있는 배추를 찾을 때, 그 인접한 배추도 다시 인접한 배추를 찾아야 된다고 생각해서 재귀함수를 사용하는 방법으로 고민을 해봤다.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/08/BAEKJOON-%EC%9C%A0%EA%B8%B0%EB%86%8D-%EB%B0%B0%EC%B6%94-1012%EB%B2%88/#more" rel="contents">
@@ -622,10 +608,6 @@
 </ul>
 <p>자바스크립트는 애초에 개발자가 아닌 비개발자가 사용할 것이라는 전제 하에 만들어진 언어라서, 오류를<br> 최대한 내지 않기 위해 실수를 해도 알아서 커버해주는 <strong>암묵적인 행동</strong>을 한다.(오류를<br> 내지 않기 때문에 코드를 이해하기 어렵다) 그래서 자바스크립트에서 더욱이 기본 개념과 동작원리를 잘<br> 알아야 한다.</p>
 <h1 id="JS-수업-내용-정리"><a href="#JS-수업-내용-정리" class="headerlink" title="JS 수업 내용 정리"></a>JS 수업 내용 정리</h1><p>수업 중에 나오는 개발 용어를 잘 정리하자</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">10</span> + <span class="number">20</span></span><br></pre></td></tr></table></figure>
-<p>우리는 <code>10 + 20</code>의 결과를 30이라고 바로 생각해내서 과정이 없는 것 처럼 느껴지지만, 사실 <code>10</code>이라는 문자가 무엇인지, <code>+</code>와 <code>20</code>이 무엇인지 알고 계산하는 과정을 거쳐야 한다.<br>비슷하게 컴퓨터는 <code>10</code>이라는 문자를 보고 <code>parsing</code>을 통해 숫자 <code>10</code>이라는 것을 인지한다. 정확히 말하면 자바스크립트 엔진이 <code>10 + 20</code>을 보고 <code>+</code>연산을 하기 전에 <code>10</code>과 <code>20</code>을 기억하고, <code>+</code>연산을 하게 된다.</p>
-<h2 id="메모리"><a href="#메모리" class="headerlink" title="메모리"></a>메모리</h2><p>메모리는 데이터를 저장할 수 있는 메모리 셀(cell)의 집합체다. 메모리 셀 하나의 크기는 1Byte(8bit)이고, 컴퓨터는 메모리 셀 하나의 크기로 데이터를 저장(write)하거나 읽는다.(read)<br>각 셀은 메모리 공간의 위치를 나타내는 메모리 주소(memory address)를 갖는다. 4GB기준 약 0~43억개의 메모리 주소를 갖는다.</p>
-<p>컴퓨터에서 기억은 메모리가 담당하고, 연산은 CPU가 담당한다.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/08/20210308-TIL/#more" rel="contents">
@@ -724,14 +706,6 @@
 <p>사실 강의를 듣기 전까지, HTML과 CSS에 크게 관심이 없었다. HTML과 CSS를 온라인 강의로 잠깐 접해본 적이 있는데, 그 당시만 해도 이걸 배워서 어떻게 써먹어야될지도 몰랐고 재미도 없어서 그냥 이론만 듣고 말았다. 그래서 이번 HTML/CSS 강의도 그런 내용이겠구나 생각하고 있었다. 첫 날, 둘 째날 강의를 계속 들으면서 HTML이 어떻게 만들어졌고 어떤 역사를 가지고 지금까지 발전을 했는지, HTML을 작성할 때 어떤 흐름으로 작성을 해야되는지 설명을 들으면서 강의 자체에 재미를 붙이게 됐다.</p>
 <p>2주라는 기간 동안 배운 많은 내용들을 내가 전부 흡수하지 못해 아쉬움이 크지만, 이번 강의를 들으면서 내가 HTML을 작성할 때는 어떤 흐름으로 작성을 하고 어떤 부분을 고려해서 작성을 해야되는지 감을 잡는 계기가 됐고, CSS도 배우기 전까지는 정말 어렵다고 생각됐는데, 내가 보여지는 것만 보고 판단을 해서 어렵게 느껴졌었고, 내가 사용한 property들의 목적을 알고 있어야 문제가 생겨도 왜 문제가 생겼는지 원인을 판단할 수 있고, 특히, CSS에서는 본래의 목적으로 사용하는게 아닌, 다른 용도(<del>꼼수</del>)로 사용하는 경우도 많기 때문에 왜 이런 property를 사용하는지 정확하게 알고 있어야 한다는걸 알게 됐다.</p>
 
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/07/HTML-CSS-%EA%B0%95%EC%9D%98%EC%97%90-%EB%8C%80%ED%95%9C-%ED%9A%8C%EA%B3%A0/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -824,14 +798,6 @@
 <li><del>HTML, CSS 회고 작성</del></li>
 </ul>
 
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/07/20210307-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 
@@ -927,11 +893,7 @@
           <h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>도현이네 반 학생 N명의 이름과 국어, 영어, 수학 점수가 주어진다. 이때, 다음과 같은 조건으로 학생의 성적을 정렬하는 프로그램을 작성하시오.</p>
 <p>국어 점수가 감소하는 순서로<br>국어 점수가 같으면 영어 점수가 증가하는 순서로<br>국어 점수와 영어 점수가 같으면 수학 점수가 감소하는 순서로<br>모든 점수가 같으면 이름이 사전 순으로 증가하는 순서로 (단, 아스키 코드에서 대문자는 소문자보다 작으므로 사전순으로 앞에 온다.)</p>
 <p>첫째 줄에 도현이네 반의 학생의 수 N (1 ≤ N ≤ 100,000)이 주어진다. 둘째 줄부터 한 줄에 하나씩 각 학생의 이름, 국어, 영어, 수학 점수가 공백으로 구분해 주어진다. 점수는 1보다 크거나 같고, 100보다 작거나 같은 자연수이다. 이름은 알파벳 대소문자로 이루어진 문자열이고, 길이는 10자리를 넘지 않는다.</p>
-<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><p>처음 든 생각은 <code>input()</code>으로 들어오는 값을 어떤 방식으로 저장할지 고민이었다.<br><code>dictionary</code>로 저장할 경우 순서를 구분하기 힘들 것 같고, <code>list</code>로 저장할 경우 <code>key:value</code>를 구분하기 힘들 것 같아서, 그냥 둘 다 써보기로 했다.</p>
-<p>입력받은 이름과 국영수 점수들을 <code>dict</code>에 <code>&#123;name: [국, 영, 수]&#125;</code>형태로 저장하고, list에는<code>[[국, 영,수]]</code> 국영수 점수만 저장했다.</p>
-<p>이제 어떻게 정렬할지 고민을 해봤는데, 쉽게 떠오르지는 않았다.<br><code>input()</code>을 입력 받을 때, <code>current_score</code>라는 이름의 <code>list</code>를 두고 위에 저장된 <code>list</code>의 값과 비교해보기로 했다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">subject_score_dict = &#123;&#125;</span><br><span class="line">subject_score_list = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(<span class="built_in">input</span>())):</span><br><span class="line">    name, korean_score, english_score, math_score = <span class="built_in">input</span>().split()</span><br><span class="line">    korean_score, english_score, math_score = <span class="built_in">int</span>(korean_score), <span class="built_in">int</span>(english_score), <span class="built_in">int</span>(math_score)</span><br><span class="line">    subject_score_dict[name] = [korean_score, english_score, math_score]</span><br><span class="line">    current_score = [korean_score, english_score, math_score]</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(subject_score_list) == <span class="number">0</span>:</span><br><span class="line">        subject_score_list.append(current_score)</span><br><span class="line">        print(<span class="string">&#x27;첫 번째 값&#x27;</span>,subject_score_list) <span class="comment">###</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> score_index, score <span class="keyword">in</span> <span class="built_in">enumerate</span>(subject_score_list):</span><br><span class="line">            <span class="comment"># 국어 점수 비교</span></span><br><span class="line">            <span class="keyword">if</span> current_score[<span class="number">0</span>] &gt; score[<span class="number">0</span>]:</span><br><span class="line">                subject_score_list.insert(score_index, current_score)</span><br><span class="line">                print(<span class="string">&#x27;cs[0]&gt;s[0]&#x27;</span>,subject_score_list) <span class="comment">###</span></span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] &lt; score[<span class="number">0</span>]:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">elif</span> current_score[<span class="number">0</span>] == score[<span class="number">0</span>]:</span><br><span class="line">                <span class="comment"># 영어 점수 비교</span></span><br><span class="line">                <span class="keyword">if</span> current_score[<span class="number">1</span>] &lt; score[<span class="number">1</span>]:</span><br><span class="line">                    subject_score_list.insert(score_index, current_score)</span><br><span class="line">                    print(<span class="string">&#x27;cs[1]&lt;s[1]&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] &gt; score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                        subject_score_list.append(current_score)</span><br><span class="line">                        print(<span class="string">&#x27;cs[1]&gt;s[1]이지만, 마지막 요소라서 리스트 맨뒤에 추가&#x27;</span>, subject_score_list)</span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">else</span>:</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                <span class="keyword">elif</span> current_score[<span class="number">1</span>] == score[<span class="number">1</span>]:</span><br><span class="line">                    <span class="comment"># 수학 점수 비교</span></span><br><span class="line">                    <span class="keyword">if</span> current_score[<span class="number">2</span>] &gt; score[<span class="number">2</span>]:</span><br><span class="line">                        subject_score_list.insert(score_index, current_score)</span><br><span class="line">                        print(<span class="string">&#x27;cs[2]&gt;s[2]&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                        <span class="keyword">break</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] &lt; score[<span class="number">2</span>]:</span><br><span class="line">                        <span class="keyword">if</span> score_index == <span class="built_in">len</span>(subject_score_list) - <span class="number">1</span>:</span><br><span class="line">                            subject_score_list.append(current_score)</span><br><span class="line">                            print(<span class="string">&#x27;cs[2]&lt;s[2]이지만, 마지막 요소라서 리스트 맨뒤에 추가&#x27;</span>, subject_score_list)</span><br><span class="line">                            <span class="keyword">break</span></span><br><span class="line">                        <span class="keyword">else</span>:</span><br><span class="line">                            <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">elif</span> current_score[<span class="number">2</span>] == score[<span class="number">2</span>]:</span><br><span class="line">                        print(<span class="string">&#x27;cs[2]==s[2] 중복된 값이라서 추가x&#x27;</span>, subject_score_list) <span class="comment">###</span></span><br><span class="line">                        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>정해진 순서대로 점수들을 배치하고, 중복된 점수들은 value값을 <code>dict</code>에서 찾아서 key값들을 같이 불러올거라서 제외했다.</p>
+<h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/05/BAEKJOON-%EA%B5%AD%EC%98%81%EC%88%98-10825%EB%B2%88/#more" rel="contents">
@@ -1040,13 +1002,6 @@
 </ul>
 <p>웹 제작 시 <code>mobile first</code> 방식으로 하는걸 추천</p>
 <p><code>desktop first</code>로 설계된 페이지의 콘텐츠를 모바일에 넣으려고 하면 어떤걸 비워야 할 지 결정하기 힘들다.<br><code>mobile first</code>로 설계를 하게 되면 데스크탑에 어떤 컨텐츠를 채울지만 생각하면 된다.</p>
-<blockquote>
-<p><code>desktop first</code>는 코끼리를 냉장고에 넣어야 하는 것과 같다.</p>
-</blockquote>
-<p>모바일에서 구조 설계할 때 <code>off canvas</code>방식을 많이 사용한다.<br><code>off canvas</code> - 화면에서 안보이는 상태였다가 메뉴가 열릴 때 화면 밖에서 안으로 들어오는 방식</p>
-<hr>
-<p>반응형 이미지를 만들 때 CSS 속성으로</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">img</span>&#123;</span><br><span class="line">    <span class="attribute">max-width</span>: <span class="number">100%</span>;</span><br><span class="line">    <span class="attribute">height</span>: auto;</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/04/20210304-TIL/#more" rel="contents">
@@ -1149,12 +1104,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="HTML-CSS-강의-내용-정리"><a href="#HTML-CSS-강의-내용-정리" class="headerlink" title="HTML, CSS 강의 내용 정리"></a>HTML, CSS 강의 내용 정리</h1><h2 id="transition"><a href="#transition" class="headerlink" title="transition"></a>transition</h2><p><code>transition</code>은 어떤 속성이 어떤 상황(ex.<code>:hover</code>)으로 인해 <code>A-&gt;B</code>로 변경될 때 그 과정을 일정 기간에 걸쳐서 자연스럽게 변화하는 과정을 보여준다. 이와 비슷한 기능을 하는 <code>@keyframes</code>가 있는데, <code>transition</code>보다 더 디테일하고 다양하게 변화를 줄 수 있다.<br>‘transition-delay’속성을 줄 때, <code>s</code>, <code>ms</code>단위를 사용할 수 있는데, 0초를 주더라고 꼭 <code>0s</code>로 s를 붙여야 한다. 다른 속성들과 다르게 0초의 단위를 생략할 수 없다.</p>
 <h2 id="대화형-콘텐츠"><a href="#대화형-콘텐츠" class="headerlink" title="대화형 콘텐츠"></a>대화형 콘텐츠</h2><p><code>:hover</code>는 모든 태그에 대해서 사용이 가능하지만, <code>:focus</code>는 <code>a</code>, <code>input</code>, <code>button</code> 태그와 같이 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/ko/docs/Web/Guide/HTML/Content_categories#%EB%8C%80%ED%99%94%ED%98%95_%EC%BD%98%ED%85%90%EC%B8%A0">대화형 콘텐츠</a>의 요소만 사용이 가능하다.</p>
-<blockquote>
-<p>태그에 <code>tabindex=&quot;0&quot;</code>을 준다면 <code>tab</code>키를 받을 수 있어서 <code>:focus</code>를 사용가능하게 만들 수는 있다.</p>
-</blockquote>
-<h2 id="순서-입력"><a href="#순서-입력" class="headerlink" title="순서 입력"></a>순서 입력</h2><p>CSS로 <code>&lt;li&gt;</code>안에 순서대로 숫자를 입력할 때 <code>li::before&#123;content: &quot;1&quot;&#125;</code>하나씩 입력해도 되지만 100개가 넘는다면? 너무 노가다.. 해결 방법이 있다.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">li</span><span class="selector-pseudo">::befor</span>&#123;</span><br><span class="line">    <span class="attribute">content</span>:<span class="built_in">counter</span>(number);</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">li</span>&#123;</span><br><span class="line">    <span class="attribute">counter-increment</span>: number;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>&lt;li&gt;</code>에 순서대로 숫자가 입력된다.</p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/03/20210303-TIL/#more" rel="contents">
@@ -1259,14 +1208,6 @@
 <li>ARIA</li>
 </ul>
 
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/02/20210302-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

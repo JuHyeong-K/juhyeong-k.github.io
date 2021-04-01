@@ -9,8 +9,36 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Wed, 31 Mar 2021 12:16:24 GMT</pubDate>
+    <pubDate>Thu, 01 Apr 2021 12:10:48 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>20210401 TIL JS 토이 프로젝트 계획</title>
+      <link>https://juhyeong-k.github.io/2021/04/01/20210401-TIL/</link>
+      <guid>https://juhyeong-k.github.io/2021/04/01/20210401-TIL/</guid>
+      <pubDate>Thu, 01 Apr 2021 11:19:41 GMT</pubDate>
+      
+        
+        
+      <description>&lt;h1 id=&quot;토이-프로젝트-목적&quot;&gt;&lt;a href=&quot;#토이-프로젝트-목적&quot; class=&quot;headerlink&quot; title=&quot;토이 프로젝트 목적&quot;&gt;&lt;/a&gt;토이 프로젝트 목적&lt;/h1&gt;&lt;p&gt;이번에 팀으로 토이 프로젝트를 진행하게 됐다. HTML, CSS, J</description>
+        
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="토이-프로젝트-목적"><a href="#토이-프로젝트-목적" class="headerlink" title="토이 프로젝트 목적"></a>토이 프로젝트 목적</h1><p>이번에 팀으로 토이 프로젝트를 진행하게 됐다. HTML, CSS, JS를 이용해서 일주일 동안 만드는 프로젝트라서 가장 큰 목적은 지금까지 배운 내용들을 복습할 수 있는 프로젝트를 만드는 것을 목표로 했다. 팀원과 회의 한 결과 자바스크립트를 공부하면서 연습한 예제인 todos를 활용해서 몇 가지 기능을 추가해보고자 했다.</p><h1 id="토이-프로젝트-계획"><a href="#토이-프로젝트-계획" class="headerlink" title="토이 프로젝트 계획"></a>토이 프로젝트 계획</h1><p>todos가 단순한 텍스트만 입력받는 서비스라면, 이미지와 긴 문장의 텍스트도 입력 받을 수 있는 기능을 구현하려고 했다. 입력 받은 데이터로 화면에 이미지와 제목, 날짜를 표시해주고 그 이미지를 클릭한다면 자세한 세부사항까지 볼 수 있도록 만들어 보려고 했다.</p>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/JS/">JS</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/04/01/20210401-TIL/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>20210331 TIL JS</title>
@@ -274,38 +302,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/03/23/20210323-TIL/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>BAEKJOON 스택 10828번</title>
-      <link>https://juhyeong-k.github.io/2021/03/22/BAEKJOON-%EC%8A%A4%ED%83%9D-10828%EB%B2%88/</link>
-      <guid>https://juhyeong-k.github.io/2021/03/22/BAEKJOON-%EC%8A%A4%ED%83%9D-10828%EB%B2%88/</guid>
-      <pubDate>Mon, 22 Mar 2021 11:30:13 GMT</pubDate>
-      
-      <description>&lt;h1 id=&quot;문제&quot;&gt;&lt;a href=&quot;#문제&quot; class=&quot;headerlink&quot; title=&quot;문제&quot;&gt;&lt;/a&gt;문제&lt;/h1&gt;&lt;p&gt;정수를 저장하는 스택을 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.&lt;/p&gt;
-&lt;p&gt;명령은 총 다섯 가지이다.&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;push X: 정수 X를 스택에 넣는 연산이다.&lt;/li&gt;
-&lt;li&gt;pop: 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.&lt;/li&gt;
-&lt;li&gt;size: 스택에 들어있는 정수의 개수를 출력한다.&lt;/li&gt;
-&lt;li&gt;empty: 스택이 비어있으면 1, 아니면 0을 출력한다.&lt;/li&gt;
-&lt;li&gt;top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 문제에 나와있지 않은 명령이 주어지는 경우는 없다.&lt;/p&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="문제"><a href="#문제" class="headerlink" title="문제"></a>문제</h1><p>정수를 저장하는 스택을 구현한 다음, 입력으로 주어지는 명령을 처리하는 프로그램을 작성하시오.</p><p>명령은 총 다섯 가지이다.</p><ul><li>push X: 정수 X를 스택에 넣는 연산이다.</li><li>pop: 스택에서 가장 위에 있는 정수를 빼고, 그 수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.</li><li>size: 스택에 들어있는 정수의 개수를 출력한다.</li><li>empty: 스택이 비어있으면 1, 아니면 0을 출력한다.</li><li>top: 스택의 가장 위에 있는 정수를 출력한다. 만약 스택에 들어있는 정수가 없는 경우에는 -1을 출력한다.</li></ul><p>첫째 줄에 주어지는 명령의 수 N (1 ≤ N ≤ 10,000)이 주어진다. 둘째 줄부터 N개의 줄에는 명령이 하나씩 주어진다. 주어지는 정수는 1보다 크거나 같고, 100,000보다 작거나 같다. 문제에 나와있지 않은 명령이 주어지는 경우는 없다.</p><p>출력해야하는 명령이 주어질 때마다, 한 줄에 하나씩 출력한다.</p><h1 id="풀이"><a href="#풀이" class="headerlink" title="풀이"></a>풀이</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">stack = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">int</span>(sys.stdin.readline())):</span><br><span class="line">    command = sys.stdin.readline().split()</span><br><span class="line">    <span class="keyword">if</span> command[<span class="number">0</span>] == <span class="string">&#x27;push&#x27;</span>:</span><br><span class="line">        stack.append(<span class="built_in">int</span>(command[<span class="number">1</span>]))</span><br><span class="line">    <span class="keyword">elif</span> command[<span class="number">0</span>] == <span class="string">&#x27;pop&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(stack) == <span class="number">0</span>:</span><br><span class="line">            print(-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(stack.pop())</span><br><span class="line">    <span class="keyword">elif</span> command[<span class="number">0</span>] == <span class="string">&#x27;size&#x27;</span>:</span><br><span class="line">        print(<span class="built_in">len</span>(stack))</span><br><span class="line">    <span class="keyword">elif</span> command[<span class="number">0</span>] == <span class="string">&#x27;empty&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(stack) == <span class="number">0</span>:</span><br><span class="line">            print(<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">elif</span> command[<span class="number">0</span>] == <span class="string">&#x27;top&#x27;</span>:</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(stack) == <span class="number">0</span>:</span><br><span class="line">            print(-<span class="number">1</span>)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(stack[-<span class="number">1</span>])</span><br></pre></td></tr></table></figure>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/BAEKJOON/">BAEKJOON</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/BAEKJOON/">BAEKJOON</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/03/22/BAEKJOON-%EC%8A%A4%ED%83%9D-10828%EB%B2%88/#disqus_thread</comments>
       
     </item>
     

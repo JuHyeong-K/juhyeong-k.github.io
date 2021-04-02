@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">82</span>
+          <span class="site-state-item-count">83</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -231,6 +231,103 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/02/20210402-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/02/20210402-TIL/" class="post-title-link" itemprop="url">20210402 TIL JS - UI Componentes</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-02 21:48:02 / Modified: 21:51:19" itemprop="dateCreated datePublished" datetime="2021-04-02T21:48:02+09:00">2021-04-02</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/02/20210402-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/02/20210402-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="toggleSideNav"><a href="#toggleSideNav" class="headerlink" title="toggleSideNav"></a>toggleSideNav</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;ie=edge&quot;</span> /&gt;</span><br><span class="line">    &lt;title&gt;Toggle side nav&lt;/title&gt;</span><br><span class="line">    &lt;link href=<span class="string">&quot;https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&quot;</span> rel=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span><br><span class="line">    &lt;link href=<span class="string">&quot;https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css&quot;</span> rel=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      html,</span><br><span class="line">      body &#123;</span><br><span class="line">        font-family: <span class="string">&#x27;Open Sans&#x27;</span>;</span><br><span class="line">        font-weight: <span class="number">300</span>;</span><br><span class="line">        height: <span class="number">100</span>%;</span><br><span class="line">        margin: <span class="number">0</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      .container &#123;</span><br><span class="line">        position: relative;</span><br><span class="line">        overflow-x: hidden; <span class="comment">/* 가로 scroll bar 방지 */</span></span><br><span class="line">        width: <span class="number">100</span>%;</span><br><span class="line">        height: <span class="number">100</span>%;</span><br><span class="line">      &#125;</span><br><span class="line">      nav,</span><br><span class="line">      main &#123;</span><br><span class="line">        position: absolute;</span><br><span class="line">        height: <span class="number">100</span>%;</span><br><span class="line">        transition: transform <span class="number">0.</span>5s;</span><br><span class="line">      &#125;</span><br><span class="line">      nav &#123;</span><br><span class="line">        left: -300px;</span><br><span class="line">        width: 300px;</span><br><span class="line">        background: #20232a;</span><br><span class="line">      &#125;</span><br><span class="line">      main &#123;</span><br><span class="line">        height: <span class="number">100</span>%;</span><br><span class="line">        padding: 20px;</span><br><span class="line">      &#125;</span><br><span class="line">      .toggle &#123;</span><br><span class="line">        font-size: 2em;</span><br><span class="line">        color: maroon;</span><br><span class="line">        cursor: pointer;</span><br><span class="line">        transition: transform <span class="number">0.</span>5s;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      <span class="comment">/* nav 요소 활성화 */</span></span><br><span class="line">      nav.active,</span><br><span class="line">      nav.active ~ main &#123;</span><br><span class="line">        transform: translate3d(300px, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      nav.active ~ main &gt; .toggle &#123;</span><br><span class="line">        transform: rotate(180deg);</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">      &lt;nav&gt;&lt;/nav&gt;</span><br><span class="line">      &lt;main&gt;</span><br><span class="line">        &lt;i <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;toggle bx bx-right-arrow-circle&quot;</span>&gt;&lt;/i&gt;</span><br><span class="line">        &lt;h1&gt;Toggle side nav&lt;/h1&gt;</span><br><span class="line">        &lt;p&gt;Lorem ipsum dolor sit amet consectetur adipisicing elit.&lt;/p&gt;</span><br><span class="line">        &lt;section&gt;</span><br><span class="line">          &lt;article&gt;</span><br><span class="line">            &lt;h2&gt;Lorem ipsum&lt;/h2&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores</span><br><span class="line">              ullam, sit, quis atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum</span><br><span class="line">              dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis</span><br><span class="line">              atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet</span><br><span class="line">              consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque</span><br><span class="line">              molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet consectetur</span><br><span class="line">              adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque molestiae? Atque rem</span><br><span class="line">              facere perspiciatis cupiditate sed temporibus fuga sint!</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">          &lt;/article&gt;</span><br><span class="line">          &lt;article&gt;</span><br><span class="line">            &lt;h2&gt;Lorem ipsum&lt;/h2&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores</span><br><span class="line">              ullam, sit, quis atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum</span><br><span class="line">              dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis</span><br><span class="line">              atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet</span><br><span class="line">              consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque</span><br><span class="line">              molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet consectetur</span><br><span class="line">              adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque molestiae? Atque rem</span><br><span class="line">              facere perspiciatis cupiditate sed temporibus fuga sint!</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">          &lt;/article&gt;</span><br><span class="line">          &lt;article&gt;</span><br><span class="line">            &lt;h2&gt;Lorem ipsum&lt;/h2&gt;</span><br><span class="line">            &lt;p&gt;</span><br><span class="line">              Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores</span><br><span class="line">              ullam, sit, quis atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum</span><br><span class="line">              dolor sit amet consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis</span><br><span class="line">              atque molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet</span><br><span class="line">              consectetur adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque</span><br><span class="line">              molestiae? Atque rem facere perspiciatis cupiditate sed temporibus fuga sint! Lorem ipsum dolor sit amet consectetur</span><br><span class="line">              adipisicing elit. Distinctio cumque eos fugit labore sunt error, dolores ullam, sit, quis atque molestiae? Atque rem</span><br><span class="line">              facere perspiciatis cupiditate sed temporibus fuga sint!</span><br><span class="line">            &lt;/p&gt;</span><br><span class="line">          &lt;/article&gt;</span><br><span class="line">        &lt;/section&gt;</span><br><span class="line">      &lt;/main&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">      <span class="keyword">const</span> navButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.toggle&#x27;</span>);</span><br><span class="line">      <span class="keyword">const</span> $nav = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;nav&#x27;</span>);</span><br><span class="line">      navButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        $nav.classList.toggle(<span class="string">&#x27;active&#x27;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="scrollingGotoTop"><a href="#scrollingGotoTop" class="headerlink" title="scrollingGotoTop"></a>scrollingGotoTop</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span><br><span class="line">    &lt;meta name=<span class="string">&quot;viewport&quot;</span> content=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">&quot;X-UA-Compatible&quot;</span> content=<span class="string">&quot;ie=edge&quot;</span> /&gt;</span><br><span class="line">    &lt;title&gt;Scroll top&lt;/title&gt;</span><br><span class="line">    &lt;link href=<span class="string">&quot;https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&quot;</span> rel=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span><br><span class="line">    &lt;link href=<span class="string">&quot;https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css&quot;</span> rel=<span class="string">&quot;stylesheet&quot;</span> /&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">      body &#123;</span><br><span class="line">        font-family: <span class="string">&#x27;Open Sans&#x27;</span>;</span><br><span class="line">        font-weight: <span class="number">300</span>;</span><br><span class="line">        background-color: #d6e1e5;</span><br><span class="line">      &#125;</span><br><span class="line">      .title &#123;</span><br><span class="line">        color: #db5b33;</span><br><span class="line">        font-weight: <span class="number">300</span>;</span><br><span class="line">        text-align: center;</span><br><span class="line">      &#125;</span><br><span class="line">      .container &#123;</span><br><span class="line">        min-height: 2000px;</span><br><span class="line">      &#125;</span><br><span class="line">      .scroll-icon &#123;</span><br><span class="line">        position: fixed;</span><br><span class="line">        left: <span class="number">50</span>%;</span><br><span class="line">        bottom: 20px;</span><br><span class="line">        transform: translate3D(-<span class="number">50</span>%, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">        font-size: 48px;</span><br><span class="line">        cursor: pointer;</span><br><span class="line">        animation: glow 4s infinite;</span><br><span class="line">        display: none;</span><br><span class="line">        </span><br><span class="line">      &#125;</span><br><span class="line">      @keyframes glow &#123;</span><br><span class="line">        <span class="number">0</span>% &#123;</span><br><span class="line">          opacity: <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="number">50</span>% &#123;</span><br><span class="line">          opacity: <span class="number">0.3</span>;</span><br><span class="line">          transform: translate3D(-<span class="number">50</span>%, 10px, <span class="number">0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;h1 <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;title&quot;</span>&gt;Scroll top&lt;/h1&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;container&quot;</span>&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">      &lt;p&gt;</span><br><span class="line">        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, repudiandae quia. Veniam amet fuga, eveniet velit ipsa</span><br><span class="line">        repudiandae nemo? Sit dolorem itaque laudantium dignissimos, rerum maiores nihil ad voluptates nostrum.</span><br><span class="line">      &lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;scroll-icon bx bxs-chevrons-up&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    <span class="keyword">const</span> throttle = <span class="function">(<span class="params">callback, delay</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> timerId;</span><br><span class="line">        <span class="comment">// throttle 함수는 timerId를 기억하는 클로저를 반환한다.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="comment">// delay가 경과하기 이전에 이벤트가 발생하면 아무것도 하지 않다가</span></span><br><span class="line">          <span class="comment">// delay가 경과했을 때 이벤트가 발생하면 새로운 타이머를 재설정한다.</span></span><br><span class="line">          <span class="comment">// 따라서 delay 간격으로 callback이 호출된다.</span></span><br><span class="line">          <span class="keyword">if</span> (timerId) <span class="keyword">return</span>;</span><br><span class="line">          timerId = <span class="built_in">setTimeout</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">            callback(event);</span><br><span class="line">            timerId = <span class="literal">null</span>;</span><br><span class="line">          &#125;, delay, event);</span><br><span class="line">        &#125;;</span><br><span class="line">      &#125;;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">const</span> $scrollIcon = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.scroll-icon&#x27;</span>);</span><br><span class="line">       </span><br><span class="line">      <span class="built_in">document</span>.addEventListener(<span class="string">&#x27;scroll&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.scrollY &gt; <span class="number">100</span> ? $scrollIcon.style.display = <span class="string">&#x27;block&#x27;</span> : $scrollIcon.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">      &#125;)</span><br><span class="line">      $scrollIcon.addEventListener(<span class="string">&#x27;click&#x27;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">window</span>.scroll(&#123;</span><br><span class="line">          top: <span class="number">0</span>,</span><br><span class="line">          left: <span class="number">0</span>,</span><br><span class="line">          behavior:<span class="string">&quot;smooth&quot;</span></span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="counter"><a href="#counter" class="headerlink" title="counter"></a>counter</h1>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/02/20210402-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/01/20210401-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -256,7 +353,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-01 20:19:41 / Modified: 21:10:48" itemprop="dateCreated datePublished" datetime="2021-04-01T20:19:41+09:00">2021-04-01</time>
+      <time title="Created: 2021-04-01 20:19:41 / Modified: 21:12:41" itemprop="dateCreated datePublished" datetime="2021-04-01T20:19:41+09:00">2021-04-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1077,102 +1174,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/24/20210324-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/23/20210323-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/23/20210323-TIL/" class="post-title-link" itemprop="url">20210323 TIL JS 예습</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-23 13:17:52 / Modified: 17:36:46" itemprop="dateCreated datePublished" datetime="2021-03-23T13:17:52+09:00">2021-03-23</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/23/20210323-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/23/20210323-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="38-브라우저의-렌더링-과정"><a href="#38-브라우저의-렌더링-과정" class="headerlink" title="38. 브라우저의 렌더링 과정"></a>38. 브라우저의 렌더링 과정</h1><h3 id="요청과-응답"><a href="#요청과-응답" class="headerlink" title="요청과 응답"></a>요청과 응답</h3><p>브라우저의 핵심 기능은 필요한 리소스(HTML, CSS, JS, 이미지, 폰트 등)를 서버에 요청(Request)하고 서버로부터 응답(Response)을 받아서 브라우저에 시각적으로 렌더링 한는 것이다. 브라우저의 주소창(URL)으로 서버에 요청을 전송할 수 있다.</p>
-<h3 id="HTML-파싱과-DOM-생성"><a href="#HTML-파싱과-DOM-생성" class="headerlink" title="HTML 파싱과 DOM 생성"></a>HTML 파싱과 DOM 생성</h3><p>브라우저의 요청으로 서버에 존재하는 HTML 파일이 응답되는데, 서버는 브라우저가 요청한 HTML파일을 읽고 메모리에 저장한 뒤, 메모리에 저장된 바이트(2진수)를 인터넷을 경유해서 응답한다.<br>서버가 응답한 바이트로 된 HTML문서를 받은 브라우저는 응답 헤더에 담긴 meta 태그의 charset 어트리뷰트에 선언된 인코딩 방식(ex: UTF-8)을 기준으로 문자열로 변환된다.<br>문자열로 변환된 HTML 문서를 읽고 문법적 의미를 갖는 최소 단위의 코드인 토큰(token)들로 분해한다.<br>각 토큰들을 객체로 변환하여 노드(node)들을 생성하는데, 토큰의 내용에 따라 문서 노드, 요소 노드, 어트리뷰트 노드, 텍스트 노드가 생성된다. 노드는 DOM을 구성하는 기본 요소다.<br>HTML 요소는 중첩 관계를 갖고, 그로 인해 부자 관계가 형성된다. 이러한 관계를 반영하여 모든 노드들을 트리 자료구조로 구성한다. 이 노드들로 구성된 트리 자료구조를 DOM(Document Object Model)이라 부른다.<br>즉 DOM은 HTML 문서를 파싱한 결과물이다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/23/20210323-TIL/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

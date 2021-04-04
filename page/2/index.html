@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,119 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/25/20210325-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/25/20210325-TIL/" class="post-title-link" itemprop="url">20210325 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2021-03-25 10:05:49" itemprop="dateCreated datePublished" datetime="2021-03-25T10:05:49+09:00">2021-03-25</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-03-28 20:31:55" itemprop="dateModified" datetime="2021-03-28T20:31:55+09:00">2021-03-28</time>
+      </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/25/20210325-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/25/20210325-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h3 id="요소-노드의-텍스트-조작"><a href="#요소-노드의-텍스트-조작" class="headerlink" title="요소 노드의 텍스트 조작"></a>요소 노드의 텍스트 조작</h3><p>노드 탐색, 노드 정보 프로퍼티는 모두 읽기 전용 접근자 프로퍼티지만, 텍스트를 조작하는<br><code>Node.prototype.nodeValue</code>, <code>Node.prototype.textContent</code>, <code>Node.prototype.innerText</code> 프로퍼티는 모두 setter와 getter 모두 존재하므로 참조와 할당이 모두 가능한 접근자 프로퍼티다.</p>
+<ul>
+<li><p>nodeValue<br>텍스트 노드의 nodeValue 프로퍼티를 참조할 때만 텍스트 노드의 값을 반환한다. 텍스트 노드가 아닌 노드 객체는 null을 반환한다.</p>
+</li>
+<li><p>textContent<br>nodeValue와 달리 요소 노드의 textContent 프로퍼티를 참조하면 요소 노드의 콘텐츠 영역 내의 HTML마크업을 제외한 모든 텍스트를 반환한다. 주의해야할 점은 요소 노드의 textContent 프로퍼티에 문자열을 할당하면, 요소 노도의 모든 자식 노드가 제거되고 할당한 문자열만 텍스트 노드로 추가된다.</p>
+</li>
+<li><p>innerText<br>textContent와 비슷한 역할을 하지만 innerText 프로퍼티는 CSS에 의해 비표시로 지정된 요소 노드의 텍스트를 반환하지 않고 CSS를 고려해야 해서 textContent보다 느리다. 결국 textContent를 사용하는게 낫다.</p>
+</li>
+<li><p>innerHTML<br>setter, getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 콘텐츠 영역 내에 포함된 모든 HTML 마크업을 문자로 반환한다.</p>
+</li>
+</ul>
+<p>DOM은 노드를 직접 생성/삽입/삭제/치환하는 메서드도 제공한다.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;fruits&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apple<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $fruits = <span class="built_in">document</span>.getElementById(<span class="string">&quot;fruits&quot;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $apple = $fruits.firstElementChild;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 생성, 삽입</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $newLi = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>); <span class="comment">// 요소 노드 생성</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $newText = <span class="built_in">document</span>.createTextNode(<span class="string">&quot;hello&quot;</span>); <span class="comment">// 텍스트 노드 생성</span></span></span><br><span class="line"><span class="javascript">    $newLi.appendChild($newText); <span class="comment">// 요소 노드의 자식으로 텍스트 노드 추가</span></span></span><br><span class="line"><span class="javascript">    $fruits.appendChild($newLi); <span class="comment">// 기존 DOM에 요소 노드 추가하면서 리플로우, 리페인트 발생</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 교체</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $replaceLi = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span></span><br><span class="line"><span class="javascript">    $replaceLi.textContent = <span class="string">&quot;hi!&quot;</span>;</span></span><br><span class="line"><span class="javascript">    $fruits.replaceChild($replaceLi, $newLi); <span class="comment">// $newLi 요소 노드 대신 $replaceLi 요소 노드로 교체</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 삭제</span></span></span><br><span class="line"><span class="javascript">    $fruits.removeChild($fruits.lastElementChild); <span class="comment">// $fruits 요소 노드의 마지막 요소를 DOM에서 삭제</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 복사(얕은 복사 이용)</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $shallowClone = $apple.cloneNode();</span></span><br><span class="line"><span class="javascript">    $shallowClone.textContent = <span class="string">&quot;orange&quot;</span>;</span></span><br><span class="line">    $fruits.appendChild($shallowClone);</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 복사(깊은 복사 이용)</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $deepClone = $fruits.cloneNode(<span class="literal">true</span>);</span></span><br><span class="line">    $fruits.appendChild($deepClone);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/25/20210325-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1086,112 +1199,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/17/20210317-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/16/20210316-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/16/20210316-TIL/" class="post-title-link" itemprop="url">20210316 TIL JS 예습</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-16 10:27:10" itemprop="dateCreated datePublished" datetime="2021-03-16T10:27:10+09:00">2021-03-16</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-18 12:56:43" itemprop="dateModified" datetime="2021-03-18T12:56:43+09:00">2021-03-18</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/16/20210316-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/16/20210316-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="17-생성자-함수에-의한-객체-생성"><a href="#17-생성자-함수에-의한-객체-생성" class="headerlink" title="17. 생성자 함수에 의한 객체 생성"></a>17. 생성자 함수에 의한 객체 생성</h1><p>생성자 함수(constructor)란 <code>new</code> 연산자와 함께 호출하여 객체(인스턴스)를 생성하는 함수를 말하고, 생성자 함수에 의해 생성된 객체를 인스턴스(intance)라 한다.<br>자바스크립트는 Object 생성자 함수 이외에도 String, Number, Boolean, Function, Array, Date, RegExp, Promise 등 빌트인 생성자 함수를 제공한다.</p>
-<p><code>new</code>연산자와 함께 호출하지 않으면 일반 함수로 호출된다.</p>
-<blockquote>
-<p>Object 생성자 함수를 사용해서 객체를 생성하는 것 보다 객체 리터럴을 이용하는게 더 직관적이고 편한 것 같은데 생성자 함수로 생성해야되는 이유가 있을까?</p>
-</blockquote>
-<p>공통된 프로퍼티를 여러 객체가 가져야 할 경우, 생성자 함수를 이용하면 간편하게 생성할 수 있다. 객체 리터럴은 직관적이고 편리하지만, 공통된 프로퍼티들을 갖는 여러 객체들에게 각각 프로퍼티를 입력해줘야 하는 단점이 있다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/16/20210316-TIL/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">84</span>
+          <span class="site-state-item-count">85</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -231,6 +231,103 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/04/20210404-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/04/20210404-TIL/" class="post-title-link" itemprop="url">20210404 TIL WebStorage</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-04 20:31:48 / Modified: 21:01:21" itemprop="dateCreated datePublished" datetime="2021-04-04T20:31:48+09:00">2021-04-04</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/04/20210404-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/04/20210404-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장힐 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다.</p>
+<h1 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h1><p>HTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebStorage 스펙이 추가되었다.<br>WebStorage는 key/value 로 데이터를 저장하고 key로 데이터를 찾는 패턴이다.<br>저장된 데이터가 클라이언트에만 존재할 뿐 서버로 전송이 이루어지지 않는다는 특징이 있다. 즉, 네트워크 트래픽 비용을 줄일 수 있다는 장점이 있다. 데이터의 지속성과 관련해서 LocalStorage와 SessionStorage 두 가지 저장소를 제공한다.</p>
+<h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><p>LocalStorage는 도메인 별로 각각의 LocalStorage가 생성이 되고, 저장한 데이터를 지우지 않는 이상 영구적으로 보관이 가능한 특징을 가지고 있다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/04/04/20210404-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
     <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/03/20210403-TIL/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -254,10 +351,16 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2021-04-03 22:41:33 / Modified: 23:05:25" itemprop="dateCreated datePublished" datetime="2021-04-03T22:41:33+09:00">2021-04-03</time>
+      <time title="Created: 2021-04-03 22:41:33" itemprop="dateCreated datePublished" datetime="2021-04-03T22:41:33+09:00">2021-04-03</time>
     </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">Edited on</span>
+        <time title="Modified: 2021-04-04 20:32:31" itemprop="dateModified" datetime="2021-04-04T20:32:31+09:00">2021-04-04</time>
+      </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-folder"></i>
@@ -1065,119 +1168,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="Pair-Programming-Todo-List"><a href="#Pair-Programming-Todo-List" class="headerlink" title="Pair-Programming - Todo List"></a>Pair-Programming - Todo List</h1><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// State</span></span><br><span class="line"><span class="keyword">let</span> todos = [];</span><br><span class="line"><span class="keyword">const</span> $inputTodo = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.input-todo&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> $todos = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.todos&quot;</span>);</span><br><span class="line"><span class="comment">// count</span></span><br><span class="line"><span class="keyword">const</span> countCompletedTodos = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> $completedCount = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.completed).length;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&quot;.completed-todos&quot;</span>).textContent = $completedCount;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&quot;.active-todos&quot;</span>).textContent =</span><br><span class="line">    todos.length - $completedCount;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">const</span> render = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $todos.innerHTML = todos</span><br><span class="line">    .map(<span class="function">(<span class="params">&#123; id, content, completed &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`&lt;li id=<span class="subst">$&#123;id&#125;</span> class=&quot;todo-item&quot;&gt;</span></span><br><span class="line"><span class="string">    &lt;input id=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot; <span class="subst">$&#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        completed ? <span class="string">&quot;checked&quot;</span> : <span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="subst">      &#125;</span>&gt;</span></span><br><span class="line"><span class="string">    &lt;label for=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot;&gt;<span class="subst">$&#123;content&#125;</span>&lt;/label&gt;</span></span><br><span class="line"><span class="string">    &lt;i class=&quot;remove-todo far fa-times-circle&quot;&gt;&lt;/i&gt;</span></span><br><span class="line"><span class="string">    &lt;/li&gt;`</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    .join(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  countCompletedTodos();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getTodos = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  todos = [</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">&quot;가나다&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">&quot;CSS&quot;</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">&quot;Javascript&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  ];</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 초기 렌더링</span></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&quot;DOMContentLoaded&quot;</span>, getTodos);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add todo</span></span><br><span class="line"><span class="keyword">const</span> addTodo = <span class="function">(<span class="params">content</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> todo = &#123;</span><br><span class="line">    id: <span class="built_in">Math</span>.max(...todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id), <span class="number">0</span>) + <span class="number">1</span>,</span><br><span class="line">    content,</span><br><span class="line">    completed: <span class="literal">false</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  todos = [todo, ...todos];</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$inputTodo.onkeydown = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="comment">// if (e.key !== &quot;Enter&quot;) return; // 이벤트 객체가 &quot;Enter&quot;키가 아니면 리턴</span></span><br><span class="line">  <span class="comment">// if (!$inputTodo.value) return; // 빈문자열 일때 리턴</span></span><br><span class="line">  <span class="comment">// if (e.key !== &quot;Enter&quot; || !$inputTodo.value) return; // 이해하기 힘든 방법</span></span><br><span class="line">  <span class="comment">// 쉬운 방법</span></span><br><span class="line">  <span class="keyword">if</span> (e.key === <span class="string">&quot;Enter&quot;</span> &amp;&amp; $inputTodo.value) &#123;</span><br><span class="line">    <span class="keyword">const</span> content = $inputTodo.value;</span><br><span class="line">    $inputTodo.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    addTodo(content);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// remove todo</span></span><br><span class="line">$todos.onclick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.classList.contains(<span class="string">&quot;remove-todo&quot;</span>)) <span class="keyword">return</span>;</span><br><span class="line">  todos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== +e.target.parentNode.id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// checkbox toggle</span></span><br><span class="line"><span class="keyword">const</span> toggleTodo = <span class="function">(<span class="params">$id</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span></span><br><span class="line">    todo.id === +$id ? &#123; ...todo, <span class="attr">completed</span>: !todo.completed &#125; : todo</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line">$todos.onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> $id = e.target.parentNode.id;</span><br><span class="line">  toggleTodo($id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// check-all-button</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.complete-all&quot;</span>).onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.checked) <span class="keyword">return</span>;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123; ...todo, <span class="attr">completed</span>: <span class="literal">true</span> &#125;;</span><br><span class="line">  &#125;);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.btn&quot;</span>).onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  todos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> !todo.completed);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 텍스트가 길어질 때 자동으로 들여쓰기</span></span><br><span class="line"><span class="comment">// 한글 입력 문제 -&gt; onkeyup에서 onkeydown으로 변경해서 해결</span></span><br><span class="line"><span class="comment">// const $removeTodo = document.querySelector(&quot;.remove-todo&quot;); &gt;&gt; i태그 값이 null??</span></span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/25/20210325-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/25/20210325-TIL/" class="post-title-link" itemprop="url">20210325 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-25 10:05:49" itemprop="dateCreated datePublished" datetime="2021-03-25T10:05:49+09:00">2021-03-25</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-28 20:31:55" itemprop="dateModified" datetime="2021-03-28T20:31:55+09:00">2021-03-28</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/25/20210325-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/25/20210325-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="요소-노드의-텍스트-조작"><a href="#요소-노드의-텍스트-조작" class="headerlink" title="요소 노드의 텍스트 조작"></a>요소 노드의 텍스트 조작</h3><p>노드 탐색, 노드 정보 프로퍼티는 모두 읽기 전용 접근자 프로퍼티지만, 텍스트를 조작하는<br><code>Node.prototype.nodeValue</code>, <code>Node.prototype.textContent</code>, <code>Node.prototype.innerText</code> 프로퍼티는 모두 setter와 getter 모두 존재하므로 참조와 할당이 모두 가능한 접근자 프로퍼티다.</p>
-<ul>
-<li><p>nodeValue<br>텍스트 노드의 nodeValue 프로퍼티를 참조할 때만 텍스트 노드의 값을 반환한다. 텍스트 노드가 아닌 노드 객체는 null을 반환한다.</p>
-</li>
-<li><p>textContent<br>nodeValue와 달리 요소 노드의 textContent 프로퍼티를 참조하면 요소 노드의 콘텐츠 영역 내의 HTML마크업을 제외한 모든 텍스트를 반환한다. 주의해야할 점은 요소 노드의 textContent 프로퍼티에 문자열을 할당하면, 요소 노도의 모든 자식 노드가 제거되고 할당한 문자열만 텍스트 노드로 추가된다.</p>
-</li>
-<li><p>innerText<br>textContent와 비슷한 역할을 하지만 innerText 프로퍼티는 CSS에 의해 비표시로 지정된 요소 노드의 텍스트를 반환하지 않고 CSS를 고려해야 해서 textContent보다 느리다. 결국 textContent를 사용하는게 낫다.</p>
-</li>
-<li><p>innerHTML<br>setter, getter 모두 존재하는 접근자 프로퍼티로서 요소 노드의 콘텐츠 영역 내에 포함된 모든 HTML 마크업을 문자로 반환한다.</p>
-</li>
-</ul>
-<p>DOM은 노드를 직접 생성/삽입/삭제/치환하는 메서드도 제공한다.</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;en&quot;</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">&quot;X-UA-Compatible&quot;</span> <span class="attr">content</span>=<span class="string">&quot;IE=edge&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">&quot;viewport&quot;</span> <span class="attr">content</span>=<span class="string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span> <span class="attr">id</span>=<span class="string">&quot;fruits&quot;</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>Apple<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $fruits = <span class="built_in">document</span>.getElementById(<span class="string">&quot;fruits&quot;</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $apple = $fruits.firstElementChild;</span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 생성, 삽입</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $newLi = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>); <span class="comment">// 요소 노드 생성</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $newText = <span class="built_in">document</span>.createTextNode(<span class="string">&quot;hello&quot;</span>); <span class="comment">// 텍스트 노드 생성</span></span></span><br><span class="line"><span class="javascript">    $newLi.appendChild($newText); <span class="comment">// 요소 노드의 자식으로 텍스트 노드 추가</span></span></span><br><span class="line"><span class="javascript">    $fruits.appendChild($newLi); <span class="comment">// 기존 DOM에 요소 노드 추가하면서 리플로우, 리페인트 발생</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 교체</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $replaceLi = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span></span><br><span class="line"><span class="javascript">    $replaceLi.textContent = <span class="string">&quot;hi!&quot;</span>;</span></span><br><span class="line"><span class="javascript">    $fruits.replaceChild($replaceLi, $newLi); <span class="comment">// $newLi 요소 노드 대신 $replaceLi 요소 노드로 교체</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 삭제</span></span></span><br><span class="line"><span class="javascript">    $fruits.removeChild($fruits.lastElementChild); <span class="comment">// $fruits 요소 노드의 마지막 요소를 DOM에서 삭제</span></span></span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 복사(얕은 복사 이용)</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $shallowClone = $apple.cloneNode();</span></span><br><span class="line"><span class="javascript">    $shallowClone.textContent = <span class="string">&quot;orange&quot;</span>;</span></span><br><span class="line">    $fruits.appendChild($shallowClone);</span><br><span class="line"></span><br><span class="line"><span class="javascript">    <span class="comment">// 노드 복사(깊은 복사 이용)</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">const</span> $deepClone = $fruits.cloneNode(<span class="literal">true</span>);</span></span><br><span class="line">    $fruits.appendChild($deepClone);</span><br><span class="line">  <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/25/20210325-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

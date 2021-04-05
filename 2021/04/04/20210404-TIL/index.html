@@ -23,15 +23,15 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장힐 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다. Web StorageHTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebS">
+<meta name="description" content="토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장할 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다. Web StorageHTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="20210404 TIL WebStorage">
 <meta property="og:url" content="https://juhyeong-k.github.io/2021/04/04/20210404-TIL/index.html">
 <meta property="og:site_name" content="JH&#39;s dev blog">
-<meta property="og:description" content="토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장힐 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다. Web StorageHTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebS">
+<meta property="og:description" content="토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장할 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다. Web StorageHTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebS">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-04T11:31:48.000Z">
-<meta property="article:modified_time" content="2021-04-04T12:01:21.463Z">
+<meta property="article:modified_time" content="2021-04-04T12:43:23.279Z">
 <meta property="article:author" content="Kim Ju Hyeong">
 <meta property="article:tag" content="TIL">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">85</span>
+          <span class="site-state-item-count">86</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -261,7 +261,7 @@
       <span class="post-meta-item-text">Posted on</span>
       
 
-      <time title="Created: 2021-04-04 20:31:48 / Modified: 21:01:21" itemprop="dateCreated datePublished" datetime="2021-04-04T20:31:48+09:00">2021-04-04</time>
+      <time title="Created: 2021-04-04 20:31:48 / Modified: 21:43:23" itemprop="dateCreated datePublished" datetime="2021-04-04T20:31:48+09:00">2021-04-04</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -297,7 +297,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <p>토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장힐 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다.</p>
+        <p>토이 프로젝트 기획 중 데이터를 어떻게 저장할지 고민이었다. Nodejs로 서버를 구현해서 데이터를 저장할 지, 아니면 브라우저의 Webstorage로 데이터를 저장할지 고민하면서 Webstorage방식은 어떻게 데이터를 저장할 수 있는지 알아봤다.</p>
 <h1 id="Web-Storage"><a href="#Web-Storage" class="headerlink" title="Web Storage"></a>Web Storage</h1><p>HTML5부터 웹사이트의 데이터를 클라이언트에 저장할 수 있는 새로운 자료구조로 WebStorage 스펙이 추가되었다.<br>WebStorage는 key/value 로 데이터를 저장하고 key로 데이터를 찾는 패턴이다.<br>저장된 데이터가 클라이언트에만 존재할 뿐 서버로 전송이 이루어지지 않는다는 특징이 있다. 즉, 네트워크 트래픽 비용을 줄일 수 있다는 장점이 있다. 데이터의 지속성과 관련해서 LocalStorage와 SessionStorage 두 가지 저장소를 제공한다.</p>
 <h3 id="LocalStorage"><a href="#LocalStorage" class="headerlink" title="LocalStorage"></a>LocalStorage</h3><p>LocalStorage는 도메인 별로 각각의 LocalStorage가 생성이 되고, 저장한 데이터를 지우지 않는 이상 영구적으로 보관이 가능한 특징을 가지고 있다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 데이터에 저장</span></span><br><span class="line"><span class="built_in">localStorage</span>.setItem(<span class="string">&quot;name&quot;</span>, <span class="string">&quot;JH&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 조회</span></span><br><span class="line"><span class="built_in">localStorage</span>.getItem(<span class="string">&quot;name&quot;</span>); <span class="comment">// JH</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 데이터 삭제</span></span><br><span class="line"><span class="built_in">localStorage</span>.removeItem(<span class="string">&quot;name&quot;</span>); </span><br><span class="line"><span class="built_in">localStorage</span>.clear(); <span class="comment">// localStorage에 있는 데이터 전체 삭제</span></span><br></pre></td></tr></table></figure>
@@ -325,6 +325,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2021/04/05/20210405-TIL/" rel="next" title="20210405 TIL 자료구조와 알고리즘 강의">
+                  20210405 TIL 자료구조와 알고리즘 강의 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

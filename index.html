@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">87</span>
+          <span class="site-state-item-count">88</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,99 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/07/20210407-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/07/20210407-TIL/" class="post-title-link" itemprop="url">20210407 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-07 21:47:41 / Modified: 21:48:37" itemprop="dateCreated datePublished" datetime="2021-04-07T21:47:41+09:00">2021-04-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/07/20210407-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/07/20210407-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="오늘-한-일"><a href="#오늘-한-일" class="headerlink" title="오늘 한 일"></a>오늘 한 일</h1><ul>
+<li><p>토이 프로젝트 기능 추가</p>
+</li>
+<li><p>리팩토링</p>
+</li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1079,104 +1172,6 @@
 <p>app.js</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> todos = [];</span><br><span class="line"><span class="keyword">const</span> $todos = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.todos&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> $inputTodo = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.input-todo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> render = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $todos.innerHTML = todos</span><br><span class="line">    .map(<span class="function">(<span class="params">&#123; id, content, completed &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`&lt;li id=<span class="subst">$&#123;id&#125;</span> class=&quot;todo-item&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;input id=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot;<span class="subst">$&#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        completed ? <span class="string">&quot;checked&quot;</span> : <span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="subst">      &#125;</span>&gt;&lt;label for=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot;&gt;<span class="subst">$&#123;content&#125;</span>&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;i class=&quot;remove-todo far fa-times-circle&quot;&gt;&lt;/i&gt;&lt;/li&gt;`</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    .join(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(todos);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getTodos = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> fetch(<span class="string">&quot;/todos&quot;</span>);</span><br><span class="line">  todos = <span class="keyword">await</span> res.json();</span><br><span class="line"></span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&quot;DOMContentLoaded&quot;</span>, getTodos);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add</span></span><br><span class="line"><span class="keyword">const</span> addTodo = <span class="function">(<span class="params">content</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> todo = &#123;</span><br><span class="line">    id: <span class="built_in">Math</span>.max(...todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id), <span class="number">0</span>) + <span class="number">1</span>,</span><br><span class="line">    content,</span><br><span class="line">    completed: <span class="literal">false</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  todos = [todo, ...todos];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$inputTodo.onkeypress = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (e.key !== <span class="string">&quot;Enter&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">const</span> content = $inputTodo.value;</span><br><span class="line">  $inputTodo.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  addTodo(content);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// remove</span></span><br><span class="line">$todos.onclick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.classList.contains(<span class="string">&quot;remove-todo&quot;</span>)) <span class="keyword">return</span>;</span><br><span class="line">  todos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== +e.target.parentNode.id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//toggle</span></span><br><span class="line"><span class="keyword">const</span> toggleTodo = <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span></span><br><span class="line">    todo.id === +id ? &#123; ...todo, <span class="attr">completed</span>: !todo.completed &#125; : todo</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$todos.onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> id = e.target.parentNode.id;</span><br><span class="line">  toggleTodo(id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// complete all todos</span></span><br><span class="line"><span class="keyword">const</span> $completeAll = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.complete-all&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> markAllTodos = <span class="function">(<span class="params">complete</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> (&#123; ...todo, complete &#125;));</span><br><span class="line">&#125;;</span><br><span class="line">$completeAll.onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> complete = e.target.checked;</span><br><span class="line">  markAllTodos(complete);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/28/20210328-TIL/" class="post-title-link" itemprop="url">20210328 TIL 키보드 이벤트 한글 입력 문제</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-28 16:02:45 / Modified: 20:12:58" itemprop="dateCreated datePublished" datetime="2021-03-28T16:02:45+09:00">2021-03-28</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/28/20210328-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/28/20210328-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="키보드-이벤트-한글-입력-문제"><a href="#키보드-이벤트-한글-입력-문제" class="headerlink" title="키보드 이벤트 한글 입력 문제"></a>키보드 이벤트 한글 입력 문제</h1><p><code>keydown</code> - 키가 눌릴 때 이벤트 발생<br><code>keypress</code> - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.<br><code>keyup</code> - 키가 떼질 때 이벤트 발생</p>
-<p>위의 이벤트가 발생하면 <code>KeyboardEvent</code> 타입의 이벤트 객체가 생성된다.<br>영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다.</p>
-<p><code>keyup</code> 이벤트가 발생했을 때,  이벤트 객체는 printable key인 한글을 입력할 때 객체가 생성되지도 않는다. 심지어 한글키로 바꿨을 때 다른 Modifier key들은 출력이 되지만, <code>Enter</code>키는 <code>Enter</code>키 자체가 객체로 생성되지 않아서 <code>Enter</code>키를 인식할 수 없다.(리눅스환경 기준)</p>
-<p><code>keydown</code> 이벤트가 발생했을 때, 이벤트 객체를 출력해보면 printable key인 한글을 입력했을 때 이벤트 객체가 생성은 되지만, key값으로는 <code>Unidentified</code>를 반환한다. Modifier key들은 정상적으로 출력이 된다.</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/28/20210328-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

@@ -9,11 +9,11 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Thu, 08 Apr 2021 12:42:10 GMT</pubDate>
+    <pubDate>Thu, 08 Apr 2021 12:43:58 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>20210408 TIL</title>
+      <title>20210408 TIL JS 기능</title>
       <link>https://juhyeong-k.github.io/2021/04/08/20210408-TIL/</link>
       <guid>https://juhyeong-k.github.io/2021/04/08/20210408-TIL/</guid>
       <pubDate>Thu, 08 Apr 2021 12:09:44 GMT</pubDate>
@@ -32,6 +32,8 @@
       
       
       <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
+      
+      <category domain="https://juhyeong-k.github.io/tags/JS/">JS</category>
       
       
       <comments>https://juhyeong-k.github.io/2021/04/08/20210408-TIL/#disqus_thread</comments>

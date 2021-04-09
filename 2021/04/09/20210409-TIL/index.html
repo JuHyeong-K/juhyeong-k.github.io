@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="토이 프로젝트 수정 기능 코드 리팩토링리팩토링 전 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&#x2F;&#x2F; 수정 기능 옛날 버전const $detailChangeButton &#x3D; document.quer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210409 TIL">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/04/09/20210409-TIL/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="토이 프로젝트 수정 기능 코드 리팩토링리팩토링 전 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263&#x2F;&#x2F; 수정 기능 옛날 버전const $detailChangeButton &#x3D; document.quer">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-09T12:39:22.000Z">
+<meta property="article:modified_time" content="2021-04-09T12:42:28.758Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="TIL">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/04/09/20210409-TIL/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>20210409 TIL | JH's dev blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-93XKT8K1JW');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="JH's dev blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%86%A0%EC%9D%B4-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EC%88%98%EC%A0%95-%EA%B8%B0%EB%8A%A5-%EC%BD%94%EB%93%9C-%EB%A6%AC%ED%8C%A9%ED%86%A0%EB%A7%81"><span class="nav-number">1.</span> <span class="nav-text">토이 프로젝트 수정 기능 코드 리팩토링</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">90</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/09/20210409-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210409 TIL
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-09 21:39:22 / Modified: 21:42:28" itemprop="dateCreated datePublished" datetime="2021-04-09T21:39:22+09:00">2021-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/09/20210409-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/09/20210409-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="토이-프로젝트-수정-기능-코드-리팩토링"><a href="#토이-프로젝트-수정-기능-코드-리팩토링" class="headerlink" title="토이 프로젝트 수정 기능 코드 리팩토링"></a>토이 프로젝트 수정 기능 코드 리팩토링</h1><p>리팩토링 전</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 수정 기능 옛날 버전</span></span><br><span class="line"><span class="keyword">const</span> $detailChangeButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-change-button&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> $buttonsConfirmCancel = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.buttons-confirm-cancel&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> $detailConfirmButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-confirm-button&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> $detailSpanTitle = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailSpandate = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailSpanTextarea = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailInputTitle = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailTextarea = <span class="literal">null</span>;</span><br><span class="line">$detailChangeButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $detailSpanTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-title&#x27;</span>);</span><br><span class="line">  $detailSpanTitle.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailSpandate = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-date&#x27;</span>);</span><br><span class="line">  $detailSpandate.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailSpanTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-textarea&#x27;</span>);</span><br><span class="line">  $detailSpanTextarea.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailInputTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>);</span><br><span class="line">  $detailInputTitle.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>);</span><br><span class="line">  $detailTextarea.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $buttonsConfirmCancel.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailChangeButton.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-edited&#x27;</span>).style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line"><span class="comment">// 수정버튼 클릭시 기존의 내용 기본값으로 추가</span></span><br><span class="line">  $detailInputTitle.value = $detailSpanTitle.textContent;</span><br><span class="line">  $detailTextarea.value = $detailSpanTextarea.textContent;</span><br><span class="line"><span class="comment">// 수정버튼 클릭시 ^아이콘 삭제</span></span><br><span class="line">  <span class="comment">// $detailBtn.style.display=&#x27;none&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> modifyTodo = <span class="function">(<span class="params">title, content, edited</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function"><span class="params">todo</span> =&gt;</span></span><br><span class="line">    todo.id === +todoDetail[<span class="number">0</span>].id ? &#123;...todo, title, content, edited&#125; : todo</span><br><span class="line">  );</span><br><span class="line">  todoDetail = todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.id === +todoDetail[<span class="number">0</span>].id);</span><br><span class="line">  renderDetail(...todoDetail)</span><br><span class="line">  render()</span><br><span class="line">&#125;</span><br><span class="line">$buttonsConfirmCancel.onclick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  $detailBtn.style.display=<span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpanTitle.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpandate.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpanTextarea.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailInputTitle.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailTextarea.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailChangeButton.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $buttonsConfirmCancel.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="keyword">if</span> (e.target.textContent === <span class="string">&quot;확인&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!$detailInputTitle.value || !$detailTextarea.value)&#123;</span><br><span class="line">      $detailChangeButton.click();</span><br><span class="line">      $detailBtn.style.display=<span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">      alert(<span class="string">&#x27;제목과 내용을 작성해주세요&#x27;</span>);</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> modifiedTitle = $detailInputTitle.value;</span><br><span class="line">    <span class="keyword">const</span> ModifiedContent = $detailTextarea.value;</span><br><span class="line">    <span class="keyword">let</span> editedDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    editedDate = editedDate.toISOString().slice(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">    modifyTodo(modifiedTitle, ModifiedContent, editedDate);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $detailInputTitle.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    $detailTextarea.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// detail button toggle</span></span><br><span class="line"><span class="keyword">const</span> toggleDetailClass = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $toggleTags = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.toggle&#x27;</span>);</span><br><span class="line">  $toggleTags.forEach(<span class="function"><span class="params">tag</span> =&gt;</span> &#123;</span><br><span class="line">    tag.style.display = tag.style.display !== <span class="string">&quot;none&quot;</span> ? <span class="string">&quot;none&quot;</span> : <span class="string">&quot;inline-block&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 수정 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailChangeButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-change-button&#x27;</span>);</span><br><span class="line">$detailChangeButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  toggleDetailClass()</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>).value = </span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-title&#x27;</span>).textContent;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>).value = </span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-textarea&#x27;</span>).textContent;</span><br><span class="line">  $detailBtn.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// modify function</span></span><br><span class="line"><span class="keyword">const</span> modifyTodo = <span class="function">(<span class="params">title, content, edited</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = <span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;key&quot;</span>)).map(<span class="function"><span class="params">todo</span> =&gt;</span> </span><br><span class="line">    todo.id === +item ? &#123;...todo, title, content, edited&#125; : todo);</span><br><span class="line">    renderDetail(item);</span><br><span class="line">    render()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 확인 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailConfirmButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-confirm-button&#x27;</span>);</span><br><span class="line">$detailConfirmButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> detailInputTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> detailTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!detailInputTitle.value || !detailTextarea.value) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;제목과 내용을 작성해주세요&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> modifiedTitle = detailInputTitle.value;</span><br><span class="line">    <span class="keyword">const</span> modifiedContent = detailTextarea.value;</span><br><span class="line">    <span class="keyword">let</span> editedDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    editedDate = editedDate.toISOString().slice(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">    toggleDetailClass();</span><br><span class="line">    modifyTodo(modifiedTitle, modifiedContent, editedDate);</span><br><span class="line">    detailInputTitle.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    detailTextarea.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    $detailBtn.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 취소 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailCancelButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-cancel-button&#x27;</span>);</span><br><span class="line">$detailCancelButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  toggleDetailClass();</span><br><span class="line">  renderDetail(item);</span><br><span class="line">  $detailBtn.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/08/20210408-TIL/" rel="prev" title="20210408 TIL JS 기능">
+                  <i class="fa fa-chevron-left"></i> 20210408 TIL JS 기능
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://juhyeong-k.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/04/09/20210409-TIL/";
+    this.page.identifier = "2021/04/09/20210409-TIL/";
+    this.page.title = "20210409 TIL";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

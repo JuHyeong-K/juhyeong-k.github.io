@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">89</span>
+          <span class="site-state-item-count">90</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,103 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/" class="post-title-link" itemprop="url">[Ubuntu 20.04] pyenv에서 system을 찾지 못하는 현상</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-15 19:58:32 / Modified: 20:39:11" itemprop="dateCreated datePublished" datetime="2021-02-15T19:58:32+09:00">2021-02-15</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/etc/" itemprop="url" rel="index"><span itemprop="name">etc</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/15/ubuntu20-04-pyenv에서-system을-찾지-못하는-현상/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="What-happened"><a href="#What-happened" class="headerlink" title="What happened?"></a>What happened?</h2><p><code>pyenv versions</code>에서 <code>system</code>이 보이지 않고, <code>pyenv global system</code>으로 전역을 <code>system</code>으로 변경<br>하려고 했으나 오류 발생</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ pyenv versions</span><br><span class="line">* 3.9.1 (<span class="built_in">set</span> by /home/kjh/.pyenv/version)</span><br><span class="line"></span><br><span class="line">$ pyenv global system</span><br><span class="line">pyenv: system version not found <span class="keyword">in</span> PATH</span><br></pre></td></tr></table></figure>
+<h2 id="Why-happened"><a href="#Why-happened" class="headerlink" title="Why happened?"></a>Why happened?</h2><p>Ubuntu 20.04 버전에서는 실행할 수 있는 <code>python</code>이 없다고 한다.<br><code>/usr/bin</code>에는 <code>python2</code>와 <code>python3</code>만 있고 <code>python</code>이라는 파일이 존재하지 않아서 pyenv에서<br>인식을 못한다고 한다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1046,113 +1143,6 @@
 <li>OPP 내용 정리</li>
 </ul>
 
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/02/10/why-use-one-underscore-in-python/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/02/10/why-use-one-underscore-in-python/" class="post-title-link" itemprop="url">파이썬의 캡슐화가 완벽하지 못한 이유</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-02-10 19:03:53" itemprop="dateCreated datePublished" datetime="2021-02-10T19:03:53+09:00">2021-02-10</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-07 20:07:38" itemprop="dateModified" datetime="2021-03-07T20:07:38+09:00">2021-03-07</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/python/" itemprop="url" rel="index"><span itemprop="name">python</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/02/10/why-use-one-underscore-in-python/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/02/10/why-use-one-underscore-in-python/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="캡슐화-Encapsulation"><a href="#캡슐화-Encapsulation" class="headerlink" title="캡슐화(Encapsulation)"></a>캡슐화(Encapsulation)</h1><ul>
-<li>객체의 속성과 그것을 사용하는 행동을 하나로 묶는 것</li>
-<li>객체의 일부 구현 내용에 대해 외부로부터의 직접적인 액세스를 차단하는 것</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmartPhone</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, ap, cam</span>):</span></span><br><span class="line">        self.ap = ap</span><br><span class="line">        self.cam = cam</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">_jail_break</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&#x27;jail break complete&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__custom_firmware</span>(<span class="params">self</span>):</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;You can&#x27;t do this&quot;</span></span><br><span class="line"></span><br><span class="line">samsung = SmartPhone(<span class="string">&#x27;exinos&#x27;</span>, <span class="string">&#x27;1.2M&#x27;</span>)</span><br><span class="line"></span><br><span class="line">print(samsung._jail_break()) <span class="comment"># 클래스 외부에서 불러오는게 가능</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">jail break complete</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">print(samsung.__custom_firmware()) <span class="comment"># 클래스 외부에서 불러오면 AttributeError 발생</span></span><br><span class="line"><span class="string">&quot;&quot;&quot; out:</span></span><br><span class="line"><span class="string">AttributeError: &#x27;SmartPhone&#x27; object has no attribute &#x27;__custom_firmware&#x27;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br></pre></td></tr></table></figure>
-<p>위의 코드에서 underscore<code>__</code> 2개로 접근을 막을 수 있는 것 처럼 보이지만,<br>파이썬에서는 underscore<code>__</code> 2개로 캡슐화를 해도 클래스 밖에서 접근이 가능하다는 것을 알게 되었다.</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Citizen</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, name, age, r_id</span>):</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.__age = age</span><br><span class="line">        self.__r_id = r_id</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_age</span>(<span class="params">self</span>):</span>  </span><br><span class="line">    <span class="string">&quot;&quot;&quot;__age를 리턴하는 메소드&quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">return</span> self.__age</span><br><span class="line"></span><br><span class="line">man = Citizen(<span class="string">&quot;JH&quot;</span>, <span class="number">27</span>, <span class="string">&quot;12345678&quot;</span>)</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/02/10/why-use-one-underscore-in-python/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

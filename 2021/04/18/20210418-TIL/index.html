@@ -23,18 +23,21 @@
     var NexT = window.NexT || {};
     var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
   </script>
-<meta name="description" content="All about dev">
-<meta property="og:type" content="website">
-<meta property="og:title" content="JH&#39;s dev blog">
-<meta property="og:url" content="https://juhyeong-k.github.io/archives/2021/02/page/2/index.html">
+<meta name="description" content="블루투스 이어폰의 마이크를 사용하려고 했는데, 시스템에서 잡히지 않는 문제가 발생했다. 내 블루투스 이어폰은 HFP 프로파일을 지원 하지만, 리눅스의 사운드 서버 프로그램인 PulseAudio는 HFP 프로파일을 지원하지 않아서 생기는 문제라고 한다. 아래의 방법으로 해결을 했다. https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;831331&#x2F;fai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20210418 TIL ubuntu 블루투스 이어폰 마이크 문제">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/04/18/20210418-TIL/index.html">
 <meta property="og:site_name" content="JH&#39;s dev blog">
-<meta property="og:description" content="All about dev">
+<meta property="og:description" content="블루투스 이어폰의 마이크를 사용하려고 했는데, 시스템에서 잡히지 않는 문제가 발생했다. 내 블루투스 이어폰은 HFP 프로파일을 지원 하지만, 리눅스의 사운드 서버 프로그램인 PulseAudio는 HFP 프로파일을 지원하지 않아서 생기는 문제라고 한다. 아래의 방법으로 해결을 했다. https:&#x2F;&#x2F;askubuntu.com&#x2F;questions&#x2F;831331&#x2F;fai">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-18T14:21:09.000Z">
+<meta property="article:modified_time" content="2021-04-18T14:29:33.888Z">
 <meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="TIL">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://juhyeong-k.github.io/archives/2021/02/page/2/">
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/04/18/20210418-TIL/">
 
 
 <script class="page-configurations">
@@ -42,11 +45,11 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
-<title>Archive | JH's dev blog</title>
+<title>20210418 TIL ubuntu 블루투스 이어폰 마이크 문제 | JH's dev blog</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
     <script>
@@ -221,234 +224,119 @@
 </noscript>
 
 
-    <div class="main-inner archive posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/18/20210418-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          20210418 TIL ubuntu 블루투스 이어폰 마이크 문제
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-18 23:21:09 / Modified: 23:29:33" itemprop="dateCreated datePublished" datetime="2021-04-18T23:21:09+09:00">2021-04-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/18/20210418-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/18/20210418-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>블루투스 이어폰의 마이크를 사용하려고 했는데, 시스템에서 잡히지 않는 문제가 발생했다.</p>
+<p>내 블루투스 이어폰은 <code>HFP</code> 프로파일을 지원 하지만, 리눅스의 사운드 서버 프로그램인 <code>PulseAudio</code>는 <code>HFP</code> 프로파일을 지원하지 않아서 생기는 문제라고 한다.</p>
+<p>아래의 방법으로 해결을 했다.</p>
+<p><a target="_blank" rel="noopener" href="https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-unit">https://askubuntu.com/questions/831331/failed-to-change-profile-to-headset-head-unit</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/TIL/" rel="tag"># TIL</a>
+          </div>
+
         
-        <span class="collection-header">Good! 98 posts in total. Keep on posting.</span>
-      </div>
 
-      
-    <div class="collection-year">
-      <span class="collection-header">2021</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-17T19:44:01+09:00"
-              content="2021-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/17/20210217-TIL/" itemprop="url">
-            <span itemprop="name">20210217 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/04/16/20210416-TIL/" rel="prev" title="20210416 TIL">
+                  <i class="fa fa-chevron-left"></i> 20210416 TIL
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-17T19:40:42+09:00"
-              content="2021-02-17">
-          02-17
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/17/HackerRank-Day-11-2D-Arrays/" itemprop="url">
-            <span itemprop="name">[HackerRank]Day 11: 2D Arrays</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-16T21:15:19+09:00"
-              content="2021-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/16/20210216-TIL/" itemprop="url">
-            <span itemprop="name">20210216 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-16T21:03:40+09:00"
-              content="2021-02-16">
-          02-16
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/16/decorator-practice/" itemprop="url">
-            <span itemprop="name">decorator practice</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-15T23:43:36+09:00"
-              content="2021-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/15/20210215-TIL/" itemprop="url">
-            <span itemprop="name">20210215 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-15T20:43:52+09:00"
-              content="2021-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/15/pyenv-virtualenv-poetry-autoenv-%EC%84%A4%EC%B9%98-%EB%B0%A9%EB%B2%95-%EC%A0%95%EB%A6%AC/" itemprop="url">
-            <span itemprop="name">pyenv virtualenv poetry autoenv 설치 방법 정리</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-15T19:58:32+09:00"
-              content="2021-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/15/ubuntu20-04-pyenv%EC%97%90%EC%84%9C-system%EC%9D%84-%EC%B0%BE%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%ED%98%84%EC%83%81/" itemprop="url">
-            <span itemprop="name">[Ubuntu 20.04] pyenv에서 system을 찾지 못하는 현상</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-15T12:51:24+09:00"
-              content="2021-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/15/HackerRank-Day-13/" itemprop="url">
-            <span itemprop="name">[HackerRank]Day.13 Abstract Classes</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-15T12:47:56+09:00"
-              content="2021-02-15">
-          02-15
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/15/HackerRank-Day-12-13/" itemprop="url">
-            <span itemprop="name">[HackerRank]Day.12 Inheritance</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2021-02-14T23:14:05+09:00"
-              content="2021-02-14">
-          02-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2021/02/14/20210214-TIL/" itemprop="url">
-            <span itemprop="name">20210214 TIL</span>
-          </a>
-      </div>
-
-      
-    </header>
-  </article>
+</div>
 
 
-    </div>
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
   </div>
   
-  
-  
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/archives/2021/02/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/archives/2021/02/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2021/02/page/3/">3</a><a class="page-number" href="/archives/2021/02/page/4/">4</a><a class="extend next" rel="next" href="/archives/2021/02/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
-
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -518,6 +406,26 @@
   }
   // defer loading until the whole page loading is completed
   window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/04/18/20210418-TIL/";
+    this.page.identifier = "2021/04/18/20210418-TIL/";
+    this.page.title = "20210418 TIL ubuntu 블루투스 이어폰 마이크 문제";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
 
 </body>

@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">97</span>
+          <span class="site-state-item-count">98</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,104 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/28/20210328-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/28/20210328-TIL/" class="post-title-link" itemprop="url">20210328 TIL 키보드 이벤트 한글 입력 문제</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-28 16:02:45 / Modified: 20:12:58" itemprop="dateCreated datePublished" datetime="2021-03-28T16:02:45+09:00">2021-03-28</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/28/20210328-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/28/20210328-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="키보드-이벤트-한글-입력-문제"><a href="#키보드-이벤트-한글-입력-문제" class="headerlink" title="키보드 이벤트 한글 입력 문제"></a>키보드 이벤트 한글 입력 문제</h1><p><code>keydown</code> - 키가 눌릴 때 이벤트 발생<br><code>keypress</code> - 웹 표준에서 deprecated 되었기 때문에 사용하지 않는 게 좋다.<br><code>keyup</code> - 키가 떼질 때 이벤트 발생</p>
+<p>위의 이벤트가 발생하면 <code>KeyboardEvent</code> 타입의 이벤트 객체가 생성된다.<br>영어의 키입력은 문제 없지만, 한글을 입력할 때 문제가 생긴다.</p>
+<p><code>keyup</code> 이벤트가 발생했을 때,  이벤트 객체는 printable key인 한글을 입력할 때 객체가 생성되지도 않는다. 심지어 한글키로 바꿨을 때 다른 Modifier key들은 출력이 되지만, <code>Enter</code>키는 <code>Enter</code>키 자체가 객체로 생성되지 않아서 <code>Enter</code>키를 인식할 수 없다.(리눅스환경 기준)</p>
+<p><code>keydown</code> 이벤트가 발생했을 때, 이벤트 객체를 출력해보면 printable key인 한글을 입력했을 때 이벤트 객체가 생성은 되지만, key값으로는 <code>Unidentified</code>를 반환한다. Modifier key들은 정상적으로 출력이 된다.</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/28/20210328-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1086,105 +1184,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/20/20210320-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/19/20210319-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/19/20210319-TIL/" class="post-title-link" itemprop="url">20210319 TIL JS 6회차</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-19 20:13:50 / Modified: 21:42:24" itemprop="dateCreated datePublished" datetime="2021-03-19T20:13:50+09:00">2021-03-19</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/19/20210319-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/19/20210319-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="배열의-메소드"><a href="#배열의-메소드" class="headerlink" title="배열의 메소드"></a>배열의 메소드</h1><h3 id="Array-prototype-sort"><a href="#Array-prototype-sort" class="headerlink" title="Array.prototype.sort"></a>Array.prototype.sort</h3><p>sort 메소드는 원본 배열을 변경하는 mutator, 바뀐 배열을 반환한다.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr.sort()); <span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr); <span class="comment">// [ &#x27;a&#x27;, &#x27;b&#x27;, &#x27;c&#x27;, &#x27;d&#x27; ]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr2 = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">10</span>, <span class="number">22</span>, <span class="number">3</span>, <span class="number">33</span>];</span><br><span class="line"><span class="built_in">console</span>.log(arr2.sort()); <span class="comment">// [ 1, 10, 2, 22, 3, 33, 5 ]</span></span><br><span class="line"><span class="built_in">console</span>.log(arr2); <span class="comment">// [ 1, 10, 2, 22, 3, 33, 5 ]</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>문자열이 아닌 숫자를 정렬했는데 왜 저런 순서로 정렬되었을까?</p>
-</blockquote>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/19/20210319-TIL/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

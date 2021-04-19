@@ -180,20 +180,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">98</span>
+          <span class="site-state-item-count">99</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -222,6 +222,97 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/29/20210329-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/29/20210329-TIL/" class="post-title-link" itemprop="url">20210329 TIL Todos 복습</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-29 21:24:47 / Modified: 21:53:22" itemprop="dateCreated datePublished" datetime="2021-03-29T21:24:47+09:00">2021-03-29</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/29/20210329-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/29/20210329-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>server.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&quot;express&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = express();</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">&quot;HTML&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">&quot;CSS&quot;</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">  &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">&quot;Javascript&quot;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">app.use(express.static(<span class="string">&quot;public&quot;</span>)); <span class="comment">// 루트 폴더로 지정</span></span><br><span class="line"></span><br><span class="line">app.get(<span class="string">&quot;/todos&quot;</span>, <span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">  res.send(todos);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// app.get(&quot;/&quot;, (req, res) =&gt; &#123;</span></span><br><span class="line"><span class="comment">//   res.send(&quot;Hellooooooo!&quot;);</span></span><br><span class="line"><span class="comment">// &#125;);</span></span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">9000</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;안녕하세요! 저는 9000번에서 대기중인 서버입니다!&quot;</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>app.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> todos = [];</span><br><span class="line"><span class="keyword">const</span> $todos = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.todos&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> $inputTodo = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.input-todo&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> render = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $todos.innerHTML = todos</span><br><span class="line">    .map(<span class="function">(<span class="params">&#123; id, content, completed &#125;</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">`&lt;li id=<span class="subst">$&#123;id&#125;</span> class=&quot;todo-item&quot;&gt;</span></span><br><span class="line"><span class="string">            &lt;input id=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot; class=&quot;checkbox&quot; type=&quot;checkbox&quot;<span class="subst">$&#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        completed ? <span class="string">&quot;checked&quot;</span> : <span class="string">&quot;&quot;</span></span></span></span><br><span class="line"><span class="string"><span class="subst">      &#125;</span>&gt;&lt;label for=&quot;ck-<span class="subst">$&#123;id&#125;</span>&quot;&gt;<span class="subst">$&#123;content&#125;</span>&lt;/label&gt;</span></span><br><span class="line"><span class="string">            &lt;i class=&quot;remove-todo far fa-times-circle&quot;&gt;&lt;/i&gt;&lt;/li&gt;`</span>;</span><br><span class="line">    &#125;)</span><br><span class="line">    .join(<span class="string">&quot;&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(todos);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> getTodos = <span class="keyword">async</span> () =&gt; &#123;</span><br><span class="line">  <span class="keyword">const</span> res = <span class="keyword">await</span> fetch(<span class="string">&quot;/todos&quot;</span>);</span><br><span class="line">  todos = <span class="keyword">await</span> res.json();</span><br><span class="line"></span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">&quot;DOMContentLoaded&quot;</span>, getTodos);</span><br><span class="line"></span><br><span class="line"><span class="comment">// add</span></span><br><span class="line"><span class="keyword">const</span> addTodo = <span class="function">(<span class="params">content</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> todo = &#123;</span><br><span class="line">    id: <span class="built_in">Math</span>.max(...todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id), <span class="number">0</span>) + <span class="number">1</span>,</span><br><span class="line">    content,</span><br><span class="line">    completed: <span class="literal">false</span>,</span><br><span class="line">  &#125;;</span><br><span class="line">  todos = [todo, ...todos];</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$inputTodo.onkeypress = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (e.key !== <span class="string">&quot;Enter&quot;</span>) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">const</span> content = $inputTodo.value;</span><br><span class="line">  $inputTodo.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  addTodo(content);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// remove</span></span><br><span class="line">$todos.onclick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!e.target.classList.contains(<span class="string">&quot;remove-todo&quot;</span>)) <span class="keyword">return</span>;</span><br><span class="line">  todos = todos.filter(<span class="function">(<span class="params">todo</span>) =&gt;</span> todo.id !== +e.target.parentNode.id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//toggle</span></span><br><span class="line"><span class="keyword">const</span> toggleTodo = <span class="function">(<span class="params">id</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span></span><br><span class="line">    todo.id === +id ? &#123; ...todo, <span class="attr">completed</span>: !todo.completed &#125; : todo</span><br><span class="line">  );</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">$todos.onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> id = e.target.parentNode.id;</span><br><span class="line">  toggleTodo(id);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// complete all todos</span></span><br><span class="line"><span class="keyword">const</span> $completeAll = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.complete-all&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> markAllTodos = <span class="function">(<span class="params">complete</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function">(<span class="params">todo</span>) =&gt;</span> (&#123; ...todo, complete &#125;));</span><br><span class="line">&#125;;</span><br><span class="line">$completeAll.onchange = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> complete = e.target.checked;</span><br><span class="line">  markAllTodos(complete);</span><br><span class="line">  render();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1086,109 +1177,6 @@
     <div class="post-body" itemprop="articleBody">
           <h1 id="29-Math"><a href="#29-Math" class="headerlink" title="29. Math"></a>29. Math</h1><p>표준 빌트인 객체 Math는 생성자 함수가 아니기 때문에 정적 프로퍼티와 정적 메소드만 제공한다.</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 원주율 PI</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.PI); <span class="comment">// 3.141592653589793</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 절대값</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs(-<span class="number">1</span>)); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs([])); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs(<span class="literal">null</span>)); <span class="comment">// 0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs(<span class="literal">undefined</span>)); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs(&#123;&#125;)); <span class="comment">// NaN</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.abs()); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 반올림</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round(-<span class="number">1.4</span>)); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round(<span class="number">1.6</span>)); <span class="comment">// 2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.round()); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 올림</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(-<span class="number">1.1</span>)); <span class="comment">// -1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(-<span class="number">4.8</span>)); <span class="comment">// -4</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil(<span class="number">4.3</span>)); <span class="comment">// 5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil()); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 내림</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(-<span class="number">1.1</span>)); <span class="comment">// -2</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(-<span class="number">4.8</span>)); <span class="comment">// -5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(<span class="number">4.7</span>)); <span class="comment">// 4</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.ceil()); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 0부터 1미만의 실수 random</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.random()); <span class="comment">// 0.5782056303358767</span></span><br><span class="line"><span class="comment">// 1부터 100 까지 랜덤 정수 출력</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">100</span>) + <span class="number">1</span>); <span class="comment">// 39</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 거듭제곱</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, <span class="number">4</span>)); <span class="comment">// 2 ** 4 -&gt; 16</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>, -<span class="number">1</span>)); <span class="comment">// 2 ** -1 -&gt; 0.5</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.pow(<span class="number">2</span>)); <span class="comment">// NaN</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// max 전달받은 인수 중 가장 큰 수 반환</span></span><br><span class="line"><span class="comment">// 숫자로 암묵적 타입 변환</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max(<span class="number">3</span>, <span class="number">1</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="string">&#x27;21&#x27;</span>, <span class="number">11</span>)); <span class="comment">// 21</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max(<span class="number">1</span>)); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max()); <span class="comment">// -Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.max(...[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>])); <span class="comment">// 스프레드 문법 -&gt; 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// min 전달받은 인수 중 가장 작은 수 반환</span></span><br><span class="line"><span class="comment">// 숫자로 암묵적 타입 변환</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.min(<span class="number">3</span>, <span class="string">&#x27;1&#x27;</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">21</span>, <span class="number">11</span>)); <span class="comment">// 1</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.min()); <span class="comment">// Infinity</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="built_in">Math</span>.min(...[<span class="number">1</span>, <span class="number">3</span>, <span class="number">5</span>])); <span class="comment">// 스프레드 문법 -&gt; 1</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/20/20210320-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/20/20210320-TIL/" class="post-title-link" itemprop="url">20210320 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2021-03-20 22:31:06" itemprop="dateCreated datePublished" datetime="2021-03-20T22:31:06+09:00">2021-03-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2021-03-21 20:36:57" itemprop="dateModified" datetime="2021-03-21T20:36:57+09:00">2021-03-21</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/20/20210320-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/20/20210320-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h1><p>Number는 빌트인 객체인 생성자 함수 객체다. new 연산자와 함께 호출하여 Number 인스턴스를 생성한다. new 연산자 없이 호출하면 숫자를 반환 하는데 이를 이용하여 명시적으로 타입을 변환하기도 한다.</p>
-<p>래퍼 객체 - 원시값은 객체가 아니므로 프로퍼티나 메서드를 가질 수 없는데 원시값인 숫자나 문자열에 메소드를 사용할 수 있는 경우가 있다. 이는 자바스크립트 엔진이 일시적으로 원시값을 연관된 객체를 생성하여 그 객체로 프로퍼티에 접근하거나 메서드를 호출하고 다시 원시값으로 되돌린다. 이 때, 문자열, 숫자, 불린 값에 대해 객체처럼 접근하면 생성되는 임시 객체를 래퍼 객체(wrapper object)라 한다.</p>
-<h3 id="Number-EPSILON"><a href="#Number-EPSILON" class="headerlink" title="Number.EPSILON"></a>Number.EPSILON</h3><p>부동소수점으로 인해 발생하는 오차를 해결하기 위해서 사용된다. </p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/20/20210320-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
       
     </div>
 

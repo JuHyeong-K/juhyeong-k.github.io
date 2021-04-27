@@ -9,6 +9,22 @@
 
 
     <url>
+        <loc>https://juhyeong-k.github.io/2021/04/27/%EC%BA%90%EC%B9%98-%EA%B0%9C%EB%B0%9C%EC%9E%90%EC%9D%98-%EC%97%AD%EB%9F%89-%ED%82%A4%EC%9A%B0%EA%B8%B0/</loc>
+        <lastmod>2021-04-27T09:22:53.181Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://juhyeong-k.github.io/2021/04/12/20210410-TIL/</loc>
+        <lastmod>2021-04-23T11:47:21.577Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://juhyeong-k.github.io/2021/04/19/ESlint%EC%99%80-Prettier-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%84%A4%EC%A0%95/</loc>
         <lastmod>2021-04-19T09:39:33.320Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -67,14 +83,6 @@
     <url>
         <loc>https://juhyeong-k.github.io/2021/04/12/20210411-TIL/</loc>
         <lastmod>2021-04-12T01:08:58.046Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://juhyeong-k.github.io/2021/04/12/20210410-TIL/</loc>
-        <lastmod>2021-04-12T01:07:16.830Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

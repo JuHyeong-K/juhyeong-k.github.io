@@ -180,20 +180,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">99</span>
+          <span class="site-state-item-count">100</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-count">15</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -222,6 +222,95 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/04/09/20210409-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/04/09/20210409-TIL/" class="post-title-link" itemprop="url">20210409 TIL</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-04-09 21:39:22 / Modified: 21:42:28" itemprop="dateCreated datePublished" datetime="2021-04-09T21:39:22+09:00">2021-04-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/04/09/20210409-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/04/09/20210409-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="토이-프로젝트-수정-기능-코드-리팩토링"><a href="#토이-프로젝트-수정-기능-코드-리팩토링" class="headerlink" title="토이 프로젝트 수정 기능 코드 리팩토링"></a>토이 프로젝트 수정 기능 코드 리팩토링</h1><p>리팩토링 전</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 수정 기능 옛날 버전</span></span><br><span class="line"><span class="keyword">const</span> $detailChangeButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-change-button&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> $buttonsConfirmCancel = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.buttons-confirm-cancel&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> $detailConfirmButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-confirm-button&#x27;</span>);</span><br><span class="line"><span class="keyword">let</span> $detailSpanTitle = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailSpandate = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailSpanTextarea = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailInputTitle = <span class="literal">null</span>;</span><br><span class="line"><span class="keyword">let</span> $detailTextarea = <span class="literal">null</span>;</span><br><span class="line">$detailChangeButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $detailSpanTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-title&#x27;</span>);</span><br><span class="line">  $detailSpanTitle.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailSpandate = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-date&#x27;</span>);</span><br><span class="line">  $detailSpandate.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailSpanTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-textarea&#x27;</span>);</span><br><span class="line">  $detailSpanTextarea.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailInputTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>);</span><br><span class="line">  $detailInputTitle.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>);</span><br><span class="line">  $detailTextarea.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $buttonsConfirmCancel.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailChangeButton.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-edited&#x27;</span>).style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line"><span class="comment">// 수정버튼 클릭시 기존의 내용 기본값으로 추가</span></span><br><span class="line">  $detailInputTitle.value = $detailSpanTitle.textContent;</span><br><span class="line">  $detailTextarea.value = $detailSpanTextarea.textContent;</span><br><span class="line"><span class="comment">// 수정버튼 클릭시 ^아이콘 삭제</span></span><br><span class="line">  <span class="comment">// $detailBtn.style.display=&#x27;none&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> modifyTodo = <span class="function">(<span class="params">title, content, edited</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = todos.map(<span class="function"><span class="params">todo</span> =&gt;</span></span><br><span class="line">    todo.id === +todoDetail[<span class="number">0</span>].id ? &#123;...todo, title, content, edited&#125; : todo</span><br><span class="line">  );</span><br><span class="line">  todoDetail = todos.filter(<span class="function"><span class="params">todo</span> =&gt;</span> todo.id === +todoDetail[<span class="number">0</span>].id);</span><br><span class="line">  renderDetail(...todoDetail)</span><br><span class="line">  render()</span><br><span class="line">&#125;</span><br><span class="line">$buttonsConfirmCancel.onclick = <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">  $detailBtn.style.display=<span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpanTitle.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpandate.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailSpanTextarea.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $detailInputTitle.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailTextarea.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  $detailChangeButton.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  $buttonsConfirmCancel.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">  <span class="keyword">if</span> (e.target.textContent === <span class="string">&quot;확인&quot;</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span>(!$detailInputTitle.value || !$detailTextarea.value)&#123;</span><br><span class="line">      $detailChangeButton.click();</span><br><span class="line">      $detailBtn.style.display=<span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">      alert(<span class="string">&#x27;제목과 내용을 작성해주세요&#x27;</span>);</span><br><span class="line">      <span class="keyword">return</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> modifiedTitle = $detailInputTitle.value;</span><br><span class="line">    <span class="keyword">const</span> ModifiedContent = $detailTextarea.value;</span><br><span class="line">    <span class="keyword">let</span> editedDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    editedDate = editedDate.toISOString().slice(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">    modifyTodo(modifiedTitle, ModifiedContent, editedDate);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    $detailInputTitle.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    $detailTextarea.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// detail button toggle</span></span><br><span class="line"><span class="keyword">const</span> toggleDetailClass = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  $toggleTags = <span class="built_in">document</span>.querySelectorAll(<span class="string">&#x27;.toggle&#x27;</span>);</span><br><span class="line">  $toggleTags.forEach(<span class="function"><span class="params">tag</span> =&gt;</span> &#123;</span><br><span class="line">    tag.style.display = tag.style.display !== <span class="string">&quot;none&quot;</span> ? <span class="string">&quot;none&quot;</span> : <span class="string">&quot;inline-block&quot;</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 수정 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailChangeButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-change-button&#x27;</span>);</span><br><span class="line">$detailChangeButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  toggleDetailClass()</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>).value = </span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-title&#x27;</span>).textContent;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>).value = </span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-span-textarea&#x27;</span>).textContent;</span><br><span class="line">  $detailBtn.style.display = <span class="string">&#x27;none&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// modify function</span></span><br><span class="line"><span class="keyword">const</span> modifyTodo = <span class="function">(<span class="params">title, content, edited</span>) =&gt;</span> &#123;</span><br><span class="line">  todos = <span class="built_in">JSON</span>.parse(<span class="built_in">localStorage</span>.getItem(<span class="string">&quot;key&quot;</span>)).map(<span class="function"><span class="params">todo</span> =&gt;</span> </span><br><span class="line">    todo.id === +item ? &#123;...todo, title, content, edited&#125; : todo);</span><br><span class="line">    renderDetail(item);</span><br><span class="line">    render()</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 확인 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailConfirmButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-confirm-button&#x27;</span>);</span><br><span class="line">$detailConfirmButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> detailInputTitle = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-input-title&#x27;</span>);</span><br><span class="line">  <span class="keyword">const</span> detailTextarea = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-textarea&#x27;</span>);</span><br><span class="line">  <span class="keyword">if</span> (!detailInputTitle.value || !detailTextarea.value) &#123;</span><br><span class="line">    alert(<span class="string">&#x27;제목과 내용을 작성해주세요&#x27;</span>);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> modifiedTitle = detailInputTitle.value;</span><br><span class="line">    <span class="keyword">const</span> modifiedContent = detailTextarea.value;</span><br><span class="line">    <span class="keyword">let</span> editedDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line">    editedDate = editedDate.toISOString().slice(<span class="number">0</span>, <span class="number">10</span>);</span><br><span class="line">    toggleDetailClass();</span><br><span class="line">    modifyTodo(modifiedTitle, modifiedContent, editedDate);</span><br><span class="line">    detailInputTitle.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    detailTextarea.value = <span class="string">&quot;&quot;</span>;</span><br><span class="line">    $detailBtn.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 취소 버튼 클릭 시</span></span><br><span class="line"><span class="keyword">const</span> $detailCancelButton = <span class="built_in">document</span>.querySelector(<span class="string">&#x27;.detail-cancel-button&#x27;</span>);</span><br><span class="line">$detailCancelButton.onclick = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  toggleDetailClass();</span><br><span class="line">  renderDetail(item);</span><br><span class="line">  $detailBtn.style.display = <span class="string">&#x27;inline-block&#x27;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1069,104 +1158,6 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2021/03/31/20210331-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/30/20210330-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/30/20210330-TIL/" class="post-title-link" itemprop="url">20210330 TIL</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-30 20:20:40 / Modified: 21:52:53" itemprop="dateCreated datePublished" datetime="2021-03-30T20:20:40+09:00">2021-03-30</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/30/20210330-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/30/20210330-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="41-타이머"><a href="#41-타이머" class="headerlink" title="41. 타이머"></a>41. 타이머</h1><p>함수를 일정 시간이 경과된 이후에 호출되도록 하는 함수 호출을 예약하는 것을 호출 스케줄링(scheduling a call)이라 한다.</p>
-<p>자바스크립트는 타이머를 생성할 수 있는 타이머 함수 setTimeout, setInterval, 타이머를 제거할 수 있는 타이머 함수 clearTimeout, claeInterval가 있다.</p>
-<p>디바운스와 스로틀은 짧은 시간 간격으로 연속해서 발생하는 이벤트를 그룹화해서 과도한 이벤트 핸들러의 호출을 방지하는 프로그래밍 기법이다.</p>
-<h1 id="42-비동기-프로그래밍"><a href="#42-비동기-프로그래밍" class="headerlink" title="42. 비동기 프로그래밍"></a>42. 비동기 프로그래밍</h1>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/30/20210330-TIL/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>

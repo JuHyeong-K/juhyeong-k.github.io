@@ -180,7 +180,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">100</span>
+          <span class="site-state-item-count">101</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -222,6 +222,109 @@
 
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/31/20210331-TIL/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2021/03/31/20210331-TIL/" class="post-title-link" itemprop="url">20210331 TIL JS</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-03-31 20:55:35 / Modified: 21:16:24" itemprop="dateCreated datePublished" datetime="2021-03-31T20:55:35+09:00">2021-03-31</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/03/31/20210331-TIL/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/31/20210331-TIL/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>비동기 함수는 값을 return 할 수 없다.(무의미하다) 즉 비동기 함수 내에서 처리를 해야힌다. 결국 callback hell이 발생하고 에러를 처리하기 힘들다</p>
+<p>동기 처리 방식은 <code>blocking</code>이 발생해서 웹 화면에서 스크롤하면 화면이 freeze되는 느낌을 받을 수 있다. 즉, UI/UX 관점에서 매우 안 좋다.</p>
+<p>비동기 처리 방식은 <code>blocking</code>이 발생하지 않고 하나의 행동이 끝날 때 까지 기다릴 필요 없이, 다른 행동을 할 수 있다. 단점으로는 어떤 순서로 실행되는지 알기 힘들다.</p>
+<h3 id="이벤트-루프와-태스크-큐"><a href="#이벤트-루프와-태스크-큐" class="headerlink" title="이벤트 루프와 태스크 큐"></a>이벤트 루프와 태스크 큐</h3><ul>
+<li>콜 스택(call stack)<br>자바스크립트 엔진은 단 하나의 콜 스택을 사용하기 때문에 실행 중인 실행 컨텍스트가 종료되어서 콜 스택에서 제거되기 전까지 다른 태스크는 실행할 수 없다.</li>
+<li>힙(heap)<br>힙은 객체가 저장되는 메모리 공간이고 실행 컨텍스트는 힙에 저장된 객체를 참조한다.</li>
+<li>태스크 큐(task queue)<br>비동기 함수의 콜백 함수(setTimeout, setInterval) 또는 이벤트 핸들러가 일시적으로 보관되는 영역이다.</li>
+<li>이벤트 루프(event loop)<br>이벤트 루프는 콜 스택과 태스크 큐를 확인하면서 실행 중인 실행 컨텍스트가 있는지 태스크 큐에 대기 중인 함수 가 있는지 계속해서 확인한다. 콜 스택이 비어 있고 태스크 큐에 대기 중인 함수가 있다면 이벤트 루프는 FIFO으로 태스크 큐에 대기 중인 함수를 콜 스택으로 이동시킨다.</li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2021/03/31/20210331-TIL/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -1107,105 +1210,8 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/03/22/20210322-TIL/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Kim Ju Hyeong">
-      <meta itemprop="description" content="All about dev">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="JH's dev blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2021/03/22/20210322-TIL/" class="post-title-link" itemprop="url">20210322 TIL JS 연습문제 풀이</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-      
-
-      <time title="Created: 2021-03-22 20:27:58 / Modified: 21:23:42" itemprop="dateCreated datePublished" datetime="2021-03-22T20:27:58+09:00">2021-03-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/TIL/" itemprop="url" rel="index"><span itemprop="name">TIL</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2021/03/22/20210322-TIL/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/03/22/20210322-TIL/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h3 id="1-html-생성"><a href="#1-html-생성" class="headerlink" title="1. html 생성"></a>1. html 생성</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">&#x27;HTML&#x27;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">&#x27;CSS&#x27;</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">&#x27;Javascript&#x27;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;</span><br><span class="line">  ];</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">render</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> html = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">  </span><br><span class="line">    todos.forEach(<span class="function"><span class="params">todo</span> =&gt;</span> &#123;</span><br><span class="line">        html += <span class="string">`</span></span><br><span class="line"><span class="string">        &lt;li id=&quot;<span class="subst">$&#123;todo.id&#125;</span>&quot;&gt;</span></span><br><span class="line"><span class="string">          &lt;label&gt;&lt;input type=&quot;checkbox&quot; <span class="subst">$&#123;todo.completed ? <span class="string">&#x27;checked&#x27;</span> : <span class="string">&#x27;&#x27;</span>&#125;</span>&gt;<span class="subst">$&#123;todo.content&#125;</span>&lt;/label&gt;</span></span><br><span class="line"><span class="string">        &lt;/li&gt;`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    );</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">return</span> html;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="built_in">console</span>.log(render());</span><br><span class="line">  <span class="comment">/*</span></span><br><span class="line"><span class="comment">  &lt;li id=&quot;3&quot;&gt;</span></span><br><span class="line"><span class="comment">    &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;HTML&lt;/label&gt;</span></span><br><span class="line"><span class="comment">  &lt;/li&gt;</span></span><br><span class="line"><span class="comment">  &lt;li id=&quot;2&quot;&gt;</span></span><br><span class="line"><span class="comment">    &lt;label&gt;&lt;input type=&quot;checkbox&quot; checked&gt;CSS&lt;/label&gt;</span></span><br><span class="line"><span class="comment">  &lt;/li&gt;</span></span><br><span class="line"><span class="comment">  &lt;li id=&quot;1&quot;&gt;</span></span><br><span class="line"><span class="comment">    &lt;label&gt;&lt;input type=&quot;checkbox&quot;&gt;Javascript&lt;/label&gt;</span></span><br><span class="line"><span class="comment">  &lt;/li&gt;</span></span><br><span class="line"><span class="comment">  */</span></span><br></pre></td></tr></table></figure>
-<h3 id="2-특정-프로퍼티-값-추출"><a href="#2-특정-프로퍼티-값-추출" class="headerlink" title="2. 특정 프로퍼티 값 추출"></a>2. 특정 프로퍼티 값 추출</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> todos = [</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">3</span>, <span class="attr">content</span>: <span class="string">&#x27;HTML&#x27;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">2</span>, <span class="attr">content</span>: <span class="string">&#x27;CSS&#x27;</span>, <span class="attr">completed</span>: <span class="literal">true</span> &#125;,</span><br><span class="line">    &#123; <span class="attr">id</span>: <span class="number">1</span>, <span class="attr">content</span>: <span class="string">&#x27;Javascript&#x27;</span>, <span class="attr">completed</span>: <span class="literal">false</span> &#125;</span><br><span class="line">  ];</span><br><span class="line">  </span><br><span class="line"><span class="comment">//   function getValues(key) &#123;</span></span><br><span class="line"><span class="comment">//     let array = [...todos];</span></span><br><span class="line"><span class="comment">//     let answer = []</span></span><br><span class="line"><span class="comment">//         for (let i = 0; i &lt; array.length; i++)&#123;</span></span><br><span class="line"><span class="comment">//             answer.push(array[i][key]);</span></span><br><span class="line"><span class="comment">//         &#125; ;</span></span><br><span class="line"><span class="comment">//     return answer;</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">getValues</span>(<span class="params">key</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> todos.map(<span class="function"><span class="params">todo</span>=&gt;</span>todo[key])</span><br><span class="line">  &#125; </span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(getValues(<span class="string">&#x27;id&#x27;</span>)); <span class="comment">// [3, 2, 1]</span></span><br><span class="line">  <span class="built_in">console</span>.log(getValues(<span class="string">&#x27;content&#x27;</span>)); <span class="comment">// [&#x27;HTML&#x27;, &#x27;CSS&#x27;, &#x27;Javascript&#x27;]</span></span><br><span class="line">  <span class="built_in">console</span>.log(getValues(<span class="string">&#x27;completed&#x27;</span>)); <span class="comment">// [false, true, false]</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="3-프로퍼티-정렬"><a href="#3-프로퍼티-정렬" class="headerlink" title="3. 프로퍼티 정렬"></a>3. 프로퍼티 정렬</h3>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2021/03/22/20210322-TIL/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 

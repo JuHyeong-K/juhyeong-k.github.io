@@ -9,8 +9,37 @@
     <atom:link href="https://juhyeong-k.github.io/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>All about dev</description>
-    <pubDate>Tue, 27 Apr 2021 09:22:53 GMT</pubDate>
+    <pubDate>Tue, 27 Apr 2021 11:24:39 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>[2021 캐치#개발자 커리어콘] 소프트웨어 장인정신, 클린코드</title>
+      <link>https://juhyeong-k.github.io/2021/04/27/%EC%BA%90%EC%B9%98-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/</link>
+      <guid>https://juhyeong-k.github.io/2021/04/27/%EC%BA%90%EC%B9%98-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/</guid>
+      <pubDate>Tue, 27 Apr 2021 09:23:50 GMT</pubDate>
+      
+      <description>&lt;h1 id=&quot;소프트웨어-장인정신-클린코드&quot;&gt;&lt;a href=&quot;#소프트웨어-장인정신-클린코드&quot; class=&quot;headerlink&quot; title=&quot;소프트웨어 장인정신, 클린코드&quot;&gt;&lt;/a&gt;소프트웨어 장인정신, 클린코드&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;피치파이브 소프트웨어 아키텍트 박재호님&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;클린코드가-사랑-받는-이유&quot;&gt;&lt;a href=&quot;#클린코드가-사랑-받는-이유&quot; class=&quot;headerlink&quot; title=&quot;클린코드가 사랑 받는 이유&quot;&gt;&lt;/a&gt;클린코드가 사랑 받는 이유&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;10년 넘게 개발자의 필독서로 자리 잡은 이유는?&lt;br&gt;근본적으로 변화하지 않는 무언가를 다루기 때문이다&lt;br&gt;리펙터링, 레거시코드, 기술 부채, TDD 와 같은 주제와 엮여 있으며 코드 기반을 튼튼히 다진다&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;읽기-좋은-코드의-중요성&quot;&gt;&lt;a href=&quot;#읽기-좋은-코드의-중요성&quot; class=&quot;headerlink&quot; title=&quot;읽기 좋은 코드의 중요성&quot;&gt;&lt;/a&gt;읽기 좋은 코드의 중요성&lt;/h2&gt;</description>
+      
+      
+      
+      <content:encoded><![CDATA[<h1 id="소프트웨어-장인정신-클린코드"><a href="#소프트웨어-장인정신-클린코드" class="headerlink" title="소프트웨어 장인정신, 클린코드"></a>소프트웨어 장인정신, 클린코드</h1><blockquote><p>피치파이브 소프트웨어 아키텍트 박재호님</p></blockquote><h2 id="클린코드가-사랑-받는-이유"><a href="#클린코드가-사랑-받는-이유" class="headerlink" title="클린코드가 사랑 받는 이유"></a>클린코드가 사랑 받는 이유</h2><ul><li>10년 넘게 개발자의 필독서로 자리 잡은 이유는?<br>근본적으로 변화하지 않는 무언가를 다루기 때문이다<br>리펙터링, 레거시코드, 기술 부채, TDD 와 같은 주제와 엮여 있으며 코드 기반을 튼튼히 다진다</li></ul><h2 id="읽기-좋은-코드의-중요성"><a href="#읽기-좋은-코드의-중요성" class="headerlink" title="읽기 좋은 코드의 중요성"></a>읽기 좋은 코드의 중요성</h2><ul><li>읽기 : 쓰기 = 10 : 1</li><li>기존 코드를 읽어야 새 코드를 짜므로 읽기 쉽게 만들면 코드를 짜기도 쉬워진다.</li><li>주변 코드를 읽지 않으면 새 코드를 짜지 못한다.</li><li>빠르고 쉽게 짜려면 읽기 쉽게 만들면 된다.</li><li>코드의 가장 중요한 독자는 미래의 내가 될 가능성이 매우 높다는 사실을 기억해야 한다.</li></ul><h2 id="지속적인-개선의-중요성"><a href="#지속적인-개선의-중요성" class="headerlink" title="지속적인 개선의 중요성"></a>지속적인 개선의 중요성</h2><ul><li>코드는 한 번에 짜여지지 않는다.</li><li>교과서나 논문에 나온 프로그램은 결과만 보여주지 실제 개선되고 수정되는 과정을 보여주지는 않는다.</li><li>퇴고가 없는 작문은 조재하지 않는다. 깨끗한 코드를 짜려면 지저분한 코드를 짠 뒤에 정리해야 한다는 의미</li><li>코드에 만족하는 프로그래머는 전문가 정신이 부족하다.</li><li>마이클 페더즈의 클린코드 정의 - 깨끗한 코드는 언제나 누군가 주의 깊게 봤다는 느낌을 준다. 고치려고 살펴봐도 딱히 손 댈 곳이 없다.</li></ul><h2 id="보이스카우트-규칙"><a href="#보이스카우트-규칙" class="headerlink" title="보이스카우트 규칙"></a>보이스카우트 규칙</h2><ul><li>캠프장은 처음 왔을 때보다 더 깨끗하게 해 놓고 떠나라.</li><li>1년 전 코드를 정리하는 것 보다 5분 전 코드가 정리하기가 편하다.</li></ul><h2 id="정리"><a href="#정리" class="headerlink" title="정리"></a>정리</h2><ul><li>클린코드는 프로그램을 바라보는 태도다.</li><li>읽기 좋은 코드는 결국 나를 위한 것이다.</li><li>보이스카우트 정신을 기억하자.</li></ul>]]></content:encoded>
+      
+      
+      <category domain="https://juhyeong-k.github.io/categories/Review/">Review</category>
+      
+      
+      <category domain="https://juhyeong-k.github.io/tags/2021-%EC%BA%90%EC%B9%98-%EA%B0%9C%EB%B0%9C%EC%9E%90-%EC%BB%A4%EB%A6%AC%EC%96%B4%EC%BD%98/">2021 캐치 개발자 커리어콘</category>
+      
+      
+      <comments>https://juhyeong-k.github.io/2021/04/27/%EC%BA%90%EC%B9%98-%ED%81%B4%EB%A6%B0%EC%BD%94%EB%93%9C/#disqus_thread</comments>
+      
+    </item>
     
     <item>
       <title>[2021 캐치#개발자 커리어콘] 개발자의 역량 키우기</title>
@@ -29,7 +58,7 @@
       
       
       
-      <content:encoded><![CDATA[<h1 id="엔지니어로서-성장을-이끌어준-순간들"><a href="#엔지니어로서-성장을-이끌어준-순간들" class="headerlink" title="엔지니어로서 성장을 이끌어준 순간들"></a>엔지니어로서 성장을 이끌어준 순간들</h1><blockquote><p>당근마켓 데브옵스 엔지니어 강진우님</p></blockquote><h2 id="첫번째-순간-커널-스터디"><a href="#첫번째-순간-커널-스터디" class="headerlink" title="첫번째 순간 - 커널 스터디"></a>첫번째 순간 - 커널 스터디</h2><ul><li>기술을 용도에 맞게 활용하기 위해서는 <strong>내부 구조에 대한 이해</strong>가 필요하다</li><li>기술을 접할 때 가장 먼저 보는 것은 공식 문서와 아키텍처 다이어그램</li></ul><h2 id="두번째-순간-글쓰기"><a href="#두번째-순간-글쓰기" class="headerlink" title="두번째 순간 - 글쓰기"></a>두번째 순간 - 글쓰기</h2><ul><li>지식을 정리하고 나누고 싶은 생각이 듦</li><li>작성한 글을 페이스북에 공유하면서 집필 의뢰가 들어옴(<a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966264049">리눅스커널이야기</a>)</li><li>글을 쓰면서 생각이 정리되고 이를 통해 성장할 수 있다</li><li>글쓰기 시작은 너무 어렵다고 생각할 수 있지만 어떤 것이든 좋으니 일단 시작하는게 중요</li><li>아무것도 아니라고 생각한 그 지식이 누군가에게 꼭 필요한 것일지도 모른다</li></ul><h2 id="세번째-순간-컴포트-존-Comport-Zone"><a href="#세번째-순간-컴포트-존-Comport-Zone" class="headerlink" title="세번째 순간 - 컴포트 존(Comport Zone)"></a>세번째 순간 - 컴포트 존(Comport Zone)</h2><ul><li>바닷가재가 성장하는 법 =&gt; 껍질을 버리고 새로운 껍질을 만들어 낸다</li><li>업무의 영역을 넓혀 보거나 주어진 환경을 새롭게 바꿔보면서 컴포트 존을 벗어나야 함</li></ul><h2 id="키워드-정리"><a href="#키워드-정리" class="headerlink" title="키워드 정리"></a>키워드 정리</h2><ul><li>스터디 - 내부 구조에 대한 이해는 성장의 바탕</li><li>글쓰기 - 무엇이 되었든 일단 글을 써 보기</li><li>컴포트 존 - 새로운 것을 추구하려는 노력</li></ul><h2 id="기타"><a href="#기타" class="headerlink" title="기타"></a>기타</h2><ul><li><p>내가 하고싶은 것을 잘 찾아내는 게 중요하다. 굉장히 어렵지만, 많은 것을 해보면서 하고 싶은 것들이 바뀔 수도 있다. 지금까지 해온 게 아까울 수 있지만, 이런 시행착오도 성장이다. 하고 싶었던 것을 끝까지 노력해보고 안되면 다른 것들 해보는 게 좋다.</p></li><li><p>이것 저것 해보다가 제대로 할 줄 아는게 없는 개발자가 되지는 않을까?<br>언제나 완벽한 선택을 할 수는 없다. 커리어가 꼬이는 게 걱정일 수 있지만 멀리본다면, 이것저것 해봤던 것들이 어떤 형태로든 자산이 되어 돌아온다. 다만, 내가 답을 찾을 수 있을 거라는 스스로에 대한 믿음을 가지고 있어야 한다. 출발은 늦을 수 있지만 더 멀리 갈 수 있는 기회가 된다.</p></li><li><p>개발을 공부하는 노하우<br>일단 해보는 것이 중요하다. 사람마다 스타일이 다를 수 있지만, 일단 돌아가는 소스코드를 만들어내고 시행착오를 겪어보고, 책이나 문서들을 통해 해결한 내용들을 글로 잘 정리해두면 성장하는데 큰 도움이 될 수 있다.</p></li></ul><h2 id="느낀점"><a href="#느낀점" class="headerlink" title="느낀점"></a>느낀점</h2><ul><li>요즘 블로그에 글을 쓰는 일이 줄었는데, 이번 강의를 통해 글을 꾸준히 작성해나가야겠다고 느꼈다.</li><li>내 스스로에게 무엇을 하고 싶은지 나에 대해 생각해보는 시간을 가져야겠다.</li></ul>]]></content:encoded>
+      <content:encoded><![CDATA[<h1 id="엔지니어로서-성장을-이끌어준-순간들"><a href="#엔지니어로서-성장을-이끌어준-순간들" class="headerlink" title="엔지니어로서 성장을 이끌어준 순간들"></a>엔지니어로서 성장을 이끌어준 순간들</h1><blockquote><p>당근마켓 데브옵스 엔지니어 강진우님</p></blockquote><h2 id="첫번째-순간-커널-스터디"><a href="#첫번째-순간-커널-스터디" class="headerlink" title="첫번째 순간 - 커널 스터디"></a>첫번째 순간 - 커널 스터디</h2><ul><li>기술을 용도에 맞게 활용하기 위해서는 <strong>내부 구조에 대한 이해</strong>가 필요하다</li><li>기술을 접할 때 가장 먼저 보는 것은 공식 문서와 아키텍처 다이어그램</li></ul><h2 id="두번째-순간-글쓰기"><a href="#두번째-순간-글쓰기" class="headerlink" title="두번째 순간 - 글쓰기"></a>두번째 순간 - 글쓰기</h2><ul><li>지식을 정리하고 나누고 싶은 생각이 듦</li><li>작성한 글을 페이스북에 공유하면서 집필 의뢰가 들어옴(<a href="http://www.kyobobook.co.kr/product/detailViewKor.laf?mallGb=KOR&ejkGb=KOR&barcode=9788966264049">리눅스커널이야기</a>)</li><li>글을 쓰면서 생각이 정리되고 이를 통해 성장할 수 있다</li><li>글쓰기 시작은 너무 어렵다고 생각할 수 있지만 어떤 것이든 좋으니 일단 시작하는게 중요</li><li>아무것도 아니라고 생각한 그 지식이 누군가에게 꼭 필요한 것일지도 모른다</li></ul><h2 id="세번째-순간-컴포트-존-Comport-Zone"><a href="#세번째-순간-컴포트-존-Comport-Zone" class="headerlink" title="세번째 순간 - 컴포트 존(Comport Zone)"></a>세번째 순간 - 컴포트 존(Comport Zone)</h2><ul><li>바닷가재가 성장하는 법 =&gt; 껍질을 버리고 새로운 껍질을 만들어 낸다</li><li>업무의 영역을 넓혀 보거나 주어진 환경을 새롭게 바꿔보면서 컴포트 존을 벗어나야 함</li></ul><h2 id="키워드-정리"><a href="#키워드-정리" class="headerlink" title="키워드 정리"></a>키워드 정리</h2><ul><li>스터디 - 내부 구조에 대한 이해는 성장의 바탕</li><li>글쓰기 - 무엇이 되었든 일단 글을 써 보기</li><li>컴포트 존 - 새로운 것을 추구하려는 노력</li></ul><h2 id="QnA"><a href="#QnA" class="headerlink" title="QnA"></a>QnA</h2><ul><li><p>내가 하고싶은 것을 잘 찾아내는 게 중요하다. 굉장히 어렵지만, 많은 것을 해보면서 하고 싶은 것들이 바뀔 수도 있다. 지금까지 해온 게 아까울 수 있지만, 이런 시행착오도 성장이다. 하고 싶었던 것을 끝까지 노력해보고 안되면 다른 것들 해보는 게 좋다.</p></li><li><p>이것 저것 해보다가 제대로 할 줄 아는게 없는 개발자가 되지는 않을까?<br>언제나 완벽한 선택을 할 수는 없다. 커리어가 꼬이는 게 걱정일 수 있지만 멀리본다면, 이것저것 해봤던 것들이 어떤 형태로든 자산이 되어 돌아온다. 다만, 내가 답을 찾을 수 있을 거라는 스스로에 대한 믿음을 가지고 있어야 한다. 출발은 늦을 수 있지만 더 멀리 갈 수 있는 기회가 된다.</p></li><li><p>개발을 공부하는 노하우<br>일단 해보는 것이 중요하다. 사람마다 스타일이 다를 수 있지만, 일단 돌아가는 소스코드를 만들어내고 시행착오를 겪어보고, 책이나 문서들을 통해 해결한 내용들을 글로 잘 정리해두면 성장하는데 큰 도움이 될 수 있다.</p></li></ul><h2 id="느낀점"><a href="#느낀점" class="headerlink" title="느낀점"></a>느낀점</h2><ul><li>요즘 블로그에 글을 쓰는 일이 줄었는데, 이번 강의를 통해 글을 꾸준히 작성해나가야겠다고 느꼈다.</li><li>내 스스로에게 무엇을 하고 싶은지 나에 대해 생각해보는 시간을 가져야겠다.</li></ul>]]></content:encoded>
       
       
       <category domain="https://juhyeong-k.github.io/categories/Review/">Review</category>
@@ -259,31 +288,6 @@
       
       
       <comments>https://juhyeong-k.github.io/2021/04/12/20210411-TIL/#disqus_thread</comments>
-      
-    </item>
-    
-    <item>
-      <title>20210410 TIL</title>
-      <link>https://juhyeong-k.github.io/2021/04/12/20210410-TIL/</link>
-      <guid>https://juhyeong-k.github.io/2021/04/12/20210410-TIL/</guid>
-      <pubDate>Mon, 12 Apr 2021 01:05:14 GMT</pubDate>
-      
-      <description>&lt;h1 id=&quot;20210410-TIL-CSSOM&quot;&gt;&lt;a href=&quot;#20210410-TIL-CSSOM&quot; class=&quot;headerlink&quot; title=&quot;20210410 TIL CSSOM&quot;&gt;&lt;/a&gt;20210410 TIL CSSOM&lt;/h1&gt;&lt;p&gt;CSSOM은 JavaScript로 CSS를 제어할 수 있는 API 모음이다.&lt;/p&gt;
-&lt;h2 id=&quot;element-style-과-window-getComputedStyle&quot;&gt;&lt;a href=&quot;#element-style-과-window-getComputedStyle&quot; class=&quot;headerlink&quot; title=&quot;element.style 과 window.getComputedStyle()&quot;&gt;&lt;/a&gt;element.style 과 window.getComputedStyle()&lt;/h2&gt;&lt;p&gt;토이 프로젝트 중 자바스크립트로 CSS 속성을 제어하려고 &lt;code&gt;element.style&lt;/code&gt;을 사용했고, &lt;code&gt;element.style&lt;/code&gt;로 CSS 속성을 읽으려고 했지만&lt;br&gt;적용된 속성을 반환하지 않는 문제가 있었다. 찾아보니, &lt;code&gt;element.stlye&lt;/code&gt;로는 &lt;strong&gt;인라인 CSS로 적용된 것만 읽을 수 있었다.&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;이 해결책으로 &lt;code&gt;getComputedStlye()&lt;/code&gt;을 이용하면 해당되는 태그에 적용된 CSS 속성을 모두 가져올 수 있다.&lt;/p&gt;</description>
-      
-      
-      
-      <content:encoded><![CDATA[<h1 id="20210410-TIL-CSSOM"><a href="#20210410-TIL-CSSOM" class="headerlink" title="20210410 TIL CSSOM"></a>20210410 TIL CSSOM</h1><p>CSSOM은 JavaScript로 CSS를 제어할 수 있는 API 모음이다.</p><h2 id="element-style-과-window-getComputedStyle"><a href="#element-style-과-window-getComputedStyle" class="headerlink" title="element.style 과 window.getComputedStyle()"></a>element.style 과 window.getComputedStyle()</h2><p>토이 프로젝트 중 자바스크립트로 CSS 속성을 제어하려고 <code>element.style</code>을 사용했고, <code>element.style</code>로 CSS 속성을 읽으려고 했지만<br>적용된 속성을 반환하지 않는 문제가 있었다. 찾아보니, <code>element.stlye</code>로는 <strong>인라인 CSS로 적용된 것만 읽을 수 있었다.</strong></p><p>이 해결책으로 <code>getComputedStlye()</code>을 이용하면 해당되는 태그에 적용된 CSS 속성을 모두 가져올 수 있다.</p><p><code>getComputedStlye()</code>메소드에 두번 째 인자를 전달하면 가상 요소의 속성에 접근이 가능하다.</p><p><code>getComputedStlye()</code>메소드에 세번 째 인자로 <code>!important</code>를 전달 할 수도 있다.</p><p>setProperty(), getPropertyValue(), removeProperty()로도 CSS속성 읽고 쓰기 가능하다.</p><h1 id="References"><a href="#References" class="headerlink" title="References"></a>References</h1><p>(<a href="https://ibrahimovic.tistory.com/56">https://ibrahimovic.tistory.com/56</a>)<br>(<a href="https://ibrahimovic.tistory.com/57">https://ibrahimovic.tistory.com/57</a>)</p>]]></content:encoded>
-      
-      
-      <category domain="https://juhyeong-k.github.io/categories/TIL/">TIL</category>
-      
-      
-      <category domain="https://juhyeong-k.github.io/tags/TIL/">TIL</category>
-      
-      
-      <comments>https://juhyeong-k.github.io/2021/04/12/20210410-TIL/#disqus_thread</comments>
       
     </item>
     

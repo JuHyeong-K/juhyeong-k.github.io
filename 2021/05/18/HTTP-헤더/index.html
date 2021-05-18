@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"juhyeong-k.github.io","root":"/","images":"/images","scheme":"Gemini","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="HTTP 헤더란?HTTP 헤더는 HTTP 전송에 필요한 모든 부가정보를 담고 있기 때문에 표준 헤더가 정말 많다. 심지어 필요하다면 임의의 헤더를 추가할 수도 있다. 그래서 공부한 내용을 바탕으로 자주 사용되는 헤더를 정리해서 작성하고, 추가적으로 궁금하거나 사용되어지는 헤더들을 하나씩 추가해서 작성해보려고 한다. HTTP 헤더의 변화현재 가장 많이 사용되">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTTP 헤더">
+<meta property="og:url" content="https://juhyeong-k.github.io/2021/05/18/HTTP-%ED%97%A4%EB%8D%94/index.html">
+<meta property="og:site_name" content="JH&#39;s dev blog">
+<meta property="og:description" content="HTTP 헤더란?HTTP 헤더는 HTTP 전송에 필요한 모든 부가정보를 담고 있기 때문에 표준 헤더가 정말 많다. 심지어 필요하다면 임의의 헤더를 추가할 수도 있다. 그래서 공부한 내용을 바탕으로 자주 사용되는 헤더를 정리해서 작성하고, 추가적으로 궁금하거나 사용되어지는 헤더들을 하나씩 추가해서 작성해보려고 한다. HTTP 헤더의 변화현재 가장 많이 사용되">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-05-18T01:24:23.000Z">
+<meta property="article:modified_time" content="2021-05-18T07:43:54.145Z">
+<meta property="article:author" content="Kim Ju Hyeong">
+<meta property="article:tag" content="HTTP">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://juhyeong-k.github.io/2021/05/18/HTTP-%ED%97%A4%EB%8D%94/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>HTTP 헤더 | JH's dev blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-93XKT8K1JW"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-93XKT8K1JW');
+      }
+    </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/rss2.xml" title="JH's dev blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">JH's dev blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">All about dev</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li>
+        <li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li>
+        <li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a></li>
+        <li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%ED%97%A4%EB%8D%94%EB%9E%80"><span class="nav-number">1.</span> <span class="nav-text">HTTP 헤더란?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%ED%97%A4%EB%8D%94%EC%9D%98-%EB%B3%80%ED%99%94"><span class="nav-number">2.</span> <span class="nav-text">HTTP 헤더의 변화</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP-%ED%97%A4%EB%8D%94%EC%99%80-%EB%A9%94%EC%8B%9C%EC%A7%80-%EB%B3%B8%EB%AC%B8-%EA%B5%AC%EC%A1%B0"><span class="nav-number">3.</span> <span class="nav-text">HTTP 헤더와 메시지 본문 구조</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%ED%91%9C%ED%98%84-%ED%97%A4%EB%8D%94-%EC%A2%85%EB%A5%98"><span class="nav-number">4.</span> <span class="nav-text">표현 헤더 종류</span></a></li><li class="nav-item nav-level-1"><a class="nav-link"><span class="nav-number">5.</span> <span class="nav-text"></span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Kim Ju Hyeong</p>
+  <div class="site-description" itemprop="description">All about dev</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">103</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">17</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://juhyeong-k.github.io/2021/05/18/HTTP-%ED%97%A4%EB%8D%94/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Kim Ju Hyeong">
+      <meta itemprop="description" content="All about dev">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="JH's dev blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTTP 헤더
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-05-18 10:24:23 / Modified: 16:43:54" itemprop="dateCreated datePublished" datetime="2021-05-18T10:24:23+09:00">2021-05-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/HTTP/" itemprop="url" rel="index"><span itemprop="name">HTTP</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2021/05/18/HTTP-%ED%97%A4%EB%8D%94/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/05/18/HTTP-헤더/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="HTTP-헤더란"><a href="#HTTP-헤더란" class="headerlink" title="HTTP 헤더란?"></a>HTTP 헤더란?</h1><p>HTTP 헤더는 HTTP 전송에 필요한 모든 부가정보를 담고 있기 때문에 표준 헤더가 정말 많다. 심지어 필요하다면 임의의 헤더를 추가할 수도 있다. 그래서 공부한 내용을 바탕으로 자주 사용되는 헤더를 정리해서 작성하고, 추가적으로 궁금하거나 사용되어지는 헤더들을 하나씩 추가해서 작성해보려고 한다.</p>
+<h1 id="HTTP-헤더의-변화"><a href="#HTTP-헤더의-변화" class="headerlink" title="HTTP 헤더의 변화"></a>HTTP 헤더의 변화</h1><p>현재 가장 많이 사용되어지고 있는 <code>HTTP/1.1</code>의 스펙을 보면 1997년에 RFC2068부터 시작해서 1999년에 RFC2616에서 개정이 되고, 2014년에 RFC7230~7235으로 개정이 되면서 많은 변화가 생겼다. 그 중 HTTP 헤더만 보자.</p>
+<p>위와 같이 개정되면서 헤더의 분류가 좀 더 명확히 분류됐고, 개념을 좀 더 명확히 구체화 하기 위해 용어가 변경 됐다.</p>
+<h1 id="HTTP-헤더와-메시지-본문-구조"><a href="#HTTP-헤더와-메시지-본문-구조" class="headerlink" title="HTTP 헤더와 메시지 본문 구조"></a>HTTP 헤더와 메시지 본문 구조</h1><ul>
+<li>엔티티 헤더(Entity header), 엔티티 본문(Entity body)가 표현 헤더(representation header), 표현 데이터(representation data)로 개정 됐다.</li>
+<li>표현 헤더는 표현 데이터를 해석할 수 있는 정보를 제공한다.<br>ex) 데이터 타입, 데이터 길이, 압축 정보 등</li>
+<li>메시지 본문(messagge body)을 통해 표현 데이터가 전달 된다.</li>
+<li>표현(Representation) = 표현 메타데이터(Representation Metadata) + 표현 데이터(Representation Data)</li>
+<li>표현은 요청(Request)이나 응답(Response)에서 전달할 실제 데이터를 말한다.</li>
+</ul>
+<h1 id="표현-헤더-종류"><a href="#표현-헤더-종류" class="headerlink" title="표현 헤더 종류"></a>표현 헤더 종류</h1><ul>
+<li><p>Content-Type<br>표현 데이터의 형식을 설명한다.<br>ex) Content-Type: text/html; charset=utf-8</p>
+</li>
+<li><p>Content-Encoding<br>표현 데이터를 압축하기 위해 사용되고 데이터를 전달하는 곳에서 압축 후 헤더에 인코딩 타입을 추가한다. 데이터를 읽는 쪽에서 인코딩 헤더의 정보로 압축을 헤제한다.<br>ex) Content-Encoding: gzip</p>
+</li>
+<li><p>Content-Language<br>표현 데이터의 자연 언어를 표현한다.<br>ex) Content-Language: ko-KR</p>
+</li>
+</ul>
+<ul>
+<li>Content-Length<br>표현 데이터의 길이를 바이트 단위로 표현한다.<br>ex) Content-Length: 223</li>
+</ul>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/HTTP/" rel="tag"># HTTP</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/09/reference-value-address-sharing/" rel="prev" title="Call by ...">
+                  <i class="fa fa-chevron-left"></i> Call by ...
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Kim Ju Hyeong</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://juhyeong-k.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://juhyeong-k.github.io/2021/05/18/HTTP-%ED%97%A4%EB%8D%94/";
+    this.page.identifier = "2021/05/18/HTTP-헤더/";
+    this.page.title = "HTTP 헤더";
+    };
+  NexT.utils.loadComments('#disqus_thread', () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://juhyeong-k.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
